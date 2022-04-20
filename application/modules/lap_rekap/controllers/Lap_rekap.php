@@ -32,7 +32,7 @@ class Lap_rekap extends CI_Controller {
 
 			} else {
 
-				$total_hari_bulan_now 	= $this->Rekap_model->get_hari_hari($id_ruang_sub, $bulan)->num_rows();// jumlahHari($bulan);
+				$total_hari_bulan_now 	= $this->Rekap_model->get_hari_hari($id_ruang_sub, $bulan, $tahun)->num_rows();// jumlahHari($bulan);
 
 				if ($total_hari_bulan_now == 0)
 				{
@@ -47,7 +47,7 @@ class Lap_rekap extends CI_Controller {
 			      	redirect('lap_rekap/bulanan');
 				} else {
 					$data = array(
-						'get_date'		=> $this->Rekap_model->get_hari_hari($id_ruang_sub, $bulan),
+						'get_date'		=> $this->Rekap_model->get_hari_hari($id_ruang_sub, $bulan, $tahun),
 						'id_ruang_sub'	=> $id_ruang_sub,
 						'id_ruang'		=> $query->ID_RUANG,
 
@@ -87,9 +87,9 @@ class Lap_rekap extends CI_Controller {
 
 		} else {
 
-			$total_hari_bulan_now 	= $this->Rekap_model->get_hari_hari($id_ruang_sub, $bulan)->num_rows();// jumlahHari($bulan);
+			$total_hari_bulan_now 	= $this->Rekap_model->get_hari_hari($id_ruang_sub, $bulan, $tahun)->num_rows();// jumlahHari($bulan);
 			$data = array(
-				'get_date'		=> $this->Rekap_model->get_hari_hari($id_ruang_sub, $bulan),
+				'get_date'		=> $this->Rekap_model->get_hari_hari($id_ruang_sub, $bulan, $tahun),
 				'id_ruang_sub'		=> $id_ruang_sub,
 				'id_ruang'			=> $id_ruang,
 				'bulan'			=> $bulan,

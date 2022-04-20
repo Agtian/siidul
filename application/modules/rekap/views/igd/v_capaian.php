@@ -111,7 +111,9 @@
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        echo round(($row->NUM_JAN / $row->$DEN_JAN) * 1000, 5);
+                                                        $num_jan = $row->NUM_JAN;
+                                                        $den_jan = $row->DEN_JAN;
+                                                        echo round(( $num_jan / $den_jan) * 1000, 5);
                                                     }
                                                 } else {
                                                     if ($row->NUM_JAN == 0 || $row->DEN_JAN == 0) 
@@ -154,7 +156,9 @@
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        echo round(($row->NUM_FEB / $row->$DEN_FEB) * 1000, 5);
+                                                        $num_feb = $row->NUM_FEB;
+                                                        $den_feb = $row->DEN_FEB;
+                                                        echo round(( $num_feb / $den_feb) * 1000, 5);
                                                     }
                                                 } else {
                                                     if ($row->NUM_FEB == 0 || $row->DEN_FEB == 0) 
@@ -197,7 +201,9 @@
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        echo round(($row->NUM_MAR / $row->$NUM_MAR) * 1000, 5);
+                                                        $num_mar = $row->NUM_MAR;
+                                                        $den_mar = $row->DEN_MAR;
+                                                        echo round(( $num_mar / $den_mar) * 1000, 5);
                                                     }
                                                 } else {
                                                     if ($row->NUM_MAR == 0 || $row->NUM_MAR == 0) 
@@ -240,7 +246,9 @@
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        echo round(($row->NUM_APR / $row->$NUM_APR) * 1000, 5);
+                                                        $num_apr = $row->NUM_APR;
+                                                        $den_apr = $row->DEN_APR;
+                                                        echo round(( $num_apr / $den_apr) * 1000, 5);
                                                     }
                                                 } else {
                                                     if ($row->NUM_APR == 0 || $row->NUM_APR == 0) 
@@ -283,7 +291,9 @@
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        echo round(($row->NUM_MEI / $row->$NUM_MEI) * 1000, 5);
+                                                        $num_mei = $row->NUM_MEI;
+                                                        $den_mei = $row->DEN_MEI;
+                                                        echo round(($num_mei / $den_mei) * 1000, 5);
                                                     }
                                                 } else {
                                                     if ($row->NUM_MEI == 0 || $row->NUM_MEI == 0) 
@@ -326,7 +336,9 @@
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        echo round(($row->NUM_JUN / $row->$NUM_JUN) * 1000, 5);
+                                                        $num_jun = $row->NUM_JUN;
+                                                        $den_jun = $row->DEN_JUN;
+                                                        echo round(($num_jun / $den_jun) * 1000, 5);
                                                     }
                                                 } else {
                                                     if ($row->NUM_JUN == 0 || $row->NUM_JUN == 0) 
@@ -369,7 +381,9 @@
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        echo round(($row->NUM_JUL / $row->$NUM_JUL) * 1000, 5);
+                                                        $num_jul = $row->NUM_JUL;
+                                                        $den_jul = $row->DEN_JUL;
+                                                        echo round(($num_jul / $den_jul) * 1000, 5);
                                                     }
                                                 } else {
                                                     if ($row->NUM_JUL == 0 || $row->NUM_JUL == 0) 
@@ -412,7 +426,9 @@
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        echo round(($row->NUM_AGT / $row->$NUM_AGT) * 1000, 5);
+                                                        $num_agt = $row->NUM_AGT;
+                                                        $den_agt = $row->DEN_AGT;
+                                                        echo round(($num_agt / $den_agt) * 1000, 5);
                                                     }
                                                 } else {
                                                     if ($row->NUM_AGT == 0 || $row->NUM_AGT == 0) 
@@ -455,7 +471,9 @@
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        echo round(($row->NUM_SEP / $row->$NUM_SEP) * 1000, 5);
+                                                        $num_sep = $row->NUM_SEP;
+                                                        $den_sep = $row->DEN_SEP;
+                                                        echo round(($num_sep / $den_sep) * 1000, 5);
                                                     }
                                                 } else {
                                                     if ($row->NUM_SEP == 0 || $row->NUM_SEP == 0) 
@@ -498,7 +516,9 @@
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        echo round(($row->NUM_OKT / $row->$NUM_OKT) * 1000, 5);
+                                                        $num_okt = $row->NUM_OKT;
+                                                        $den_okt = $row->DEN_OKT;
+                                                        echo round(($num_okt / $den_okt) * 1000, 5);
                                                     }
                                                 } else {
                                                     if ($row->NUM_OKT == 0 || $row->NUM_OKT == 0) 
@@ -541,7 +561,9 @@
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        echo round(($row->NUM_NOV / $row->$NUM_NOV) * 1000, 5);
+                                                        $num_nov = $row->NUM_NOV;
+                                                        $den_nov = $row->DEN_NOV;
+                                                        echo round(($num_nov / $den_nov) * 1000, 5);
                                                     }
                                                 } else {
                                                     if ($row->NUM_NOV == 0 || $row->NUM_NOV == 0) 
@@ -584,7 +606,9 @@
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        echo round(($row->NUM_DES / $row->$NUM_DES) * 1000, 5);
+                                                        $num_des = $row->NUM_DES;
+                                                        $den_des = $row->DEN_DES;
+                                                        echo round(($num_des / $den_des) * 1000, 5);
                                                     }
                                                 } else {
                                                     if ($row->NUM_DES == 0 || $row->NUM_DES == 0) 

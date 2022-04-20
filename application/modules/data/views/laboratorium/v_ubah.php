@@ -33,13 +33,13 @@
 
                             <div class="form-group">
                                 <div class="col-md-2 col-sm-2 col-xs-2">
-                                    <input type="text" class="form-control" name="num[]" placeholder="Numerator" value="<?= $row->NUM?>" required>
+                                    <input type="number" class="form-control" name="num[]" placeholder="Numerator" value="<?= $row->NUM?>" required>
                                 </div>
                                 <div class="col-md-10 col-sm-10 col-xs-10"> <h4><?php echo $row->DETAIL_NUM; ?></h4> </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-2 col-sm-2 col-xs-2">
-                                    <input type="text" class="form-control" name="den[]" placeholder="Denumerator" value="<?= $row->DEN?>" required>
+                                    <input type="number" class="form-control" name="den[]" placeholder="Denumerator" value="<?= $row->DEN?>" required>
                                 </div>
                                 <div class="col-md-10 col-sm-10 col-xs-10"> <h4><?php echo $row->DETAIL_DEN; ?></h4> </div>
                             </div>

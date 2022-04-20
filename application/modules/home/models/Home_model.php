@@ -150,7 +150,7 @@ class Home_model extends CI_Model {
 		public function get_data_progres_chart_nov($id_sub_ruang, $tahun) 
 		{
 			$this->db->distinct();
-			$this->db->select('TANGGAL AS OKT');
+			$this->db->select('TANGGAL AS NOV');
 			$this->db->from('TR_INDIKATOR');
 			$this->db->where('ID_RUANG_SUB', $id_sub_ruang);
 			$this->db->where('MONTH(TANGGAL)', '11');
@@ -164,7 +164,7 @@ class Home_model extends CI_Model {
 		public function get_data_progres_chart_des($id_sub_ruang, $tahun) 
 		{
 			$this->db->distinct();
-			$this->db->select('TANGGAL AS OKT');
+			$this->db->select('TANGGAL AS DES');
 			$this->db->from('TR_INDIKATOR');
 			$this->db->where('ID_RUANG_SUB', $id_sub_ruang);
 			$this->db->where('MONTH(TANGGAL)', '12');

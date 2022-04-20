@@ -372,7 +372,7 @@
                                             {
                                                 echo "0";
                                             } else {
-                                                echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000, 5);
+                                                echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000, 1);
                                             }
                                         } else {
                                             if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 

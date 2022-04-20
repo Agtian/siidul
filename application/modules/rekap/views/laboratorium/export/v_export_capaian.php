@@ -290,41 +290,20 @@
                                     <?php
                                         if ($no == 2)
                                         {
-                                            if ($row->NUM_NOV == 0 || $row->NUM_NOV == 0) 
-                                            {
-                                                echo "0 %";
-                                            } else {
-                                                echo round($row->NUM_NOV / $row->NUM_NOV, 2);
-                                            }
-                                        } else if ($no == 5) {
-                                            if ($row->NUM_NOV == 0 || $row->NUM_NOV == 0) 
-                                            {
-                                                echo "0";
-                                            } else {
-                                                echo round($row->NUM_NOV / $row->NUM_NOV, 2);
-                                            }
-                                        } else if ($no == 6) {
-                                            if ($row->NUM_NOV == 0 || $row->NUM_NOV == 0) 
+                                            if ($row->NUM_NOV == 0 || $row->DEN_NOV == 0) 
                                             {
                                                 echo "00:00:00";
                                             } else {
                                                 $average = $row->NUM_NOV / $tt_hari_nov;
-                                                $time    = $average / $row->NUM_NOV;
+                                                $time    = $average / $row->NUM_OKT;
                                                 echo gmdate('H:i:s', floor($time * 86400));
                                             }
-                                        } else if ($no == 8) {
-                                            if ($row->NUM_NOV == 0 || $row->NUM_NOV == 0) 
-                                            {
-                                                echo "0";
-                                            } else {
-                                                echo round(($row->NUM_NOV / $row->$NUM_NOV) * 1000, 5);
-                                            }
                                         } else {
-                                            if ($row->NUM_NOV == 0 || $row->NUM_NOV == 0) 
+                                            if ($row->NUM_NOV == 0 || $row->DEN_NOV == 0) 
                                             {
                                                 echo "0  %";
                                             } else {
-                                                echo substr($row->NUM_NOV / $row->NUM_NOV * 100, 0, 5)." %";
+                                                echo substr($row->NUM_NOV / $row->DEN_NOV * 100, 0, 5)." %";
                                             }
                                         }
                                     ?>
@@ -333,21 +312,7 @@
                                     <?php
                                         if ($no == 2)
                                         {
-                                            if ($row->NUM_DES == 0 || $row->NUM_DES == 0) 
-                                            {
-                                                echo "0 %";
-                                            } else {
-                                                echo round($row->NUM_DES / $row->NUM_DES, 2);
-                                            }
-                                        } else if ($no == 5) {
-                                            if ($row->NUM_DES == 0 || $row->NUM_DES == 0) 
-                                            {
-                                                echo "0";
-                                            } else {
-                                                echo round($row->NUM_DES / $row->NUM_DES, 2);
-                                            }
-                                        } else if ($no == 6) {
-                                            if ($row->NUM_DES == 0 || $row->NUM_DES == 0) 
+                                            if ($row->NUM_DES == 0 || $row->DEN_DES == 0) 
                                             {
                                                 echo "00:00:00";
                                             } else {
@@ -355,19 +320,12 @@
                                                 $time    = $average / $row->NUM_DES;
                                                 echo gmdate('H:i:s', floor($time * 86400));
                                             }
-                                        } else if ($no == 8) {
-                                            if ($row->NUM_DES == 0 || $row->NUM_DES == 0) 
-                                            {
-                                                echo "0";
-                                            } else {
-                                                echo round(($row->NUM_DES / $row->$NUM_DES) * 1000, 5);
-                                            }
                                         } else {
                                             if ($row->NUM_DES == 0 || $row->NUM_DES == 0) 
                                             {
                                                 echo "0  %";
                                             } else {
-                                                echo substr($row->NUM_DES / $row->NUM_DES * 100, 0, 5)." %";
+                                                echo substr($row->NUM_DES / $row->DEN_DES * 100, 0, 5)." %";
                                             }
                                         }
                                     ?>

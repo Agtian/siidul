@@ -84,7 +84,7 @@
                                             <?php 
                                                 if ($no == '4')
                                                 {
-                                                    if ($row->NUM_JAN == 0) 
+                                                    if ($row->NUM_JAN == 0 || $row->DEN_JAN == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
@@ -115,7 +115,7 @@
                                                         echo "0";
                                                         echo " %";
                                                     } else {
-                                                        echo ($row->NUM_JAN / $row->DEN_JAN) * (1 / 100);
+                                                        echo round(($row->NUM_JAN / $row->DEN_JAN) * (1 / 100), 2);
                                                         echo " %";
                                                     }
                                                 } else {
@@ -134,11 +134,11 @@
                                             <?php 
                                                 if ($no == '4')
                                                 {
-                                                    if ($row->NUM_FEB == 0) 
+                                                    if ($row->NUM_FEB == 0 || $row->DEN_FEB == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $persen = $row->NUM_FEB / $tt_hari_FEB;
+                                                        $persen = $row->NUM_FEB / $tt_hari_feb;
                                                         echo $persen;
                                                     }
                                                 } else if ($no == '6') {
@@ -184,11 +184,11 @@
                                             <?php 
                                                 if ($no == '4')
                                                 {
-                                                    if ($row->NUM_MAR == 0) 
+                                                    if ($row->NUM_MAR == 0 || $row->DEN_MAR == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $persen = $row->NUM_MAR / $tt_hari_MAR;
+                                                        $persen = $row->NUM_MAR / $tt_hari_mar;
                                                         echo $persen;
                                                     }
                                                 } else if ($no == '6') {
@@ -234,11 +234,11 @@
                                             <?php 
                                                 if ($no == '4')
                                                 {
-                                                    if ($row->NUM_APR == 0) 
+                                                    if ($row->NUM_APR == 0 || $row->DEN_APR == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $persen = $row->NUM_APR / $tt_hari_APR;
+                                                        $persen = $row->NUM_APR / $tt_hari_apr;
                                                         echo $persen;
                                                     }
                                                 } else if ($no == '6') {
@@ -284,11 +284,11 @@
                                             <?php 
                                                 if ($no == '4')
                                                 {
-                                                    if ($row->NUM_MEI == 0) 
+                                                    if ($row->NUM_MEI == 0 || $row->DEN_MEI == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $persen = $row->NUM_MEI / $tt_hari_MEI;
+                                                        $persen = $row->NUM_MEI / $tt_hari_mei;
                                                         echo $persen;
                                                     }
                                                 } else if ($no == '6') {
@@ -334,11 +334,11 @@
                                             <?php 
                                                 if ($no == '4')
                                                 {
-                                                    if ($row->NUM_JUN == 0) 
+                                                    if ($row->NUM_JUN == 0 || $row->DEN_JUN == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $persen = $row->NUM_JUN / $tt_hari_JUN;
+                                                        $persen = $row->NUM_JUN / $tt_hari_jun;
                                                         echo $persen;
                                                     }
                                                 } else if ($no == '6') {
@@ -384,11 +384,11 @@
                                             <?php 
                                                 if ($no == '4')
                                                 {
-                                                    if ($row->NUM_JUL == 0) 
+                                                    if ($row->NUM_JUL == 0 || $row->DEN_JUL == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $persen = $row->NUM_JUL / $tt_hari_JUL;
+                                                        $persen = $row->NUM_JUL / $tt_hari_jul;
                                                         echo $persen;
                                                     }
                                                 } else if ($no == '6') {
@@ -434,11 +434,11 @@
                                             <?php 
                                                 if ($no == '4')
                                                 {
-                                                    if ($row->NUM_AGT == 0) 
+                                                    if ($row->NUM_AGT == 0 || $row->DEN_AGT == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $persen = $row->NUM_AGT / $tt_hari_AGT;
+                                                        $persen = $row->NUM_AGT / $tt_hari_agt;
                                                         echo $persen;
                                                     }
                                                 } else if ($no == '6') {
@@ -484,11 +484,11 @@
                                             <?php 
                                                 if ($no == '4')
                                                 {
-                                                    if ($row->NUM_SEP == 0) 
+                                                    if ($row->NUM_SEP == 0 || $row->DEN_SEP == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $persen = $row->NUM_SEP / $tt_hari_SEP;
+                                                        $persen = $row->NUM_SEP / $tt_hari_sep;
                                                         echo $persen;
                                                     }
                                                 } else if ($no == '6') {
@@ -534,11 +534,11 @@
                                             <?php 
                                                 if ($no == '4')
                                                 {
-                                                    if ($row->NUM_OKT == 0) 
+                                                    if ($row->NUM_OKT == 0 || $row->DEN_OKT == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $persen = $row->NUM_OKT / $tt_hari_OKT;
+                                                        $persen = $row->NUM_OKT / $tt_hari_okt;
                                                         echo $persen;
                                                     }
                                                 } else if ($no == '6') {
@@ -584,11 +584,11 @@
                                             <?php 
                                                 if ($no == '4')
                                                 {
-                                                    if ($row->NUM_NOV == 0) 
+                                                    if ($row->NUM_NOV == 0 || $row->DEN_NOV == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $persen = $row->NUM_NOV / $tt_hari_NOV;
+                                                        $persen = $row->NUM_NOV / $tt_hari_nov;
                                                         echo $persen;
                                                     }
                                                 } else if ($no == '6') {
@@ -634,11 +634,11 @@
                                             <?php 
                                                 if ($no == '4')
                                                 {
-                                                    if ($row->NUM_DES == 0) 
+                                                    if ($row->NUM_DES == 0 || $row->DEN_DES == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $persen = $row->NUM_DES / $tt_hari_DES;
+                                                        $persen = $row->NUM_DES / $tt_hari_des;
                                                         echo $persen;
                                                     }
                                                 } else if ($no == '6') {

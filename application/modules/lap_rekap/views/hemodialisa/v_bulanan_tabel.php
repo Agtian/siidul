@@ -71,11 +71,11 @@
                                 <thead>
                                     <tr class="bg-primary">
                                         <th rowspan="2" width="30"><center>NO</center></th>
-                                        <th rowspan="2" width="170"><center>INDIKATOR</center></th>
-                                        <th rowspan="2" width="220"><center>SUB INDIKATOR</center></th>
+                                        <th rowspan="2"><center>INDIKATOR</center></th>
+                                        <th rowspan="2"><center>SUB INDIKATOR</center></th>
                                         <th colspan="<?php echo $total_hari; ?>" ><center>TANGGAL</center></th>
-                                        <th rowspan="2" width="60"><center>TOTAL</center></th>
-                                        <th rowspan="2" width="60"><center>PERSEN</center></th>
+                                        <th rowspan="2"><center>TOTAL</center></th>
+                                        <th rowspan="2"><center>PERSEN</center></th>
                                     </tr>
                                     <tr class="bg-primary">
                                         <?php 
@@ -88,8 +88,8 @@
                                 <tbody>
                                     <?php 
                                         $no = 1;
-                                        $tanggal    = $total_hari;
                                         $id_ruang_sub   = $this->session->userdata("user_id_ruang_sub");
+                                        $tanggal    = $total_hari;
                                         foreach ($data_indikator->result() as $row) {
                                     ?>
                                     <tr>
@@ -107,12 +107,12 @@
                                                 {
                                                     echo '<td align="center"> '.$key->NUM.' </td>';
                                                     $total_num += $key->NUM;
-                                                    $total_den += $key->DEN;                                      
+                                                    $total_den += $key->DEN;                                         
                                                 }
 
                                             } else {
 
-                                                $data = $this->Rekap_model->get_data_bulanan($row->ID, $id_ruang_sub, $bulan, $tahun);
+                                                $data = $$this->Rekap_model->get_data_bulanan($row->ID, $id_ruang_sub, $bulan, $tahun);
                                                 foreach ($data->result() as $key) 
                                                 {
                                                     echo '<td align="center"> '.$key->NUM.' </td>';
@@ -136,9 +136,11 @@
                                                 <?php
                                                     if ($total_num == 0 || $total_den == 0)
                                                     {
-                                                        echo "0  %";
+                                                        echo "0";
+                                                        echo " %";
                                                     } else {
-                                                        echo round($total_num / $total_den * 100, 2)." %";
+                                                        echo substr($total_num / $total_den * 100, 0, 5);
+                                                        echo " %";
                                                     }
                                                 ?>
                                             </center></b> 
@@ -163,19 +165,7 @@
                                                 echo '<td align="center"> '.$key->DEN.' </td>';
                                             }
                                         } ?>
-                                        <td align="center">
-                                            <b> 
-                                                <?php
-
-                                                    if ($total_den == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        echo $total_den;
-                                                    }
-                                                ?> 
-                                            </b>
-                                        </td>
+                                        <td align="center"> <b><?php echo $total_den; ?></b> </td>
                                     </tr>
                                     <?php } ?>
                                 </tbody>

@@ -61,13 +61,14 @@ class Rekap_model extends CI_Model {
 		return $this->db->get();
 	}
 
-	public function get_hari_hari($id_ruang_sub, $bulan)
+	public function get_hari_hari($id_ruang_sub, $bulan, $tahun)
 	{
 		$this->db->distinct();
 		$this->db->select('TANGGAL, DAY(TANGGAL) AS DATE');
 		$this->db->from('TR_INDIKATOR');
 		$this->db->where('ID_RUANG_SUB', $id_ruang_sub);
 		$this->db->where('MONTH(TANGGAL)', $bulan);
+		$this->db->where('YEAR(TANGGAL)', $tahun);
 		$this->db->order_by('TANGGAL', 'ASC');
 		$this->db->group_by('TANGGAL');
 		return $this->db->get();

@@ -358,7 +358,7 @@
                                     <?php 
                                         if ($no == '4' || $no == '5')
                                         {
-                                            if (empty($row->NUM_NOV)) {
+                                            if (empty($row->NUM_NOV) || empty($row->DEN_NOV)) {
 
                                                 echo "0 %";
 
@@ -370,7 +370,7 @@
                                             }
                                         } else {
 
-                                            if (empty($row->NUM_OKT)) {
+                                            if (empty($row->NUM_OKT) || empty($row->DEN_NOV)) {
 
                                                 echo "0 %";
                                                 

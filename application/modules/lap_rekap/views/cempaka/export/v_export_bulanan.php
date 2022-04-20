@@ -54,7 +54,6 @@
                     <td rowspan="2"><?php echo $row->DETAIL_INDIKATOR; ?></td>
                     <td rowspan="1" height="40"><?php echo $row->DETAIL_NUM; ?></td>
 
-
                     <?php 
                         $total_num  = 0; 
                         $total_den  = 0;
@@ -62,16 +61,14 @@
                         if ($total_hari == $total_hari) {
                             foreach ($data->result() as $key) 
                             {
-                                if ($no == 4) {
-                                    $total_num += $key->NUM;
-                                    // $total_den += $key->DEN;
+                                if ($no == 3) {
                                     echo '<td align="center"> '.$key->NUM.' </td>';
-                                } else if ($no == 6) {
                                     $total_num += $key->NUM;
                                     $total_den += $key->DEN;
-                                    echo '<td align="center"> '.$key->NUM.' </td>';
+                                    $average_num = $total_num / $total_hari;
+                                    $average_den = $total_den / $total_hari;
                                 } else {
-                                    echo '<td align="center"> '.$key->NUM.' </td>';
+                                    echo '<td align="center"> '.round($key->NUM, 2).' </td>';
                                     $total_num += $key->NUM;
                                     $total_den += $key->DEN;
                                 }                                                
@@ -86,6 +83,7 @@
                             }
                         } 
                     ?>
+                    
                     <td align="center"> 
                         <b>
                             <?php 
@@ -114,7 +112,7 @@
                                         echo "0";
                                         echo " %";
                                     } else {
-                                        echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 100, 2);
+                                        echo round(($total_num / $total_den) * 100, 2);
                                         echo " %";
                                     }
                                 }

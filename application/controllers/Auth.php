@@ -39,19 +39,19 @@ class Auth extends CI_Controller{
         		// $password = htmlspecialchars(MD5($this->input->post('password',TRUE)),ENT_QUOTES);
         		
 	            $username = $this->input->post("username", TRUE);
-	            $password = $this->input->post('password', TRUE);
+	            $password = md5($this->input->post('password', TRUE));
 
-	            if ($username == 'admin' && $password == 'admin')
+	            if ($username == 'administrator' && $password == '21232f297a57a5a743894a0e4a801fc3')
             	{
             		$session_data = array(
-                        'user_id'   		=> '69',
-                        'user_id_ruang'		=> '69',
-                        'user_id_ruang_sub' => '69',
-                        'user_nama' 		=> 'Administator',
-                        'user_id_akses' 	=> '69',
-                        'user_username' 	=> 'Admin',
-                        'user_nama_ruang'	=> 'Admin',
-                        'user_kepala_ruang'	=> 'Admin',
+                        'user_id'   		=> '30',
+                        'user_id_ruang'		=> '25',
+                        'user_id_ruang_sub' => '30',
+                        'user_nama' 		=> 'Administrator',
+                        'user_id_akses' 	=> '1',
+                        'user_username' 	=> 'administrator',
+                        'user_nama_ruang'	=> 'Administrator',
+                        'user_kepala_ruang'	=> 'Administrator',
                     );
                     //set session userdata
                     $this->session->set_userdata($session_data);

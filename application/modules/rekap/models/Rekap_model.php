@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Rekap_model extends CI_Model {
+class Rekap_model extends CI_Model
+{
 
 	public function get_total_perbulan($bulan)
 	{
@@ -43,13 +44,14 @@ class Rekap_model extends CI_Model {
 		return $this->db->get();
 	}
 
-	public function get_hari_hari($id_ruang_sub, $bulan)
+	public function get_hari_hari($id_ruang_sub, $bulan, $tahun)
 	{
 		$this->db->distinct();
 		$this->db->select('TANGGAL, DAY(TANGGAL) AS DATE');
 		$this->db->from('TR_INDIKATOR');
 		$this->db->where('ID_RUANG_SUB', $id_ruang_sub);
 		$this->db->where('MONTH(TANGGAL)', $bulan);
+		$this->db->where('YEAR(TANGGAL)', $tahun);
 		$this->db->order_by('TANGGAL', 'ASC');
 		$this->db->group_by('TANGGAL');
 		return $this->db->get();
@@ -58,9 +60,9 @@ class Rekap_model extends CI_Model {
 	// 
 	// Start Rekap triwulan
 	//
-		public function get_triwulan_i($id_ruang_sub, $tahun) 
-		{
-			$query = $this->db->query("SELECT DISTINCT TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN,
+	public function get_triwulan_i($id_ruang_sub, $tahun)
+	{
+		$query = $this->db->query("SELECT DISTINCT TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '01' THEN NUM ELSE 0 END) AS NUM_JAN,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '02' THEN NUM ELSE 0 END) AS NUM_FEB,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '03' THEN NUM ELSE 0 END) AS NUM_MAR,
@@ -101,12 +103,12 @@ class Rekap_model extends CI_Model {
 				AND FORMAT (TANGGAL, 'yyyy') = '$tahun'
 				GROUP BY TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN
 				ORDER BY TM_INDIKATOR.ID ASC");
-			return $query;
-		}
+		return $query;
+	}
 
-		public function get_triwulan_ii($id_ruang_sub, $tahun)
-		{
-			$query = $this->db->query("SELECT DISTINCT TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN,
+	public function get_triwulan_ii($id_ruang_sub, $tahun)
+	{
+		$query = $this->db->query("SELECT DISTINCT TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '04' THEN NUM ELSE 0 END) AS NUM_APR,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '05' THEN NUM ELSE 0 END) AS NUM_MEI,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '06' THEN NUM ELSE 0 END) AS NUM_JUN,
@@ -148,12 +150,12 @@ class Rekap_model extends CI_Model {
 				AND FORMAT (TANGGAL, 'yyyy') = '$tahun'
 				GROUP BY TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN
 				ORDER BY TM_INDIKATOR.ID ASC");
-			return $query;
-		}
+		return $query;
+	}
 
-		public function get_triwulan_iii($id_ruang_sub, $tahun)
-		{
-			$query = $this->db->query("SELECT DISTINCT TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN,
+	public function get_triwulan_iii($id_ruang_sub, $tahun)
+	{
+		$query = $this->db->query("SELECT DISTINCT TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '07' THEN NUM ELSE 0 END) AS NUM_JUL,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '08' THEN NUM ELSE 0 END) AS NUM_AGT,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '08' THEN NUM ELSE 0 END) AS NUM_SEP,
@@ -194,12 +196,12 @@ class Rekap_model extends CI_Model {
 				AND FORMAT (TANGGAL, 'yyyy') = '$tahun'
 				GROUP BY TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN
 				ORDER BY TM_INDIKATOR.ID ASC");
-			return $query;
-		}
+		return $query;
+	}
 
-		public function get_triwulan_iv($id_ruang_sub, $tahun)
-		{
-			$query = $this->db->query("SELECT DISTINCT TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN,
+	public function get_triwulan_iv($id_ruang_sub, $tahun)
+	{
+		$query = $this->db->query("SELECT DISTINCT TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '09' THEN NUM ELSE 0 END) AS NUM_OKT,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '11' THEN NUM ELSE 0 END) AS NUM_NOV,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '12' THEN NUM ELSE 0 END) AS NUM_DES,
@@ -240,8 +242,8 @@ class Rekap_model extends CI_Model {
 				AND FORMAT (TANGGAL, 'yyyy') = '$tahun'
 				GROUP BY TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN
 				ORDER BY TM_INDIKATOR.ID ASC");
-			return $query;
-		}
+		return $query;
+	}
 	// 
 	// End Rekap triwulan
 	//
@@ -249,9 +251,9 @@ class Rekap_model extends CI_Model {
 	//
 	// Start Rekap Semester
 	//
-		public function get_semester_i($id_ruang_sub, $tahun) 
-		{
-			$query = $this->db->query("SELECT DISTINCT TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN,
+	public function get_semester_i($id_ruang_sub, $tahun)
+	{
+		$query = $this->db->query("SELECT DISTINCT TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '01' THEN NUM ELSE 0 END) AS NUM_JAN,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '02' THEN NUM ELSE 0 END) AS NUM_FEB,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '03' THEN NUM ELSE 0 END) AS NUM_MAR,
@@ -316,12 +318,12 @@ class Rekap_model extends CI_Model {
 				AND FORMAT (TANGGAL, 'yyyy') = '$tahun'
 				GROUP BY TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN
 				ORDER BY TM_INDIKATOR.ID ASC");
-			return $query;
-		}
+		return $query;
+	}
 
-		public function get_semester_ii($id_ruang_sub, $tahun) 
-		{
-			$query = $this->db->query("SELECT DISTINCT TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN,
+	public function get_semester_ii($id_ruang_sub, $tahun)
+	{
+		$query = $this->db->query("SELECT DISTINCT TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '07' THEN NUM ELSE 0 END) AS NUM_JUL,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '08' THEN NUM ELSE 0 END) AS NUM_AGT,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '09' THEN NUM ELSE 0 END) AS NUM_SEP,
@@ -386,8 +388,8 @@ class Rekap_model extends CI_Model {
 				AND FORMAT (TANGGAL, 'yyyy') = '$tahun'
 				GROUP BY TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN
 				ORDER BY TM_INDIKATOR.ID ASC");
-			return $query;
-		}
+		return $query;
+	}
 	//
 	// End Rekap Semester
 	//
@@ -398,9 +400,9 @@ class Rekap_model extends CI_Model {
 	// 
 	// Start Rekap Tahunan
 	//
-		public function get_tahunan($id_ruang_sub, $tahun) 
-		{
-			$query = $this->db->query("SELECT DISTINCT TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN,
+	public function get_tahunan($id_ruang_sub, $tahun)
+	{
+		$query = $this->db->query("SELECT DISTINCT TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '01' THEN NUM ELSE 0 END) AS NUM_JAN,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '02' THEN NUM ELSE 0 END) AS NUM_FEB,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '03' THEN NUM ELSE 0 END) AS NUM_MAR,
@@ -469,15 +471,15 @@ class Rekap_model extends CI_Model {
 					((SUM(CASE WHEN DATEPART(m, TANGGAL)= '01' THEN DEN ELSE 0 END)) + 
 					(SUM(CASE WHEN DATEPART(m, TANGGAL)= '02' THEN DEN ELSE 0 END)) +
 					(SUM(CASE WHEN DATEPART(m, TANGGAL)= '03' THEN DEN ELSE 0 END)) +
-					(SUM(CASE WHEN DATEPART(m, TANGGAL)= '04' THEN NUM ELSE 0 END)) +
-					(SUM(CASE WHEN DATEPART(m, TANGGAL)= '05' THEN NUM ELSE 0 END)) +
-					(SUM(CASE WHEN DATEPART(m, TANGGAL)= '06' THEN NUM ELSE 0 END)) +
+					(SUM(CASE WHEN DATEPART(m, TANGGAL)= '04' THEN DEN ELSE 0 END)) +
+					(SUM(CASE WHEN DATEPART(m, TANGGAL)= '05' THEN DEN ELSE 0 END)) +
+					(SUM(CASE WHEN DATEPART(m, TANGGAL)= '06' THEN DEN ELSE 0 END)) +
 					(SUM(CASE WHEN DATEPART(m, TANGGAL)= '07' THEN DEN ELSE 0 END)) + 
 					(SUM(CASE WHEN DATEPART(m, TANGGAL)= '08' THEN DEN ELSE 0 END)) +
 					(SUM(CASE WHEN DATEPART(m, TANGGAL)= '09' THEN DEN ELSE 0 END)) +
-					(SUM(CASE WHEN DATEPART(m, TANGGAL)= '10' THEN NUM ELSE 0 END)) +
-					(SUM(CASE WHEN DATEPART(m, TANGGAL)= '11' THEN NUM ELSE 0 END)) +
-					(SUM(CASE WHEN DATEPART(m, TANGGAL)= '12' THEN NUM ELSE 0 END)))
+					(SUM(CASE WHEN DATEPART(m, TANGGAL)= '10' THEN DEN ELSE 0 END)) +
+					(SUM(CASE WHEN DATEPART(m, TANGGAL)= '11' THEN DEN ELSE 0 END)) +
+					(SUM(CASE WHEN DATEPART(m, TANGGAL)= '12' THEN DEN ELSE 0 END)))
 				AS TOTAL_DEN,
 
 					((AVG(CASE WHEN DATEPART(m, TANGGAL)= '01' THEN NUM ELSE 0 END)) + 
@@ -496,15 +498,15 @@ class Rekap_model extends CI_Model {
 					((AVG(CASE WHEN DATEPART(m, TANGGAL)= '01' THEN DEN ELSE 0 END)) + 
 					(AVG(CASE WHEN DATEPART(m, TANGGAL)= '02' THEN DEN ELSE 0 END)) +
 					(AVG(CASE WHEN DATEPART(m, TANGGAL)= '03' THEN DEN ELSE 0 END)) +
-					(AVG(CASE WHEN DATEPART(m, TANGGAL)= '04' THEN NUM ELSE 0 END)) +
-					(AVG(CASE WHEN DATEPART(m, TANGGAL)= '05' THEN NUM ELSE 0 END)) +
-					(AVG(CASE WHEN DATEPART(m, TANGGAL)= '06' THEN NUM ELSE 0 END)) +
+					(AVG(CASE WHEN DATEPART(m, TANGGAL)= '04' THEN DEN ELSE 0 END)) +
+					(AVG(CASE WHEN DATEPART(m, TANGGAL)= '05' THEN DEN ELSE 0 END)) +
+					(AVG(CASE WHEN DATEPART(m, TANGGAL)= '06' THEN DEN ELSE 0 END)) +
 					(AVG(CASE WHEN DATEPART(m, TANGGAL)= '07' THEN DEN ELSE 0 END)) + 
 					(AVG(CASE WHEN DATEPART(m, TANGGAL)= '08' THEN DEN ELSE 0 END)) +
 					(AVG(CASE WHEN DATEPART(m, TANGGAL)= '09' THEN DEN ELSE 0 END)) +
-					(AVG(CASE WHEN DATEPART(m, TANGGAL)= '10' THEN NUM ELSE 0 END)) +
-					(AVG(CASE WHEN DATEPART(m, TANGGAL)= '11' THEN NUM ELSE 0 END)) +
-					(AVG(CASE WHEN DATEPART(m, TANGGAL)= '12' THEN NUM ELSE 0 END)))
+					(AVG(CASE WHEN DATEPART(m, TANGGAL)= '10' THEN DEN ELSE 0 END)) +
+					(AVG(CASE WHEN DATEPART(m, TANGGAL)= '11' THEN DEN ELSE 0 END)) +
+					(AVG(CASE WHEN DATEPART(m, TANGGAL)= '12' THEN DEN ELSE 0 END)))
 				AS AVG_TOTAL_DEN
 
 				FROM TR_INDIKATOR
@@ -513,8 +515,8 @@ class Rekap_model extends CI_Model {
 				AND FORMAT (TANGGAL, 'yyyy') = '$tahun'
 				GROUP BY TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN
 				ORDER BY TM_INDIKATOR.ID ASC");
-			return $query;
-		}
+		return $query;
+	}
 	// 
 	// End Rekap Tahunan
 	//
@@ -522,9 +524,9 @@ class Rekap_model extends CI_Model {
 	// 
 	// Start Rekap Capaian
 	//
-		public function get_capaian($id_ruang_sub, $tahun) 
-		{
-			$query = $this->db->query("SELECT DISTINCT TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN, NILAI_STANDAR,
+	public function get_capaian($id_ruang_sub, $tahun)
+	{
+		$query = $this->db->query("SELECT DISTINCT TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN, NILAI_STANDAR,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '01' THEN NUM ELSE 0 END) AS NUM_JAN,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '02' THEN NUM ELSE 0 END) AS NUM_FEB,
 					SUM(CASE WHEN DATEPART(m, TANGGAL)= '03' THEN NUM ELSE 0 END) AS NUM_MAR,
@@ -637,14 +639,14 @@ class Rekap_model extends CI_Model {
 				AND FORMAT (TANGGAL, 'yyyy') = '$tahun'
 				GROUP BY TM_INDIKATOR.ID, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN, NILAI_STANDAR
 				ORDER BY TM_INDIKATOR.ID ASC");
-			return $query;
-		}
+		return $query;
+	}
 	// 
 	// End Rekap Capaian
 	//	
 
 
-	publiC function get_det_indikator($id_ruang)
+	public function get_det_indikator($id_ruang)
 	{
 		$this->db->select('ID, DETAIL_INDIKATOR');
 		$this->db->from('TM_INDIKATOR');
@@ -655,196 +657,196 @@ class Rekap_model extends CI_Model {
 
 
 	// Start Get Total Input Bulanan Per Tahun
-		public function get_tt_hari_jan($tahun, $id_indikator) 
-		{
-			$this->db->select('TANGGAL');
-			$this->db->from('TR_INDIKATOR');
-			$this->db->where('MONTH(TANGGAL)', '1');
-			$this->db->where('YEAR(TANGGAL)', $tahun);
-			$this->db->where('ID_INDIKATOR', $id_indikator);
-			$query = $this->db->get()->num_rows();
-			if ($query == 0) {
-				$val = 1;
-				return $val;
-			} else {
-				return $query;
-			}
+	public function get_tt_hari_jan($tahun, $id_indikator)
+	{
+		$this->db->select('TANGGAL');
+		$this->db->from('TR_INDIKATOR');
+		$this->db->where('MONTH(TANGGAL)', '1');
+		$this->db->where('YEAR(TANGGAL)', $tahun);
+		$this->db->where('ID_INDIKATOR', $id_indikator);
+		$query = $this->db->get()->num_rows();
+		if ($query == 0) {
+			$val = 1;
+			return $val;
+		} else {
+			return $query;
 		}
+	}
 
-		public function get_tt_hari_feb($tahun, $id_indikator) 
-		{
-			$this->db->select('TANGGAL');
-			$this->db->from('TR_INDIKATOR');
-			$this->db->where('MONTH(TANGGAL)', '2');
-			$this->db->where('YEAR(TANGGAL)', $tahun);
-			$this->db->where('ID_INDIKATOR', $id_indikator);
-			$query = $this->db->get()->num_rows();
-			if ($query == 0) {
-				$val = 1;
-				return $val;
-			} else {
-				return $query;
-			}
+	public function get_tt_hari_feb($tahun, $id_indikator)
+	{
+		$this->db->select('TANGGAL');
+		$this->db->from('TR_INDIKATOR');
+		$this->db->where('MONTH(TANGGAL)', '2');
+		$this->db->where('YEAR(TANGGAL)', $tahun);
+		$this->db->where('ID_INDIKATOR', $id_indikator);
+		$query = $this->db->get()->num_rows();
+		if ($query == 0) {
+			$val = 1;
+			return $val;
+		} else {
+			return $query;
 		}
+	}
 
-		public function get_tt_hari_mar($tahun, $id_indikator) 
-		{
-			$this->db->select('TANGGAL');
-			$this->db->from('TR_INDIKATOR');
-			$this->db->where('MONTH(TANGGAL)', '3');
-			$this->db->where('YEAR(TANGGAL)', $tahun);
-			$this->db->where('ID_INDIKATOR', $id_indikator);
-			$query = $this->db->get()->num_rows();
-			if ($query == 0) {
-				$val = 1;
-				return $val;
-			} else {
-				return $query;
-			}
+	public function get_tt_hari_mar($tahun, $id_indikator)
+	{
+		$this->db->select('TANGGAL');
+		$this->db->from('TR_INDIKATOR');
+		$this->db->where('MONTH(TANGGAL)', '3');
+		$this->db->where('YEAR(TANGGAL)', $tahun);
+		$this->db->where('ID_INDIKATOR', $id_indikator);
+		$query = $this->db->get()->num_rows();
+		if ($query == 0) {
+			$val = 1;
+			return $val;
+		} else {
+			return $query;
 		}
+	}
 
-		public function get_tt_hari_apr($tahun, $id_indikator) 
-		{
-			$this->db->select('TANGGAL');
-			$this->db->from('TR_INDIKATOR');
-			$this->db->where('MONTH(TANGGAL)', '4');
-			$this->db->where('YEAR(TANGGAL)', $tahun);
-			$this->db->where('ID_INDIKATOR', $id_indikator);
-			$query = $this->db->get()->num_rows();
-			if ($query == 0) {
-				$val = 1;
-				return $val;
-			} else {
-				return $query;
-			}
+	public function get_tt_hari_apr($tahun, $id_indikator)
+	{
+		$this->db->select('TANGGAL');
+		$this->db->from('TR_INDIKATOR');
+		$this->db->where('MONTH(TANGGAL)', '4');
+		$this->db->where('YEAR(TANGGAL)', $tahun);
+		$this->db->where('ID_INDIKATOR', $id_indikator);
+		$query = $this->db->get()->num_rows();
+		if ($query == 0) {
+			$val = 1;
+			return $val;
+		} else {
+			return $query;
 		}
+	}
 
-		public function get_tt_hari_mei($tahun, $id_indikator) 
-		{
-			$this->db->select('TANGGAL');
-			$this->db->from('TR_INDIKATOR');
-			$this->db->where('MONTH(TANGGAL)', '5');
-			$this->db->where('YEAR(TANGGAL)', $tahun);
-			$this->db->where('ID_INDIKATOR', $id_indikator);
-			$query = $this->db->get()->num_rows();
-			if ($query == 0) {
-				$val = 1;
-				return $val;
-			} else {
-				return $query;
-			}
+	public function get_tt_hari_mei($tahun, $id_indikator)
+	{
+		$this->db->select('TANGGAL');
+		$this->db->from('TR_INDIKATOR');
+		$this->db->where('MONTH(TANGGAL)', '5');
+		$this->db->where('YEAR(TANGGAL)', $tahun);
+		$this->db->where('ID_INDIKATOR', $id_indikator);
+		$query = $this->db->get()->num_rows();
+		if ($query == 0) {
+			$val = 1;
+			return $val;
+		} else {
+			return $query;
 		}
+	}
 
-		public function get_tt_hari_jun($tahun, $id_indikator) 
-		{
-			$this->db->select('TANGGAL');
-			$this->db->from('TR_INDIKATOR');
-			$this->db->where('MONTH(TANGGAL)', '6');
-			$this->db->where('YEAR(TANGGAL)', $tahun);
-			$this->db->where('ID_INDIKATOR', $id_indikator);
-			$query = $this->db->get()->num_rows();
-			if ($query == 0) {
-				$val = 1;
-				return $val;
-			} else {
-				return $query;
-			}
+	public function get_tt_hari_jun($tahun, $id_indikator)
+	{
+		$this->db->select('TANGGAL');
+		$this->db->from('TR_INDIKATOR');
+		$this->db->where('MONTH(TANGGAL)', '6');
+		$this->db->where('YEAR(TANGGAL)', $tahun);
+		$this->db->where('ID_INDIKATOR', $id_indikator);
+		$query = $this->db->get()->num_rows();
+		if ($query == 0) {
+			$val = 1;
+			return $val;
+		} else {
+			return $query;
 		}
+	}
 
-		public function get_tt_hari_jul($tahun, $id_indikator) 
-		{
-			$this->db->select('TANGGAL');
-			$this->db->from('TR_INDIKATOR');
-			$this->db->where('MONTH(TANGGAL)', '7');
-			$this->db->where('YEAR(TANGGAL)', $tahun);
-			$this->db->where('ID_INDIKATOR', $id_indikator);
-			$query = $this->db->get()->num_rows();
-			if ($query == 0) {
-				$val = 1;
-				return $val;
-			} else {
-				return $query;
-			}
+	public function get_tt_hari_jul($tahun, $id_indikator)
+	{
+		$this->db->select('TANGGAL');
+		$this->db->from('TR_INDIKATOR');
+		$this->db->where('MONTH(TANGGAL)', '7');
+		$this->db->where('YEAR(TANGGAL)', $tahun);
+		$this->db->where('ID_INDIKATOR', $id_indikator);
+		$query = $this->db->get()->num_rows();
+		if ($query == 0) {
+			$val = 1;
+			return $val;
+		} else {
+			return $query;
 		}
+	}
 
-		public function get_tt_hari_agt($tahun, $id_indikator) 
-		{
-			$this->db->select('TANGGAL');
-			$this->db->from('TR_INDIKATOR');
-			$this->db->where('MONTH(TANGGAL)', '8');
-			$this->db->where('YEAR(TANGGAL)', $tahun);
-			$this->db->where('ID_INDIKATOR', $id_indikator);
-			$query = $this->db->get()->num_rows();
-			if ($query == 0) {
-				$val = 1;
-				return $val;
-			} else {
-				return $query;
-			}
+	public function get_tt_hari_agt($tahun, $id_indikator)
+	{
+		$this->db->select('TANGGAL');
+		$this->db->from('TR_INDIKATOR');
+		$this->db->where('MONTH(TANGGAL)', '8');
+		$this->db->where('YEAR(TANGGAL)', $tahun);
+		$this->db->where('ID_INDIKATOR', $id_indikator);
+		$query = $this->db->get()->num_rows();
+		if ($query == 0) {
+			$val = 1;
+			return $val;
+		} else {
+			return $query;
 		}
+	}
 
-		public function get_tt_hari_sep($tahun, $id_indikator) 
-		{
-			$this->db->select('TANGGAL');
-			$this->db->from('TR_INDIKATOR');
-			$this->db->where('MONTH(TANGGAL)', '9');
-			$this->db->where('YEAR(TANGGAL)', $tahun);
-			$this->db->where('ID_INDIKATOR', $id_indikator);
-			$query = $this->db->get()->num_rows();
-			if ($query == 0) {
-				$val = 1;
-				return $val;
-			} else {
-				return $query;
-			}
+	public function get_tt_hari_sep($tahun, $id_indikator)
+	{
+		$this->db->select('TANGGAL');
+		$this->db->from('TR_INDIKATOR');
+		$this->db->where('MONTH(TANGGAL)', '9');
+		$this->db->where('YEAR(TANGGAL)', $tahun);
+		$this->db->where('ID_INDIKATOR', $id_indikator);
+		$query = $this->db->get()->num_rows();
+		if ($query == 0) {
+			$val = 1;
+			return $val;
+		} else {
+			return $query;
 		}
+	}
 
-		public function get_tt_hari_okt($tahun, $id_indikator) 
-		{
-			$this->db->select('TANGGAL');
-			$this->db->from('TR_INDIKATOR');
-			$this->db->where('MONTH(TANGGAL)', '10');
-			$this->db->where('YEAR(TANGGAL)', $tahun);
-			$this->db->where('ID_INDIKATOR', $id_indikator);
-			$query = $this->db->get()->num_rows();
-			if ($query == 0) {
-				$val = 1;
-				return $val;
-			} else {
-				return $query;
-			}
+	public function get_tt_hari_okt($tahun, $id_indikator)
+	{
+		$this->db->select('TANGGAL');
+		$this->db->from('TR_INDIKATOR');
+		$this->db->where('MONTH(TANGGAL)', '10');
+		$this->db->where('YEAR(TANGGAL)', $tahun);
+		$this->db->where('ID_INDIKATOR', $id_indikator);
+		$query = $this->db->get()->num_rows();
+		if ($query == 0) {
+			$val = 1;
+			return $val;
+		} else {
+			return $query;
 		}
+	}
 
-		public function get_tt_hari_nov($tahun, $id_indikator) 
-		{
-			$this->db->select('TANGGAL');
-			$this->db->from('TR_INDIKATOR');
-			$this->db->where('MONTH(TANGGAL)', '11');
-			$this->db->where('YEAR(TANGGAL)', $tahun);
-			$this->db->where('ID_INDIKATOR', $id_indikator);
-			$query = $this->db->get()->num_rows();
-			if ($query == 0) {
-				$val = 1;
-				return $val;
-			} else {
-				return $query;
-			}
+	public function get_tt_hari_nov($tahun, $id_indikator)
+	{
+		$this->db->select('TANGGAL');
+		$this->db->from('TR_INDIKATOR');
+		$this->db->where('MONTH(TANGGAL)', '11');
+		$this->db->where('YEAR(TANGGAL)', $tahun);
+		$this->db->where('ID_INDIKATOR', $id_indikator);
+		$query = $this->db->get()->num_rows();
+		if ($query == 0) {
+			$val = 1;
+			return $val;
+		} else {
+			return $query;
 		}
+	}
 
-		public function get_tt_hari_des($tahun, $id_indikator) 
-		{
-			$this->db->select('TANGGAL');
-			$this->db->from('TR_INDIKATOR');
-			$this->db->where('MONTH(TANGGAL)', '12');
-			$this->db->where('YEAR(TANGGAL)', $tahun);
-			$this->db->where('ID_INDIKATOR', $id_indikator);
-			$query = $this->db->get()->num_rows();
-			if ($query == 0) {
-				$val = 1;
-				return $val;
-			} else {
-				return $query;
-			}
+	public function get_tt_hari_des($tahun, $id_indikator)
+	{
+		$this->db->select('TANGGAL');
+		$this->db->from('TR_INDIKATOR');
+		$this->db->where('MONTH(TANGGAL)', '12');
+		$this->db->where('YEAR(TANGGAL)', $tahun);
+		$this->db->where('ID_INDIKATOR', $id_indikator);
+		$query = $this->db->get()->num_rows();
+		if ($query == 0) {
+			$val = 1;
+			return $val;
+		} else {
+			return $query;
 		}
+	}
 	// End Get Total Input Bulanan Per Tahun
 }

@@ -24,16 +24,16 @@
 
 <body>
     <div class="row" style="line-height:24px; font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; color:#555;">
-        <h4>Tabel Data : <?php echo formatNamaBulan($bulan).' '.$tahun; ?></h4>
+        <h2>Tabel Data : <?php echo formatNamaBulan($bulan).' '.$tahun; ?></h2>
         <table id="datatable" class="table table-striped table-bordered">
             <thead>
                 <tr class="bg-primary">
-                    <th rowspan="2" width="30"><center>NO</center></th>
-                    <th rowspan="2" width="170"><center>INDIKATOR</center></th>
-                    <th rowspan="2" width="220"><center>SUB INDIKATOR</center></th>
+                    <th rowspan="2" width="40"><center>NO</center></th>
+                    <th rowspan="2" width="300"><center>INDIKATOR</center></th>
+                    <th rowspan="2" width="400"><center>SUB INDIKATOR</center></th>
                     <th colspan="<?php echo $total_hari; ?>" ><center>TANGGAL</center></th>
-                    <th rowspan="2" width="60"><center>TOTAL</center></th>
-                    <th rowspan="2" width="60"><center>PERSEN</center></th>
+                    <th rowspan="2"><center>TOTAL</center></th>
+                    <th rowspan="2"><center>PERSEN</center></th>
                 </tr>
                 <tr class="bg-primary">
                     <?php 
@@ -53,7 +53,7 @@
                 <tr>
                     <td rowspan="2" align="center"><?php echo $no++; ?></td>
                     <td rowspan="2"><?php echo $row->DETAIL_INDIKATOR; ?></td>
-                    <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
+                    <td rowspan="1" height="40"><?php echo $row->DETAIL_NUM; ?></td>
 
 
                     <?php 
@@ -65,7 +65,7 @@
                             {
                                 echo '<td align="center"> '.$key->NUM.' </td>';
                                 $total_num += $key->NUM;
-                                $total_den += $key->DEN;                                      
+                                $total_den += $key->DEN;                                             
                             }
 
                         } else {
@@ -80,74 +80,32 @@
                     <td align="center"> 
                         <b>
                             <?php 
-                                if ($no == 6)
+                                if (empty($total_num))
                                 {
-                                    if (empty($total_num))
-                                    {
-                                        echo "0";
-                                    } else {
-                                        $average = $total_num / $total_hari;
-                                        echo $average;
-                                    }
+                                    echo "0";
                                 } else {
-                                    if (empty($total_num))
-                                    {
-                                        echo "0";
-                                    } else {
-                                        echo $total_num;
-                                    }
-                                }      
+                                    echo $total_num;
+                                }
                             ?>
                         </b> 
                     </td>
                     <td rowspan="2"> 
                         <b><center>
                             <?php
-                                if ($no == 3)
+                                if ($total_num == 0 || $total_den == 0)
                                 {
-                                    if ($total_num == 0 || $total_den == 0)
-                                    {
-                                        echo "0 %";
-                                    } else {
-                                        echo round($total_num / $total_den, 2);
-                                    }
-                                } else if ($no == 5) {
-                                    if ($total_num == 0 || $total_den == 0)
-                                    {
-                                        echo "0";
-                                    } else {
-                                        echo round($total_num / $total_den, 2);
-                                    }
-                                } else if ($no == 6) {
-                                    if ($total_num == 0 || $total_den == 0)
-                                    {
-                                        echo "0";
-                                    } else {
-                                        $average = $total_num / $total_hari;
-                                        $time    = $average / $total_den;
-                                        echo gmdate('H:i:s', floor($time * 86400));
-                                    }
-                                } else if ($no == 8) {
-                                    if ($total_num == 0 || $total_den == 0)
-                                    {
-                                        echo "0";
-                                    } else {
-                                        echo round(($total_num / $total_den) * 1000, 1);
-                                    }
+                                    echo "0";
+                                    echo " %";
                                 } else {
-                                    if ($total_num == 0 || $total_den == 0)
-                                    {
-                                        echo "0  %";
-                                    } else {
-                                        echo substr($total_num / $total_den * 100, 0, 5)." %";
-                                    }
+                                    echo substr($total_num / $total_den * 100, 0, 5);
+                                    echo " %";
                                 }
                             ?>
                         </center></b> 
                     </td>
                 </tr>
                 <tr>
-                    <td><?php echo $row->DETAIL_DEN; ?></td>
+                    <td height="40"><?php echo $row->DETAIL_DEN; ?></td>
                     <?php if ($total_hari == $total_hari) {
                         $tanggal    = $total_hari;
                         foreach ($data->result() as $key) 

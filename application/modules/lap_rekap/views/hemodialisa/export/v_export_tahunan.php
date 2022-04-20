@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,8 +18,8 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/dashboard/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css">
 
     <!-- Bootstrap Colorpicker -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/dashboard/vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
-
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/dashboard/vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+    
 </head>
 
 <body>
@@ -35,24 +34,12 @@
                 <table id="" class="table table-striped table-bordered">
                     <thead>
                         <tr class="bg-primary">
-                            <th rowspan="2" width="30">
-                                <center>NO</center>
-                            </th>
-                            <th rowspan="2" width="200">
-                                <center>INDIKATOR</center>
-                            </th>
-                            <th rowspan="2" width="300">
-                                <center>SUB INDIKATOR</center>
-                            </th>
-                            <th colspan="12">
-                                <center>BULAN</center>
-                            </th>
-                            <th rowspan="2">
-                                <center>TOTAL</center>
-                            </th>
-                            <th rowspan="2">
-                                <center>PERSEN</center>
-                            </th>
+                            <th rowspan="2" width="30"><center>NO</center></th>
+                            <th rowspan="2" width="200"><center>INDIKATOR</center></th>
+                            <th rowspan="2" width="300"><center>SUB INDIKATOR</center></th>
+                            <th colspan="12"><center>BULAN</center></th>
+                            <th rowspan="2"><center>TOTAL</center></th>
+                            <th rowspan="2"><center>PERSEN</center></th>
                         </tr>
                         <tr class="bg-primary">
                             <th align="center">JAN</th>
@@ -70,67 +57,57 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php
-                        $no = 1;
-                        foreach ($tahunan_i->result() as $row) {
+                        <?php 
+                            $no = 1;
+                            foreach ($tahunan_i->result() as $row) {
                         ?>
-                            <tr>
-                                <td rowspan="2" align="center"><?php echo $no++; ?></td>
-                                <td rowspan="2"><?php echo $row->DETAIL_INDIKATOR; ?></td>
-                                <td rowspan="1" height="50"><?php echo $row->DETAIL_NUM; ?></td>
-                                <td align="center"> <?php echo $row->NUM_JAN; ?> </td>
-                                <td align="center"> <?php echo $row->NUM_FEB; ?> </td>
-                                <td align="center"> <?php echo $row->NUM_MAR; ?> </td>
-                                <td align="center"> <?php echo $row->NUM_APR; ?> </td>
-                                <td align="center"> <?php echo $row->NUM_MEI; ?> </td>
-                                <td align="center"> <?php echo $row->NUM_JUN; ?> </td>
-                                <td align="center"> <?php echo $row->NUM_JUL; ?> </td>
-                                <td align="center"> <?php echo $row->NUM_AGT; ?> </td>
-                                <td align="center"> <?php echo $row->NUM_SEP; ?> </td>
-                                <td align="center"> <?php echo $row->NUM_OKT; ?> </td>
-                                <td align="center"> <?php echo $row->NUM_NOV; ?> </td>
-                                <td align="center"> <?php echo $row->NUM_DES; ?> </td>
-                                <td align="center">
-                                    <b>
-                                        <?php
-                                        if ($row->TOTAL_NUM == 0) {
-                                            echo "0";
-                                        } else {
-                                            echo $row->TOTAL_NUM;
-                                        }
-                                        ?>
-                                    </b>
-                                </td>
-                                <td rowspan="2" align="center">
-                                    <b>
-                                        <?php
-                                        if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
+                        <tr>
+                            <td rowspan="2" align="center"><?php echo $no++; ?></td>
+                            <td rowspan="2"><?php echo $row->DETAIL_INDIKATOR; ?></td>
+                            <td rowspan="1" height="50"><?php echo $row->DETAIL_NUM; ?></td>
+                            <td align="center"> <?php echo $row->NUM_JAN; ?> </td>
+                            <td align="center"> <?php echo $row->NUM_FEB; ?> </td>
+                            <td align="center"> <?php echo $row->NUM_MAR; ?> </td>
+                            <td align="center"> <?php echo $row->NUM_APR; ?> </td>
+                            <td align="center"> <?php echo $row->NUM_MEI; ?> </td>
+                            <td align="center"> <?php echo $row->NUM_JUN; ?> </td>
+                            <td align="center"> <?php echo $row->NUM_JUL; ?> </td>
+                            <td align="center"> <?php echo $row->NUM_AGT; ?> </td>
+                            <td align="center"> <?php echo $row->NUM_SEP; ?> </td>
+                            <td align="center"> <?php echo $row->NUM_OKT; ?> </td>
+                            <td align="center"> <?php echo $row->NUM_NOV; ?> </td>
+                            <td align="center"> <?php echo $row->NUM_DES; ?> </td>
+                            <td rowspan="2" align="center">
+                                <b> 
+                                    <?php 
+                                        if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
+                                        {
                                             echo "0";
                                             echo " %";
                                         } else {
-                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 100, 2);
+                                            echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * 100;
                                             echo " %";
                                         }
-                                        ?>
-                                    </b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td height="50"><?php echo $row->DETAIL_DEN; ?></td>
-                                <td align="center"> <?php echo $row->DEN_JAN; ?> </td>
-                                <td align="center"> <?php echo $row->DEN_FEB; ?> </td>
-                                <td align="center"> <?php echo $row->DEN_MAR; ?> </td>
-                                <td align="center"> <?php echo $row->DEN_APR; ?> </td>
-                                <td align="center"> <?php echo $row->DEN_MEI; ?> </td>
-                                <td align="center"> <?php echo $row->DEN_JUN; ?> </td>
-                                <td align="center"> <?php echo $row->DEN_JUL; ?> </td>
-                                <td align="center"> <?php echo $row->DEN_AGT; ?> </td>
-                                <td align="center"> <?php echo $row->DEN_SEP; ?> </td>
-                                <td align="center"> <?php echo $row->DEN_OKT; ?> </td>
-                                <td align="center"> <?php echo $row->DEN_NOV; ?> </td>
-                                <td align="center"> <?php echo $row->DEN_DES; ?> </td>
-                                <td align="center"><b> <?php echo $row->TOTAL_DEN; ?> </b></td>
-                            </tr>
+                                    ?> 
+                                </b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="50"><?php echo $row->DETAIL_DEN; ?></td>
+                            <td align="center"> <?php echo $row->DEN_JAN; ?> </td>
+                            <td align="center"> <?php echo $row->DEN_FEB; ?> </td>
+                            <td align="center"> <?php echo $row->DEN_MAR; ?> </td>
+                            <td align="center"> <?php echo $row->DEN_APR; ?> </td>
+                            <td align="center"> <?php echo $row->DEN_MEI; ?> </td>
+                            <td align="center"> <?php echo $row->DEN_JUN; ?> </td>
+                            <td align="center"> <?php echo $row->DEN_JUL; ?> </td>
+                            <td align="center"> <?php echo $row->DEN_AGT; ?> </td>
+                            <td align="center"> <?php echo $row->DEN_SEP; ?> </td>
+                            <td align="center"> <?php echo $row->DEN_OKT; ?> </td>
+                            <td align="center"> <?php echo $row->DEN_NOV; ?> </td>
+                            <td align="center"> <?php echo $row->DEN_DES; ?> </td>
+                            <td align="center"><b> <?php echo $row->TOTAL_DEN; ?> </b></td>
+                        </tr>
                         <?php } ?>
                     </tbody>
                 </table>

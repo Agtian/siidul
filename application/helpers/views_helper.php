@@ -734,6 +734,11 @@
 				// Fisioterapi Donorojo
 				return "fisioterapi_donorojo/export/v_export_capaian";
 				break;
+			case 24:
+				// Hemodialisa
+				return "hemodialisa/export/v_export_capaian";
+				break;
+
 
 
 			default:
@@ -1137,6 +1142,10 @@
 				// Radiologi
 				return "radiologi/v_tahunan_tabel";
 				break;
+			case 18:
+				// Gizi
+				return "gizi/v_tahunan_tabel";
+				break;
 			case 19:
 				// Gakin
 				return "gakin/v_tahunan_tabel";
@@ -1241,7 +1250,7 @@
 				break;
 			case 18:
 				// Gizi
-				return "gizi/export/v_capaian";
+				return "gizi/v_capaian";
 				break;
 			case 19:
 				// Gakin

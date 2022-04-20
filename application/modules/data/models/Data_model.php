@@ -46,7 +46,7 @@ class Data_model extends CI_Model {
 	public function get_data_pertanggal($tanggal)
 	{
 		$this->db->distinct();
-		$this->db->select('TR_INDIKATOR.ID AS ID_INDIKATOR_MUTU, ID_INDIKATOR, NUM, DEN, TANGGAL, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN, NILAI_STANDAR, ID_RUANG');
+		$this->db->select('TR_INDIKATOR.ID AS ID_INDIKATOR_MUTU, ID_INDIKATOR, NUM, DEN, TANGGAL, DETAIL_INDIKATOR, DETAIL_NUM, DETAIL_DEN, NILAI_STANDAR, TR_INDIKATOR.ID_RUANG');
 		$this->db->from('TR_INDIKATOR');
 		$this->db->join('TM_INDIKATOR', 'TR_INDIKATOR.ID_INDIKATOR = TM_INDIKATOR.ID');
 		$this->db->where('ID_RUANG_SUB', $this->session->userdata('user_id_ruang_sub'));
