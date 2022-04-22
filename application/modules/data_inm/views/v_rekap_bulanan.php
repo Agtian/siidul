@@ -94,9 +94,33 @@
                                         <tr>
                                             <td> <?= $no++; ?> </td>
                                             <td> <?= $value->DETAIL_INDIKATOR; ?> </td>
-                                            <td align="center"> <?= $value->NUM_BULAN; ?> </td>
-                                            <td align="center"> <?= $value->DEN_BULAN; ?> </td>
-                                            <td align="center"> <?= round(($value->NUM_BULAN / $value->DEN_BULAN) * 100); ?> %</td>
+                                            <td align="center">
+                                                <?php
+                                                if ($value->NUM_BULAN == 0) {
+                                                    echo '0';
+                                                } else {
+                                                    echo $value->NUM_BULAN;
+                                                }
+                                                ?>
+                                            </td>
+                                            <td align="center">
+                                                <?php
+                                                if ($value->DEN_BULAN == 0) {
+                                                    echo '0';
+                                                } else {
+                                                    echo $value->DEN_BULAN;
+                                                }
+                                                ?>
+                                            </td>
+                                            <td align="center">
+                                                <?php
+                                                if ($value->NUM_BULAN == 0 || $value->DEN_BULAN == 0) {
+                                                    echo '0 %';
+                                                } else {
+                                                    echo round(($value->NUM_BULAN / $value->DEN_BULAN) * 100) . '%';
+                                                }
+                                                ?>
+                                            </td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
