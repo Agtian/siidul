@@ -21,6 +21,8 @@ class Inm_model extends CI_Model
         $this->db->distinct();
         $this->db->select('YEAR(TANGGAL) AS TAHUN');
         $this->db->from('TR_INDIKATOR');
+        $this->db->order_by("YEAR(TANGGAL)", "desc");
+
         return $this->db->get();
     }
 
