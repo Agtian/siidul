@@ -93,7 +93,7 @@
                             <?php } else { ?>
                                 <h3> GENERAL </h3>
                                 <ul class="nav side-menu">
-                                    <li><a href="<?php echo base_url('home'); ?>"><i class="fa fa-home"></i> HOME </a></li>
+                                    <li><a href="<?php echo base_url('administrator'); ?>"><i class="fa fa-home"></i> HOME </a></li>
                                     <li><a><i class="fa fa-desktop"></i> REKAP DATA INM<span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><a href="<?php echo base_url('data_inm/rekap_bulanan'); ?>">Rekap Bulanan</a></li>
@@ -106,6 +106,7 @@
                                             <li><a href="<?php echo base_url('lap_rekap/semester'); ?>">Rekap Semester</a></li>
                                             <li><a href="<?php echo base_url('lap_rekap/tahunan'); ?>">Rekap Tahunan</a></li>
                                             <li><a href="<?php echo base_url('lap_rekap/capaian'); ?>">Rekap Capaian</a></li>
+                                            <li><a href="<?php echo base_url('lap_rekap/capaian_ranap'); ?>">Rekap Capaian Rawat Inap</a></li>
                                         </ul>
                                     </li>
                                 </ul>

@@ -571,4 +571,85 @@ class Lap_rekap extends CI_Controller {
 
 		}
 	}
+
+	public function capaian_ranap()
+	{
+		if($this->Auth_model->logged_id())
+		{
+			$tahun 			= date('Y');
+			$id_ruang 		= "3";
+
+			$query 			= $this->Rekap_model->get_det_indikator($id_ruang);
+			$id_indikator  	= $query->ID;
+
+			// var_dump($this->Rekap_model->get_capaian_ranap($tahun)->result()); die;
+
+			$data = array(
+				'tahun'				=> $tahun,
+				'list_tahun' 		=> $this->Rekap_model->get_tahun(),
+				'list_ruang'		=> $this->Rekap_model->get_ruang(),
+
+				'capaian'			=> $this->Rekap_model->get_capaian_ranap($tahun),
+
+				'tt_hari_jan' 		=> $this->Rekap_model->get_tt_hari_jan($tahun, $id_indikator),
+				'tt_hari_feb' 		=> $this->Rekap_model->get_tt_hari_feb($tahun, $id_indikator),
+				'tt_hari_mar' 		=> $this->Rekap_model->get_tt_hari_mar($tahun, $id_indikator),
+				'tt_hari_apr' 		=> $this->Rekap_model->get_tt_hari_apr($tahun, $id_indikator),
+				'tt_hari_mei' 		=> $this->Rekap_model->get_tt_hari_mei($tahun, $id_indikator),
+				'tt_hari_jun' 		=> $this->Rekap_model->get_tt_hari_jun($tahun, $id_indikator),
+				'tt_hari_jul' 		=> $this->Rekap_model->get_tt_hari_jul($tahun, $id_indikator),
+				'tt_hari_agt' 		=> $this->Rekap_model->get_tt_hari_agt($tahun, $id_indikator),
+				'tt_hari_sep' 		=> $this->Rekap_model->get_tt_hari_sep($tahun, $id_indikator),
+				'tt_hari_okt' 		=> $this->Rekap_model->get_tt_hari_okt($tahun, $id_indikator),
+				'tt_hari_nov' 		=> $this->Rekap_model->get_tt_hari_nov($tahun, $id_indikator),
+				'tt_hari_des' 		=> $this->Rekap_model->get_tt_hari_des($tahun, $id_indikator),
+			);
+			$this->template->load('template', 'rawatinap/v_capaian_rawatInap', $data);
+		
+		} else {
+        	redirect('auth');
+        }
+	}
+
+	public function export_capaian_ranap()
+	{
+		$id_ruang 		= '3';
+		$tahun 			= date('Y');
+
+		$query 			= $this->Rekap_model->get_det_indikator($id_ruang);
+		$id_indikator  	= $query->ID;
+
+		$data = array(
+				'tahun'				=> $tahun,
+				'list_tahun' 		=> $this->Rekap_model->get_tahun(),
+
+				'capaian'			=> $this->Rekap_model->get_capaian_ranap($tahun),
+
+				'tt_hari_jan' 		=> $this->Rekap_model->get_tt_hari_jan($tahun, $id_indikator),
+				'tt_hari_feb' 		=> $this->Rekap_model->get_tt_hari_feb($tahun, $id_indikator),
+				'tt_hari_mar' 		=> $this->Rekap_model->get_tt_hari_mar($tahun, $id_indikator),
+				'tt_hari_apr' 		=> $this->Rekap_model->get_tt_hari_apr($tahun, $id_indikator),
+				'tt_hari_mei' 		=> $this->Rekap_model->get_tt_hari_mei($tahun, $id_indikator),
+				'tt_hari_jun' 		=> $this->Rekap_model->get_tt_hari_jun($tahun, $id_indikator),
+				'tt_hari_jul' 		=> $this->Rekap_model->get_tt_hari_jul($tahun, $id_indikator),
+				'tt_hari_agt' 		=> $this->Rekap_model->get_tt_hari_agt($tahun, $id_indikator),
+				'tt_hari_sep' 		=> $this->Rekap_model->get_tt_hari_sep($tahun, $id_indikator),
+				'tt_hari_okt' 		=> $this->Rekap_model->get_tt_hari_okt($tahun, $id_indikator),
+				'tt_hari_nov' 		=> $this->Rekap_model->get_tt_hari_nov($tahun, $id_indikator),
+				'tt_hari_des' 		=> $this->Rekap_model->get_tt_hari_des($tahun, $id_indikator),
+			);
+
+		$mpdf = new \Mpdf\Mpdf();
+		// Define a default Landscape page size/format by name
+		$mpdf = new \Mpdf\Mpdf([
+			'mode' 			=> 'utf-8', 
+			'format' 		=> [215, 330],
+			'orientation' 	=> 'L'
+		]);
+		$html = $this->load->view('rawatinap/export/v_export_capaian_ranap', $data, true);
+   		$mpdf->WriteHTML($html);
+    	$mpdf->Output();
+
+		
+	}
 }

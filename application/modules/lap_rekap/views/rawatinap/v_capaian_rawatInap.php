@@ -7,53 +7,10 @@
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
-                    <div class="x_title">
-                        <h2>Form Filter Data</h2>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
-                        <br>
-                        <?php echo form_open('lap_rekap/capaian', 'class="form-horizontal "'); ?>
-                            <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12">RUANG</label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <select class="form-control" name="id_sub_ruang" required>
-                                        <?php foreach ($list_ruang->result() as $dd) { ?>
-                                            <option value="<?php echo $dd->ID; ?>"> <?php echo $dd->NAMA_SUB_RUANG; ?> </option>
-                                        <?php } ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12">TAHUN</label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <select class="form-control" name="tahun" required>
-                                        <?php foreach ($list_tahun->result() as $dd) { ?>
-                                            <option value="<?php echo $dd->TAHUN; ?>"> <?php echo $dd->TAHUN; ?> </option>
-                                        <?php } ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="ln_solid"></div>
-                            <div class="form-group">
-                                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                    <button type="submit" class="btn btn-primary">Tampilkan</button>
-                                    <a class="btn btn-primary" target="_blank" href="<?php echo base_url('lap_rekap/export_capaian/').$id_ruang_sub.'/'.$tahun; ?>">Export PDF</a>
-                                </div>
-                            </div>
-                        <?php echo form_close(); ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
 
                     <a class="hiddenanchor" id="signup"></a>
                     <div class="x_title">
-                        <h2>Tabel Data Capaian Tahunan <?php echo $tahun; ?></h2>
+                        <h2>Tabel Data Capaian Tahunan <?php echo $tahun; ?></h2> <a href="<?= base_url('lap_rekap/export_capaian_ranap'); ?>" class="btn btn-primary btn-sm pull-right" target="_blank">Download PDF</a>
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
@@ -135,7 +92,6 @@
                                                         echo " %";
                                                     } else {
                                                         echo substr(($row->NUM_JAN / $row->DEN_JAN) * 100, 0, 5);
-                                                        // echo substr(($row->TOTAL_NUM / $row->TOTAL_DEN) * 100, 0, 5);
                                                         echo " %";
                                                     }
                                                 }

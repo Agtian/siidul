@@ -29,7 +29,7 @@
 
             <a class="hiddenanchor" id="signup"></a>
             <div class="x_title">
-                <h2>Tabel Data Capaian Tahunan <?php echo $tahun; ?></h2>
+                <h4>Tabel Data Capaian Tahunan <?php echo $tahun; ?> || Ruang : Installasi Rawat Inap</h4>
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
