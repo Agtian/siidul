@@ -103,6 +103,7 @@
                                         <ul class="nav child_menu">
                                             <li><a href="<?php echo base_url('lap_rekap/bulanan'); ?>">Rekap Bulanan</a></li>
                                             <li><a href="<?php echo base_url('lap_rekap/triwulan'); ?>">Rekap Triwulan</a></li>
+                                            <li><a href="<?php echo base_url('lap_rekap/triwulan_iii_dewas'); ?>">Rekap Triwulan III (Dewas)</a></li>
                                             <li><a href="<?php echo base_url('lap_rekap/semester'); ?>">Rekap Semester</a></li>
                                             <li><a href="<?php echo base_url('lap_rekap/tahunan'); ?>">Rekap Tahunan</a></li>
                                             <li><a href="<?php echo base_url('lap_rekap/capaian'); ?>">Rekap Capaian</a></li>
