@@ -137,7 +137,7 @@
                                                         {
                                                             echo "00:00:00";
                                                         } else {
-                                                            $average = $total_num / $total_hari;
+                                                            $average = $total_num / 2;
                                                             echo gmdate('H:i:s', floor($average * 60));
                                                         }
                                                     } else {

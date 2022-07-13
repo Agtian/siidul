@@ -96,7 +96,8 @@
                                                 {
                                                     echo "0";
                                                 } else if ($no == 2 || $no == 3) {
-                                                    echo substr($row->NUM_JAN / $tt_hari_jan, 0, 6); 
+                                                    $tt_average = ($row->NUM_JAN / 2);
+                                                    echo gmdate('H:i:s', floor($tt_average * 60));
                                                 } else {
                                                     echo $row->NUM_JAN;
                                                 }
@@ -108,7 +109,8 @@
                                                 {
                                                     echo "0";
                                                 } else if ($no == 2 || $no == 3) {
-                                                    echo substr($row->NUM_FEB / $tt_hari_feb, 0, 6); 
+                                                    $tt_average = ($row->NUM_FEB / 2);
+                                                    echo gmdate('H:i:s', floor($tt_average * 60));
                                                 } else {
                                                     echo $row->NUM_FEB;
                                                 }
@@ -120,7 +122,8 @@
                                                 {
                                                     echo "0";
                                                 } else if ($no == 2 || $no == 3) {
-                                                    echo substr($row->NUM_MAR / $tt_hari_mar, 0, 6); 
+                                                    $tt_average = ($row->NUM_MAR / 2);
+                                                    echo gmdate('H:i:s', floor($tt_average * 60));
                                                 } else {
                                                     echo $row->NUM_MAR;
                                                 }
@@ -132,7 +135,8 @@
                                                 {
                                                     echo "0";
                                                 } else if ($no == 2 || $no == 3) {
-                                                    echo substr($row->NUM_APR / $tt_hari_apr, 0, 6); 
+                                                    $tt_average = ($row->NUM_APR / 2);
+                                                    echo gmdate('H:i:s', floor($tt_average * 60));
                                                 } else {
                                                     echo $row->NUM_APR;
                                                 }
@@ -144,7 +148,8 @@
                                                 {
                                                     echo "0";
                                                 } else if ($no == 2 || $no == 3) {
-                                                    echo substr($row->NUM_MEI / $tt_hari_mei, 0, 6); 
+                                                    $tt_average = ($row->NUM_MEI / 2);
+                                                    echo gmdate('H:i:s', floor($tt_average * 60));
                                                 } else {
                                                     echo $row->NUM_MEI;
                                                 }
@@ -156,7 +161,8 @@
                                                 {
                                                     echo "0";
                                                 } else if ($no == 2 || $no == 3) {
-                                                    echo substr($row->NUM_JUN / $tt_hari_jun, 0, 6); 
+                                                    $tt_average = ($row->NUM_JUN / 2);
+                                                    echo gmdate('H:i:s', floor($tt_average * 60));
                                                 } else {
                                                     echo $row->NUM_JUN;
                                                 }
@@ -168,7 +174,8 @@
                                                 {
                                                     echo "0";
                                                 } else if ($no == 2 || $no == 3) {
-                                                    echo substr($row->NUM_JUL / $tt_hari_jul, 0, 6); 
+                                                    $tt_average = ($row->NUM_JUL / 2);
+                                                    echo gmdate('H:i:s', floor($tt_average * 60));
                                                 } else {
                                                     echo $row->NUM_JUL;
                                                 }
@@ -180,7 +187,8 @@
                                                 {
                                                     echo "0";
                                                 } else if ($no == 2 || $no == 3) {
-                                                    echo substr($row->NUM_AGT / $tt_hari_agt, 0, 6); 
+                                                    $tt_average = ($row->NUM_AGT / 2);
+                                                    echo gmdate('H:i:s', floor($tt_average * 60));
                                                 } else {
                                                     echo $row->NUM_AGT;
                                                 }
@@ -192,7 +200,8 @@
                                                 {
                                                     echo "0";
                                                 } else if ($no == 2 || $no == 3) {
-                                                    echo substr($row->NUM_SEP / $tt_hari_sep, 0, 6); 
+                                                    $tt_average = ($row->NUM_SEP / 2);
+                                                    echo gmdate('H:i:s', floor($tt_average * 60));
                                                 } else {
                                                     echo $row->NUM_SEP;
                                                 }
@@ -201,22 +210,23 @@
                                         <td align="center">
                                             <b> 
                                                 <?php 
+                                                    $tt_num     = $row->NUM_JAN + $row->NUM_FEB + $row->NUM_MAR + $row->NUM_APR + $row->NUM_MEI + $row->NUM_JUN + $row->NUM_JUL + $row->NUM_AGT + $row->NUM_SEP;
+                                                    $tt_den     = $row->DEN_JAN + $row->DEN_FEB + $row->DEN_MAR + $row->DEN_APR + $row->DEN_MEI + $row->DEN_JUN + $row->DEN_JUL + $row->DEN_AGT + $row->DEN_SEP;
                                                     if ($no == '2' || $no == 3)
                                                     {
-                                                        if ($row->TOTAL_NUM_TW_I == 0) 
-                                                        {
-                                                            echo " 0";
-                                                        } else {
-                                                            $num    = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun) + ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep);
-                                                            $total = $num / 9;
-                                                            echo substr($total, 0, 6); 
-                                                        }
-                                                    } else {
-                                                        if ($row->TOTAL_NUM_TW_I == 0 && $row->TOTAL_NUM_TW_II && $row->TOTAL_NUM_TW_III) 
+                                                        if ($row->NUM_JAN == 0) 
                                                         {
                                                             echo "0";
                                                         } else {
-                                                            $total = $row->TOTAL_NUM_TW_I + $row->TOTAL_NUM_TW_II + $row->TOTAL_NUM_TW_III;
+                                                            $num    = ($row->NUM_JAN / 2) + ($row->NUM_FEB / 2) + ($row->NUM_MAR / 2) + ($row->NUM_APR / 2) + ($row->NUM_MEI / 2) + ($row->NUM_JUN / 2) + ($row->NUM_JUL / 2) + ($row->NUM_AGT / 2) + ($row->NUM_SEP / 2);
+                                                            echo gmdate('H:i:s', floor($num * 60));
+                                                        }
+                                                    } else {
+                                                        if ($row->NUM_JAN == 0) 
+                                                        {
+                                                            echo "0";
+                                                        } else {
+                                                            $total = $tt_num;
                                                             echo substr($total, 0, 6);
                                                         }
                                                     }
@@ -226,29 +236,32 @@
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
+                                                    $tt_num     = $row->NUM_JAN + $row->NUM_FEB + $row->NUM_MAR + $row->NUM_APR + $row->NUM_MEI + $row->NUM_JUN + $row->NUM_JUL + $row->NUM_AGT + $row->NUM_SEP;
+                                                    $tt_den     = $row->DEN_JAN + $row->DEN_FEB + $row->DEN_MAR + $row->DEN_APR + $row->DEN_MEI + $row->DEN_JUN + $row->DEN_JUL + $row->DEN_AGT + $row->DEN_SEP;
                                                     if ($no == '2' || $no == 3) {
                                                         if ($row->TOTAL_NUM_TW_I == 0 && $row->TOTAL_DEN_TW_I == 0) 
                                                         {
                                                             echo "00:00:00";
                                                         } else {
                                                             $tt_average = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun) + ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep);
-                                                            $time       = $tt_average / ($row->TOTAL_DEN_TW_I = $row->TOTAL_DEN_TW_II + $row->TOTAL_DEN_TW_III);
-                                                            echo gmdate('H:i:s', floor($time * 86400));
+                                                            $time       = $tt_average / $tt_den;
+                                                            echo gmdate('H:i:s', floor($time * 60));
                                                         }
                                                     } else if ($no == 10) {
                                                         if ($row->TOTAL_NUM_TW_I == 0 && $row->TOTAL_DEN_TW_I == 0) 
                                                         {
                                                             echo "0 %";
                                                         } else {
-                                                            $total_num = ($row->TOTAL_NUM_TW_I + $row->TOTAL_NUM_TW_II + $row->TOTAL_NUM_TW_III);
+                                                            $total_num  = ($row->TOTAL_NUM_TW_I + $row->TOTAL_NUM_TW_II + $row->TOTAL_NUM_TW_III);
                                                             $average_den = ($row->DEN_JAN / $tt_hari_jan) + ($row->DEN_FEB / $tt_hari_feb) + ($row->DEN_MAR / $tt_hari_mar) + ($row->DEN_APR / $tt_hari_apr) + ($row->DEN_MEI / $tt_hari_mei) + ($row->DEN_JUN / $tt_hari_jun) + ($row->DEN_JUL / $tt_hari_jul) + ($row->DEN_AGT / $tt_hari_agt) + ($row->DEN_SEP / $tt_hari_sep);
-                                                            echo round(($total_num / $average_den) * 100, 2)." %";
+                                                            echo round(($tt_num / $average_den) * 100, 2)." %";
                                                         }
                                                     } else {
-                                                        if ($row->TOTAL_NUM_TW_I == '0' && $row->TOTAL_NUM_TW_II  == '0' && $row->TOTAL_NUM_TW_III == '0') {
+                                                        if ($row->NUM_JAN == '0') {
                                                             echo "0 %";
                                                         } else {
-                                                            echo round(($row->TOTAL_NUM_TW_I + $row->TOTAL_NUM_TW_II + $row->TOTAL_NUM_TW_III) / ($row->TOTAL_DEN_TW_I + $row->TOTAL_DEN_TW_II + $row->TOTAL_DEN_TW_III) * 100, 2)." %";
+                                                            $total_num  = ($row->TOTAL_NUM_TW_I + $row->TOTAL_NUM_TW_II + $row->TOTAL_NUM_TW_III);
+                                                            echo round(($tt_num / $tt_den) * 100, 2)." %";
                                                         }
                                                     }
                                                 ?> 
@@ -279,10 +292,10 @@
                                                             echo $total_DEN;
                                                         }
                                                     } else {
-                                                        if ($row->TOTAL_DEN_TW_I == '0' && $row->TOTAL_DEN_TW_II == '0' && $row->TOTAL_DEN_TW_III = '0') {
+                                                        if ($row->DEN_JAN == '0') {
                                                             echo "0";
                                                         } else {
-                                                            echo ($row->TOTAL_DEN_TW_I + $row->TOTAL_DEN_TW_II + $row->TOTAL_DEN_TW_III);
+                                                            echo $row->DEN_JAN + $row->DEN_FEB + $row->DEN_MAR + $row->DEN_APR + $row->DEN_MEI + $row->DEN_JUN + $row->DEN_JUL + $row->DEN_AGT + $row->DEN_SEP;
                                                         }
                                                     }
                                                 ?>
