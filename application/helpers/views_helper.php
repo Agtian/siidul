@@ -106,6 +106,14 @@ function views_input($id)
 			// komdik
 			return "rawatinap/v_input";
 			break;
+		case 10028:
+			// pdeit
+			return "pdeit/v_input";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/v_input";
+			break;
 
 
 		default:
@@ -221,6 +229,14 @@ function views_ubah($id)
 			// komdik
 			return "rawatinap/v_ubah";
 			break;
+		case 10028:
+			// pdeit
+			return "pdeit/v_ubah";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/v_ubah";
+			break;
 
 		default:
 			echo "Isi variabel tidak di temukan";
@@ -330,6 +346,14 @@ function views_export_bulanan($id)
 			// Hemodialisa
 			return "hemodialisa/export/v_export_bulanan";
 			break;
+		case 10028:
+			// pdeit
+			return "pdeit/export/v_export_bulanan";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/export/v_export_bulanan";
+			break;
 
 
 		default:
@@ -437,6 +461,14 @@ function views_export_triwulan($id)
 			// Hemodialisa
 			return "hemodialisa/export/v_export_triwulan";
 			break;
+		case 10028:
+			// pdeit
+			return "pdeit/export/v_export_triwulan";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/export/v_export_triwulan";
+			break;
 
 		default:
 			echo "Isi variabel tidak di temukan";
@@ -542,6 +574,14 @@ function views_export_semester($id)
 		case 24:
 			// Hemodialisa
 			return "hemodialisa/export/v_export_semester";
+			break;
+		case 10028:
+			// pdeit
+			return "pdeit/export/v_export_semester";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/export/v_export_semester";
 			break;
 
 		default:
@@ -649,6 +689,14 @@ function views_export_tahunan($id)
 			// Hemodialisa
 			return "hemodialisa/export/v_export_tahunan";
 			break;
+		case 10028:
+			// pdeit
+			return "pdeit/export/v_export_tahunan";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/export/v_export_tahunan";
+			break;
 
 		default:
 			echo "Isi variabel tidak di temukan";
@@ -754,6 +802,14 @@ function views_export_capaian($id)
 		case 24:
 			// Hemodialisa
 			return "hemodialisa/export/v_export_capaian";
+			break;
+		case 10028:
+			// pdeit
+			return "pdeit/export/v_export_capaian";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/export/v_export_capaian";
 			break;
 
 
@@ -862,6 +918,14 @@ function views_export_triwulan_iii_form_dewas($id)
 		case 24:
 			// Hemodialisa
 			return "hemodialisa/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 10028:
+			// pdeit
+			return "pdeit/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/export/v_export_triwulan_iii_form_dewas";
 			break;
 
 		default:
@@ -972,6 +1036,14 @@ function views_rekap_bulanan($id)
 			// Hemodialisa
 			return "hemodialisa/v_bulanan_tabel";
 			break;
+		case 10028:
+			// pdeit
+			return "pdeit/v_bulanan_tabel";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/v_bulanan_tabel";
+			break;
 
 		default:
 			echo "Isi variabel tidak di temukan";
@@ -1078,6 +1150,14 @@ function views_rekap_triwulan($id)
 			// Hemodialisa
 			return "hemodialisa/v_triwulan_tabel";
 			break;
+		case 10028:
+			// pdeit
+			return "pdeit/v_triwulan_tabel";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/v_triwulan_tabel";
+			break;
 
 		default:
 			echo "Isi variabel tidak di temukan";
@@ -1183,6 +1263,14 @@ function views_rekap_semester($id)
 		case 24:
 			// Hemodialisa
 			return "hemodialisa/v_semester_tabel";
+			break;
+		case 10028:
+			// pdeit
+			return "pdeit/v_semester_tabel";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/v_semester_tabel";
 			break;
 
 
@@ -1398,6 +1486,14 @@ function views_rekap_capaian($id)
 			// Hemodialisa
 			return "hemodialisa/v_capaian";
 			break;
+		case 10028:
+			// pdeit
+			return "pdeit/v_capaian";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/v_capaian";
+			break;
 
 
 		default:
@@ -1504,6 +1600,14 @@ function views_rekap_triwulan_table_dewas($id)
 		case 24:
 			// Hemodialisa
 			return "hemodialisa/v_triwulan_tabel_dewas";
+			break;
+		case 10028:
+			// pdeit
+			return "pdeit/v_triwulan_tabel_dewas";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/v_triwulan_tabel_dewas";
 			break;
 
 		default:
