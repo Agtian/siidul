@@ -28,12 +28,15 @@ class Administrator_model extends CI_Model
 
 	public function get_data_kelengkapan()
 	{
+		$tahun = date('Y') - 1;
+		$tahun_kmrn	= date('Y-m-d', strtotime($tahun."-01-01"));
+		$tanggal_skrg = date('Y-m-d');
 		$query = $this->db->query("SELECT NAMA_SUB_RUANG, TANGGAL FROM (SELECT NAMA_SUB_RUANG, ROW_NUMBER() OVER (PARTITION BY TR_INDIKATOR.ID_RUANG_SUB ORDER BY  TR_INDIKATOR.TANGGAL DESC) As RowNum, TR_INDIKATOR.TANGGAL
 				FROM TR_INDIKATOR 
 				JOIN TREF_RUANG_SUB ON TR_INDIKATOR.ID_RUANG_SUB = TREF_RUANG_SUB.ID  
-				WHERE YEAR(TANGGAL) = 2022
+				WHERE TANGGAL BETWEEN '$tahun_kmrn' AND '$tanggal_skrg'
 			) as A
-			WhERe A.RowNum = 1");
+			WHERE A.RowNum = 1");
 		return $query->result();
 	}
 
