@@ -148,7 +148,7 @@
                                                         echo "0";
                                                         echo " %";
                                                     } else {
-                                                        echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 100, 2);
+                                                        echo round(($total_num / $total_den) * 100, 2);
                                                         echo " %";
                                                     }
                                                 ?>

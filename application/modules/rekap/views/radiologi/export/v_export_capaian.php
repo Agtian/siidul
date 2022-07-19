@@ -76,7 +76,7 @@
                                             } else {
                                                 $average = $row->NUM_JAN / $tt_hari_jan;
                                                 $time    = $average / $row->DEN_JAN;
-                                                echo gmdate('H:i:s', floor($time * 86400));
+                                                echo gmdate('H:i:s', floor($time * 1440));
                                             }
                                         } else {
                                             if ($row->NUM_JAN == 0 || $row->DEN_JAN == 0) 
@@ -98,7 +98,7 @@
                                             } else {
                                                 $average = $row->NUM_FEB / $tt_hari_feb;
                                                 $time    = $average / $row->DEN_FEB;
-                                                echo gmdate('H:i:s', floor($time * 86400));
+                                                echo gmdate('H:i:s', floor($time * 1440));
                                             }
                                         } else {
                                             if ($row->NUM_FEB == 0 || $row->DEN_FEB == 0) 
@@ -120,7 +120,7 @@
                                             } else {
                                                 $average = $row->NUM_MAR / $tt_hari_mar;
                                                 $time    = $average / $row->NUM_MAR;
-                                                echo gmdate('H:i:s', floor($time * 86400));
+                                                echo gmdate('H:i:s', floor($time * 1440));
                                             }
                                         } else {
                                             if ($row->NUM_MAR == 0 || $row->NUM_MAR == 0) 
@@ -142,7 +142,7 @@
                                             } else {
                                                 $average = $row->NUM_APR / $tt_hari_apr;
                                                 $time    = $average / $row->NUM_APR;
-                                                echo gmdate('H:i:s', floor($time * 86400));
+                                                echo gmdate('H:i:s', floor($time * 1440));
                                             }
                                         } else {
                                             if ($row->NUM_APR == 0 || $row->NUM_APR == 0) 
@@ -164,7 +164,7 @@
                                             } else {
                                                 $average = $row->NUM_MEI / $tt_hari_mei;
                                                 $time    = $average / $row->NUM_MEI;
-                                                echo gmdate('H:i:s', floor($time * 86400));
+                                                echo gmdate('H:i:s', floor($time * 1440));
                                             }
                                         } else {
                                             if ($row->NUM_MEI == 0 || $row->NUM_MEI == 0) 
@@ -186,7 +186,7 @@
                                             } else {
                                                 $average = $row->NUM_JUN / $tt_hari_jun;
                                                 $time    = $average / $row->NUM_JUN;
-                                                echo gmdate('H:i:s', floor($time * 86400));
+                                                echo gmdate('H:i:s', floor($time * 1440));
                                             }
                                         } else {
                                             if ($row->NUM_JUN == 0 || $row->NUM_JUN == 0) 
@@ -208,7 +208,7 @@
                                             } else {
                                                 $average = $row->NUM_JUL / $tt_hari_jul;
                                                 $time    = $average / $row->NUM_JUL;
-                                                echo gmdate('H:i:s', floor($time * 86400));
+                                                echo gmdate('H:i:s', floor($time * 1440));
                                             }
                                         } else {
                                             if ($row->NUM_JUL == 0 || $row->NUM_JUL == 0) 
@@ -230,7 +230,7 @@
                                             } else {
                                                 $average = $row->NUM_AGT / $tt_hari_agt;
                                                 $time    = $average / $row->NUM_AGT;
-                                                echo gmdate('H:i:s', floor($time * 86400));
+                                                echo gmdate('H:i:s', floor($time * 1440));
                                             }
                                         } else {
                                             if ($row->NUM_AGT == 0 || $row->NUM_AGT == 0) 
@@ -252,7 +252,7 @@
                                             } else {
                                                 $average = $row->NUM_SEP / $tt_hari_sep;
                                                 $time    = $average / $row->NUM_SEP;
-                                                echo gmdate('H:i:s', floor($time * 86400));
+                                                echo gmdate('H:i:s', floor($time * 1440));
                                             }
                                         } else {
                                             if ($row->NUM_SEP == 0 || $row->NUM_SEP == 0) 
@@ -274,7 +274,7 @@
                                             } else {
                                                 $average = $row->NUM_OKT / $tt_hari_okt;
                                                 $time    = $average / $row->NUM_OKT;
-                                                echo gmdate('H:i:s', floor($time * 86400));
+                                                echo gmdate('H:i:s', floor($time * 1440));
                                             }
                                         } else {
                                             if ($row->NUM_OKT == 0 || $row->NUM_OKT == 0) 
@@ -296,7 +296,7 @@
                                             } else {
                                                 $average = $row->NUM_NOV / $tt_hari_nov;
                                                 $time    = $average / $row->NUM_NOV;
-                                                echo gmdate('H:i:s', floor($time * 86400));
+                                                echo gmdate('H:i:s', floor($time * 1440));
                                             }
                                         } else {
                                             if ($row->NUM_NOV == 0 || $row->NUM_NOV == 0) 
@@ -318,7 +318,7 @@
                                             } else {
                                                 $average = $row->NUM_DES / $tt_hari_des;
                                                 $time    = $average / $row->NUM_DES;
-                                                echo gmdate('H:i:s', floor($time * 86400));
+                                                echo gmdate('H:i:s', floor($time * 1440));
                                             }
                                         } else {
                                             if ($row->NUM_DES == 0 || $row->NUM_DES == 0) 
