@@ -112,11 +112,11 @@
                                         echo round($total_num / $total_den, 2);
                                     }
                                 } else if ($no == 5) {
-                                    if ($total_num == 0 || $total_den == 0)
+                                    if ($total_num == 0 || $total_num == 0)
                                     {
                                         echo "0";
                                     } else {
-                                        echo round($total_num / $total_den, 2);
+                                        echo round($total_num / $total_num, 2);
                                     }
                                 } else if ($no == 6) {
                                     if ($total_num == 0 || $total_den == 0)

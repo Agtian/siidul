@@ -352,11 +352,11 @@
                                                 echo round(($row->TOTAL_NUM / $row->TOTAL_DEN), 2);
                                             }
                                         } else if ($no == 5) {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_NUM == 0) 
                                             {
                                                 echo "0";
                                             } else {
-                                                echo round(($row->TOTAL_NUM / $row->TOTAL_DEN), 2);
+                                                echo round(($row->TOTAL_NUM / $row->TOTAL_NUM), 2);
                                             }
                                         } else if ($no == 6) {
                                             if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
