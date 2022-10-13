@@ -172,7 +172,8 @@
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 2)
+                                                    if ($no == 2) 
+                                                    {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "00:00:00";

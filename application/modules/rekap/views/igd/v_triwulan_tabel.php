@@ -173,9 +173,9 @@
                                                     } else if ($no == 5) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
-                                                            echo "0";
+                                                            echo "1";
                                                         } else {
-                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN), 2);
+                                                            echo "1";
                                                         }
                                                     } else if ($no == 6) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
@@ -349,9 +349,9 @@
                                                     } else if ($no == 5) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
-                                                            echo "0";
+                                                            echo "1";
                                                         } else {
-                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN), 2);
+                                                            echo "1";
                                                         }
                                                     } else if ($no == 6) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
@@ -525,9 +525,9 @@
                                                     } else if ($no == 5) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
-                                                            echo "0 %";
+                                                            echo "1";
                                                         } else {
-                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN), 2);
+                                                            echo "1";
                                                         }
                                                     } else if ($no == 6) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
@@ -701,9 +701,9 @@
                                                     } else if ($no == 5) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
-                                                            echo "0";
+                                                            echo "1";
                                                         } else {
-                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN), 2);
+                                                            echo "1";
                                                         }
                                                     } else if ($no == 6) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 

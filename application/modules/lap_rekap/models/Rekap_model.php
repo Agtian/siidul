@@ -23,6 +23,7 @@ class Rekap_model extends CI_Model
 		$this->db->where('TR_INDIKATOR.ID_INDIKATOR', $id_indikator);
 		$this->db->where('YEAR(TR_INDIKATOR.TANGGAL)', $tahun);
 		$this->db->where('MONTH(TR_INDIKATOR.TANGGAL)', $bulan);
+		$this->db->where('TM_INDIKATOR.F_STATUS', 1);
 		$this->db->order_by('TR_INDIKATOR.TANGGAL', 'ASC');
 		return $this->db->get();
 	}
@@ -58,6 +59,7 @@ class Rekap_model extends CI_Model
 		$this->db->select('*');
 		$this->db->from('TM_INDIKATOR');
 		$this->db->where('TM_INDIKATOR.ID_RUANG', $id_ruang);
+		$this->db->where('F_STATUS', 1);
 		return $this->db->get();
 	}
 
