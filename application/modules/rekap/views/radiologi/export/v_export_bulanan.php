@@ -87,7 +87,7 @@
                                         echo "0";
                                     } else {
                                         $average = $total_num / $total_hari;
-                                        echo round($average, 2);
+                                        echo gmdate('H:i:s', floor($average * 1440));
                                     }
                                 } else {
                                     if (empty($total_num))
@@ -111,7 +111,7 @@
                                     } else {
                                         $average = $total_num / $total_hari;
                                         $time    = $average / $total_den;
-                                        echo gmdate('H:i:s', floor($time * 86400));
+                                        echo gmdate('H:i:s', floor($time * 1440));
                                     }
                                 } else {
                                     if ($total_num == 0 || $total_den == 0)

@@ -8,6 +8,7 @@ class Data_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('TM_INDIKATOR');
 		$this->db->where('ID_RUANG', $this->session->userdata('user_id_ruang'));
+		$this->db->where('F_STATUS', 1);
 		return $this->db->get();
 	}
 

@@ -114,17 +114,17 @@
                                                 <?php 
                                                     if ($no == '3')
                                                     {
-                                                        if (!empty($row->NUM_JAN) && empty($row->NUM_FEB) && empty($NUM_MAR)) 
+                                                        if (!empty($row->NUM_JAN) && empty($row->NUM_FEB) && empty($row->NUM_MAR)) 
                                                         {
-                                                            $persen = ($row->NUM_JAN / $tt_hari_jan) / 3;
-                                                            // echo round($persen, 5);
-                                                        } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && empty($NUM_MAR)) {
-                                                            $persen = (($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb)) / 3;
+                                                            $persen = ($row->NUM_JAN / $tt_hari_jan) / 1;
                                                             echo round($persen, 5);
-                                                        } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR)){
+                                                        } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && empty($row->NUM_MAR)) {
+                                                            $persen = (($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb)) / 2;
+                                                            echo round($persen, 5);
+                                                        } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($row->NUM_MAR)){
                                                             $persen = (($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar)) / 3;
-                                                            // echo round($persen, 5);
-                                                        } else if (empty($row->NUM_JAN) && empty($row->NUM_FEB) && empty($NUM_MAR)){
+                                                            echo round($persen, 5);
+                                                        } else if (empty($row->NUM_JAN) && empty($row->NUM_FEB) && empty($row->NUM_MAR)){
                                                             echo "0";
                                                         } else {
                                                             echo "";
@@ -145,18 +145,18 @@
                                                 <?php
                                                     if ($no == '3')
                                                     {
-                                                        if (!empty($row->NUM_JAN) && empty($row->NUM_FEB) && empty($NUM_MAR)) 
+                                                        if (!empty($row->NUM_JAN) && empty($row->NUM_FEB) && empty($row->NUM_MAR)) 
                                                         {
-                                                            $num    = ($row->NUM_JAN / $tt_hari_jan) / 3;
-                                                            $den    = ($row->DEN_JAN / $tt_hari_jan) / 3;
+                                                            $num    = ($row->NUM_JAN / $tt_hari_jan) / 1;
+                                                            $den    = ($row->DEN_JAN / $tt_hari_jan) / 1;
                                                             $persen = $num / $den * 100;
                                                             echo round($persen, 2);
-                                                        } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && empty($NUM_MAR)) {
-                                                            $num    = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) / 3;
-                                                            $den    = ($row->DEN_JAN / $tt_hari_jan) + ($row->DEN_FEB / $tt_hari_feb) / 3;
+                                                        } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && empty($row->NUM_MAR)) {
+                                                            $num    = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) / 2;
+                                                            $den    = ($row->DEN_JAN / $tt_hari_jan) + ($row->DEN_FEB / $tt_hari_feb) / 2;
                                                             $persen = $num / $den * 100;
                                                             echo round($persen, 2);
-                                                        } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR)){
+                                                        } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($row->NUM_MAR)){
                                                             $num    = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) / 3;
                                                             $den    = ($row->DEN_JAN / $tt_hari_jan) + ($row->DEN_FEB / $tt_hari_feb) + ($row->DEN_MAR / $tt_hari_mar) / 3;
                                                             $persen = $num / $den * 100;
@@ -226,17 +226,17 @@
                                                 <?php 
                                                     if ($no == '3' || $no == '4')
                                                     {
-                                                        if (!empty($row->DEN_JAN) && empty($row->DEN_FEB) && empty($DEN_MAR)) 
+                                                        if (!empty($row->DEN_JAN) && empty($row->DEN_FEB) && empty($row->DEN_MAR)) 
                                                         {
-                                                            $persen = ($row->DEN_JAN / $tt_hari_jan) / 3;
+                                                            $persen = ($row->DEN_JAN / $tt_hari_jan) / 1;
                                                             echo round($persen, 5);
-                                                        } else if (!empty($row->DEN_JAN) && !empty($row->DEN_FEB) && empty($DEN_MAR)) {
-                                                            $persen = (($row->DEN_JAN / $tt_hari_jan) + ($row->DEN_FEB / $tt_hari_feb)) / 3;
+                                                        } else if (!empty($row->DEN_JAN) && !empty($row->DEN_FEB) && empty($row->DEN_MAR)) {
+                                                            $persen = (($row->DEN_JAN / $tt_hari_jan) + ($row->DEN_FEB / $tt_hari_feb)) / 2;
                                                             echo round($persen, 5);
-                                                        } else if (!empty($row->DEN_JAN) && !empty($row->DEN_FEB) && !empty($DEN_MAR)){
+                                                        } else if (!empty($row->DEN_JAN) && !empty($row->DEN_FEB) && !empty($row->DEN_MAR)){
                                                             $persen = (($row->DEN_JAN / $tt_hari_jan) + ($row->DEN_FEB / $tt_hari_feb) + ($row->DEN_MAR / $tt_hari_mar)) / 3;
                                                             echo round($persen, 5);
-                                                        } else if (empty($row->DEN_JAN) && empty($row->DEN_FEB) && empty($DEN_MAR)){
+                                                        } else if (empty($row->DEN_JAN) && empty($row->DEN_FEB) && empty($row->DEN_MAR)){
                                                             echo "0";
                                                         } else {
                                                             echo "";
@@ -331,17 +331,17 @@
                                                 <?php 
                                                     if ($no == '3')
                                                     {
-                                                        if (!empty($row->NUM_APR) && empty($row->NUM_MEI) && empty($NUM_JUN)) 
+                                                        if (!empty($row->NUM_APR) && empty($row->NUM_MEI) && empty($row->NUM_JUN)) 
                                                         {
-                                                            $persen = ($row->NUM_APR / $tt_hari_apr) / 3;
+                                                            $persen = ($row->NUM_APR / $tt_hari_apr) / 1;
                                                             echo round($persen, 5);
-                                                        } else if (!empty($row->NUM_APR) && !empty($row->NUM_MEI) && empty($NUM_JUN)) {
-                                                            $persen = (($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei)) / 3;
+                                                        } else if (!empty($row->NUM_APR) && !empty($row->NUM_MEI) && empty($row->NUM_JUN)) {
+                                                            $persen = (($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei)) / 2;
                                                             echo round($persen, 5);
-                                                        } else if (!empty($row->NUM_APR) && !empty($row->NUM_MEI) && !empty($NUM_JUN)){
+                                                        } else if (!empty($row->NUM_APR) && !empty($row->NUM_MEI) && !empty($row->NUM_JUN)){
                                                             $persen = (($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun)) / 3;
                                                             echo round($persen, 5);
-                                                        } else if (empty($row->NUM_APR) && empty($row->NUM_MEI) && empty($NUM_JUN)){
+                                                        } else if (empty($row->NUM_APR) && empty($row->NUM_MEI) && empty($row->NUM_JUN)){
                                                             echo "0";
                                                         } else {
                                                             echo "";
@@ -362,18 +362,18 @@
                                                 <?php
                                                     if ($no == '3')
                                                     {
-                                                        if (!empty($row->NUM_APR) && empty($row->NUM_MEI) && empty($NUM_JUN)) 
+                                                        if (!empty($row->NUM_APR) && empty($row->NUM_MEI) && empty($row->NUM_JUN)) 
                                                         {
-                                                            $num    = ($row->NUM_APR / $tt_hari_apr) / 3;
-                                                            $den    = ($row->DEN_APR / $tt_hari_apr) / 3;
+                                                            $num    = ($row->NUM_APR / $tt_hari_apr) / 1;
+                                                            $den    = ($row->DEN_APR / $tt_hari_apr) / 1;
                                                             $persen = $num / $den * 100;
                                                             echo round($persen, 2);
-                                                        } else if (!empty($row->NUM_APR) && !empty($row->NUM_MEI) && empty($NUM_JUN)) {
-                                                            $num    = ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) / 3;
-                                                            $den    = ($row->DEN_APR / $tt_hari_apr) + ($row->DEN_MEI / $tt_hari_mei) / 3;
+                                                        } else if (!empty($row->NUM_APR) && !empty($row->NUM_MEI) && empty($row->NUM_JUN)) {
+                                                            $num    = ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) / 2;
+                                                            $den    = ($row->DEN_APR / $tt_hari_apr) + ($row->DEN_MEI / $tt_hari_mei) / 2;
                                                             $persen = $num / $den * 100;
                                                             echo round($persen, 2);
-                                                        } else if (!empty($row->NUM_APR) && !empty($row->NUM_MEI) && !empty($NUM_JUN)){
+                                                        } else if (!empty($row->NUM_APR) && !empty($row->NUM_MEI) && !empty($row->NUM_JUN)){
                                                             $num    = ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun) / 3;
                                                             $den    = ($row->DEN_APR / $tt_hari_apr) + ($row->DEN_MEI / $tt_hari_mei) + ($row->DEN_JUN / $tt_hari_jun) / 3;
                                                             $persen = $num / $den * 100;
@@ -443,17 +443,17 @@
                                                 <?php 
                                                     if ($no == '3' || $no == '4')
                                                     {
-                                                        if (!empty($row->DEN_APR) && empty($row->DEN_MEI) && empty($DEN_JUN)) 
+                                                        if (!empty($row->DEN_APR) && empty($row->DEN_MEI) && empty($row->DEN_JUN)) 
                                                         {
-                                                            $persen = ($row->DEN_APR / $tt_hari_apr) / 3;
-                                                            // echo round($persen, 5);
-                                                        } else if (!empty($row->DEN_APR) && !empty($row->DEN_MEI) && empty($DEN_JUN)) {
-                                                            $persen = (($row->DEN_APR / $tt_hari_apr) + ($row->DEN_MEI / $tt_hari_mei)) / 3;
+                                                            $persen = ($row->DEN_APR / $tt_hari_apr) / 1;
                                                             echo round($persen, 5);
-                                                        } else if (!empty($row->DEN_APR) && !empty($row->DEN_MEI) && !empty($DEN_JUN)){
+                                                        } else if (!empty($row->DEN_APR) && !empty($row->DEN_MEI) && empty($row->DEN_JUN)) {
+                                                            $persen = (($row->DEN_APR / $tt_hari_apr) + ($row->DEN_MEI / $tt_hari_mei)) / 2;
+                                                            echo round($persen, 5);
+                                                        } else if (!empty($row->DEN_APR) && !empty($row->DEN_MEI) && !empty($row->DEN_JUN)){
                                                             $persen = (($row->DEN_APR / $tt_hari_apr) + ($row->DEN_MEI / $tt_hari_mei) + ($row->DEN_JUN / $tt_hari_jun)) / 3;
-                                                            // echo round($persen, 5);
-                                                        } else if (empty($row->DEN_APR) && empty($row->DEN_MEI) && empty($DEN_JUN)){
+                                                            echo round($persen, 5);
+                                                        } else if (empty($row->DEN_APR) && empty($row->DEN_MEI) && empty($row->DEN_JUN)){
                                                             echo "0";
                                                         } else {
                                                             echo "";
@@ -548,17 +548,17 @@
                                                 <?php 
                                                     if ($no == '3')
                                                     {
-                                                        if (!empty($row->NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP)) 
+                                                        if (!empty($row->NUM_JUL) && empty($row->NUM_AGT) && empty($row->NUM_SEP)) 
                                                         {
-                                                            $persen = ($row->NUM_JUL / $tt_hari_jul) / 3;
-                                                            // echo round($persen, 5);
-                                                        } else if (!empty($row->NUM_JUL) && !empty($row->NUM_AGT) && empty($NUM_SEP)) {
-                                                            $persen = (($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt)) / 3;
+                                                            $persen = ($row->NUM_JUL / $tt_hari_jul) / 1;
                                                             echo round($persen, 5);
-                                                        } else if (!empty($row->NUM_JUL) && !empty($row->NUM_AGT) && !empty($NUM_SEP)){
+                                                        } else if (!empty($row->NUM_JUL) && !empty($row->NUM_AGT) && empty($row->NUM_SEP)) {
+                                                            $persen = (($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt)) / 2;
+                                                            echo round($persen, 5);
+                                                        } else if (!empty($row->NUM_JUL) && !empty($row->NUM_AGT) && !empty($row->NUM_SEP)){
                                                             $persen = (($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep)) / 3;
-                                                            // echo round($persen, 5);
-                                                        } else if (empty($row->NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP)){
+                                                            echo round($persen, 5);
+                                                        } else if (empty($row->NUM_JUL) && empty($row->NUM_AGT) && empty($row->NUM_SEP)){
                                                             echo "0";
                                                         } else {
                                                             echo "";
@@ -579,18 +579,18 @@
                                                 <?php
                                                     if ($no == '3')
                                                     {
-                                                        if (!empty($row->NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP)) 
+                                                        if (!empty($row->NUM_JUL) && empty($row->NUM_AGT) && empty($row->NUM_SEP)) 
                                                         {
-                                                            $num    = ($row->NUM_JUL / $tt_hari_jul) / 3;
-                                                            $den    = ($row->DEN_JUL / $tt_hari_jul) / 3;
+                                                            $num    = ($row->NUM_JUL / $tt_hari_jul) / 1;
+                                                            $den    = ($row->DEN_JUL / $tt_hari_jul) / 1;
                                                             $persen = $num / $den * 100;
                                                             echo round($persen, 2);
-                                                        } else if (!empty($row->NUM_JUL) && !empty($row->NUM_AGT) && empty($NUM_SEP)) {
-                                                            $num    = ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) / 3;
-                                                            $den    = ($row->DEN_JUL / $tt_hari_jul) + ($row->DEN_AGT / $tt_hari_agt) / 3;
+                                                        } else if (!empty($row->NUM_JUL) && !empty($row->NUM_AGT) && empty($row->NUM_SEP)) {
+                                                            $num    = ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) / 2;
+                                                            $den    = ($row->DEN_JUL / $tt_hari_jul) + ($row->DEN_AGT / $tt_hari_agt) / 2;
                                                             $persen = $num / $den * 100;
                                                             echo round($persen, 2);
-                                                        } else if (!empty($row->NUM_JUL) && !empty($row->NUM_AGT) && !empty($NUM_SEP)){
+                                                        } else if (!empty($row->NUM_JUL) && !empty($row->NUM_AGT) && !empty($row->NUM_SEP)){
                                                             $num    = ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep) / 3;
                                                             $den    = ($row->DEN_JUL / $tt_hari_jul) + ($row->DEN_AGT / $tt_hari_agt) + ($row->DEN_SEP / $tt_hari_sep) / 3;
                                                             $persen = $num / $den * 100;
@@ -660,17 +660,17 @@
                                                 <?php 
                                                     if ($no == '3' || $no == '4')
                                                     {
-                                                        if (!empty($row->DEN_JUL) && empty($row->DEN_AGT) && empty($DEN_SEP)) 
+                                                        if (!empty($row->DEN_JUL) && empty($row->DEN_AGT) && empty($row->DEN_SEP)) 
                                                         {
-                                                            $persen = ($row->DEN_JUL / $tt_hari_jul) / 3;
+                                                            $persen = ($row->DEN_JUL / $tt_hari_jul) / 1;
                                                             echo round($persen, 5);
-                                                        } else if (!empty($row->DEN_JUL) && !empty($row->DEN_AGT) && empty($DEN_SEP)) {
-                                                            $persen = (($row->DEN_JUL / $tt_hari_jul) + ($row->DEN_AGT / $tt_hari_agt)) / 3;
+                                                        } else if (!empty($row->DEN_JUL) && !empty($row->DEN_AGT) && empty($row->DEN_SEP)) {
+                                                            $persen = (($row->DEN_JUL / $tt_hari_jul) + ($row->DEN_AGT / $tt_hari_agt)) / 2;
                                                             echo round($persen, 5);
-                                                        } else if (!empty($row->DEN_JUL) && !empty($row->DEN_AGT) && !empty($DEN_SEP)){
+                                                        } else if (!empty($row->DEN_JUL) && !empty($row->DEN_AGT) && !empty($row->DEN_SEP)){
                                                             $persen = (($row->DEN_JUL / $tt_hari_jul) + ($row->DEN_AGT / $tt_hari_agt) + ($row->DEN_SEP / $tt_hari_jun)) / 3;
                                                             echo round($persen, 5);
-                                                        } else if (empty($row->DEN_JUL) && empty($row->DEN_AGT) && empty($DEN_SEP)){
+                                                        } else if (empty($row->DEN_JUL) && empty($row->DEN_AGT) && empty($row->DEN_SEP)){
                                                             echo "0";
                                                         } else {
                                                             echo "";
@@ -765,17 +765,17 @@
                                                 <?php 
                                                     if ($no == '3')
                                                     {
-                                                        if (!empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) 
+                                                        if (!empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($row->NUM_DES)) 
                                                         {
-                                                            $persen = ($row->NUM_OKT / $tt_hari_okt) / 3;
-                                                            // echo round($persen, 5);
-                                                        } else if (!empty($row->NUM_OKT) && !empty($row->NUM_NOV) && empty($NUM_DES)) {
-                                                            $persen = (($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov)) / 3;
+                                                            $persen = ($row->NUM_OKT / $tt_hari_okt) / 1;
                                                             echo round($persen, 5);
-                                                        } else if (!empty($row->NUM_OKT) && !empty($row->NUM_NOV) && !empty($NUM_DES)){
+                                                        } else if (!empty($row->NUM_OKT) && !empty($row->NUM_NOV) && empty($row->NUM_DES)) {
+                                                            $persen = (($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov)) / 2;
+                                                            echo round($persen, 5);
+                                                        } else if (!empty($row->NUM_OKT) && !empty($row->NUM_NOV) && !empty($row->NUM_DES)){
                                                             $persen = (($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov) + ($row->NUM_DES / $tt_hari_des)) / 3;
-                                                            // echo round($persen, 5);
-                                                        } else if (empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)){
+                                                            echo round($persen, 5);
+                                                        } else if (empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($row->NUM_DES)){
                                                             echo "0";
                                                         } else {
                                                             echo "";
@@ -796,18 +796,18 @@
                                                 <?php
                                                     if ($no == '3')
                                                     {
-                                                        if (!empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) 
+                                                        if (!empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($row->NUM_DES)) 
                                                         {
-                                                            $num    = ($row->NUM_OKT / $tt_hari_okt) / 3;
-                                                            $den    = ($row->DEN_OKT / $tt_hari_okt) / 3;
+                                                            $num    = ($row->NUM_OKT / $tt_hari_okt) / 1;
+                                                            $den    = ($row->DEN_OKT / $tt_hari_okt) / 1;
                                                             $persen = $num / $den * 100;
                                                             echo round($persen, 2);
-                                                        } else if (!empty($row->NUM_OKT) && !empty($row->NUM_NOV) && empty($NUM_DES)) {
-                                                            $num    = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov) / 3;
-                                                            $den    = ($row->DEN_OKT / $tt_hari_okt) + ($row->DEN_AGT / $tt_hari_nov) / 3;
+                                                        } else if (!empty($row->NUM_OKT) && !empty($row->NUM_NOV) && empty($row->NUM_DES)) {
+                                                            $num    = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov) / 2;
+                                                            $den    = ($row->DEN_OKT / $tt_hari_okt) + ($row->DEN_AGT / $tt_hari_nov) / 2;
                                                             $persen = $num / $den * 100;
                                                             echo round($persen, 2);
-                                                        } else if (!empty($row->NUM_OKT) && !empty($row->NUM_NOV) && !empty($NUM_DES)){
+                                                        } else if (!empty($row->NUM_OKT) && !empty($row->NUM_NOV) && !empty($row->NUM_DES)){
                                                             $num    = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov) + ($row->NUM_DES / $tt_hari_des) / 3;
                                                             $den    = ($row->DEN_OKT / $tt_hari_okt) + ($row->DEN_AGT / $tt_hari_nov) + ($row->DEN_SEP / $tt_hari_des) / 3;
                                                             $persen = $num / $den * 100;
@@ -877,17 +877,17 @@
                                                 <?php 
                                                     if ($no == '3' || $no == '4')
                                                     {
-                                                        if (!empty($row->DEN_OKT) && empty($row->DEN_NOV) && empty($DEN_DES)) 
+                                                        if (!empty($row->DEN_OKT) && empty($row->DEN_NOV) && empty($row->DEN_DES)) 
                                                         {
-                                                            $persen = ($row->DEN_OKT / $tt_hari_okt) / 3;
-                                                            // echo round($persen, 5);
-                                                        } else if (!empty($row->DEN_OKT) && !empty($row->DEN_NOV) && empty($DEN_DES)) {
-                                                            $persen = (($row->DEN_OKT / $tt_hari_okt) + ($row->DEN_NOV / $tt_hari_nov)) / 3;
+                                                            $persen = ($row->DEN_OKT / $tt_hari_okt) / 1;
                                                             echo round($persen, 5);
-                                                        } else if (!empty($row->DEN_OKT) && !empty($row->DEN_NOV) && !empty($DEN_DES)){
+                                                        } else if (!empty($row->DEN_OKT) && !empty($row->DEN_NOV) && empty($row->DEN_DES)) {
+                                                            $persen = (($row->DEN_OKT / $tt_hari_okt) + ($row->DEN_NOV / $tt_hari_nov)) / 2;
+                                                            echo round($persen, 5);
+                                                        } else if (!empty($row->DEN_OKT) && !empty($row->DEN_NOV) && !empty($row->DEN_DES)){
                                                             $persen = (($row->DEN_OKT / $tt_hari_okt) + ($row->DEN_NOV / $tt_hari_nov) + ($row->DEN_DES / $tt_hari_des)) / 3;
-                                                            // echo round($persen, 5);
-                                                        } else if (empty($row->DEN_OKT) && empty($row->DEN_NOV) && empty($DEN_DES)){
+                                                            echo round($persen, 5);
+                                                        } else if (empty($row->DEN_OKT) && empty($row->DEN_NOV) && empty($row->DEN_DES)){
                                                             echo "0";
                                                         } else {
                                                             echo "";

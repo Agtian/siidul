@@ -60,7 +60,7 @@ class Auth extends CI_Controller
 
 					// Cek ke database
 					// checking data via model
-					$checking = $this->Auth_model->check_login('TM_USER', array('USERNAME' => $username), array('PASSWORD' => $password));
+					$checking = $this->Auth_model->check_login('TM_USER', array('USERNAME' => $username), array('PASSWORD_CI' => $password));
 
 					//jika ditemukan, maka create session
 					if ($checking != FALSE) {

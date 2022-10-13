@@ -106,6 +106,14 @@ function views_input($id)
 			// komdik
 			return "rawatinap/v_input";
 			break;
+		case 10028:
+			// pdeit
+			return "pdeit/v_input";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/v_input";
+			break;
 
 
 		default:
@@ -221,6 +229,14 @@ function views_ubah($id)
 			// komdik
 			return "rawatinap/v_ubah";
 			break;
+		case 10028:
+			// pdeit
+			return "pdeit/v_ubah";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/v_ubah";
+			break;
 
 		default:
 			echo "Isi variabel tidak di temukan";
@@ -330,6 +346,14 @@ function views_export_bulanan($id)
 			// Hemodialisa
 			return "hemodialisa/export/v_export_bulanan";
 			break;
+		case 10028:
+			// pdeit
+			return "pdeit/export/v_export_bulanan";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/export/v_export_bulanan";
+			break;
 
 
 		default:
@@ -437,6 +461,14 @@ function views_export_triwulan($id)
 			// Hemodialisa
 			return "hemodialisa/export/v_export_triwulan";
 			break;
+		case 10028:
+			// pdeit
+			return "pdeit/export/v_export_triwulan";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/export/v_export_triwulan";
+			break;
 
 		default:
 			echo "Isi variabel tidak di temukan";
@@ -542,6 +574,14 @@ function views_export_semester($id)
 		case 24:
 			// Hemodialisa
 			return "hemodialisa/export/v_export_semester";
+			break;
+		case 10028:
+			// pdeit
+			return "pdeit/export/v_export_semester";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/export/v_export_semester";
 			break;
 
 		default:
@@ -649,6 +689,14 @@ function views_export_tahunan($id)
 			// Hemodialisa
 			return "hemodialisa/export/v_export_tahunan";
 			break;
+		case 10028:
+			// pdeit
+			return "pdeit/export/v_export_tahunan";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/export/v_export_tahunan";
+			break;
 
 		default:
 			echo "Isi variabel tidak di temukan";
@@ -755,6 +803,14 @@ function views_export_capaian($id)
 			// Hemodialisa
 			return "hemodialisa/export/v_export_capaian";
 			break;
+		case 10028:
+			// pdeit
+			return "pdeit/export/v_export_capaian";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/export/v_export_capaian";
+			break;
 
 
 
@@ -764,6 +820,119 @@ function views_export_capaian($id)
 	}
 }
 
+function views_export_triwulan_iii_form_dewas($id)
+{
+	switch ($id) {
+		case 1:
+			// Bank Darah
+			return "bankdarah/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 2:
+			// Rekam Medis
+			return "rekammedis/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 3:
+			// Rawat Inap
+			return "rawatinap/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 4:
+			// Cempaka
+			return "cempaka/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 5:
+			// ICU
+			return "icu/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 6:
+			// IBS
+			return "ibs/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 7:
+			// IGD
+			return "igd/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 8:
+			// Laboratorium
+			return "laboratorium/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 9:
+			// Farmasi
+			return "farmasi/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 10:
+			// Elektromedik
+			return "elektromedik/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 11:
+			// CSSD
+			return "cssd/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 12:
+			// VCT
+			return "vct/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 13:
+			// Pemulasan Jenazah & Ambulance
+			return "kamar_jenazah/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 14:
+			// Sanitasi
+			return "sanitasi/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 15:
+			// Rawat Jalan
+			return "rawat_jalan/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 16:
+			// PPI
+			return "ppi/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 17:
+			// Radiologi
+			return "radiologi/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 18:
+			// Gizi
+			return "gizi/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 19:
+			// Gakin
+			return "gakin/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 20:
+			// Kepegawaian
+			return "kepegawaian/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 21:
+			// Keuangan
+			return "keuangan/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 22:
+			// Fisioterapi
+			return "fisioterapi/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 23:
+			// Fisioterapi Donorojo
+			return "fisioterapi_donorojo/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 24:
+			// Hemodialisa
+			return "hemodialisa/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 10028:
+			// pdeit
+			return "pdeit/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/export/v_export_triwulan_iii_form_dewas";
+			break;
+
+		default:
+			echo "Isi variabel tidak di temukan";
+			break;
+	}
+}
 
 
 
@@ -866,6 +1035,14 @@ function views_rekap_bulanan($id)
 		case 24:
 			// Hemodialisa
 			return "hemodialisa/v_bulanan_tabel";
+			break;
+		case 10028:
+			// pdeit
+			return "pdeit/v_bulanan_tabel";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/v_bulanan_tabel";
 			break;
 
 		default:
@@ -973,6 +1150,14 @@ function views_rekap_triwulan($id)
 			// Hemodialisa
 			return "hemodialisa/v_triwulan_tabel";
 			break;
+		case 10028:
+			// pdeit
+			return "pdeit/v_triwulan_tabel";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/v_triwulan_tabel";
+			break;
 
 		default:
 			echo "Isi variabel tidak di temukan";
@@ -1078,6 +1263,14 @@ function views_rekap_semester($id)
 		case 24:
 			// Hemodialisa
 			return "hemodialisa/v_semester_tabel";
+			break;
+		case 10028:
+			// pdeit
+			return "pdeit/v_semester_tabel";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/v_semester_tabel";
 			break;
 
 
@@ -1293,6 +1486,14 @@ function views_rekap_capaian($id)
 			// Hemodialisa
 			return "hemodialisa/v_capaian";
 			break;
+		case 10028:
+			// pdeit
+			return "pdeit/v_capaian";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/v_capaian";
+			break;
 
 
 		default:
@@ -1300,3 +1501,118 @@ function views_rekap_capaian($id)
 			break;
 	}
 }
+
+function views_rekap_triwulan_table_dewas($id)
+{
+	switch ($id) {
+		case 1:
+			// Bank Darah
+			return "bankdarah/v_triwulan_tabel_dewas";
+			break;
+		case 2:
+			// Rekam Medis
+			return "rekammedis/v_triwulan_tabel_dewas";
+			break;
+		case 3:
+			// Rawat Inap
+			return "rawatinap/v_triwulan_tabel_dewas";
+			break;
+		case 4:
+			// Cempaka
+			return "cempaka/v_triwulan_tabel_dewas";
+			break;
+		case 5:
+			// ICU
+			return "icu/v_triwulan_tabel_dewas";
+			break;
+		case 6:
+			// IBS
+			return "ibs/v_triwulan_tabel_dewas";
+			break;
+		case 7:
+			// IGD
+			return "igd/v_triwulan_tabel_dewas";
+			break;
+		case 8:
+			// Laboratorium
+			return "laboratorium/v_triwulan_tabel_dewas";
+			break;
+		case 9:
+			// Farmasi
+			return "farmasi/v_triwulan_tabel_dewas";
+			break;
+		case 10:
+			// Elektromedik
+			return "elektromedik/v_triwulan_tabel_dewas";
+			break;
+		case 11:
+			// CSSD
+			return "cssd/v_triwulan_tabel_dewas";
+			break;
+		case 12:
+			// VCT
+			return "vct/v_triwulan_tabel_dewas";
+			break;
+		case 13:
+			// Pemulasan Jenazah & Ambulance
+			return "kamar_jenazah/v_triwulan_tabel_dewas";
+			break;
+		case 14:
+			// Sanitasi
+			return "sanitasi/v_triwulan_tabel_dewas";
+			break;
+		case 15:
+			// Rawat Jalan
+			return "rawat_jalan/v_triwulan_tabel_dewas";
+			break;
+		case 16:
+			// PPI
+			return "ppi/v_triwulan_tabel_dewas";
+			break;
+		case 17:
+			// Radiologi
+			return "radiologi/v_triwulan_tabel_dewas";
+			break;
+		case 18:
+			// Gizi
+			return "gizi/v_triwulan_tabel_dewas";
+			break;
+		case 19:
+			// Gakin
+			return "gakin/v_triwulan_tabel_dewas";
+			break;
+		case 20:
+			// Kepegawaian
+			return "kepegawaian/v_triwulan_tabel_dewas";
+			break;
+		case 21:
+			// Keuangan
+			return "keuangan/v_triwulan_tabel_dewas";
+			break;
+		case 22:
+			// Fisioterapi
+			return "fisioterapi/v_triwulan_tabel_dewas";
+			break;
+		case 23:
+			// Fisioterapi Donorojo
+			return "fisioterapi_donorojo/v_triwulan_tabel_dewas";
+			break;
+		case 24:
+			// Hemodialisa
+			return "hemodialisa/v_triwulan_tabel_dewas";
+			break;
+		case 10028:
+			// pdeit
+			return "pdeit/v_triwulan_tabel_dewas";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/v_triwulan_tabel_dewas";
+			break;
+
+		default:
+			echo "Isi variabel tidak di temukan";
+			break;
+	}
+}
+

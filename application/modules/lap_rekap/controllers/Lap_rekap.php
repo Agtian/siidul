@@ -652,4 +652,136 @@ class Lap_rekap extends CI_Controller {
 
 		
 	}
+
+	public function triwulan_iii_dewas()
+	{
+		if($this->Auth_model->logged_id())
+		{
+			$tahun 			= $this->input->post('tahun');
+			$id_ruang_sub 	= $this->input->post('id_sub_ruang');
+			
+
+			if (empty($tahun) || empty($id_ruang_sub))
+			{
+
+				$data = array(
+					'list_tahun' 	=> $this->Rekap_model->get_tahun(),
+					'list_ruang'	=> $this->Rekap_model->get_ruang(),
+				);
+				$this->template->load('template','v_triwulan_dewas_form', $data);
+
+			} else if ($id_ruang_sub == 'rawat_inap') {
+
+				$data = array(
+					'tahun'				=> $tahun,
+					'list_ruang'		=> $this->Rekap_model->get_ruang(),
+					'list_tahun' 		=> $this->Rekap_model->get_tahun(),
+
+					'triwulan'		=> $this->Rekap_model->get_triwulan_dewas($tahun),
+				);
+				$this->template->load('template', 'rawatinap/v_triwulan_iii_tabel_dewas', $data);
+
+			} else {
+
+				$query_i 		= $this->Rekap_model->get_det_ruang($id_ruang_sub);
+				$query 			= $this->Rekap_model->get_det_indikator($query_i->ID_RUANG);
+				$id_indikator  	= $query->ID;
+				$id_ruang		= $query_i->ID_RUANG;
+
+				$data = array(
+					'id_ruang_sub'		=> $id_ruang_sub,
+					'tahun'				=> $tahun,
+					'list_ruang'		=> $this->Rekap_model->get_ruang(),
+					'list_tahun' 		=> $this->Rekap_model->get_tahun(),
+					'nama_ruang'		=> $query_i->NAMA_SUB_RUANG,
+
+					'triwulan'			=> $this->Rekap_model->get_triwulan_dewas_one_room($id_ruang, $tahun),
+
+					'tt_hari_jan' 		=> $this->Rekap_model->get_tt_hari_jan($tahun, $id_indikator),
+					'tt_hari_feb' 		=> $this->Rekap_model->get_tt_hari_feb($tahun, $id_indikator),
+					'tt_hari_mar' 		=> $this->Rekap_model->get_tt_hari_mar($tahun, $id_indikator),
+					'tt_hari_apr' 		=> $this->Rekap_model->get_tt_hari_apr($tahun, $id_indikator),
+					'tt_hari_mei' 		=> $this->Rekap_model->get_tt_hari_mei($tahun, $id_indikator),
+					'tt_hari_jun' 		=> $this->Rekap_model->get_tt_hari_jun($tahun, $id_indikator),
+					'tt_hari_jul' 		=> $this->Rekap_model->get_tt_hari_jul($tahun, $id_indikator),
+					'tt_hari_agt' 		=> $this->Rekap_model->get_tt_hari_agt($tahun, $id_indikator),
+					'tt_hari_sep' 		=> $this->Rekap_model->get_tt_hari_sep($tahun, $id_indikator),
+					'tt_hari_okt' 		=> $this->Rekap_model->get_tt_hari_okt($tahun, $id_indikator),
+					'tt_hari_nov' 		=> $this->Rekap_model->get_tt_hari_nov($tahun, $id_indikator),
+					'tt_hari_des' 		=> $this->Rekap_model->get_tt_hari_des($tahun, $id_indikator),
+				);
+				$this->template->load('template', views_rekap_triwulan_table_dewas($query_i->ID_RUANG), $data);
+
+			}	
+		} else {
+        	redirect('auth');
+        }
+	}
+
+	public function export_triwulan_iii_form_dewas($id_ruang_sub, $tahun)
+	{
+
+		$query_i 			= $this->Rekap_model->get_det_ruang($id_ruang_sub);
+		$id_ruang 			= $query_i->ID_RUANG;
+
+		if (empty($id_ruang_sub) || empty($tahun))
+		{
+
+			$this->session->set_flashdata('message', "
+	        <div class='x_content'>
+          		<div class='alert alert-danger alert-dismissible fade in' role='alert'>
+	                <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span>
+	                </button>
+	                <strong>Perhatian!</strong> <br> Gagal record data !.
+	            </div>
+	        </div>");
+	      	redirect('lap_rekap/triwulan');
+
+		// } else if ($id_ruang_sub == 'rawat_inap') {
+
+		} else {
+
+			$query 			= $this->Rekap_model->get_det_indikator($id_ruang);
+			$id_indikator  	= $query->ID;
+
+			$data = array(
+				'id_ruang_sub'		=> $id_ruang_sub,
+				'tahun'				=> $tahun,
+				'list_ruang'		=> $this->Rekap_model->get_ruang(),
+				'list_tahun' 		=> $this->Rekap_model->get_tahun(),
+				'nama_ruang'		=> $query_i->NAMA_SUB_RUANG,
+
+				'triwulan'			=> $this->Rekap_model->get_triwulan_dewas_one_room($id_ruang, $tahun),
+
+				'tt_hari_jan' 		=> $this->Rekap_model->get_tt_hari_jan($tahun, $id_indikator),
+				'tt_hari_feb' 		=> $this->Rekap_model->get_tt_hari_feb($tahun, $id_indikator),
+				'tt_hari_mar' 		=> $this->Rekap_model->get_tt_hari_mar($tahun, $id_indikator),
+				'tt_hari_apr' 		=> $this->Rekap_model->get_tt_hari_apr($tahun, $id_indikator),
+				'tt_hari_mei' 		=> $this->Rekap_model->get_tt_hari_mei($tahun, $id_indikator),
+				'tt_hari_jun' 		=> $this->Rekap_model->get_tt_hari_jun($tahun, $id_indikator),
+				'tt_hari_jul' 		=> $this->Rekap_model->get_tt_hari_jul($tahun, $id_indikator),
+				'tt_hari_agt' 		=> $this->Rekap_model->get_tt_hari_agt($tahun, $id_indikator),
+				'tt_hari_sep' 		=> $this->Rekap_model->get_tt_hari_sep($tahun, $id_indikator),
+				'tt_hari_okt' 		=> $this->Rekap_model->get_tt_hari_okt($tahun, $id_indikator),
+				'tt_hari_nov' 		=> $this->Rekap_model->get_tt_hari_nov($tahun, $id_indikator),
+				'tt_hari_des' 		=> $this->Rekap_model->get_tt_hari_des($tahun, $id_indikator),
+			);
+
+			// var_dump(json_encode($this->Rekap_model->get_triwulan_dewas_one_room($id_ruang, $tahun)->result())); die;
+
+			$mpdf = new \Mpdf\Mpdf();
+			// Define a default Landscape page size/format by name
+			$mpdf = new \Mpdf\Mpdf([
+				'mode' 		=> 'utf-8', 
+				'format' 	=> [215, 330],
+				'orientation' => 'L'
+			]);
+			
+			$html = $this->load->view(views_export_triwulan_iii_form_dewas($id_ruang), $data, true);
+			// $mpdf->WriteHTML("<h4><center>Ruang : $query_i->NAMA_SUB_RUANG </center></h4>");
+       		$mpdf->WriteHTML($html);
+        	$mpdf->Output();
+
+		}
+	}
 }
