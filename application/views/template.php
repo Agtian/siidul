@@ -36,6 +36,9 @@
 
     <!-- Bootstrap Colorpicker -->
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/dashboard/vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+
+     <!-- Chart.js -->
+     <script src="<?php echo base_url() ?>assets/dashboard/vendors/Chart.js/dist/Chart.min.js"></script>
 </head>
 
 <body class="nav-md">
@@ -87,6 +90,11 @@
                                             <li><a href="<?php echo base_url('rekap/semester'); ?>">Rekap Semester</a></li>
                                             <li><a href="<?php echo base_url('rekap/tahunan'); ?>">Rekap Tahunan</a></li>
                                             <li><a href="<?php echo base_url('rekap/capaian'); ?>">Rekap Capaian</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-line-chart"></i> GRAFIK CAPAIAN <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                           <li><a href="<?php echo base_url('rekap/grafik'); ?>">Grafik Capaian</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -190,8 +198,7 @@
     <script src="<?php echo base_url() ?>assets/dashboard/vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
     <script src="<?php echo base_url() ?>assets/dashboard/vendors/nprogress/nprogress.js"></script>
-    <!-- Chart.js -->
-    <!-- <script src="<?php echo base_url() ?>assets/dashboard/vendors/Chart.js/dist/Chart.min.js"></script> -->
+   
     <!-- jQuery Sparklines -->
     <script src="<?php echo base_url() ?>assets/dashboard/vendors/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
     <!-- Flot -->

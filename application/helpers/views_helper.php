@@ -820,6 +820,9 @@ function views_export_capaian($id)
 	}
 }
 
+
+
+
 function views_export_triwulan_iii_form_dewas($id)
 {
 	switch ($id) {
@@ -1405,6 +1408,120 @@ function views_rekap_capaian($id)
 		case 4:
 			// Cempaka
 			return "cempaka/v_capaian";
+			break;
+		case 5:
+			// ICU
+			return "icu/v_capaian";
+			break;
+		case 6:
+			// IBS
+			return "ibs/v_capaian";
+			break;
+		case 7:
+			// IGD
+			return "igd/v_capaian";
+			break;
+		case 8:
+			// Laboratorium
+			return "laboratorium/v_capaian";
+			break;
+		case 9:
+			// Farmasi
+			return "farmasi/v_capaian";
+			break;
+		case 10:
+			// Elektromedik
+			return "elektromedik/v_capaian";
+			break;
+		case 11:
+			// CSSD
+			return "cssd/v_capaian";
+			break;
+		case 12:
+			// VCT
+			return "vct/v_capaian";
+			break;
+		case 13:
+			// Pemulasan Jenazah & Ambulance
+			return "kamar_jenazah/v_capaian";
+			break;
+		case 14:
+			// Sanitasi
+			return "sanitasi/v_capaian";
+			break;
+		case 15:
+			// Rawat Jalan
+			return "rawat_jalan/v_capaian";
+			break;
+		case 16:
+			// PPI
+			return "ppi/v_capaian";
+			break;
+		case 17:
+			// Radiologi
+			return "radiologi/v_capaian";
+			break;
+		case 18:
+			// Gizi
+			return "gizi/v_capaian";
+			break;
+		case 19:
+			// Gakin
+			return "gakin/v_capaian";
+			break;
+		case 20:
+			// Kepegawaian
+			return "kepegawaian/v_capaian";
+			break;
+		case 21:
+			// Keuangan
+			return "keuangan/v_capaian";
+			break;
+		case 22:
+			// Fisioterapi
+			return "fisioterapi/v_capaian";
+			break;
+		case 23:
+			// Fisioterapi Donorojo
+			return "fisioterapi_donorojo/v_capaian";
+			break;
+		case 24:
+			// Hemodialisa
+			return "hemodialisa/v_capaian";
+			break;
+		case 10028:
+			// pdeit
+			return "pdeit/v_capaian";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/v_capaian";
+			break;
+
+
+		default:
+			echo "Isi variabel tidak di temukan";
+			break;
+	}
+}
+function views_grafik_capaian($id)
+{
+	switch ($id) {
+		case 1:
+			// Bank Darah
+			return "bankdarah/v_capaian";
+			break;
+		case 2:
+			// Rekam Medis
+			return "rekammedis/v_capaian";
+			break;
+		case 3:
+			// Rawat Inap
+			return "rawatinap/v_capaian";
+			break;
+		case 4:
+			// Cempaka
+			return "cempaka/v_grafik";
 			break;
 		case 5:
 			// ICU

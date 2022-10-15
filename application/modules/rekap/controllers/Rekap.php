@@ -460,6 +460,50 @@ class Rekap extends CI_Controller
 			redirect('auth');
 		}
 	}
+	public function grafik()
+	{
+		if ($this->Auth_model->logged_id()) {
+			$tahun 			= $this->input->post('tahun');
+			$id_ruang 		= $this->session->userdata("user_id_ruang");
+			$id_ruang_sub 	= $this->session->userdata("user_id_ruang_sub");
+
+			if (empty($tahun) || empty($id_ruang_sub)) {
+
+				$data = array(
+					'list_tahun' 	=> $this->Rekap_model->get_tahun(),
+				);
+				$this->template->load('template', 'v_grafik_form', $data);
+			} else {
+
+				$query 			= $this->Rekap_model->get_det_indikator($id_ruang);
+				$id_indikator  	= $query->ID;
+
+				$data = array(
+					'id_ruang_sub'		=> $id_ruang_sub,
+					'tahun'				=> $tahun,
+					'list_tahun' 		=> $this->Rekap_model->get_tahun(),
+
+					'capaian'			=> $this->Rekap_model->get_capaian($id_ruang_sub, $tahun),
+
+					'tt_hari_jan' 		=> $this->Rekap_model->get_tt_hari_jan($tahun, $id_indikator),
+					'tt_hari_feb' 		=> $this->Rekap_model->get_tt_hari_feb($tahun, $id_indikator),
+					'tt_hari_mar' 		=> $this->Rekap_model->get_tt_hari_mar($tahun, $id_indikator),
+					'tt_hari_apr' 		=> $this->Rekap_model->get_tt_hari_apr($tahun, $id_indikator),
+					'tt_hari_mei' 		=> $this->Rekap_model->get_tt_hari_mei($tahun, $id_indikator),
+					'tt_hari_jun' 		=> $this->Rekap_model->get_tt_hari_jun($tahun, $id_indikator),
+					'tt_hari_jul' 		=> $this->Rekap_model->get_tt_hari_jul($tahun, $id_indikator),
+					'tt_hari_agt' 		=> $this->Rekap_model->get_tt_hari_agt($tahun, $id_indikator),
+					'tt_hari_sep' 		=> $this->Rekap_model->get_tt_hari_sep($tahun, $id_indikator),
+					'tt_hari_okt' 		=> $this->Rekap_model->get_tt_hari_okt($tahun, $id_indikator),
+					'tt_hari_nov' 		=> $this->Rekap_model->get_tt_hari_nov($tahun, $id_indikator),
+					'tt_hari_des' 		=> $this->Rekap_model->get_tt_hari_des($tahun, $id_indikator),
+				);
+				$this->template->load('template', views_grafik_capaian($id_ruang), $data);
+			}
+		} else {
+			redirect('auth');
+		}
+	}
 
 	public function export_capaian($id_ruang_sub, $tahun)
 	{
