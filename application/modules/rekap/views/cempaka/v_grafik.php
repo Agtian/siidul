@@ -81,17 +81,11 @@
         $no = $no + 1;
         $datas = $row;
     ?>
-
-
-
         var target = <?php echo $row->STD_VALUE; ?>;
         var dataTarget = [];
         for (var i = 1; i <= 12; i++) {
             dataTarget.push(target);
         }
-
-        console.log(dataTarget);
-
 
         myChart('<?php echo 'chart_indikator_id_' . $no; ?>', '<?php echo $row->DETAIL_INDIKATOR; ?>',
             [
@@ -149,7 +143,7 @@
             data: capaian,
             lineTension: 0,
             fill: false,
-            borderColor: 'blue'
+            borderColor: 'rgb(75, 192, 192)'
         };
 
         var dataSecond = {
@@ -157,7 +151,7 @@
             data: target,
             lineTension: 0,
             fill: false,
-            borderColor: 'red'
+            borderColor: 'rgb(255, 51, 51)'
         };
 
         var dataCapaianTarget = {
