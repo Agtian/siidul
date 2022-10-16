@@ -84,6 +84,15 @@
 
 
 
+        var target = <?php echo $row->STD_VALUE; ?>;
+        var dataTarget = [];
+        for (var i = 1; i <= 12; i++) {
+            dataTarget.push(target);
+        }
+
+        console.log(dataTarget);
+
+
         myChart('<?php echo 'chart_indikator_id_' . $no; ?>', '<?php echo $row->DETAIL_INDIKATOR; ?>',
             [
                 hitung(<?php echo $no; ?>, <?php echo $row->NUM_JAN; ?>, <?php echo $row->DEN_JAN; ?>),
@@ -98,6 +107,19 @@
                 hitung(<?php echo $no; ?>, <?php echo $row->NUM_OKT; ?>, <?php echo $row->DEN_OKT; ?>),
                 hitung(<?php echo $no; ?>, <?php echo $row->NUM_NOV; ?>, <?php echo $row->DEN_NOV; ?>),
                 hitung(<?php echo $no; ?>, <?php echo $row->NUM_DES; ?>, <?php echo $row->DEN_DES; ?>)
+            ], [
+                <?php echo $row->STD_VALUE ?>,
+                <?php echo $row->STD_VALUE ?>,
+                <?php echo $row->STD_VALUE ?>,
+                <?php echo $row->STD_VALUE ?>,
+                <?php echo $row->STD_VALUE ?>,
+                <?php echo $row->STD_VALUE ?>,
+                <?php echo $row->STD_VALUE ?>,
+                <?php echo $row->STD_VALUE ?>,
+                <?php echo $row->STD_VALUE ?>,
+                <?php echo $row->STD_VALUE ?>,
+                <?php echo $row->STD_VALUE ?>,
+                <?php echo $row->STD_VALUE ?>
             ]);
     <?php } ?>
 
@@ -118,21 +140,33 @@
         }
     }
 
-    function myChart(id, detail, arrayData) {
+    function myChart(id, detail, capaian, target) {
         const ctx = document.getElementById(id);
 
+
+        var dataFirst = {
+            label: detail,
+            data: capaian,
+            lineTension: 0,
+            fill: false,
+            borderColor: 'blue'
+        };
+
+        var dataSecond = {
+            label: "target " ,
+            data: target,
+            lineTension: 0,
+            fill: false,
+            borderColor: 'red'
+        };
+
+        var dataCapaianTarget = {
+            labels: ['JAN', 'FEB', 'MAR', 'APR', 'MEI', 'JUN', 'JUL', 'AGT', 'SEP', 'OKT', 'NOV', 'DES'],
+            datasets: [dataFirst, dataSecond]
+        };
         const myChart = new Chart(ctx, {
             type: 'line',
-            data: {
-                labels: ['JAN', 'FEB', 'MAR', 'APR', 'MEI', 'JUN', 'JUL', 'AGT', 'SEP', 'OKT', 'NOV', 'DES'],
-                datasets: [{
-                    label: detail,
-                    data: arrayData,
-                    fill: false,
-                    borderColor: 'rgb(75, 192, 192)',
-                    tension: 0.1
-                }]
-            },
+            data: dataCapaianTarget,
             options: {
                 scales: {
                     y: {
