@@ -28,13 +28,10 @@
                         <div class="form-group">
                             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                 <button type="submit" class="btn btn-primary">Tampilkan</button>
-                                <!-- <a class="btn btn-primary" target="_blank" href="<?php echo base_url('rekap/export_grafik/') . $id_ruang_sub . '/' . $tahun; ?>">Export PDF</a> -->
                             </div>
                         </div>
                         <?php echo form_close(); ?>
-                        <!-- <button type="button" id="download-pdf2">
-                            Download Higher Quality PDF
-                        </button> -->
+
                     </div>
                 </div>
             </div>
@@ -95,18 +92,18 @@
 
         myChart('<?php echo 'chart_indikator_id_' . $no; ?>', '<?php echo $row->DETAIL_INDIKATOR; ?>',
             [
-                hitung(<?php echo $no; ?>, <?php echo $row->NUM_JAN; ?>, <?php echo $row->DEN_JAN; ?>),
-                hitung(<?php echo $no; ?>, <?php echo $row->NUM_FEB; ?>, <?php echo $row->DEN_FEB; ?>),
-                hitung(<?php echo $no; ?>, <?php echo $row->NUM_MAR; ?>, <?php echo $row->DEN_MAR; ?>),
-                hitung(<?php echo $no; ?>, <?php echo $row->NUM_APR; ?>, <?php echo $row->DEN_APR; ?>),
-                hitung(<?php echo $no; ?>, <?php echo $row->NUM_MEI; ?>, <?php echo $row->DEN_MEI; ?>),
-                hitung(<?php echo $no; ?>, <?php echo $row->NUM_JUN; ?>, <?php echo $row->DEN_JUN; ?>),
-                hitung(<?php echo $no; ?>, <?php echo $row->NUM_JUL; ?>, <?php echo $row->DEN_JUL; ?>),
-                hitung(<?php echo $no; ?>, <?php echo $row->NUM_AGT; ?>, <?php echo $row->DEN_AGT; ?>),
-                hitung(<?php echo $no; ?>, <?php echo $row->NUM_SEP; ?>, <?php echo $row->DEN_SEP; ?>),
-                hitung(<?php echo $no; ?>, <?php echo $row->NUM_OKT; ?>, <?php echo $row->DEN_OKT; ?>),
-                hitung(<?php echo $no; ?>, <?php echo $row->NUM_NOV; ?>, <?php echo $row->DEN_NOV; ?>),
-                hitung(<?php echo $no; ?>, <?php echo $row->NUM_DES; ?>, <?php echo $row->DEN_DES; ?>)
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_JAN; ?>, <?php echo $row->DEN_JAN; ?>, <?php echo $tt_hari_jan; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_FEB; ?>, <?php echo $row->DEN_FEB; ?>, <?php echo $tt_hari_feb; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_MAR; ?>, <?php echo $row->DEN_MAR; ?>, <?php echo $tt_hari_mar; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_APR; ?>, <?php echo $row->DEN_APR; ?>, <?php echo $tt_hari_apr; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_MEI; ?>, <?php echo $row->DEN_MEI; ?>, <?php echo $tt_hari_mei; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_JUN; ?>, <?php echo $row->DEN_JUN; ?>, <?php echo $tt_hari_jun; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_JUL; ?>, <?php echo $row->DEN_JUL; ?>, <?php echo $tt_hari_jul; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_AGT; ?>, <?php echo $row->DEN_AGT; ?>, <?php echo $tt_hari_agt; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_SEP; ?>, <?php echo $row->DEN_SEP; ?>, <?php echo $tt_hari_sep; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_OKT; ?>, <?php echo $row->DEN_OKT; ?>, <?php echo $tt_hari_okt; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_NOV; ?>, <?php echo $row->DEN_NOV; ?>, <?php echo $tt_hari_nov; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_DES; ?>, <?php echo $row->DEN_DES; ?>, <?php echo $tt_hari_des; ?>)
             ], [
                 <?php echo $row->STD_VALUE ?>,
                 <?php echo $row->STD_VALUE ?>,
@@ -123,45 +120,33 @@
             ]);
     <?php } ?>
 
-    //add event listener to 2nd button
-    document.getElementById('download-pdf2').addEventListener("click", downloadPDF2);
-    //download pdf form hidden canvas
-    function downloadPDF2() {
-
-
-        //creates PDF from img
-        var doc = new jsPDF('potrait');
-        doc.setFontSize(12);
-        doc.text(12, 12, "Grafik Capaian Tahun");
-        // Add image chart
-        <?php
-        $no = 0;
-        foreach ($capaian->result() as $row) {
-            $no = $no + 1;
-        ?>
-            var newCanvas = document.querySelector('#<?php echo 'chart_indikator_id_' . $no; ?>');
-
-            //create image from dummy canvas
-            var newCanvasImg = newCanvas.toDataURL("image/png", 1.0);
-            doc.addImage(newCanvasImg, 'PNG', 10, 10, 150, 280);
-        <?php } ?>
-        doc.save('new-canvas.pdf');
-    }
-
-    function hitung(no, num, denum) {
-        if (no == 4) {
+    function hitung(no, num, den, hari) {
+        if (no == 2) {
+            if (num == 0 || den == 0) {
+                return 0;
+            } else {
+                return (num / den);
+            }
+        } else if (no == 4) {
             if (num == 0) {
                 return 0;
             } else {
-                return Math.round(num, 2);
+                return (num / num);
             }
-        } else {
-            if (num == 0 || denum == 0) {
+        } else if (no == 5) {
+            if (num == 0) {
                 return 0;
             } else {
-                return Math.round((num / denum) * 100, 2);
+                return (num * 60 / den);
+            }
+        } else {
+            if (num == 0 || den == 0) {
+                return 0;
+            } else {
+                return (num / den * 100);
             }
         }
+
     }
 
     function myChart(id, detail, capaian, target) {
@@ -177,7 +162,7 @@
         };
 
         var dataSecond = {
-            label: "target ",
+            label: "target / ambang batas ",
             data: target,
             lineTension: 0,
             fill: false,

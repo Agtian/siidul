@@ -819,6 +819,121 @@ function views_export_capaian($id)
 			break;
 	}
 }
+function views_export_grafik($id)
+{
+	switch ($id) {
+		case 1:
+			// Bank Darah
+			return "bankdarah/export/v_export_capaian";
+			break;
+		case 2:
+			// Rekam Medis
+			return "rekammedis/export/v_export_capaian";
+			break;
+		case 3:
+			// Rawat Inap
+			return "rawatinap/export/v_export_capaian";
+			break;
+		case 4:
+			// Cempaka
+			return "cempaka/export/v_export_grafik";
+			break;
+		case 5:
+			// ICU
+			return "icu/export/v_export_capaian";
+			break;
+		case 6:
+			// IBS
+			return "ibs/export/v_export_capaian";
+			break;
+		case 7:
+			// IGD
+			return "igd/export/v_export_capaian";
+			break;
+		case 8:
+			// Laboratorium
+			return "laboratorium/export/v_export_capaian";
+			break;
+		case 9:
+			// Farmasi
+			return "farmasi/export/v_export_capaian";
+			break;
+		case 10:
+			// Elektromedik
+			return "elektromedik/export/v_export_capaian";
+			break;
+		case 11:
+			// CSSD
+			return "cssd/export/v_export_capaian";
+			break;
+		case 12:
+			// VCT
+			return "vct/export/v_export_capaian";
+			break;
+		case 13:
+			// Pemulasan Jenazah & Ambulance
+			return "kamar_jenazah/export/v_export_capaian";
+			break;
+		case 14:
+			// Sanitasi
+			return "sanitasi/export/v_export_capaian";
+			break;
+		case 15:
+			// Rawat Jalan
+			return "rawat_jalan/export/v_export_capaian";
+			break;
+		case 16:
+			// PPI
+			return "ppi/export/v_export_capaian";
+			break;
+		case 17:
+			// Radiologi
+			return "radiologi/export/v_export_capaian";
+			break;
+		case 18:
+			// Gizi
+			return "gizi/export/v_export_capaian";
+			break;
+		case 19:
+			// Gakin
+			return "gakin/export/v_export_capaian";
+			break;
+		case 20:
+			// Kepegawaian
+			return "kepegawaian/export/v_export_capaian";
+			break;
+		case 21:
+			// Keuangan
+			return "keuangan/export/v_export_capaian";
+			break;
+		case 22:
+			// Fisioterapi
+			return "fisioterapi/export/v_export_capaian";
+			break;
+		case 23:
+			// Fisioterapi Donorojo
+			return "fisioterapi_donorojo/export/v_export_capaian";
+			break;
+		case 24:
+			// Hemodialisa
+			return "hemodialisa/export/v_export_capaian";
+			break;
+		case 10028:
+			// pdeit
+			return "pdeit/export/v_export_capaian";
+			break;
+		case 10029:
+			// pkrs
+			return "pkrs/export/v_export_capaian";
+			break;
+
+
+
+		default:
+			echo "Isi variabel tidak di temukan";
+			break;
+	}
+}
 
 
 
@@ -1509,15 +1624,15 @@ function views_grafik_capaian($id)
 	switch ($id) {
 		case 1:
 			// Bank Darah
-			return "bankdarah/v_capaian";
+			return "bankdarah/v_grafik";
 			break;
 		case 2:
 			// Rekam Medis
-			return "rekammedis/v_capaian";
+			return "rekammedis/v_grafik";
 			break;
 		case 3:
 			// Rawat Inap
-			return "rawatinap/v_capaian";
+			return "rawatinap/v_grafik";
 			break;
 		case 4:
 			// Cempaka
@@ -1525,93 +1640,92 @@ function views_grafik_capaian($id)
 			break;
 		case 5:
 			// ICU
-			return "icu/v_capaian";
+			return "icu/v_grafik";
 			break;
 		case 6:
 			// IBS
-			return "ibs/v_capaian";
+			return "ibs/v_grafik";
 			break;
 		case 7:
 			// IGD
-			return "igd/v_capaian";
+			return "igd/v_grafik";
 			break;
 		case 8:
 			// Laboratorium
-			return "laboratorium/v_capaian";
+			return "laboratorium/v_grafik";
 			break;
 		case 9:
 			// Farmasi
-			return "farmasi/v_capaian";
+			return "farmasi/v_grafik";
 			break;
 		case 10:
 			// Elektromedik
-			return "elektromedik/v_capaian";
+			return "elektromedik/v_grafik";
 			break;
 		case 11:
 			// CSSD
-			return "cssd/v_capaian";
+			return "cssd/v_grafik";
 			break;
 		case 12:
 			// VCT
-			return "vct/v_capaian";
+			return "vct/v_grafik";
 			break;
 		case 13:
 			// Pemulasan Jenazah & Ambulance
-			return "kamar_jenazah/v_capaian";
+			return "kamar_jenazah/v_grafik";
 			break;
 		case 14:
 			// Sanitasi
-			return "sanitasi/v_capaian";
+			return "sanitasi/v_grafik";
 			break;
 		case 15:
 			// Rawat Jalan
-			return "rawat_jalan/v_capaian";
+			return "rawat_jalan/v_grafik";
 			break;
 		case 16:
 			// PPI
-			return "ppi/v_capaian";
+			return "ppi/v_grafik";
 			break;
 		case 17:
 			// Radiologi
-			return "radiologi/v_capaian";
+			return "radiologi/v_grafik";
 			break;
 		case 18:
 			// Gizi
-			return "gizi/v_capaian";
+			return "gizi/v_grafik";
 			break;
 		case 19:
 			// Gakin
-			return "gakin/v_capaian";
+			return "gakin/v_grafik";
 			break;
 		case 20:
 			// Kepegawaian
-			return "kepegawaian/v_capaian";
+			return "kepegawaian/v_grafik";
 			break;
 		case 21:
 			// Keuangan
-			return "keuangan/v_capaian";
+			return "keuangan/v_grafik";
 			break;
 		case 22:
 			// Fisioterapi
-			return "fisioterapi/v_capaian";
+			return "fisioterapi/v_grafik";
 			break;
 		case 23:
 			// Fisioterapi Donorojo
-			return "fisioterapi_donorojo/v_capaian";
+			return "fisioterapi_donorojo/v_grafik";
 			break;
 		case 24:
 			// Hemodialisa
-			return "hemodialisa/v_capaian";
+			return "hemodialisa/v_grafik";
 			break;
 		case 10028:
 			// pdeit
-			return "pdeit/v_capaian";
+			return "pdeit/v_grafik";
 			break;
 		case 10029:
 			// pkrs
-			return "pkrs/v_capaian";
+			return "pkrs/v_grafik";
 			break;
-
 
 		default:
 			echo "Isi variabel tidak di temukan";

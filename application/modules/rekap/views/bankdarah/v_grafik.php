@@ -28,13 +28,10 @@
                         <div class="form-group">
                             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                 <button type="submit" class="btn btn-primary">Tampilkan</button>
-                                <!-- <a class="btn btn-primary" target="_blank" href="<?php echo base_url('rekap/export_grafik/') . $id_ruang_sub . '/' . $tahun; ?>">Export PDF</a> -->
                             </div>
                         </div>
                         <?php echo form_close(); ?>
-                        <!-- <button type="button" id="download-pdf2">
-                            Download Higher Quality PDF
-                        </button> -->
+               
                     </div>
                 </div>
             </div>
@@ -123,45 +120,14 @@
             ]);
     <?php } ?>
 
-    //add event listener to 2nd button
-    document.getElementById('download-pdf2').addEventListener("click", downloadPDF2);
-    //download pdf form hidden canvas
-    function downloadPDF2() {
-
-
-        //creates PDF from img
-        var doc = new jsPDF('potrait');
-        doc.setFontSize(12);
-        doc.text(12, 12, "Grafik Capaian Tahun");
-        // Add image chart
-        <?php
-        $no = 0;
-        foreach ($capaian->result() as $row) {
-            $no = $no + 1;
-        ?>
-            var newCanvas = document.querySelector('#<?php echo 'chart_indikator_id_' . $no; ?>');
-
-            //create image from dummy canvas
-            var newCanvasImg = newCanvas.toDataURL("image/png", 1.0);
-            doc.addImage(newCanvasImg, 'PNG', 10, 10, 150, 280);
-        <?php } ?>
-        doc.save('new-canvas.pdf');
-    }
-
     function hitung(no, num, denum) {
-        if (no == 4) {
-            if (num == 0) {
-                return 0;
-            } else {
-                return Math.round(num, 2);
-            }
+
+        if (num == 0 || denum == 0) {
+            return 0;
         } else {
-            if (num == 0 || denum == 0) {
-                return 0;
-            } else {
-                return Math.round((num / denum) * 100, 2);
-            }
+            return Math.round((num / denum) * 100, 2);
         }
+
     }
 
     function myChart(id, detail, capaian, target) {
@@ -177,7 +143,7 @@
         };
 
         var dataSecond = {
-            label: "target ",
+            label: "target / ambang batas ",
             data: target,
             lineTension: 0,
             fill: false,

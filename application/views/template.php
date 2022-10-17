@@ -37,8 +37,13 @@
     <!-- Bootstrap Colorpicker -->
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/dashboard/vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
 
-     <!-- Chart.js -->
-     <script src="<?php echo base_url() ?>assets/dashboard/vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- jQuery -->
+    <script src="<?php echo base_url() ?>assets/dashboard/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Chart.js -->
+    <script src="<?php echo base_url() ?>assets/dashboard/vendors/Chart.js/dist/Chart.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 </head>
 
 <body class="nav-md">
@@ -94,7 +99,7 @@
                                     </li>
                                     <li><a><i class="fa fa-line-chart"></i> GRAFIK CAPAIAN <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
-                                           <li><a href="<?php echo base_url('rekap/grafik'); ?>">Grafik Capaian</a></li>
+                                            <li><a href="<?php echo base_url('rekap/grafik'); ?>">Grafik Capaian</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -190,15 +195,14 @@
         </div>
     </div>
 
-    <!-- jQuery -->
-    <script src="<?php echo base_url() ?>assets/dashboard/vendors/jquery/dist/jquery.min.js"></script>
+
     <!-- Bootstrap -->
     <script src="<?php echo base_url() ?>assets/dashboard/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->
     <script src="<?php echo base_url() ?>assets/dashboard/vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
     <script src="<?php echo base_url() ?>assets/dashboard/vendors/nprogress/nprogress.js"></script>
-   
+
     <!-- jQuery Sparklines -->
     <script src="<?php echo base_url() ?>assets/dashboard/vendors/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
     <!-- Flot -->
