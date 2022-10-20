@@ -121,10 +121,19 @@
     <?php } ?>
 
     function hitung(no, num, den, hari) {
-        if (num == 0 || den == 0) {
-            return 0;
+        if (no == 1) {
+            if (num == 0 || den == 0) {
+                return 0;
+            } else {
+                return (num / den /60 );
+            }
         } else {
-            return (num / den * 100);
+
+            if (num == 0 || den == 0) {
+                return 0;
+            } else {
+                return (num / den * 100);
+            }
         }
     }
 
