@@ -17,6 +17,7 @@ class Home extends CI_Controller {
 			$id_sub_ruang 	= $this->session->userdata("user_id_ruang_sub");
 			$tahun 			= date('Y');
 
+
 			$jan 			= $this->Home_model->get_data_progres_chart_jan($id_sub_ruang, $tahun);
 			if (empty($jan->JAN)) {
 				$data['jan']	= 0;
