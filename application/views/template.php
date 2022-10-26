@@ -102,6 +102,13 @@
                                             <li><a href="<?php echo base_url('rekap/grafik'); ?>">Grafik Capaian</a></li>
                                         </ul>
                                     </li>
+                                    <li><a><i class="fa fa-book"></i> PROFIL INDIKATOR<span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="<?php echo base_url(); ?>assets/document/guide/spm.pdf" target="_blank">SPM</a></li>
+                                            <li><a href="<?php echo base_url(); ?>assets/document/guide/inm.pdf" target="_blank">INM</a></li>
+                                            <li><a href="<?php echo base_url(); ?>assets/document/guide/imprs-unit.pdf" target="_blank">IMP-RS dan IMP-UNIT</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             <?php } else { ?>
                                 <h3> GENERAL </h3>
@@ -187,7 +194,7 @@
             <!-- footer content -->
             <footer>
                 <div class="pull-right">
-                    Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                    RSUD Kelet Provinsi Jawa Tengah - 2022</a>
                 </div>
                 <div class="clearfix"></div>
             </footer>
