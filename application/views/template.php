@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/dashboard/vendors/nprogress/nprogress.css">
     <!-- bootstrap-daterangepicker -->
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/dashboard/vendors/bootstrap-daterangepicker/daterangepicker.css">
-
+    <!-- logo -->
+    <link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/images/rehatta.png" />
     <!-- Custom Theme Style -->
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/dashboard/build/css/custom.min.css">
 
@@ -56,7 +57,7 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>SI IDUL</span></a>
+                        <a href="index.html" class="site_title"><i class="fa fa-book"></i> <span>SI IDUL</span></a>
                     </div>
 
                     <div class="clearfix"></div>
