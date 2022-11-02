@@ -346,18 +346,9 @@ function views_export_bulanan($id)
 			// Hemodialisa
 			return "hemodialisa/export/v_export_bulanan";
 			break;
-		case 10028:
-			// pdeit
-			return "pdeit/export/v_export_bulanan";
-			break;
-		case 10029:
-			// pkrs
-			return "pkrs/export/v_export_bulanan";
-			break;
-
 
 		default:
-			echo "Isi variabel tidak di temukan";
+			return "general/export/v_export_bulanan";
 			break;
 	}
 }
@@ -461,17 +452,10 @@ function views_export_triwulan($id)
 			// Hemodialisa
 			return "hemodialisa/export/v_export_triwulan";
 			break;
-		case 10028:
-			// pdeit
-			return "pdeit/export/v_export_triwulan";
-			break;
-		case 10029:
-			// pkrs
-			return "pkrs/export/v_export_triwulan";
-			break;
 
 		default:
-			echo "Isi variabel tidak di temukan";
+			// general
+			return "general/export/v_export_triwulan";
 			break;
 	}
 }
@@ -575,17 +559,9 @@ function views_export_semester($id)
 			// Hemodialisa
 			return "hemodialisa/export/v_export_semester";
 			break;
-		case 10028:
-			// pdeit
-			return "pdeit/export/v_export_semester";
-			break;
-		case 10029:
-			// pkrs
-			return "pkrs/export/v_export_semester";
-			break;
 
 		default:
-			echo "Isi variabel tidak di temukan";
+			return "general/export/v_export_semester";
 			break;
 	}
 }
@@ -689,17 +665,9 @@ function views_export_tahunan($id)
 			// Hemodialisa
 			return "hemodialisa/export/v_export_tahunan";
 			break;
-		case 10028:
-			// pdeit
-			return "pdeit/export/v_export_tahunan";
-			break;
-		case 10029:
-			// pkrs
-			return "pkrs/export/v_export_tahunan";
-			break;
-
 		default:
-			echo "Isi variabel tidak di temukan";
+			// general
+			return "general/export/v_export_tahunan";
 			break;
 	}
 }
@@ -803,22 +771,14 @@ function views_export_capaian($id)
 			// Hemodialisa
 			return "hemodialisa/export/v_export_capaian";
 			break;
-		case 10028:
-			// pdeit
-			return "pdeit/export/v_export_capaian";
-			break;
-		case 10029:
-			// pkrs
-			return "pkrs/export/v_export_capaian";
-			break;
-
 
 
 		default:
-			echo "Isi variabel tidak di temukan";
+			return "general/export/v_export_capaian";
 			break;
 	}
 }
+
 function views_export_grafik($id)
 {
 	switch ($id) {
@@ -918,19 +878,8 @@ function views_export_grafik($id)
 			// Hemodialisa
 			return "hemodialisa/export/v_export_capaian";
 			break;
-		case 10028:
-			// pdeit
-			return "pdeit/export/v_export_capaian";
-			break;
-		case 10029:
-			// pkrs
-			return "pkrs/export/v_export_capaian";
-			break;
-
-
-
 		default:
-			echo "Isi variabel tidak di temukan";
+			return "general/export/v_export_capaian";
 			break;
 	}
 }
@@ -1154,17 +1103,10 @@ function views_rekap_bulanan($id)
 			// Hemodialisa
 			return "hemodialisa/v_bulanan_tabel";
 			break;
-		case 10028:
-			// pdeit
-			return "pdeit/v_bulanan_tabel";
-			break;
-		case 10029:
-			// pkrs
-			return "pkrs/v_bulanan_tabel";
-			break;
+
 
 		default:
-			echo "Isi variabel tidak di temukan";
+			return "general/v_bulanan_tabel";
 			break;
 	}
 }
@@ -1278,7 +1220,7 @@ function views_rekap_triwulan($id)
 			break;
 
 		default:
-			echo "Isi variabel tidak di temukan";
+			return "general/v_triwulan_tabel";
 			break;
 	}
 }
@@ -1382,19 +1324,9 @@ function views_rekap_semester($id)
 			// Hemodialisa
 			return "hemodialisa/v_semester_tabel";
 			break;
-		case 10028:
-			// pdeit
-			return "pdeit/v_semester_tabel";
-			break;
-		case 10029:
-			// pkrs
-			return "pkrs/v_semester_tabel";
-			break;
-
-
 
 		default:
-			echo "Isi variabel tidak di temukan";
+			return "general/v_semester_tabel";
 			break;
 	}
 }
@@ -1500,7 +1432,7 @@ function views_rekap_tahunan($id)
 			break;
 
 		default:
-			echo "Isi variabel tidak di temukan";
+			return "general/v_tahunan_tabel";
 			break;
 	}
 }
@@ -1604,18 +1536,9 @@ function views_rekap_capaian($id)
 			// Hemodialisa
 			return "hemodialisa/v_capaian";
 			break;
-		case 10028:
-			// pdeit
-			return "pdeit/v_capaian";
-			break;
-		case 10029:
-			// pkrs
-			return "pkrs/v_capaian";
-			break;
-
 
 		default:
-			echo "Isi variabel tidak di temukan";
+			return "general/v_capaian";
 			break;
 	}
 }
@@ -1728,7 +1651,7 @@ function views_grafik_capaian($id)
 			break;
 
 		default:
-			echo "Isi variabel tidak di temukan";
+			return "general/v_grafik";
 			break;
 	}
 }
@@ -1832,18 +1755,10 @@ function views_rekap_triwulan_table_dewas($id)
 			// Hemodialisa
 			return "hemodialisa/v_triwulan_tabel_dewas";
 			break;
-		case 10028:
-			// pdeit
-			return "pdeit/v_triwulan_tabel_dewas";
-			break;
-		case 10029:
-			// pkrs
-			return "pkrs/v_triwulan_tabel_dewas";
-			break;
+
 
 		default:
-			echo "Isi variabel tidak di temukan";
+			return "general/v_triwulan_tabel_dewas";
 			break;
 	}
 }
-

@@ -137,8 +137,8 @@
         var dataFirst = {
             label: detail,
             data: capaian,
-            lineTension: 0,
-            fill: false,
+            lineTension: 0.2,
+            fill: true,
             borderColor: 'rgb(75, 192, 192)'
         };
 

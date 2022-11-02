@@ -44,6 +44,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+    <!-- Helper.js -->
+    <script src="<?php echo base_url() ?>js/helper.js"></script>
+
 </head>
 
 <body class="nav-md">
