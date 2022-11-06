@@ -48,7 +48,7 @@
                     </div>
                     <div class="x_content">
                         <div class="table-responsive">
-                            <table id="" class="table table-striped table-bordered">
+                            <table id="tabel_capaian" class="table table-striped table-bordered">
                                 <thead>
                                     <tr class="bg-primary">
                                         <th rowspan="2" width="30">
@@ -208,3 +208,71 @@
         </div>
     </div>
 </div>
+
+<style>
+    /* CSS */
+    .dt-button {
+        background-color: initial;
+        background-image: linear-gradient(-180deg, #00D775, #00BD68);
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+        height: 44px;
+        line-height: 44px;
+        outline: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        pointer-events: auto;
+        position: relative;
+        text-align: center;
+        touch-action: manipulation;
+        user-select: none;
+        -webkit-user-select: none;
+        vertical-align: top;
+        white-space: nowrap;
+        z-index: 9;
+        border: none;
+    }
+
+    .dt-button:hover {
+        background: #00bd68;
+    }
+
+    .dt-button,
+    .buttons.print:focus {
+        border: none;
+    }
+</style>
+<script type="text/javascript">
+    // change name of title web
+    var currentdate = new Date();
+    var date = currentdate.getDate() + "/" +
+        (currentdate.getMonth() + 1) + "/" +
+        currentdate.getFullYear() + " @ " +
+        currentdate.getHours() + ":" +
+        currentdate.getMinutes() + ":" +
+        currentdate.getSeconds();
+    document.getElementById("titleWeb").text = "Rekap Capaian IMP-UNIT ### " + date;
+    
+
+    $('#tabel_capaian').DataTable({
+        "paging": true,
+        "lengthChange": true,
+        "searching": true,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+        dom: 'Bfrtip',
+        buttons: [
+            'excel', {
+                extend: 'pdfHtml5',
+                orientation: 'landscape',
+                pageSize: 'LEGAL'
+            }, 'print'
+        ]
+    });
+</script>
