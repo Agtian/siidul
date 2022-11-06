@@ -70,7 +70,7 @@ class Data_imp extends CI_Controller
 
                 //print_r($data);
                 //die();
-                $this->template->load('template', 'v_capaian', $data);
+                $this->template->load('template', 'v_capaian_unit', $data);
             }
         } else {
             redirect('auth');
