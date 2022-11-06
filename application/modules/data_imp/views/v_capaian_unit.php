@@ -13,7 +13,7 @@
                     </div>
                     <div class="x_content">
                         <br>
-                        <?php echo form_open('data_imp/rekap_imp_rs', 'class="form-horizontal "'); ?>
+                        <?php echo form_open('data_imp/rekap_imp_unit', 'class="form-horizontal "'); ?>
 
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12">TAHUN</label>
