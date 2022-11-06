@@ -124,6 +124,16 @@
                                             <li><a href="<?php echo base_url('data_inm/rekap_bulanan'); ?>">Rekap Bulanan</a></li>
                                         </ul>
                                     </li>
+                                    <li><a><i class="fa fa-desktop"></i> REKAP DATA IMP-RS<span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="<?php echo base_url('data_imp/rekap_imp_rs'); ?>">Rekap Capaian</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a><i class="fa fa-desktop"></i> REKAP DATA IMP-UNIT<span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="<?php echo base_url('data_imp/rekap_imp_unit'); ?>">Rekap Capaian</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a><i class="fa fa-desktop"></i> REKAP DATA <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><a href="<?php echo base_url('lap_rekap/bulanan'); ?>">Rekap Bulanan</a></li>
