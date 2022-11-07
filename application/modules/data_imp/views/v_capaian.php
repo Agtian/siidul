@@ -244,9 +244,20 @@
     .buttons.print:focus {
         border: none;
     }
+
+    input[type=search] {
+
+        flex: 1;
+        border: none;
+        padding: 24px 20px;
+        font-size: 12px;
+        color: black;
+    }
+
 </style>
 <script type="text/javascript">
     // change name of title web
+
     var currentdate = new Date();
     var date = currentdate.getDate() + "/" +
         (currentdate.getMonth() + 1) + "/" +
@@ -255,6 +266,7 @@
         currentdate.getMinutes() + ":" +
         currentdate.getSeconds();
     document.getElementById("titleWeb").text = "Rekap Capaian IMP-RS ### " + date;
+
     $('#tabel_capaian').DataTable({
         "paging": true,
         "lengthChange": true,
