@@ -986,17 +986,9 @@ function views_export_triwulan_iii_form_dewas($id)
 			// Hemodialisa
 			return "hemodialisa/export/v_export_triwulan_iii_form_dewas";
 			break;
-		case 10028:
-			// pdeit
-			return "pdeit/export/v_export_triwulan_iii_form_dewas";
-			break;
-		case 10029:
-			// pkrs
-			return "pkrs/export/v_export_triwulan_iii_form_dewas";
-			break;
-
+		
 		default:
-			echo "Isi variabel tidak di temukan";
+			return "general/export/v_export_triwulan_iii_form_dewas";
 			break;
 	}
 }
@@ -1210,14 +1202,7 @@ function views_rekap_triwulan($id)
 			// Hemodialisa
 			return "hemodialisa/v_triwulan_tabel";
 			break;
-		case 10028:
-			// pdeit
-			return "pdeit/v_triwulan_tabel";
-			break;
-		case 10029:
-			// pkrs
-			return "pkrs/v_triwulan_tabel";
-			break;
+
 
 		default:
 			return "general/v_triwulan_tabel";
