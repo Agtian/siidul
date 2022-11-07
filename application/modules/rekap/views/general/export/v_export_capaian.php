@@ -88,101 +88,101 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($row->NUM_MAR == 0 || $row->NUM_MAR == 0) 
+                                        if ($row->NUM_MAR == 0 || $row->DEN_MAR == 0) 
                                         {
                                             echo "0 %";
                                         } else {
-                                            echo round(($row->NUM_MAR / $row->NUM_MAR) * 100, 2).' %';
+                                            echo round(($row->NUM_MAR / $row->DEN_MAR) * 100, 2).' %';
                                         }
                                     ?>
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($row->NUM_APR == 0 || $row->NUM_APR == 0) 
+                                        if ($row->NUM_APR == 0 || $row->DEN_APR == 0) 
                                         {
                                             echo "0 %";
                                         } else {
-                                            echo round(($row->NUM_APR / $row->NUM_APR) * 100, 2).' %';
+                                            echo round(($row->NUM_APR / $row->DEN_APR) * 100, 2).' %';
                                         }
                                     ?>
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($row->NUM_MEI == 0 || $row->NUM_MEI == 0) 
+                                        if ($row->NUM_MEI == 0 || $row->DEN_MEI == 0) 
                                         {
                                             echo "0 %";
                                         } else {
-                                            echo round(($row->NUM_MEI / $row->NUM_MEI) * 100, 2).' %';
+                                            echo round(($row->NUM_MEI / $row->DEN_MEI) * 100, 2).' %';
                                         }
                                     ?>
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($row->NUM_JUN == 0 || $row->NUM_JUN == 0) 
+                                        if ($row->NUM_JUN == 0 || $row->DEN_JUN == 0) 
                                         {
                                             echo "0 %";
                                         } else {
-                                            echo round(($row->NUM_JUN / $row->NUM_JUN) * 100, 2).' %';
+                                            echo round(($row->NUM_JUN / $row->DEN_JUN) * 100, 2).' %';
                                         }
                                     ?>
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($row->NUM_JUL == 0 || $row->NUM_JUL == 0) 
+                                        if ($row->NUM_JUL == 0 || $row->DEN_JUL == 0) 
                                         {
                                             echo "0 %";
                                         } else {
-                                            echo round(($row->NUM_JUL / $row->NUM_JUL) * 100, 2).' %';
+                                            echo round(($row->NUM_JUL / $row->DEN_JUL) * 100, 2).' %';
                                         }
                                     ?>
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($row->NUM_AGT == 0 || $row->NUM_AGT == 0) 
+                                        if ($row->NUM_AGT == 0 || $row->DEN_AGT == 0) 
                                         {
                                             echo "0 %";
                                         } else {
-                                            echo round(($row->NUM_AGT / $row->NUM_AGT) * 100, 2).' %';
+                                            echo round(($row->NUM_AGT / $row->DEN_AGT) * 100, 2).' %';
                                         }
                                     ?>
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($row->NUM_SEP == 0 || $row->NUM_SEP == 0) 
+                                        if ($row->NUM_SEP == 0 || $row->DEN_SEP == 0) 
                                         {
                                             echo "0 %";
                                         } else {
-                                            echo round(($row->NUM_SEP / $row->NUM_SEP) * 100, 2).' %';
+                                            echo round(($row->NUM_SEP / $row->DEN_SEP) * 100, 2).' %';
                                         }
                                     ?>
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($row->NUM_OKT == 0 || $row->NUM_OKT == 0) 
+                                        if ($row->NUM_OKT == 0 || $row->DEN_OKT == 0) 
                                         {
                                             echo "0 %";
                                         } else {
-                                            echo round(($row->NUM_OKT / $row->NUM_OKT) * 100, 2).' %';
+                                            echo round(($row->NUM_OKT / $row->DEN_OKT) * 100, 2).' %';
                                         }
                                     ?> 
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($row->NUM_NOV == 0 || $row->NUM_NOV == 0) 
+                                        if ($row->NUM_NOV == 0 || $row->DEN_NOV == 0) 
                                         {
                                             echo "0 %";
                                         } else {
-                                            echo round(($row->NUM_NOV / $row->NUM_NOV) * 100, 2).' %';
+                                            echo round(($row->NUM_NOV / $row->DEN_NOV) * 100, 2).' %';
                                         }
                                     ?>
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($row->NUM_DES == 0 || $row->NUM_DES == 0) 
+                                        if ($row->NUM_DES == 0 || $row->DEN_DES == 0) 
                                         {
                                             echo "0 %";
                                         } else {
-                                            echo round(($row->NUM_DES / $row->NUM_DES) * 100, 2).' %';
+                                            echo round(($row->NUM_DES / $row->DEN_DES) * 100, 2).' %';
                                         }
                                     ?>
                                 </td>
