@@ -9,7 +9,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-body">
                         <div class="x_title">
-                            <h4> Rekap IMP RS </h4>
+                            <h4> Rekap IMP Unit </h4>
                             <hr>
                             <?php echo form_open('data_imp/rekap_imp_unit', 'class="form-horizontal "'); ?>
 

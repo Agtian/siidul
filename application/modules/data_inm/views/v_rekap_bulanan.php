@@ -64,67 +64,79 @@
                         <h2>Tabel Data : <?php echo formatNamaBulan($bulan) . ' ' . $tahun; ?></h2>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="x_content">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered">
-                                <thead>
-                                    <tr class="bg-primary">
-                                        <th rowspan="2" width="30">
-                                            <center>NO</center>
-                                        </th>
-                                        <th rowspan="2">
-                                            <center>INDIKATOR</center>
-                                        </th>
-                                        <th rowspan="2">
-                                            <center>TOTAL NUMERATOR</center>
-                                        </th>
-                                        <th rowspan="2">
-                                            <center>TOTAL DENUMERATOR</center>
-                                        </th>
-                                        <th rowspan="2">
-                                            <center>PERSEN</center>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    $no = 1;
-                                    foreach ($bulanan->result() as $value) {
-                                    ?>
-                                        <tr>
-                                            <td> <?= $no++; ?> </td>
-                                            <td> <?= $value->DETAIL_INDIKATOR; ?> </td>
-                                            <td align="center">
+             
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-body">
+                                <div class="x_title">
+                                    <h4> Tabel Kelengkapan Data </h4>
+                                </div>
+                                <div class="x_content">
+                                    <div class="table-responsive">
+                                        <table id="datatable-buttons" class="table table-bordered" style="width:100%">
+                                            <thead>
+                                                <tr class="bg-primary">
+                                                <tr class="bg-primary">
+                                                    <th width="30">
+                                                        <center>NO</center>
+                                                    </th>
+                                                    <th>
+                                                        <center>INDIKATOR</center>
+                                                    </th>
+                                                    <th>
+                                                        <center>TOTAL NUMERATOR</center>
+                                                    </th>
+                                                    <th>
+                                                        <center>TOTAL DENUMERATOR</center>
+                                                    </th>
+                                                    <th>
+                                                        <center>PERSEN</center>
+                                                    </th>
+                                                </tr>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
                                                 <?php
-                                                if ($value->NUM_BULAN == 0) {
-                                                    echo '0';
-                                                } else {
-                                                    echo $value->NUM_BULAN;
-                                                }
+                                                $no = 1;
+                                                foreach ($bulanan->result() as $value) {
                                                 ?>
-                                            </td>
-                                            <td align="center">
-                                                <?php
-                                                if ($value->DEN_BULAN == 0) {
-                                                    echo '0';
-                                                } else {
-                                                    echo $value->DEN_BULAN;
-                                                }
-                                                ?>
-                                            </td>
-                                            <td align="center">
-                                                <?php
-                                                if ($value->NUM_BULAN == 0 || $value->DEN_BULAN == 0) {
-                                                    echo '0 %';
-                                                } else {
-                                                    echo round(($value->NUM_BULAN / $value->DEN_BULAN) * 100) . '%';
-                                                }
-                                                ?>
-                                            </td>
-                                        </tr>
-                                    <?php } ?>
-                                </tbody>
-                            </table>
+                                                    <tr>
+                                                        <td> <?= $no++; ?> </td>
+                                                        <td> <?= $value->DETAIL_INDIKATOR; ?> </td>
+                                                        <td align="center">
+                                                            <?php
+                                                            if ($value->NUM_BULAN == 0) {
+                                                                echo '0';
+                                                            } else {
+                                                                echo $value->NUM_BULAN;
+                                                            }
+                                                            ?>
+                                                        </td>
+                                                        <td align="center">
+                                                            <?php
+                                                            if ($value->DEN_BULAN == 0) {
+                                                                echo '0';
+                                                            } else {
+                                                                echo $value->DEN_BULAN;
+                                                            }
+                                                            ?>
+                                                        </td>
+                                                        <td align="center">
+                                                            <?php
+                                                            if ($value->NUM_BULAN == 0 || $value->DEN_BULAN == 0) {
+                                                                echo '0 %';
+                                                            } else {
+                                                                echo round(($value->NUM_BULAN / $value->DEN_BULAN) * 100) . '%';
+                                                            }
+                                                            ?>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -132,3 +144,64 @@
         </div>
     </div>
 </div>
+
+<style>
+    /* CSS */
+    .dt-button {
+        background-color: initial;
+        background-image: linear-gradient(-180deg, #00D775, #00BD68);
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+        height: 44px;
+        line-height: 44px;
+        outline: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        pointer-events: auto;
+        position: relative;
+        text-align: center;
+        touch-action: manipulation;
+        user-select: none;
+        -webkit-user-select: none;
+        vertical-align: top;
+        white-space: nowrap;
+        z-index: 9;
+        border: none;
+    }
+
+    .dt-button:hover {
+        background: #00bd68;
+    }
+
+    .dt-button,
+    .buttons.print:focus {
+        border: none;
+    }
+
+    input[type=search] {
+
+        flex: 1;
+        border: none;
+        padding: 24px 20px;
+        font-size: 12px;
+        color: black;
+    }
+
+</style>
+<script type="text/javascript">
+    // change name of title web
+    var currentdate = new Date();
+    var date = currentdate.getDate() + "/" +
+        (currentdate.getMonth() + 1) + "/" +
+        currentdate.getFullYear() + " @ " +
+        currentdate.getHours() + ":" +
+        currentdate.getMinutes() + ":" +
+        currentdate.getSeconds();
+    document.getElementById("titleWeb").text = "Rekap INM Bulanan ### " + "<?php echo formatNamaBulan($bulan) . '-' . $tahun; ?>" +":"+ date;
+
+
+</script>
