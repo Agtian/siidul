@@ -85,44 +85,44 @@
                                         <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2)
-                                                {
-                                                    if ($row->NUM_JAN == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        $average = $row->NUM_JAN / $tt_hari_jan;
-                                                        echo round($average, 4);
-                                                    }
-                                                } else {
-                                                    if ($row->TOTAL_NUM == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        echo $row->NUM_JAN;
-                                                    }
-                                                }
+                                               if ($no == 2)
+                                               {
+                                                   if ($row->NUM_JAN == 0) 
+                                                   {
+                                                       echo "0";
+                                                   } else {
+                                                       $average = $row->NUM_JAN / $tt_hari_jan;
+                                                       echo gmdate('H:i:s', floor($average * 1440));
+                                                   }
+                                               } else {
+                                                   if ($row->TOTAL_NUM == 0) 
+                                                   {
+                                                       echo "0";
+                                                   } else {
+                                                       echo $row->NUM_JAN;
+                                                   }
+                                               }
                                             ?> 
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2)
-                                                {
-                                                    if ($row->NUM_FEB == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        $average = $row->NUM_FEB / $tt_hari_feb;
-                                                        echo round($average, 4);
-                                                    }
-                                                } else {
-                                                    if ($row->TOTAL_NUM == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        echo $row->NUM_FEB;
-                                                    }
-                                                }
+                                                 if ($no == 2)
+                                                 {
+                                                     if ($row->NUM_FEB == 0) 
+                                                     {
+                                                         echo "0";
+                                                     } else {
+                                                         $average = $row->NUM_FEB / $tt_hari_feb;
+                                                         echo gmdate('H:i:s', floor($average * 1440));
+                                                     }
+                                                 } else {
+                                                     if ($row->TOTAL_NUM == 0) 
+                                                     {
+                                                         echo "0";
+                                                     } else {
+                                                         echo $row->NUM_FEB;
+                                                     }
+                                                 }
                                             ?>
                                         </td>
                                         <td align="center"> 
@@ -134,7 +134,7 @@
                                                         echo "0";
                                                     } else {
                                                         $average = $row->NUM_MAR / $tt_hari_mar;
-                                                        echo round($average, 4);
+                                                        echo gmdate('H:i:s', floor($average * 1440));
                                                     }
                                                 } else {
                                                     if ($row->TOTAL_NUM == 0) 
@@ -156,7 +156,7 @@
                                                             echo "0";
                                                         } else {
                                                             $average = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar);
-                                                            echo round($average, 2);
+                                                            echo gmdate('H:i:s', floor($average * 1440));
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_NUM == 0) 
@@ -172,15 +172,14 @@
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 2) 
-                                                    {
+                                                     if ($no == 2) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "00:00:00";
                                                         } else {
                                                             $tt_average = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar);
                                                             $time       = $tt_average / $row->TOTAL_DEN;
-                                                            echo gmdate('H:i:s', floor($time * 86400));
+                                                            echo gmdate('H:i:s', floor($time * 1440));
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
@@ -240,111 +239,111 @@
                                         <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2)
-                                                {
-                                                    if ($row->NUM_APR == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        $average = $row->NUM_APR / $tt_hari_apr;
-                                                        echo round($average, 4);
-                                                    }
-                                                } else {
-                                                    if ($row->TOTAL_NUM == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        echo $row->NUM_APR;
-                                                    }
-                                                }
+                                                 if ($no == 2)
+                                                 {
+                                                     if ($row->NUM_APR == 0) 
+                                                     {
+                                                         echo "0";
+                                                     } else {
+                                                         $average = $row->NUM_APR / $tt_hari_apr;
+                                                         echo gmdate('H:i:s', floor($average * 1440));
+                                                     }
+                                                 } else {
+                                                     if ($row->TOTAL_NUM == 0) 
+                                                     {
+                                                         echo "0";
+                                                     } else {
+                                                         echo $row->NUM_APR;
+                                                     }
+                                                 }
                                             ?> 
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2)
-                                                {
-                                                    if ($row->NUM_MEI == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        $average = $row->NUM_MEI / $tt_hari_mei;
-                                                        echo round($average, 4);
-                                                    }
-                                                } else {
-                                                    if ($row->TOTAL_NUM == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        echo $row->NUM_MEI;
-                                                    }
-                                                }
+                                               if ($no == 2)
+                                               {
+                                                   if ($row->NUM_MEI == 0) 
+                                                   {
+                                                       echo "0";
+                                                   } else {
+                                                       $average = $row->NUM_MEI / $tt_hari_mei;
+                                                       echo gmdate('H:i:s', floor($average * 1440));
+                                                   }
+                                               } else {
+                                                   if ($row->TOTAL_NUM == 0) 
+                                                   {
+                                                       echo "0";
+                                                   } else {
+                                                       echo $row->NUM_MEI;
+                                                   }
+                                               }
                                             ?>
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2)
-                                                {
-                                                    if ($row->NUM_JUN == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        $average = $row->NUM_JUN / $tt_hari_jun;
-                                                        echo round($average, 4);
-                                                    }
-                                                } else {
-                                                    if ($row->TOTAL_NUM == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        echo $row->NUM_JUN;
-                                                    }
-                                                }
+                                                 if ($no == 2)
+                                                 {
+                                                     if ($row->NUM_JUN == 0) 
+                                                     {
+                                                         echo "0";
+                                                     } else {
+                                                         $average = $row->NUM_JUN / $tt_hari_jun;
+                                                         echo gmdate('H:i:s', floor($average * 1440));
+                                                     }
+                                                 } else {
+                                                     if ($row->TOTAL_NUM == 0) 
+                                                     {
+                                                         echo "0";
+                                                     } else {
+                                                         echo $row->NUM_JUN;
+                                                     }
+                                                 }
                                             ?>
                                         </td>
                                         <td align="center">
                                             <b> 
                                                 <?php
-                                                    if ($no == 2)
-                                                    {
-                                                        if ($row->TOTAL_NUM == 0) 
-                                                        {
-                                                            echo "0";
-                                                        } else {
-                                                            $average = ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun);
-                                                            echo round($average, 2);
-                                                        }
-                                                    } else {
-                                                        if ($row->TOTAL_NUM == 0) 
-                                                        {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_NUM;
-                                                        }
-                                                    }
+                                                     if ($no == 2)
+                                                     {
+                                                         if ($row->TOTAL_NUM == 0) 
+                                                         {
+                                                             echo "0";
+                                                         } else {
+                                                             $average = ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun);
+                                                             echo gmdate('H:i:s', floor($average * 1440));
+                                                         }
+                                                     } else {
+                                                         if ($row->TOTAL_NUM == 0) 
+                                                         {
+                                                             echo "0";
+                                                         } else {
+                                                             echo $row->TOTAL_NUM;
+                                                         }
+                                                     }
                                                 ?> 
                                             </b>
                                         </td>
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 3)
-                                                    {
-                                                        if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                                        {
-                                                            echo "00:00:00";
-                                                        } else {
-                                                            $tt_average = ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun);
-                                                            $time       = $tt_average / $row->TOTAL_DEN;
-                                                            echo gmdate('H:i:s', floor($time * 86400));
-                                                        }
-                                                    } else {
-                                                        if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                                        {
-                                                            echo "0 %";
-                                                        } else {
-                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 100, 2)." %";
-                                                        }
-                                                    }
+                                                  if ($no == 3)
+                                                  {
+                                                      if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
+                                                      {
+                                                          echo "00:00:00";
+                                                      } else {
+                                                          $tt_average = ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun);
+                                                          $time       = $tt_average / $row->TOTAL_DEN;
+                                                          echo gmdate('H:i:s', floor($time * 1440));
+                                                      }
+                                                  } else {
+                                                      if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
+                                                      {
+                                                          echo "0 %";
+                                                      } else {
+                                                          echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 100, 2)." %";
+                                                      }
+                                                  }
                                                 ?> 
                                             </b>
                                         </td>
@@ -394,7 +393,7 @@
                                         <td rowspan="2"><?php echo $row->DETAIL_INDIKATOR; ?></td>
                                         <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
                                         <td align="center"> 
-                                            <?php
+                                        <?php
                                                 if ($no == 2)
                                                 {
                                                     if ($row->NUM_JUL == 0) 
@@ -402,7 +401,7 @@
                                                         echo "0";
                                                     } else {
                                                         $average = $row->NUM_JUL / $tt_hari_jul;
-                                                        echo round($average, 4);
+                                                        echo gmdate('H:i:s', floor($average * 1440));
                                                     }
                                                 } else {
                                                     if ($row->TOTAL_NUM == 0) 
@@ -416,23 +415,23 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2)
-                                                {
-                                                    if ($row->NUM_AGT == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        $average = $row->NUM_AGT / $tt_hari_agt;
-                                                        echo round($average, 4);
-                                                    }
-                                                } else {
-                                                    if ($row->TOTAL_NUM == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        echo $row->NUM_AGT;
-                                                    }
-                                                }
+                                              if ($no == 2)
+                                              {
+                                                  if ($row->NUM_AGT == 0) 
+                                                  {
+                                                      echo "0";
+                                                  } else {
+                                                      $average = $row->NUM_AGT / $tt_hari_agt;
+                                                      echo gmdate('H:i:s', floor($average * 1440));
+                                                  }
+                                              } else {
+                                                  if ($row->TOTAL_NUM == 0) 
+                                                  {
+                                                      echo "0";
+                                                  } else {
+                                                      echo $row->NUM_AGT;
+                                                  }
+                                              }
                                             ?>
                                         </td>
                                         <td align="center"> 
@@ -444,7 +443,7 @@
                                                         echo "0";
                                                     } else {
                                                         $average = $row->NUM_SEP / $tt_hari_sep;
-                                                        echo round($average, 4);
+                                                        echo gmdate('H:i:s', floor($average * 1440));
                                                     }
                                                 } else {
                                                     if ($row->TOTAL_NUM == 0) 
@@ -458,7 +457,7 @@
                                         </td>
                                         <td align="center">
                                             <b> 
-                                                <?php
+                                            <?php
                                                     if ($no == 2)
                                                     {
                                                         if ($row->TOTAL_NUM == 0) 
@@ -466,7 +465,7 @@
                                                             echo "0";
                                                         } else {
                                                             $average = ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep);
-                                                            echo round($average, 2);
+                                                            echo gmdate('H:i:s', floor($average * 1440));
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_NUM == 0) 
@@ -482,24 +481,24 @@
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 2)
-                                                    {
-                                                        if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                                        {
-                                                            echo "00:00:00";
-                                                        } else {
-                                                            $tt_average = ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep);
-                                                            $time       = $tt_average / $row->TOTAL_DEN;
-                                                            echo gmdate('H:i:s', floor($time * 86400));
-                                                        }
-                                                    } else {
-                                                        if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                                        {
-                                                            echo "0 %";
-                                                        } else {
-                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 100, 2)." %";
-                                                        }
-                                                    }
+                                                  if ($no == 2)
+                                                  {
+                                                      if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
+                                                      {
+                                                          echo "00:00:00";
+                                                      } else {
+                                                          $tt_average = ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep);
+                                                          $time       = $tt_average / $row->TOTAL_DEN;
+                                                          echo gmdate('H:i:s', floor($time * 1440));
+                                                      }
+                                                  } else {
+                                                      if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
+                                                      {
+                                                          echo "0 %";
+                                                      } else {
+                                                          echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 100, 2)." %";
+                                                      }
+                                                  }
                                                 ?> 
                                             </b>
                                         </td>
@@ -550,111 +549,111 @@
                                         <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2)
-                                                {
-                                                    if ($row->NUM_OKT == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        $average = $row->NUM_OKT / $tt_hari_okt;
-                                                        echo round($average, 4);
-                                                    }
-                                                } else {
-                                                    if ($row->TOTAL_NUM == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        echo $row->NUM_OKT;
-                                                    }
-                                                }
+                                               if ($no == 2)
+                                               {
+                                                   if ($row->NUM_OKT == 0) 
+                                                   {
+                                                       echo "0";
+                                                   } else {
+                                                       $average = $row->NUM_OKT / $tt_hari_okt;
+                                                       echo gmdate('H:i:s', floor($average * 1440));
+                                                   }
+                                               } else {
+                                                   if ($row->TOTAL_NUM == 0) 
+                                                   {
+                                                       echo "0";
+                                                   } else {
+                                                       echo $row->NUM_OKT;
+                                                   }
+                                               }
                                             ?> 
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2)
-                                                {
-                                                    if ($row->NUM_NOV == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        $average = $row->NUM_NOV / $tt_hari_nov;
-                                                        echo round($average, 4);
-                                                    }
-                                                } else {
-                                                    if ($row->TOTAL_NUM == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        echo $row->NUM_NOV;
-                                                    }
-                                                }
+                                               if ($no == 2)
+                                               {
+                                                   if ($row->NUM_NOV == 0) 
+                                                   {
+                                                       echo "0";
+                                                   } else {
+                                                       $average = $row->NUM_NOV / $tt_hari_nov;
+                                                       echo gmdate('H:i:s', floor($average * 1440));
+                                                   }
+                                               } else {
+                                                   if ($row->TOTAL_NUM == 0) 
+                                                   {
+                                                       echo "0";
+                                                   } else {
+                                                       echo $row->NUM_NOV;
+                                                   }
+                                               }
                                             ?>
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2)
-                                                {
-                                                    if ($row->NUM_DES == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        $average = $row->NUM_DES / $tt_hari_des;
-                                                        echo round($average, 4);
-                                                    }
-                                                } else {
-                                                    if ($row->TOTAL_NUM == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        echo $row->NUM_DES;
-                                                    }
-                                                }
+                                                 if ($no == 2)
+                                                 {
+                                                     if ($row->NUM_DES == 0) 
+                                                     {
+                                                         echo "0";
+                                                     } else {
+                                                         $average = $row->NUM_DES / $tt_hari_des;
+                                                         echo gmdate('H:i:s', floor($average * 1440));
+                                                     }
+                                                 } else {
+                                                     if ($row->TOTAL_NUM == 0) 
+                                                     {
+                                                         echo "0";
+                                                     } else {
+                                                         echo $row->NUM_DES;
+                                                     }
+                                                 }
                                             ?>
                                         </td>
                                         <td align="center">
                                             <b> 
                                                 <?php
-                                                    if ($no == 2)
-                                                    {
-                                                        if ($row->TOTAL_NUM == 0) 
-                                                        {
-                                                            echo "0";
-                                                        } else {
-                                                            $average = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov) + ($row->NUM_DES / $tt_hari_des);
-                                                            echo round($average, 2);
-                                                        }
-                                                    } else {
-                                                        if ($row->TOTAL_NUM == 0) 
-                                                        {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_NUM;
-                                                        }
-                                                    }
+                                                   if ($no == 2)
+                                                   {
+                                                       if ($row->TOTAL_NUM == 0) 
+                                                       {
+                                                           echo "0";
+                                                       } else {
+                                                           $average = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov) + ($row->NUM_DES / $tt_hari_des);
+                                                           echo gmdate('H:i:s', floor($average * 1440));
+                                                       }
+                                                   } else {
+                                                       if ($row->TOTAL_NUM == 0) 
+                                                       {
+                                                           echo "0";
+                                                       } else {
+                                                           echo $row->TOTAL_NUM;
+                                                       }
+                                                   }
                                                 ?> 
                                             </b>
                                         </td>
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 2)
-                                                    {
-                                                        if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                                        {
-                                                            echo "00:00:00";
-                                                        } else {
-                                                            $tt_average = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov) + ($row->NUM_DES / $tt_hari_des);
-                                                            $time       = $tt_average / $row->TOTAL_DEN;
-                                                            echo gmdate('H:i:s', floor($time * 86400));
-                                                        }
-                                                    } else {
-                                                        if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                                        {
-                                                            echo "0 %";
-                                                        } else {
-                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 100, 2)." %";
-                                                        }
-                                                    }
+                                                   if ($no == 2)
+                                                   {
+                                                       if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
+                                                       {
+                                                           echo "00:00:00";
+                                                       } else {
+                                                           $tt_average = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov) + ($row->NUM_DES / $tt_hari_des);
+                                                           $time       = $tt_average / $row->TOTAL_DEN;
+                                                           echo gmdate('H:i:s', floor($time * 1440));
+                                                       }
+                                                   } else {
+                                                       if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
+                                                       {
+                                                           echo "0 %";
+                                                       } else {
+                                                           echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 100, 2)." %";
+                                                       }
+                                                   }
                                                 ?> 
                                             </b>
                                         </td>
