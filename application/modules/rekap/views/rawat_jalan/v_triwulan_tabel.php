@@ -109,12 +109,12 @@
                                                         } else {
                                                             echo ($row->TOTAL_NUM / 3) / $row->TOTAL_DEN;
                                                         }
-                                                    } else if ($no == 5) {
+                                                    } else if ($no == 4) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "00:00:00";
                                                         } else {
-                                                            $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
+                                                            $persen = $row->TOTAL_NUM / 3 / $row->TOTAL_DEN;
                                                             echo gmdate('H:i:s', floor($persen * 86400));
                                                         }
                                                     } else {
