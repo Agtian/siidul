@@ -84,9 +84,9 @@
                                             <?php
                                                 if ($row->NUM_JAN == 0 || $row->DEN_JAN == 0) 
                                                 {
-                                                    echo "0 %";
+                                                    echo "0  %";
                                                 } else {
-                                                    echo round($row->NUM_JAN / $row->DEN_JAN, 2);
+                                                    echo substr($row->NUM_JAN / $row->DEN_JAN * 100, 0, 5)." %";
                                                 }
                                             ?>
                                         </td>
@@ -96,77 +96,77 @@
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_FEB / $row->DEN_FEB, 2);
+                                                    echo substr($row->NUM_FEB / $row->DEN_FEB * 100, 0, 5)." %";
                                                 }
                                             ?>
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($row->NUM_MAR == 0 || $row->NUM_MAR == 0) 
+                                                if ($row->NUM_MAR == 0 || $row->DEN_MAR == 0) 
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_MAR / $row->NUM_MAR, 2);
+                                                    echo substr($row->NUM_MAR / $row->DEN_MAR * 100, 0, 5)." %";
                                                 }
                                             ?>
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($row->NUM_APR == 0 || $row->NUM_APR == 0) 
+                                                if ($row->NUM_APR == 0 || $row->DEN_APR == 0) 
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_APR / $row->NUM_APR, 2);
+                                                    echo substr($row->NUM_APR / $row->DEN_APR * 100, 0, 5)." %";
                                                 }
                                             ?>
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($row->NUM_MEI == 0 || $row->NUM_MEI == 0) 
+                                                if ($row->NUM_MEI == 0 || $row->DEN_MEI == 0) 
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_MEI / $row->NUM_MEI, 2);
+                                                    echo substr($row->NUM_MEI / $row->DEN_MEI * 100, 0, 5)." %";
                                                 }
                                             ?>
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($row->NUM_JUN == 0 || $row->NUM_JUN == 0) 
+                                                if ($row->NUM_JUN == 0 || $row->DEN_JUN == 0) 
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_JUN / $row->NUM_JUN, 2);
+                                                    echo substr($row->NUM_JUN / $row->DEN_JUN * 100, 0, 5)." %";
                                                 }
                                             ?>
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($row->NUM_JUL == 0 || $row->NUM_JUL == 0) 
+                                                if ($row->NUM_JUL == 0 || $row->DEN_JUL == 0) 
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_JUL / $row->NUM_JUL, 2);
+                                                    echo substr($row->NUM_JUL / $row->DEN_JUL * 100, 0, 5)." %";
                                                 }
                                             ?>
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($row->NUM_AGT == 0 || $row->NUM_AGT == 0) 
+                                                if ($row->NUM_AGT == 0 || $row->DEN_AGT == 0) 
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_AGT / $row->NUM_AGT, 2);
+                                                    echo substr($row->NUM_AGT / $row->DEN_AGT * 100, 0, 5)." %";
                                                 }
                                             ?>
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($row->NUM_SEP == 0 || $row->NUM_SEP == 0) 
+                                                if ($row->NUM_SEP == 0 || $row->DEN_SEP == 0) 
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_SEP / $row->NUM_SEP, 2);
+                                                    echo substr($row->NUM_SEP / $row->DEN_SEP * 100, 0, 5)." %";
                                                 }
                                             ?>
                                         </td>
@@ -176,27 +176,27 @@
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_OKT / $row->NUM_OKT, 2);
+                                                    echo substr($row->NUM_OKT / $row->DEN_OKT * 100, 0, 5)." %";
                                                 }
                                             ?> 
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($row->NUM_NOV == 0 || $row->NUM_NOV == 0) 
+                                                if ($row->NUM_NOV == 0 || $row->DEN_NOV == 0) 
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_NOV / $row->NUM_NOV, 2);
+                                                    echo substr($row->NUM_NOV / $row->DEN_NOV * 100, 0, 5)." %";
                                                 }
                                             ?>
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($row->NUM_DES == 0 || $row->NUM_DES == 0) 
+                                                if ($row->NUM_DES == 0 || $row->DEN_DES == 0) 
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_DES / $row->NUM_DES, 2);
+                                                    echo substr($row->NUM_DES / $row->DEN_DES * 100, 0, 5)." %";
                                                 }
                                             ?>
                                         </td>
