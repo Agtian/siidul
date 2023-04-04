@@ -142,7 +142,7 @@
                                                         {
                                                             echo "00:00:00";
                                                         } else {
-                                                            $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
+                                                            $persen = $row->TOTAL_NUM/12 / $row->TOTAL_DEN;
                                                             echo gmdate('H:i:s', floor($persen * 86400));
                                                         }
                                                     } else {
