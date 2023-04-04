@@ -53,7 +53,7 @@
 
                     <a class="hiddenanchor" id="signup"></a>
                     <div class="x_title">
-                        <h4>Tabel Data Semester I : <?php echo $tahun; ?></h4>
+                        <h2>Tabel Data Semester I : <?php echo $tahun; ?></h2>
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
@@ -62,11 +62,11 @@
                                 <thead>
                                     <tr class="bg-primary">
                                         <th rowspan="2" width="30"><center>NO</center></th>
-                                        <th rowspan="2" width="150"><center>INDIKATOR</center></th>
-                                        <th rowspan="2" width="190"><center>SUB INDIKATOR</center></th>
+                                        <th rowspan="2"><center>INDIKATOR</center></th>
+                                        <th rowspan="2"><center>SUB INDIKATOR</center></th>
                                         <th colspan="6"><center>BULAN</center></th>
-                                        <th rowspan="2" width="60"><center>TOTAL</center></th>
-                                        <th rowspan="2" width="60"><center>PERSEN</center></th>
+                                        <th rowspan="2"><center>TOTAL</center></th>
+                                        <th rowspan="2"><center>PERSEN</center></th>
                                     </tr>
                                     <tr class="bg-primary">
                                         <th align="center">JAN</th>
@@ -94,47 +94,26 @@
                                         <td align="center"> <?php echo $row->NUM_JUN; ?> </td>
                                         <td align="center">
                                             <b> 
-                                                <?php
-                                                    if ($no == 3 || $no == 4 || $no == 7)
+                                                <?php 
+                                                    if ($row->TOTAL_NUM == 0) 
                                                     {
-                                                        if ($row->TOTAL_NUM == 0) 
-                                                        {
-                                                            echo "0";
-                                                        } else {
-                                                            $average = $row->TOTAL_NUM / 6;
-                                                            echo round($average, 2);
-                                                        }
+                                                        echo "0";
                                                     } else {
-                                                        if ($row->TOTAL_NUM == 0) 
-                                                        {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_NUM;
-                                                        }
+                                                        echo $row->TOTAL_NUM;
                                                     }
-                                                ?>
+                                                ?> 
                                             </b>
                                         </td>
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 3 || $no == 4 || $no == 7)
+                                                    if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                     {
-                                                        if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                                        {
-                                                            echo "0 %";
-                                                        } else {
-                                                            $average    = $row->TOTAL_NUM / 6;
-                                                            $time       = $average / $row->TOTAL_DEN;
-                                                            echo round($time, 2)." %";
-                                                        }
+                                                        echo "0";
+                                                        echo " %";
                                                     } else {
-                                                        if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                                        {
-                                                            echo "0 %";
-                                                        } else {
-                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 100, 2)." %";
-                                                        }
+                                                        echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * 100;
+                                                        echo " %";
                                                     }
                                                 ?> 
                                             </b>
@@ -148,29 +127,7 @@
                                         <td align="center"> <?php echo $row->DEN_APR; ?> </td>
                                         <td align="center"> <?php echo $row->DEN_MEI; ?> </td>
                                         <td align="center"> <?php echo $row->DEN_JUN; ?> </td>
-                                        <td align="center">
-                                            <b> 
-                                                <?php
-                                                    if ($no == 3 || $no == 4 || $no == 7)
-                                                    {
-                                                        if ($row->TOTAL_DEN == 0) 
-                                                        {
-                                                            echo "0";
-                                                        } else {
-                                                            $average = $row->TOTAL_DEN / 6;
-                                                            echo round($average, 2);
-                                                        }
-                                                    } else {
-                                                        if ($row->TOTAL_DEN == 0) 
-                                                        {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_DEN;
-                                                        }
-                                                    }
-                                                ?> 
-                                            </b>
-                                        </td>
+                                        <td align="center"><b> <?php echo $row->TOTAL_DEN; ?> </b></td>
                                     </tr>
                                     <?php } ?>
                                 </tbody>
@@ -179,7 +136,7 @@
                     </div>
 
                     <div class="x_title">
-                        <h4>Tabel Data Semester II : <?php echo $tahun; ?></h4>
+                        <h2>Tabel Data Semester II : <?php echo $tahun; ?></h2>
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
@@ -188,11 +145,11 @@
                                 <thead>
                                     <tr class="bg-primary">
                                         <th rowspan="2" width="30"><center>NO</center></th>
-                                        <th rowspan="2" width="150"><center>INDIKATOR</center></th>
-                                        <th rowspan="2" width="190"><center>SUB INDIKATOR</center></th>
+                                        <th rowspan="2"><center>INDIKATOR</center></th>
+                                        <th rowspan="2"><center>SUB INDIKATOR</center></th>
                                         <th colspan="6"><center>BULAN</center></th>
-                                        <th rowspan="2" width="60"><center>TOTAL</center></th>
-                                        <th rowspan="2" width="60"><center>PERSEN</center></th>
+                                        <th rowspan="2"><center>TOTAL</center></th>
+                                        <th rowspan="2"><center>PERSEN</center></th>
                                     </tr>
                                     <tr class="bg-primary">
                                         <th align="center">JUL</th>
@@ -220,47 +177,26 @@
                                         <td align="center"> <?php echo $row->NUM_DES; ?> </td>
                                         <td align="center">
                                             <b> 
-                                                <?php
-                                                    if ($no == 3 || $no == 4 || $no == 7)
+                                                <?php 
+                                                    if ($row->TOTAL_NUM == 0) 
                                                     {
-                                                        if ($row->TOTAL_NUM == 0) 
-                                                        {
-                                                            echo "0";
-                                                        } else {
-                                                            $average = $row->TOTAL_NUM / 6;
-                                                            echo round($average, 2);
-                                                        }
+                                                        echo "0";
                                                     } else {
-                                                        if ($row->TOTAL_NUM == 0) 
-                                                        {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_NUM;
-                                                        }
+                                                        echo $row->TOTAL_NUM;
                                                     }
-                                                ?>
+                                                ?> 
                                             </b>
                                         </td>
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 3 || $no == 4 || $no == 7)
+                                                    if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                     {
-                                                        if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                                        {
-                                                            echo "0 %";
-                                                        } else {
-                                                            $average    = $row->TOTAL_NUM / 6;
-                                                            $time       = $average / $row->TOTAL_DEN;
-                                                            echo round($time, 2)." %";
-                                                        }
+                                                        echo "0";
+                                                        echo " %";
                                                     } else {
-                                                        if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                                        {
-                                                            echo "0 %";
-                                                        } else {
-                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 100, 2)." %";
-                                                        }
+                                                        echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * 100;
+                                                        echo " %";
                                                     }
                                                 ?> 
                                             </b>
@@ -268,35 +204,13 @@
                                     </tr>
                                     <tr>
                                         <td><?php echo $row->DETAIL_DEN; ?></td>
-                                        <td align="center"> <?php echo $row->NUM_JUL; ?> </td>
-                                        <td align="center"> <?php echo $row->NUM_AGT; ?> </td>
-                                        <td align="center"> <?php echo $row->NUM_SEP; ?> </td>
-                                        <td align="center"> <?php echo $row->NUM_OKT; ?> </td>
-                                        <td align="center"> <?php echo $row->NUM_NOV; ?> </td>
-                                        <td align="center"> <?php echo $row->NUM_DES; ?> </td>
-                                        <td align="center">
-                                            <b> 
-                                                <?php
-                                                    if ($no == 3 || $no == 4 || $no == 7)
-                                                    {
-                                                        if ($row->TOTAL_DEN == 0) 
-                                                        {
-                                                            echo "0";
-                                                        } else {
-                                                            $average = $row->TOTAL_DEN / 6;
-                                                            echo round($average, 2);
-                                                        }
-                                                    } else {
-                                                        if ($row->TOTAL_DEN == 0) 
-                                                        {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_DEN;
-                                                        }
-                                                    }
-                                                ?> 
-                                            </b>
-                                        </td>
+                                        <td align="center"> <?php echo $row->DEN_JUL; ?> </td>
+                                        <td align="center"> <?php echo $row->DEN_AGT; ?> </td>
+                                        <td align="center"> <?php echo $row->DEN_SEP; ?> </td>
+                                        <td align="center"> <?php echo $row->DEN_OKT; ?> </td>
+                                        <td align="center"> <?php echo $row->DEN_NOV; ?> </td>
+                                        <td align="center"> <?php echo $row->DEN_DES; ?> </td>
+                                        <td align="center"><b> <?php echo $row->TOTAL_DEN; ?> </b></td>
                                     </tr>
                                     <?php } ?>
                                 </tbody>

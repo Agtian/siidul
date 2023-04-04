@@ -81,11 +81,11 @@
                                 <thead>
                                     <tr class="bg-primary">
                                         <th rowspan="2" width="30"><center>NO</center></th>
-                                        <th rowspan="2" width="170"><center>INDIKATOR</center></th>
-                                        <th rowspan="2" width="220"><center>SUB INDIKATOR</center></th>
+                                        <th rowspan="2"><center>INDIKATOR</center></th>
+                                        <th rowspan="2"><center>SUB INDIKATOR</center></th>
                                         <th colspan="<?php echo $total_hari; ?>" ><center>TANGGAL</center></th>
-                                        <th rowspan="2" width="60"><center>TOTAL</center></th>
-                                        <th rowspan="2" width="60"><center>PERSEN</center></th>
+                                        <th rowspan="2"><center>TOTAL</center></th>
+                                        <th rowspan="2"><center>PERSEN</center></th>
                                     </tr>
                                     <tr class="bg-primary">
                                         <?php 
@@ -116,7 +116,7 @@
                                                 {
                                                     echo '<td align="center"> '.$key->NUM.' </td>';
                                                     $total_num += $key->NUM;
-                                                    $total_den += $key->DEN;                                      
+                                                    $total_den += $key->DEN;                                         
                                                 }
 
                                             } else {
@@ -145,9 +145,11 @@
                                                 <?php
                                                     if ($total_num == 0 || $total_den == 0)
                                                     {
-                                                        echo "0  %";
+                                                        echo "0";
+                                                        echo " %";
                                                     } else {
-                                                        echo round($total_num / $total_den * 100, 2)." %";
+                                                        echo substr($total_num / $total_den * 100, 0, 5);
+                                                        echo " %";
                                                     }
                                                 ?>
                                             </center></b> 
@@ -172,18 +174,7 @@
                                                 echo '<td align="center"> '.$key->DEN.' </td>';
                                             }
                                         } ?>
-                                        <td align="center">
-                                            <b> 
-                                                <?php
-                                                    if ($row->total_den == 0) 
-                                                    {
-                                                        echo "0";
-                                                    } else {
-                                                        echo $row->total_den;
-                                                    }
-                                                ?> 
-                                            </b>
-                                        </td>
+                                        <td align="center"> <b><?php echo $total_den; ?></b> </td>
                                     </tr>
                                     <?php } ?>
                                 </tbody>

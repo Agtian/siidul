@@ -96,7 +96,7 @@
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_JAN / $row->DEN_JAN, 2);
+                                                    echo round(($row->NUM_JAN / $row->DEN_JAN) * 100, 2).' %';
                                                 }
                                             ?>
                                         </td>
@@ -106,7 +106,7 @@
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_FEB / $row->DEN_FEB, 2);
+                                                    echo round(($row->NUM_FEB / $row->DEN_FEB) * 100, 2).' %';
                                                 }
                                             ?>
                                         </td>
@@ -116,7 +116,7 @@
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_MAR / $row->NUM_MAR, 2);
+                                                    echo round(($row->NUM_MAR / $row->NUM_MAR) * 100, 2).' %';
                                                 }
                                             ?>
                                         </td>
@@ -126,7 +126,7 @@
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_APR / $row->NUM_APR, 2);
+                                                    echo round(($row->NUM_APR / $row->NUM_APR) * 100, 2).' %';
                                                 }
                                             ?>
                                         </td>
@@ -136,7 +136,7 @@
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_MEI / $row->NUM_MEI, 2);
+                                                    echo round(($row->NUM_MEI / $row->NUM_MEI) * 100, 2).' %';
                                                 }
                                             ?>
                                         </td>
@@ -146,7 +146,7 @@
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_JUN / $row->NUM_JUN, 2);
+                                                    echo round(($row->NUM_JUN / $row->NUM_JUN) * 100, 2).' %';
                                                 }
                                             ?>
                                         </td>
@@ -156,7 +156,7 @@
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_JUL / $row->NUM_JUL, 2);
+                                                    echo round(($row->NUM_JUL / $row->NUM_JUL) * 100, 2).' %';
                                                 }
                                             ?>
                                         </td>
@@ -166,7 +166,7 @@
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_AGT / $row->NUM_AGT, 2);
+                                                    echo round(($row->NUM_AGT / $row->NUM_AGT) * 100, 2).' %';
                                                 }
                                             ?>
                                         </td>
@@ -176,7 +176,7 @@
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_SEP / $row->NUM_SEP, 2);
+                                                    echo round(($row->NUM_SEP / $row->NUM_SEP) * 100, 2).' %';
                                                 }
                                             ?>
                                         </td>
@@ -186,7 +186,7 @@
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_OKT / $row->NUM_OKT, 2);
+                                                    echo round(($row->NUM_OKT / $row->NUM_OKT) * 100, 2).' %';
                                                 }
                                             ?> 
                                         </td>
@@ -196,7 +196,7 @@
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_NOV / $row->NUM_NOV, 2);
+                                                    echo round(($row->NUM_NOV / $row->NUM_NOV) * 100, 2).' %';
                                                 }
                                             ?>
                                         </td>
@@ -206,7 +206,7 @@
                                                 {
                                                     echo "0 %";
                                                 } else {
-                                                    echo round($row->NUM_DES / $row->NUM_DES, 2);
+                                                    echo round(($row->NUM_DES / $row->NUM_DES) * 100, 2).' %';
                                                 }
                                             ?>
                                         </td>
