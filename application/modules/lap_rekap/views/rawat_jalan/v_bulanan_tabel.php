@@ -132,7 +132,7 @@
                                         <td align="center"> 
                                             <b>
                                                 <?php 
-                                                    if ($no == 3 || $no == 5)
+                                                    if ($no == 3 || $no == 4)
                                                     {
                                                         if (empty($total_num))
                                                         {
@@ -155,7 +155,7 @@
                                         <td rowspan="2"> 
                                             <b><center>
                                                 <?php
-                                                    if ($no == 5)
+                                                    if ($no == 4)
                                                     {
                                                         if ($total_num == 0 || $total_den == 0)
                                                         {
