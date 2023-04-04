@@ -90,7 +90,7 @@
                                                         $persen = (($row->NUM_JAN / $tt_hari_jan) / $row->DEN_JAN);
                                                         echo round($persen, 2);
                                                     }
-                                                } else if ($no == 5) {
+                                                } else if ($no == 4) {
                                                     if (empty($row->NUM_JAN)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -119,7 +119,7 @@
                                                         $persen = (($row->NUM_FEB / $tt_hari_feb) / $row->DEN_FEB);
                                                         echo round($persen, 2);
                                                     }
-                                                } else if ($no == 5) {
+                                                } else if ($no == 4) {
                                                     if (empty($row->NUM_FEB)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -148,7 +148,7 @@
                                                         $persen = (($row->NUM_MAR / $tt_hari_mar) / $row->DEN_MAR);
                                                         echo round($persen, 2);
                                                     }
-                                                } else if ($no == 5) {
+                                                } else if ($no == 4) {
                                                     if (empty($row->NUM_MAR)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -177,7 +177,7 @@
                                                         $persen = (($row->NUM_APR / $tt_hari_apr) / $row->DEN_APR);
                                                         echo round($persen, 2);
                                                     }
-                                                } else if ($no == 5) {
+                                                } else if ($no == 4) {
                                                     if (empty($row->NUM_APR)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -206,7 +206,7 @@
                                                         $persen = (($row->NUM_MEI / $tt_hari_mei) / $row->DEN_MEI);
                                                         echo round($persen, 2);
                                                     }
-                                                } else if ($no == 5) {
+                                                } else if ($no == 4) {
                                                     if (empty($row->NUM_MEI)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -235,7 +235,7 @@
                                                         $persen = (($row->NUM_JUN / $tt_hari_jun) / $row->DEN_JUN);
                                                         echo round($persen, 2);
                                                     }
-                                                } else if ($no == 5) {
+                                                } else if ($no == 4) {
                                                     if (empty($row->NUM_JUN)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -264,7 +264,7 @@
                                                         $persen = (($row->NUM_JUN / $tt_hari_jul) / $row->DEN_JUN);
                                                         echo round($persen, 2);
                                                     }
-                                                } else if ($no == 5) {
+                                                } else if ($no == 4) {
                                                     if (empty($row->NUM_JUN)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -293,7 +293,7 @@
                                                         $persen = (($row->NUM_AGT / $tt_hari_agt) / $row->DEN_AGT);
                                                         echo round($persen, 2);
                                                     }
-                                                } else if ($no == 5) {
+                                                } else if ($no == 4) {
                                                     if (empty($row->NUM_AGT)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -322,7 +322,7 @@
                                                         $persen = (($row->NUM_SEP / $tt_hari_sep) / $row->DEN_SEP);
                                                         echo round($persen, 2);
                                                     }
-                                                } else if ($no == 5) {
+                                                } else if ($no == 4) {
                                                     if (empty($row->NUM_SEP)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -351,7 +351,7 @@
                                                         $persen = (($row->NUM_OKT / $tt_hari_okt) / $row->DEN_OKT);
                                                         echo round($persen, 2);
                                                     }
-                                                } else if ($no == 5) {
+                                                } else if ($no == 4) {
                                                     if (empty($row->NUM_OKT)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -380,7 +380,7 @@
                                                         $persen = (($row->NUM_NOV / $tt_hari_nov) / $row->DEN_NOV);
                                                         echo round($persen, 2);
                                                     }
-                                                } else if ($no == 5) {
+                                                } else if ($no == 4) {
                                                     if (empty($row->NUM_NOV)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -409,7 +409,7 @@
                                                         $persen = (($row->NUM_DES / $tt_hari_des) / $row->DEN_DES);
                                                         echo round($persen, 2);
                                                     }
-                                                } else if ($no == 5) {
+                                                } else if ($no == 4) {
                                                     if (empty($row->NUM_DES)) {
                                                         echo "00:00:00";
                                                     } else {
