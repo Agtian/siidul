@@ -117,7 +117,8 @@ function views_input($id)
 
 
 		default:
-			echo "Isi variabel tidak di temukan";
+			// default
+			return "default/v_input";
 			break;
 	}
 }
@@ -239,7 +240,8 @@ function views_ubah($id)
 			break;
 
 		default:
-			echo "Isi variabel tidak di temukan";
+			// default form ubah
+			return "default/v_ubah";
 			break;
 	}
 }
@@ -986,7 +988,7 @@ function views_export_triwulan_iii_form_dewas($id)
 			// Hemodialisa
 			return "hemodialisa/export/v_export_triwulan_iii_form_dewas";
 			break;
-		
+
 		default:
 			return "general/export/v_export_triwulan_iii_form_dewas";
 			break;
