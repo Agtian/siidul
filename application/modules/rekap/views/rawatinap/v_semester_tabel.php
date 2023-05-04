@@ -71,6 +71,8 @@
                                     <?php 
                                         $no = 1;
                                         foreach ($semester_i->result() as $row) {
+                                            $id_indikator = $row->ID;
+
                                     ?>
                                     <tr>
                                         <td rowspan="2"><?php echo $no++; ?></td>
@@ -81,7 +83,7 @@
                                                 if ($row->NUM_JAN == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 10) {
                                                     echo $row->NUM_JAN / $tt_hari_jan; 
                                                 } else {
                                                     echo $row->NUM_JAN;
@@ -93,7 +95,7 @@
                                                 if ($row->NUM_FEB == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 10) {
                                                     echo $row->NUM_FEB / $tt_hari_jan; 
                                                 } else {
                                                     echo $row->NUM_FEB;
@@ -105,7 +107,7 @@
                                                 if ($row->NUM_MAR == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 10) {
                                                     echo $row->NUM_MAR / $tt_hari_jan; 
                                                 } else {
                                                     echo $row->NUM_MAR;
@@ -117,7 +119,7 @@
                                                 if ($row->NUM_APR == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 10) {
                                                     echo $row->NUM_APR / $tt_hari_apr; 
                                                 } else {
                                                     echo $row->NUM_APR;
@@ -129,7 +131,7 @@
                                                 if ($row->NUM_MEI == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 10) {
                                                     echo $row->NUM_MEI / $tt_hari_mei; 
                                                 } else {
                                                     echo $row->NUM_MEI;
@@ -141,7 +143,7 @@
                                                 if ($row->NUM_JUN == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 10) {
                                                     echo $row->NUM_JUN / $tt_hari_jun; 
                                                 } else {
                                                     echo $row->NUM_JUN;
@@ -151,7 +153,7 @@
                                         <td align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == '4')
+                                                    if ($id_indikator == 10)
                                                     {
                                                         if ($row->TOTAL_NUM == 0) 
                                                         {
@@ -174,7 +176,7 @@
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == '4')
+                                                    if ($id_indikator == 10)
                                                     {
                                                         if ($row->TOTAL_NUM == 0) 
                                                         {
@@ -183,7 +185,7 @@
                                                             $persen = $row->TOTAL_NUM /  ($tt_hari_jan + $tt_hari_feb + $tt_hari_mar + $tt_hari_apr + $tt_hari_mei + $tt_hari_jun);
                                                             echo $persen;
                                                         }
-                                                    } else if ($no == '6') {
+                                                    } else if ($id_indikator == 12) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "0";
@@ -193,15 +195,15 @@
                                                             echo $persen;
                                                             echo " %";
                                                         }
-                                                    } else if ($no == '9') {
+                                                    } else if ($id_indikator == 15) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "0";
                                                         } else {
                                                             $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000;
-                                                            echo $persen;
+                                                            echo round($persen, 2). " permil";
                                                         }
-                                                    } else if ($no == '10') {
+                                                    } else if ($id_indikator == 16) {
                                                         if ($row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "0";
@@ -279,7 +281,7 @@
                                                 if ($row->NUM_JUL == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 10) {
                                                     echo $row->NUM_JUL / $tt_hari_jul; 
                                                 } else {
                                                     echo $row->NUM_JUL;
@@ -291,7 +293,7 @@
                                                 if ($row->NUM_AGT == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 10) {
                                                     echo $row->NUM_AGT / $tt_hari_agt; 
                                                 } else {
                                                     echo $row->NUM_AGT;
@@ -303,7 +305,7 @@
                                                 if ($row->NUM_SEP == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 10) {
                                                     echo $row->NUM_SEP / $tt_hari_sep; 
                                                 } else {
                                                     echo $row->NUM_SEP;
@@ -315,7 +317,7 @@
                                                 if ($row->NUM_OKT == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 10) {
                                                     echo $row->NUM_OKT / $tt_hari_okt; 
                                                 } else {
                                                     echo $row->NUM_OKT;
@@ -327,7 +329,7 @@
                                                 if ($row->NUM_NOV == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 10) {
                                                     echo $row->NUM_NOV / $tt_hari_nov; 
                                                 } else {
                                                     echo $row->NUM_NOV;
@@ -339,7 +341,7 @@
                                                 if ($row->NUM_DES == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 10) {
                                                     echo $row->NUM_DES / $tt_hari_des; 
                                                 } else {
                                                     echo $row->NUM_DES;
@@ -349,7 +351,7 @@
                                         <td align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == '4')
+                                                    if ($id_indikator == 10)
                                                     {
                                                         if ($row->TOTAL_NUM == 0) 
                                                         {
@@ -372,7 +374,7 @@
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == '4')
+                                                    if ($id_indikator == 10)
                                                     {
                                                         if ($row->TOTAL_NUM == 0) 
                                                         {
@@ -381,7 +383,7 @@
                                                             $persen = $row->TOTAL_NUM /  ($tt_hari_jul + $tt_hari_agt + $tt_hari_sep + $tt_hari_okt + $tt_hari_nov + $tt_hari_des);
                                                             echo $persen;
                                                         }
-                                                    } else if ($no == '6') {
+                                                    } else if ($id_indikator == 12) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "0";
@@ -391,7 +393,7 @@
                                                             echo $persen;
                                                             echo " %";
                                                         }
-                                                    } else if ($no == '9') {
+                                                    } else if ($id_indikator == 15) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "0";
@@ -399,7 +401,7 @@
                                                             $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000;
                                                             echo $persen;
                                                         }
-                                                    } else if ($no == '10') {
+                                                    } else if ($id_indikator == 16) {
                                                         if ($row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "0";
