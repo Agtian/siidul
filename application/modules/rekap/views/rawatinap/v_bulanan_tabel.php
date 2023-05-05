@@ -171,7 +171,7 @@
                                                             echo " %";
                                                         } else {
                                                             $persen = $total_num / $total_den;
-                                                            echo $persen;
+                                                            echo round($persen, 2);
                                                             echo " %";
                                                         }
                                                     } else if ($id_indikator == 15) {
@@ -189,7 +189,7 @@
                                                             echo " %";
                                                         } else {
                                                             $persen = ($total_num / $total_den) * (1 / 100);
-                                                            echo $persen;
+                                                            echo round($persen, 2);
                                                             echo " %";
                                                         }
                                                     } else {
@@ -198,7 +198,8 @@
                                                             echo "0";
                                                             echo " %";
                                                         } else {
-                                                            echo $total_num / $total_den * 100;
+                                                            $persen = $total_num / $total_den * 100;
+                                                            echo round($persen, 2);
                                                             echo " %";
                                                         }
                                                     }
