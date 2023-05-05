@@ -148,8 +148,8 @@
                                                 if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                     echo "0";
                                                 } else {
-                                                    $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000;
-                                                    echo round($persen, 2);
+                                                    $persen = ($total_num / $total_den) * 1000;
+                                                    echo round($persen, 2) . " permil";
                                                 }
                                             } else if ($id_indikator == 16) {
                                                 if ($row->TOTAL_DEN == 0) {
@@ -308,8 +308,8 @@
                                                 if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                     echo "0";
                                                 } else {
-                                                    $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000;
-                                                    echo round($persen, 2);
+                                                    $persen = ($total_num / $total_den) * 1000;
+                                                    echo round($persen, 2) . " permil";
                                                 }
                                             } else if ($id_indikator == 16) {
                                                 if ($row->TOTAL_DEN == 0) {
@@ -468,8 +468,8 @@
                                                 if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                     echo "0";
                                                 } else {
-                                                    $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000;
-                                                    echo round($persen, 2);
+                                                    $persen = ($total_num / $total_den) * 1000;
+                                                    echo round($persen, 2) . " permil";
                                                 }
                                             } else if ($id_indikator == 16) {
                                                 if ($row->TOTAL_DEN == 0) {
@@ -634,8 +634,8 @@
                                                 if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                     echo "0";
                                                 } else {
-                                                    $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000;
-                                                    echo round($persen, 2);
+                                                    $persen = ($total_num / $total_den) * 1000;
+                                                    echo round($persen, 2) . " permil";
                                                 }
                                             } else if ($id_indikator == 16) {
                                                 if ($row->TOTAL_DEN == 0) {
