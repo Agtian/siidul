@@ -188,7 +188,7 @@
                                                             echo "0";
                                                             echo " %";
                                                         } else {
-                                                            $persen = ($total_num / $total_den) * (1 / 100);
+                                                            $persen = ($total_num / $total_den) *100;
                                                             echo round($persen, 2);
                                                             echo " %";
                                                         }

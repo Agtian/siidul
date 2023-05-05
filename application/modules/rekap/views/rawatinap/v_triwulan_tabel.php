@@ -169,7 +169,7 @@
                                                             echo "0";
                                                             echo " %";
                                                         } else {
-                                                            echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * (1 / 100);
+                                                            $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
                                                             echo " %";
                                                         }
                                                     } else {
@@ -327,7 +327,7 @@
                                                             echo "0";
                                                             echo " %";
                                                         } else {
-                                                            echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * (1 / 100);
+                                                            $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
                                                             echo " %";
                                                         }
                                                     } else {
@@ -486,7 +486,7 @@
                                                             echo "0";
                                                             echo " %";
                                                         } else {
-                                                            echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * (1 / 100);
+                                                            $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
                                                             echo " %";
                                                         }
                                                     } else {
@@ -645,7 +645,7 @@
                                                             echo "0";
                                                             echo " %";
                                                         } else {
-                                                            echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * (1 / 100);
+                                                            $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
                                                             echo " %";
                                                         }
                                                     } else {
