@@ -139,7 +139,7 @@
                                         echo "0";
                                     } else {
                                         $persen = ($total_num / $total_den) * 1000;
-                                        echo round($persen, 2). " permil";
+                                        echo round($persen, 2);
                                     }
                                 } else if ($id_indikator == 16) {
                                     if ($total_den == 0)

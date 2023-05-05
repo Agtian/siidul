@@ -102,11 +102,20 @@
                                         <td align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($row->NUM_JAN == 0) 
-                                                    {
-                                                        echo "0";
+                                                    if ($no == 3 || $no == 4 || $no == 7) {
+                                                        if ($row->TOTAL_NUM_TW_I == 0 || $row->TOTAL_NUM_TW_II == 0) 
+                                                        {
+                                                            echo "0";
+                                                        } else {
+                                                            echo $row->TOTAL_NUM_TW_I + $row->TOTAL_NUM_TW_II + $row->TOTAL_NUM_TW_III;
+                                                        }
                                                     } else {
-                                                        echo $row->TOTAL_NUM_TW_I + $row->TOTAL_NUM_TW_II + $row->TOTAL_NUM_TW_III;
+                                                        if ($row->TOTAL_NUM_TW_I == 0 || $row->TOTAL_NUM_TW_II == 0) 
+                                                        {
+                                                            echo "0";
+                                                        } else {
+                                                            echo $row->TOTAL_NUM_TW_I + $row->TOTAL_NUM_TW_II + $row->TOTAL_NUM_TW_III;
+                                                        }
                                                     }
                                                 ?> 
                                             </b>
@@ -114,14 +123,26 @@
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    $total_row = $row->TOTAL_NUM_TW_I + $row->TOTAL_NUM_TW_II + $row->TOTAL_NUM_TW_III;
-                                                    $total_den = $row->TOTAL_DEN_TW_I + $row->TOTAL_DEN_TW_II + $row->TOTAL_DEN_TW_III;
-                                                    if ($total_row == 0 || $total_den == 0) 
-                                                    {
-                                                        echo "0 %";
+                                                    if ($no == 3 || $no == 4 || $no == 7) {
+                                                        if ($row->TOTAL_NUM_TW_I == 0 || $row->TOTAL_NUM_TW_II == 0) 
+                                                        {
+                                                            echo "0";
+                                                        } else {
+                                                            $total_row = $row->TOTAL_NUM_TW_I + $row->TOTAL_NUM_TW_II + $row->TOTAL_NUM_TW_III;
+                                                            $total_den = $row->TOTAL_DEN_TW_I + $row->TOTAL_DEN_TW_II + $row->TOTAL_DEN_TW_III;
+                                                            $time       = ($total_row / 9) / $total_den;
+                                                            echo round($time, 2)." %";
+                                                        }
                                                     } else {
-                                                        echo round(($total_row / $total_den) * 100, 2);
-                                                        echo " %";
+                                                        if ($row->TOTAL_NUM_TW_I == 0 || $row->TOTAL_NUM_TW_II == 0) 
+                                                        {
+                                                            echo "0";
+                                                        } else {
+                                                            $total_row = $row->TOTAL_NUM_TW_I + $row->TOTAL_NUM_TW_II + $row->TOTAL_NUM_TW_III;
+                                                            $total_den = $row->TOTAL_DEN_TW_I + $row->TOTAL_DEN_TW_II + $row->TOTAL_DEN_TW_III;
+                                                            echo round(($total_row / $total_den) * 100, 2);
+                                                            echo " %";
+                                                        }
                                                     }
                                                 ?> 
                                             </b>
@@ -138,7 +159,29 @@
                                         <td align="center"> <?php echo $row->DEN_JUL; ?> </td>
                                         <td align="center"> <?php echo $row->DEN_AGT; ?> </td>
                                         <td align="center"> <?php echo $row->DEN_SEP; ?> </td>
-                                        <td align="center"><b> <?php echo $row->TOTAL_DEN_TW_I + $row->TOTAL_DEN_TW_II + $row->TOTAL_DEN_TW_III; ?> </b></td>
+                                        <td align="center">
+                                            <b> 
+                                                <?php
+                                                    if ($no == 3 || $no == 4 || $no == 7)
+                                                    {
+                                                        if ($row->TOTAL_DEN_TW_I == 0) 
+                                                        {
+                                                            echo "0";
+                                                        } else {
+                                                            $average = $row->TOTAL_DEN_TW_I + $row->TOTAL_DEN_TW_II + $row->TOTAL_DEN_TW_III / 9;
+                                                            echo round($average, 2);
+                                                        }
+                                                    } else {
+                                                        if ($row->TOTAL_DEN_TW_I == 0) 
+                                                        {
+                                                            echo "0";
+                                                        } else {
+                                                            echo $row->TOTAL_DEN_TW_I + $row->TOTAL_DEN_TW_II + $row->TOTAL_DEN_TW_III;
+                                                        }
+                                                    }
+                                                ?> 
+                                            </b>
+                                        </td>
                                     </tr>
                                     <?php } ?>
                                 </tbody>
