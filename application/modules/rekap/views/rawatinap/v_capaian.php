@@ -91,7 +91,7 @@
                                                         echo "0";
                                                     } else {
                                                         $persen = $row->NUM_JAN / $tt_hari_jan;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                     }
                                                 } else if ($id_indikator == 12) {
                                                     if ($row->NUM_JAN == 0 || $row->DEN_JAN == 0) 
@@ -100,7 +100,7 @@
                                                         echo " %";
                                                     } else {
                                                         $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                         echo " %";
                                                     }
                                                 } else if ($id_indikator == 15) {
@@ -117,7 +117,7 @@
                                                         echo "0";
                                                         echo " %";
                                                     } else {
-                                                        echo round(($row->NUM_JAN / $row->DEN_JAN) * (1 / 100), 2);
+                                                        echo round(($row->NUM_JAN / $row->DEN_JAN) * 100, 2);
                                                         echo " %";
                                                     }
                                                 } else {
@@ -141,7 +141,7 @@
                                                         echo "0";
                                                     } else {
                                                         $persen = $row->NUM_FEB / $tt_hari_feb;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                     }
                                                 } else if ($id_indikator == 12) {
                                                     if ($row->NUM_FEB == 0 || $row->DEN_FEB == 0) 
@@ -150,7 +150,7 @@
                                                         echo " %";
                                                     } else {
                                                         $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                         echo " %";
                                                     }
                                                 } else if ($id_indikator == 15) {
@@ -167,7 +167,7 @@
                                                         echo "0";
                                                         echo " %";
                                                     } else {
-                                                        echo ($row->NUM_FEB / $row->DEN_FEB) * (1 / 100);
+                                                        echo ($row->NUM_FEB / $row->DEN_FEB) * 100;
                                                         echo " %";
                                                     }
                                                 } else {
@@ -191,7 +191,7 @@
                                                         echo "0";
                                                     } else {
                                                         $persen = $row->NUM_MAR / $tt_hari_mar;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                     }
                                                 } else if ($id_indikator == 12) {
                                                     if ($row->NUM_MAR == 0 || $row->DEN_MAR == 0) 
@@ -200,7 +200,7 @@
                                                         echo " %";
                                                     } else {
                                                         $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                         echo " %";
                                                     }
                                                 } else if ($id_indikator == 15) {
@@ -217,7 +217,7 @@
                                                         echo "0";
                                                         echo " %";
                                                     } else {
-                                                        echo ($row->NUM_MAR / $row->DEN_MAR) * (1 / 100);
+                                                        echo ($row->NUM_MAR / $row->DEN_MAR) * 100;
                                                         echo " %";
                                                     }
                                                 } else {
@@ -250,7 +250,7 @@
                                                         echo " %";
                                                     } else {
                                                         $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                         echo " %";
                                                     }
                                                 } else if ($id_indikator == 15) {
@@ -267,7 +267,7 @@
                                                         echo "0";
                                                         echo " %";
                                                     } else {
-                                                        echo ($row->NUM_APR / $row->DEN_APR) * (1 / 100);
+                                                        echo ($row->NUM_APR / $row->DEN_APR) * 100;
                                                         echo " %";
                                                     }
                                                 } else {
@@ -291,7 +291,7 @@
                                                         echo "0";
                                                     } else {
                                                         $persen = $row->NUM_MEI / $tt_hari_mei;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                     }
                                                 } else if ($id_indikator == 12) {
                                                     if ($row->NUM_MEI == 0 || $row->DEN_MEI == 0) 
@@ -300,7 +300,7 @@
                                                         echo " %";
                                                     } else {
                                                         $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                         echo " %";
                                                     }
                                                 } else if ($id_indikator == 15) {
@@ -317,7 +317,7 @@
                                                         echo "0";
                                                         echo " %";
                                                     } else {
-                                                        echo ($row->NUM_MEI / $row->DEN_MEI) * (1 / 100);
+                                                        echo ($row->NUM_MEI / $row->DEN_MEI) * 100;
                                                         echo " %";
                                                     }
                                                 } else {
@@ -341,7 +341,7 @@
                                                         echo "0";
                                                     } else {
                                                         $persen = $row->NUM_JUN / $tt_hari_jun;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                     }
                                                 } else if ($id_indikator == 12) {
                                                     if ($row->NUM_JUN == 0 || $row->DEN_JUN == 0) 
@@ -350,7 +350,7 @@
                                                         echo " %";
                                                     } else {
                                                         $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                         echo " %";
                                                     }
                                                 } else if ($id_indikator == 15) {
@@ -367,7 +367,7 @@
                                                         echo "0";
                                                         echo " %";
                                                     } else {
-                                                        echo ($row->NUM_JUN / $row->DEN_JUN) * (1 / 100);
+                                                        echo ($row->NUM_JUN / $row->DEN_JUN) * 100;
                                                         echo " %";
                                                     }
                                                 } else {
@@ -391,7 +391,7 @@
                                                         echo "0";
                                                     } else {
                                                         $persen = $row->NUM_JUL / $tt_hari_jul;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                     }
                                                 } else if ($id_indikator == 12) {
                                                     if ($row->NUM_JUL == 0 || $row->DEN_JUL == 0) 
@@ -400,7 +400,7 @@
                                                         echo " %";
                                                     } else {
                                                         $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                         echo " %";
                                                     }
                                                 } else if ($id_indikator == 15) {
@@ -417,7 +417,7 @@
                                                         echo "0";
                                                         echo " %";
                                                     } else {
-                                                        echo ($row->NUM_JUL / $row->DEN_JUL) * (1 / 100);
+                                                        echo ($row->NUM_JUL / $row->DEN_JUL) * 100;
                                                         echo " %";
                                                     }
                                                 } else {
@@ -441,7 +441,7 @@
                                                         echo "0";
                                                     } else {
                                                         $persen = $row->NUM_AGT / $tt_hari_agt;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                     }
                                                 } else if ($id_indikator == 12) {
                                                     if ($row->NUM_AGT == 0 || $row->DEN_AGT == 0) 
@@ -450,7 +450,7 @@
                                                         echo " %";
                                                     } else {
                                                         $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                         echo " %";
                                                     }
                                                 } else if ($id_indikator == 15) {
@@ -467,7 +467,7 @@
                                                         echo "0";
                                                         echo " %";
                                                     } else {
-                                                        echo ($row->NUM_AGT / $row->DEN_AGT) * (1 / 100);
+                                                        echo ($row->NUM_AGT / $row->DEN_AGT) * 100;
                                                         echo " %";
                                                     }
                                                 } else {
@@ -491,7 +491,7 @@
                                                         echo "0";
                                                     } else {
                                                         $persen = $row->NUM_SEP / $tt_hari_sep;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                     }
                                                 } else if ($id_indikator == 12) {
                                                     if ($row->NUM_SEP == 0 || $row->DEN_SEP == 0) 
@@ -500,7 +500,7 @@
                                                         echo " %";
                                                     } else {
                                                         $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                         echo " %";
                                                     }
                                                 } else if ($id_indikator == 15) {
@@ -517,7 +517,7 @@
                                                         echo "0";
                                                         echo " %";
                                                     } else {
-                                                        echo ($row->NUM_SEP / $row->DEN_SEP) * (1 / 100);
+                                                        echo ($row->NUM_SEP / $row->DEN_SEP) * 100;
                                                         echo " %";
                                                     }
                                                 } else {
@@ -541,7 +541,7 @@
                                                         echo "0";
                                                     } else {
                                                         $persen = $row->NUM_OKT / $tt_hari_okt;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                     }
                                                 } else if ($id_indikator == 12) {
                                                     if ($row->NUM_OKT == 0 || $row->DEN_OKT == 0) 
@@ -550,7 +550,7 @@
                                                         echo " %";
                                                     } else {
                                                         $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                         echo " %";
                                                     }
                                                 } else if ($id_indikator == 15) {
@@ -567,7 +567,7 @@
                                                         echo "0";
                                                         echo " %";
                                                     } else {
-                                                        echo ($row->NUM_OKT / $row->DEN_OKT) * (1 / 100);
+                                                        echo ($row->NUM_OKT / $row->DEN_OKT) * 100;
                                                         echo " %";
                                                     }
                                                 } else {
@@ -591,7 +591,7 @@
                                                         echo "0";
                                                     } else {
                                                         $persen = $row->NUM_NOV / $tt_hari_nov;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                     }
                                                 } else if ($id_indikator == 12) {
                                                     if ($row->NUM_NOV == 0 || $row->DEN_NOV == 0) 
@@ -600,7 +600,7 @@
                                                         echo " %";
                                                     } else {
                                                         $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                         echo " %";
                                                     }
                                                 } else if ($id_indikator == 15) {
@@ -617,7 +617,7 @@
                                                         echo "0";
                                                         echo " %";
                                                     } else {
-                                                        echo ($row->NUM_NOV / $row->DEN_NOV) * (1 / 100);
+                                                        echo ($row->NUM_NOV / $row->DEN_NOV) * 100;
                                                         echo " %";
                                                     }
                                                 } else {
@@ -641,7 +641,7 @@
                                                         echo "0";
                                                     } else {
                                                         $persen = $row->NUM_DES / $tt_hari_des;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                     }
                                                 } else if ($id_indikator == 12) {
                                                     if ($row->NUM_DES == 0 || $row->DEN_DES == 0) 
@@ -650,7 +650,7 @@
                                                         echo " %";
                                                     } else {
                                                         $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                        echo $persen;
+                                                        echo round($persen, 2);
                                                         echo " %";
                                                     }
                                                 } else if ($id_indikator == 15) {
@@ -667,7 +667,7 @@
                                                         echo "0";
                                                         echo " %";
                                                     } else {
-                                                        echo ($row->NUM_DES / $row->DEN_DES) * (1 / 100);
+                                                        echo ($row->NUM_DES / $row->DEN_DES) * 100;
                                                         echo " %";
                                                     }
                                                 } else {

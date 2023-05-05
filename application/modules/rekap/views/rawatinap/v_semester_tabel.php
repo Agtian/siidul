@@ -160,7 +160,7 @@
                                                             echo "0";
                                                         } else {
                                                             $persen = $row->TOTAL_NUM /  ($tt_hari_jan + $tt_hari_feb + $tt_hari_mar + $tt_hari_apr + $tt_hari_mei + $tt_hari_jun);
-                                                            echo $persen;
+                                                           echo round($persen, 2);
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_NUM == 0) 
@@ -183,7 +183,7 @@
                                                             echo "0";
                                                         } else {
                                                             $persen = $row->TOTAL_NUM /  ($tt_hari_jan + $tt_hari_feb + $tt_hari_mar + $tt_hari_apr + $tt_hari_mei + $tt_hari_jun);
-                                                            echo $persen;
+                                                           echo round($persen, 2);
                                                         }
                                                     } else if ($id_indikator == 12) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
@@ -192,7 +192,7 @@
                                                             echo " %";
                                                         } else {
                                                             $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                            echo $persen;
+                                                           echo round($persen, 2);
                                                             echo " %";
                                                         }
                                                     } else if ($id_indikator == 15) {
@@ -209,7 +209,8 @@
                                                             echo "0";
                                                             echo " %";
                                                         } else {
-                                                            echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * (1 / 100);
+                                                            $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN *  100);
+                                                            echo round($persen, 2);
                                                             echo " %";
                                                         }
                                                     } else {
@@ -218,7 +219,8 @@
                                                             echo "0";
                                                             echo " %";
                                                         } else {
-                                                            echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * 100;
+                                                            $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                            echo round($persen, 2);
                                                             echo " %";
                                                         }
                                                     }
@@ -271,6 +273,8 @@
                                     <?php 
                                         $no = 1;
                                         foreach ($semester_ii->result() as $row) {
+                                            $id_indikator = $row->ID;
+
                                     ?>
                                     <tr>
                                         <td rowspan="2"><?php echo $no++; ?></td>
@@ -358,7 +362,7 @@
                                                             echo "0";
                                                         } else {
                                                             $persen = $row->TOTAL_NUM /  ($tt_hari_jul + $tt_hari_agt + $tt_hari_sep + $tt_hari_okt + $tt_hari_nov + $tt_hari_des);
-                                                            echo $persen;
+                                                           echo round($persen, 2);
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_NUM == 0) 
@@ -381,7 +385,7 @@
                                                             echo "0";
                                                         } else {
                                                             $persen = $row->TOTAL_NUM /  ($tt_hari_jul + $tt_hari_agt + $tt_hari_sep + $tt_hari_okt + $tt_hari_nov + $tt_hari_des);
-                                                            echo $persen;
+                                                           echo round($persen, 2);
                                                         }
                                                     } else if ($id_indikator == 12) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
@@ -390,7 +394,7 @@
                                                             echo " %";
                                                         } else {
                                                             $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                            echo $persen;
+                                                           echo round($persen, 2);
                                                             echo " %";
                                                         }
                                                     } else if ($id_indikator == 15) {
@@ -399,7 +403,7 @@
                                                             echo "0";
                                                         } else {
                                                             $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000;
-                                                            echo $persen;
+                                                           echo round($persen, 2);
                                                         }
                                                     } else if ($id_indikator == 16) {
                                                         if ($row->TOTAL_DEN == 0) 
@@ -407,7 +411,8 @@
                                                             echo "0";
                                                             echo " %";
                                                         } else {
-                                                            echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * (1 / 100);
+                                                            $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN *  100);
+                                                            echo round($persen, 2);
                                                             echo " %";
                                                         }
                                                     } else {
@@ -416,7 +421,8 @@
                                                             echo "0";
                                                             echo " %";
                                                         } else {
-                                                            echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * 100;
+                                                            $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                            echo round($persen, 2);
                                                             echo " %";
                                                         }
                                                     }
