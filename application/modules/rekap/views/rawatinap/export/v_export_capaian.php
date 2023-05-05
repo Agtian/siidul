@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,8 +19,8 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/dashboard/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css">
 
     <!-- Bootstrap Colorpicker -->
-    <link rel="stylesheet" href="<?php echo base_url()?>assets/dashboard/vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
-    
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/dashboard/vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+
 </head>
 
 <body>
@@ -37,10 +38,18 @@
                     <table id="" class="table table-striped table-bordered">
                         <thead>
                             <tr class="bg-primary">
-                                <th rowspan="2" width="5"><center>NO</center></th>
-                                <th rowspan="2" width="250"><center>INDIKATOR</center></th>
-                                <th rowspan="2" width="200"><center>STANDAR</center></th>
-                                <th colspan="12"><center>BULAN</center></th>
+                                <th rowspan="2" width="5">
+                                    <center>NO</center>
+                                </th>
+                                <th rowspan="2" width="250">
+                                    <center>INDIKATOR</center>
+                                </th>
+                                <th rowspan="2" width="200">
+                                    <center>STANDAR</center>
+                                </th>
+                                <th colspan="12">
+                                    <center>BULAN</center>
+                                </th>
                             </tr>
                             <tr class="bg-primary">
                                 <th align="center">JAN</th>
@@ -58,615 +67,569 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php 
-                                $no = 1;
-                                foreach ($capaian->result() as $row) {
+                            <?php
+                            $no = 1;
+                            foreach ($capaian->result() as $row) {
+                                $id_indikator = $row->ID;
+
                             ?>
-                            <tr>
-                                <td rowspan="1" align="center" height="40"><?php echo $no++; ?></td>
-                                <td rowspan="1"><?php echo $row->DETAIL_INDIKATOR; ?></td>
-                                <td align="center"><b> <?php echo $row->NILAI_STANDAR; ?> </b></td>
-                                <td align="center"> 
-                                    <?php 
-                                        if ($no == '4')
-                                        {
-                                            if ($row->NUM_JAN == 0) 
-                                            {
+                                <tr>
+                                    <td rowspan="1" align="center" height="40"><?php echo $no++; ?></td>
+                                    <td rowspan="1"><?php echo $row->DETAIL_INDIKATOR; ?></td>
+                                    <td align="center"><b> <?php echo $row->NILAI_STANDAR; ?> </b></td>
+                                    <td align="center">
+                                        <?php
+                                        if ($id_indikator == 10) {
+                                            if ($row->NUM_JAN == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = $row->NUM_JAN / $tt_hari_jan;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '6') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 12) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
                                                 $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
-                                        } else if ($no == '9') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 15) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '10') {
-                                            if ($row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 16) {
+                                            if ($row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * (1 / 100);
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         } else {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * 100;
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         }
-                                    ?> 
-                                </td>
-                                <td align="center"> 
-                                    <?php 
-                                        if ($no == '4')
-                                        {
-                                            if ($row->NUM_FEB == 0) 
-                                            {
+                                        ?>
+                                    </td>
+                                    <td align="center">
+                                        <?php
+                                        if ($id_indikator == 10) {
+                                            if ($row->NUM_FEB == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = $row->NUM_FEB / $tt_hari_feb;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '6') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 12) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
                                                 $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
-                                        } else if ($no == '9') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 15) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '10') {
-                                            if ($row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 16) {
+                                            if ($row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * (1 / 100);
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         } else {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * 100;
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         }
-                                    ?>                                         
-                                </td>
-                                <td align="center"> 
-                                    <?php 
-                                        if ($no == '4')
-                                        {
-                                            if ($row->NUM_MAR == 0) 
-                                            {
+                                        ?>
+                                    </td>
+                                    <td align="center">
+                                        <?php
+                                        if ($id_indikator == 10) {
+                                            if ($row->NUM_MAR == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = $row->NUM_MAR / $tt_hari_mar;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '6') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 12) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
                                                 $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
-                                        } else if ($no == '9') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 15) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '10') {
-                                            if ($row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 16) {
+                                            if ($row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * (1 / 100);
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         } else {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * 100;
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         }
-                                    ?> 
-                                </td>
-                                <td align="center"> 
-                                    <?php 
-                                        if ($no == '4')
-                                        {
-                                            if ($row->NUM_APR == 0) 
-                                            {
+                                        ?>
+                                    </td>
+                                    <td align="center">
+                                        <?php
+                                        if ($id_indikator == 10) {
+                                            if ($row->NUM_APR == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = $row->NUM_APR / $tt_hari_apr;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '6') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 12) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
                                                 $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
-                                        } else if ($no == '9') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 15) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '10') {
-                                            if ($row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 16) {
+                                            if ($row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * (1 / 100);
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         } else {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * 100;
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         }
-                                    ?> 
-                                </td>
-                                <td align="center"> 
-                                    <?php 
-                                        if ($no == '4')
-                                        {
-                                            if ($row->NUM_MEI == 0) 
-                                            {
+                                        ?>
+                                    </td>
+                                    <td align="center">
+                                        <?php
+                                        if ($id_indikator == 10) {
+                                            if ($row->NUM_MEI == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = $row->NUM_MEI / $tt_hari_mei;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '6') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 12) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
                                                 $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
-                                        } else if ($no == '9') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 15) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '10') {
-                                            if ($row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 16) {
+                                            if ($row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * (1 / 100);
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         } else {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * 100;
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         }
-                                    ?> 
-                                </td>
-                                <td align="center"> 
-                                    <?php 
-                                        if ($no == '4')
-                                        {
-                                            if ($row->NUM_JUN == 0) 
-                                            {
+                                        ?>
+                                    </td>
+                                    <td align="center">
+                                        <?php
+                                        if ($id_indikator == 10) {
+                                            if ($row->NUM_JUN == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = $row->NUM_JUN / $tt_hari_jun;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '6') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 12) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
                                                 $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
-                                        } else if ($no == '9') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 15) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '10') {
-                                            if ($row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 16) {
+                                            if ($row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * (1 / 100);
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         } else {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * 100;
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         }
-                                    ?> 
-                                </td>
-                                <td align="center"> 
-                                    <?php 
-                                        if ($no == '4')
-                                        {
-                                            if ($row->NUM_JUL == 0) 
-                                            {
+                                        ?>
+                                    </td>
+                                    <td align="center">
+                                        <?php
+                                        if ($id_indikator == 10) {
+                                            if ($row->NUM_JUL == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = $row->NUM_JUL / $tt_hari_jul;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '6') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 12) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
                                                 $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
-                                        } else if ($no == '9') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 15) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '10') {
-                                            if ($row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 16) {
+                                            if ($row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * (1 / 100);
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         } else {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * 100;
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         }
-                                    ?> 
-                                </td>
-                                <td align="center"> 
-                                    <?php 
-                                        if ($no == '4')
-                                        {
-                                            if ($row->NUM_AGT == 0) 
-                                            {
+                                        ?>
+                                    </td>
+                                    <td align="center">
+                                        <?php
+                                        if ($id_indikator == 10) {
+                                            if ($row->NUM_AGT == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = $row->NUM_AGT / $tt_hari_agt;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '6') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 12) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
                                                 $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
-                                        } else if ($no == '9') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 15) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '10') {
-                                            if ($row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 16) {
+                                            if ($row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * (1 / 100);
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         } else {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * 100;
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         }
-                                    ?> 
-                                </td>
-                                <td align="center"> 
-                                    <?php 
-                                        if ($no == '4')
-                                        {
-                                            if ($row->NUM_SEP == 0) 
-                                            {
+                                        ?>
+                                    </td>
+                                    <td align="center">
+                                        <?php
+                                        if ($id_indikator == 10) {
+                                            if ($row->NUM_SEP == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = $row->NUM_SEP / $tt_hari_sep;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '6') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 12) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
                                                 $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
-                                        } else if ($no == '9') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 15) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '10') {
-                                            if ($row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 16) {
+                                            if ($row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * (1 / 100);
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         } else {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * 100;
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         }
-                                    ?> 
-                                </td>
-                                <td align="center"> 
-                                    <?php 
-                                        if ($no == '4')
-                                        {
-                                            if ($row->NUM_OKT == 0) 
-                                            {
+                                        ?>
+                                    </td>
+                                    <td align="center">
+                                        <?php
+                                        if ($id_indikator == 10) {
+                                            if ($row->NUM_OKT == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = $row->NUM_OKT / $tt_hari_okt;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '6') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 12) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
                                                 $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
-                                        } else if ($no == '9') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 15) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '10') {
-                                            if ($row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 16) {
+                                            if ($row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * (1 / 100);
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         } else {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * 100;
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         }
-                                    ?> 
-                                </td>
-                                <td align="center"> 
-                                    <?php 
-                                        if ($no == '4')
-                                        {
-                                            if ($row->NUM_NOV == 0) 
-                                            {
+                                        ?>
+                                    </td>
+                                    <td align="center">
+                                        <?php
+                                        if ($id_indikator == 10) {
+                                            if ($row->NUM_NOV == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = $row->NUM_NOV / $tt_hari_nov;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '6') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 12) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
                                                 $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
-                                        } else if ($no == '9') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 15) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '10') {
-                                            if ($row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 16) {
+                                            if ($row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * (1 / 100);
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         } else {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * 100;
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         }
-                                    ?> 
-                                </td>
-                                <td align="center"> 
-                                    <?php 
-                                        if ($no == '4')
-                                        {
-                                            if ($row->NUM_DES == 0) 
-                                            {
+                                        ?>
+                                    </td>
+                                    <td align="center">
+                                        <?php
+                                        if ($id_indikator == 10) {
+                                            if ($row->NUM_DES == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = $row->NUM_DES / $tt_hari_des;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '6') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 12) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
                                                 $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
-                                        } else if ($no == '9') {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 15) {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                             } else {
                                                 $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000;
-                                                echo $persen;
+                                                echo round($persen, 2);
                                             }
-                                        } else if ($no == '10') {
-                                            if ($row->TOTAL_DEN == 0) 
-                                            {
+                                        } else if ($id_indikator == 16) {
+                                            if ($row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * (1 / 100);
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         } else {
-                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                            {
+                                            if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
-                                                echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * 100;
+                                                $persen = $row->TOTAL_NUM / $row->TOTAL_DEN * 100;
+                                                echo round($persen, 2);
                                                 echo " %";
                                             }
                                         }
-                                    ?> 
-                                </td>
-                            </tr>
+                                        ?>
+                                    </td>
+                                </tr>
                             <?php } ?>
                         </tbody>
                     </table>
