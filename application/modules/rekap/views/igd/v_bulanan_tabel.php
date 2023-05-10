@@ -122,19 +122,45 @@
                                         <td align="center"> 
                                             <b>
                                                 <?php 
-                                                   if (empty($total_num))
-                                                   {
-                                                       echo "0";
-                                                   } else {
-                                                       echo $total_num;
-                                                   }
+                                                    if ($no == 6)
+                                                    {
+                                                        if (empty($total_num))
+                                                        {
+                                                            echo "0";
+                                                        } else {
+                                                            $average = $total_num / $total_hari;
+                                                            echo $average;
+                                                        }
+                                                    } else {
+                                                        if (empty($total_num))
+                                                        {
+                                                            echo "0";
+                                                        } else {
+                                                            echo $total_num;
+                                                        }
+                                                    }      
                                                 ?>
                                             </b> 
                                         </td>
                                         <td rowspan="2"> 
                                             <b><center>
                                                 <?php
-                                                     if ($no == 4) {
+                                                    if ($no == 3)
+                                                    {
+                                                        if ($total_num == 0 || $total_den == 0)
+                                                        {
+                                                            echo "0 %";
+                                                        } else {
+                                                            echo round($total_num / $total_den, 2);
+                                                        }
+                                                    } else if ($no == 5) {
+                                                        if ($total_num == 0 || $total_num == 0)
+                                                        {
+                                                            echo "0";
+                                                        } else {
+                                                            echo round($total_num / $total_num, 2);
+                                                        }
+                                                    } else if ($no == 6) {
                                                         if ($total_num == 0 || $total_den == 0)
                                                         {
                                                             echo "0";
@@ -143,12 +169,12 @@
                                                             $time    = $average / $total_den;
                                                             echo gmdate('H:i:s', floor($time * 86400));
                                                         }
-                                                    } else if ($no == 6) {
+                                                    } else if ($no == 8) {
                                                         if ($total_num == 0 || $total_den == 0)
                                                         {
                                                             echo "0";
                                                         } else {
-                                                            echo round(($total_num / $total_den) * 1000, 5)." permil ";
+                                                            echo round(($total_num / $total_den) * 1000, 5);
                                                         }
                                                     } else {
                                                         if ($total_num == 0 || $total_den == 0)
