@@ -13,7 +13,7 @@ class Rekap_model extends CI_Model
 		return $this->db->get()->num_rows();
 	}
 
-	public function get_data_bulanan($id_indikator, $bulan, $tahun)
+	public function get_data_bulanan($id_indikator, $id_ruang_sub, $bulan, $tahun)
 	{
 		$this->db->select('TR_INDIKATOR.ID, TR_INDIKATOR.TANGGAL, YEAR(TANGGAL) AS TAHUN, MONTH(TANGGAL) AS BULAN, DAY(TANGGAL) AS DATE, TR_INDIKATOR.NUM, TR_INDIKATOR.DEN, TREF_RUANG.NAMA_RUANG, TM_INDIKATOR.DETAIL_INDIKATOR, TM_INDIKATOR.DETAIL_NUM, TM_INDIKATOR.DETAIL_DEN');
 		$this->db->from('TR_INDIKATOR');
@@ -21,6 +21,7 @@ class Rekap_model extends CI_Model
 		$this->db->join('TREF_RUANG', 'TREF_RUANG_SUB.ID_RUANG = TREF_RUANG.ID');
 		$this->db->join('TM_INDIKATOR', 'TR_INDIKATOR.ID_INDIKATOR = TM_INDIKATOR.ID');
 		$this->db->where('TR_INDIKATOR.ID_INDIKATOR', $id_indikator);
+		$this->db->where('TR_INDIKATOR.ID_RUANG_SUB', $id_ruang_sub);
 		$this->db->where('YEAR(TR_INDIKATOR.TANGGAL)', $tahun);
 		$this->db->where('MONTH(TR_INDIKATOR.TANGGAL)', $bulan);
 		$this->db->where('TM_INDIKATOR.F_STATUS', 1);
