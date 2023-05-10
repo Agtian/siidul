@@ -68,6 +68,7 @@
                                     <?php 
                                         $no = 1;
                                         foreach ($triwulan_i->result() as $row) {
+                                            $id_indikator = $row->ID;
                                     ?>
                                     <tr>
                                         <td rowspan="2"><?php echo $no++; ?></td>
@@ -75,7 +76,7 @@
                                         <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 6)
+                                                if ($id_indikator == 53)
                                                 {
                                                     if ($row->NUM_JAN == 0) 
                                                     {
@@ -96,7 +97,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 6)
+                                                if ($id_indikator == 53)
                                                 {
                                                     if ($row->NUM_FEB == 0) 
                                                     {
@@ -117,7 +118,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 6)
+                                                if ($id_indikator == 53)
                                                 {
                                                     if ($row->NUM_MAR == 0) 
                                                     {
@@ -139,7 +140,7 @@
                                         <td align="center">
                                             <b> 
                                                 <?php
-                                                    if ($no == 6)
+                                                    if ($id_indikator == 53)
                                                     {
                                                         if ($row->TOTAL_NUM == 0) 
                                                         {
@@ -162,7 +163,7 @@
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 3)
+                                                    if ($id_indikator == 50)
                                                     {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
@@ -170,14 +171,14 @@
                                                         } else {
                                                             echo round(($row->TOTAL_NUM / $row->TOTAL_DEN), 2);
                                                         }
-                                                    } else if ($no == 5) {
+                                                    } else if ($id_indikator == 52) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "1";
                                                         } else {
                                                             echo "1";
                                                         }
-                                                    } else if ($no == 6) {
+                                                    } else if ($id_indikator == 53) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "00:00:00";
@@ -186,12 +187,12 @@
                                                             $time       = $tt_average / $row->TOTAL_DEN;
                                                             echo gmdate('H:i:s', floor($time * 86400));
                                                         }
-                                                    } else if ($no == 8) {
+                                                    } else if ($id_indikator == 55) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0)
                                                         {
                                                             echo "0";
                                                         } else {
-                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000, 5);
+                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000, 2). ' permil';
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
@@ -244,6 +245,8 @@
                                     <?php 
                                         $no = 1;
                                         foreach ($triwulan_ii->result() as $row) {
+                                            $id_indikator = $row->ID;
+
                                     ?>
                                     <tr>
                                         <td rowspan="2"><?php echo $no++; ?></td>
@@ -251,7 +254,7 @@
                                         <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 6)
+                                                if ($id_indikator == 53)
                                                 {
                                                     if ($row->NUM_APR == 0) 
                                                     {
@@ -272,7 +275,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 6)
+                                                if ($id_indikator == 53)
                                                 {
                                                     if ($row->NUM_MEI == 0) 
                                                     {
@@ -293,7 +296,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 6)
+                                                if ($id_indikator == 53)
                                                 {
                                                     if ($row->NUM_JUN == 0) 
                                                     {
@@ -315,7 +318,7 @@
                                         <td align="center">
                                             <b> 
                                                 <?php
-                                                    if ($no == 6)
+                                                    if ($id_indikator == 53)
                                                     {
                                                         if ($row->TOTAL_NUM == 0) 
                                                         {
@@ -338,7 +341,7 @@
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 3)
+                                                    if ($id_indikator == 50)
                                                     {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
@@ -346,14 +349,14 @@
                                                         } else {
                                                             echo round(($row->TOTAL_NUM / $row->TOTAL_DEN), 2);
                                                         }
-                                                    } else if ($no == 5) {
+                                                    } else if ($id_indikator == 52) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "1";
                                                         } else {
                                                             echo "1";
                                                         }
-                                                    } else if ($no == 6) {
+                                                    } else if ($id_indikator == 53) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "00:00:00";
@@ -362,12 +365,12 @@
                                                             $time       = $tt_average / $row->TOTAL_DEN;
                                                             echo gmdate('H:i:s', floor($time * 86400));
                                                         }
-                                                    } else if ($no == 8) {
+                                                    } else if ($id_indikator == 55) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0)
                                                         {
                                                             echo "0";
                                                         } else {
-                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000, 5);
+                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000, 2). ' permil';
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
@@ -420,6 +423,8 @@
                                     <?php 
                                         $no = 1;
                                         foreach ($triwulan_iii->result() as $row) {
+                                            $id_indikator = $row->ID;
+
                                     ?>
                                     <tr>
                                         <td rowspan="2"><?php echo $no++; ?></td>
@@ -427,7 +432,7 @@
                                         <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 6)
+                                                if ($id_indikator == 53)
                                                 {
                                                     if ($row->NUM_JUL == 0) 
                                                     {
@@ -448,7 +453,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 6)
+                                                if ($id_indikator == 53)
                                                 {
                                                     if ($row->NUM_AGT == 0) 
                                                     {
@@ -469,7 +474,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 6)
+                                                if ($id_indikator == 53)
                                                 {
                                                     if ($row->NUM_SEP == 0) 
                                                     {
@@ -491,7 +496,7 @@
                                         <td align="center">
                                             <b> 
                                                 <?php
-                                                    if ($no == 6)
+                                                    if ($id_indikator == 53)
                                                     {
                                                         if ($row->TOTAL_NUM == 0) 
                                                         {
@@ -514,7 +519,7 @@
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 3)
+                                                    if ($id_indikator == 50)
                                                     {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
@@ -522,14 +527,14 @@
                                                         } else {
                                                             echo round(($row->TOTAL_NUM / $row->TOTAL_DEN), 2);
                                                         }
-                                                    } else if ($no == 5) {
+                                                    } else if ($id_indikator == 52) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "1";
                                                         } else {
                                                             echo "1";
                                                         }
-                                                    } else if ($no == 6) {
+                                                    } else if ($id_indikator == 53) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "00:00:00";
@@ -538,12 +543,12 @@
                                                             $time       = $tt_average / $row->TOTAL_DEN;
                                                             echo gmdate('H:i:s', floor($time * 86400));
                                                         }
-                                                    } else if ($no == 8) {
+                                                    } else if ($id_indikator == 55) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0)
                                                         {
                                                             echo "0";
                                                         } else {
-                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000, 5);
+                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000, 2). ' permil';
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
@@ -596,6 +601,8 @@
                                     <?php 
                                         $no = 1;
                                         foreach ($triwulan_iv->result() as $row) {
+                                            $id_indikator = $row->ID;
+
                                     ?>
                                     <tr>
                                         <td rowspan="2"><?php echo $no++; ?></td>
@@ -603,7 +610,7 @@
                                         <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 6)
+                                                if ($id_indikator == 53)
                                                 {
                                                     if ($row->NUM_OKT == 0) 
                                                     {
@@ -624,7 +631,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 6)
+                                                if ($id_indikator == 53)
                                                 {
                                                     if ($row->NUM_NOV == 0) 
                                                     {
@@ -645,7 +652,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 6)
+                                                if ($id_indikator == 53)
                                                 {
                                                     if ($row->NUM_DES == 0) 
                                                     {
@@ -667,7 +674,7 @@
                                         <td align="center">
                                             <b> 
                                                 <?php
-                                                    if ($no == 6)
+                                                    if ($id_indikator == 53)
                                                     {
                                                         if ($row->TOTAL_NUM == 0) 
                                                         {
@@ -690,7 +697,7 @@
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 3)
+                                                    if ($id_indikator == 50)
                                                     {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
@@ -698,14 +705,14 @@
                                                         } else {
                                                             echo round(($row->TOTAL_NUM / $row->TOTAL_DEN), 2);
                                                         }
-                                                    } else if ($no == 5) {
+                                                    } else if ($id_indikator == 52) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "1";
                                                         } else {
                                                             echo "1";
                                                         }
-                                                    } else if ($no == 6) {
+                                                    } else if ($id_indikator == 53) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "00:00:00";
@@ -714,12 +721,12 @@
                                                             $time       = $tt_average / $row->TOTAL_DEN;
                                                             echo gmdate('H:i:s', floor($time * 86400));
                                                         }
-                                                    } else if ($no == 8) {
+                                                    } else if ($id_indikator == 55) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0)
                                                         {
                                                             echo "0";
                                                         } else {
-                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000, 5);
+                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 1000, 2). ' permil';
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
