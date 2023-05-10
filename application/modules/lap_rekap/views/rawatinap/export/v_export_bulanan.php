@@ -47,7 +47,10 @@
                 <?php 
                     $no = 1;
                     $tanggal    = $total_hari;
+                    $id_ruang_sub   = $this->session->userdata("user_id_ruang_sub");
                     foreach ($data_indikator->result() as $row) {
+                        $id_indikator = $row->ID;
+
                 ?>
                 <tr>
                     <td rowspan="2" align="center"><?php echo $no++; ?></td>
@@ -58,15 +61,15 @@
                     <?php 
                         $total_num  = 0; 
                         $total_den  = 0;
-                        $data       = $this->Rekap_model->get_data_bulanan($row->ID, $bulan, $tahun);
+                        $data       = $this->Rekap_model->get_data_bulanan($row->ID, $id_ruang_sub, $bulan, $tahun);
                         if ($total_hari == $total_hari) {
                             foreach ($data->result() as $key) 
                             {
-                                if ($no == 4) {
+                                if ($id_indikator == 10) {
                                     $total_num += $key->NUM;
                                     $total_den += $key->DEN;
                                     echo '<td align="center"> '.$key->NUM.' </td>';
-                                } else if ($no == 6) {
+                                } else if ($id_indikator == 12) {
                                     $total_num += $key->NUM;
                                     $total_den += $key->DEN;
                                     echo '<td align="center"> '.$key->NUM.' </td>';
@@ -79,7 +82,7 @@
 
                         } else {
 
-                            $data = $this->Rekap_model->get_data_bulanan($row->ID, $bulan, $tahun);
+                            $data = $this->Rekap_model->get_data_bulanan($row->ID, $id_ruang_sub, $bulan, $tahun);
                             foreach ($data->result() as $key) 
                             {
                                 echo '<td align="center"> '.$key->NUM.' </td>';
@@ -90,7 +93,7 @@
                         <b>
                             <?php 
                                 $average_3 = $total_num / $total_hari;
-                                if ($no == 4) 
+                                if ($id_indikator == 10) 
                                 {
                                     if (empty($average_3))
                                     {
@@ -112,7 +115,7 @@
                     <td rowspan="2"> 
                         <b><center>
                             <?php
-                                if ($no == 4) {
+                                if ($id_indikator == 10) {
                                     if ($total_num == 0)
                                     {
                                         echo "0";
@@ -120,32 +123,32 @@
                                         $average_3 = $total_num / $total_hari;
                                         echo $average_3;
                                     }
-                                } else if ($no == 6) {
+                                } else if ($id_indikator == 12) {
                                     if ($total_num == 0 || $total_den == 0)
                                     {
                                         echo "0";
                                         echo " %";
                                     } else {
                                         $persen = $total_num / $total_den;
-                                        echo $persen;
+                                        echo round($persen, 2);
                                         echo " %";
                                     }
-                                } else if ($no == 9) {
+                                } else if ($id_indikator == 15) {
                                     if ($total_num == 0 || $total_den == 0)
                                     {
                                         echo "0";
                                     } else {
                                         $persen = ($total_num / $total_den) * 1000;
-                                        echo $persen;
+                                        echo round($persen, 2);
                                     }
-                                } else if ($no == 10) {
+                                } else if ($id_indikator == 16) {
                                     if ($total_den == 0)
                                     {
                                         echo "0";
                                         echo " %";
                                     } else {
-                                        $persen = ($total_num / $total_den) * (1 / 100);
-                                        echo $persen;
+                                        $persen = ($total_num / $total_den) *  100;
+                                        echo round($persen, 2);
                                         echo " %";
                                     }
                                 } else {
@@ -154,7 +157,8 @@
                                         echo "0";
                                         echo " %";
                                     } else {
-                                        echo $total_num / $total_den * 100;
+                                        $persen = $total_num / $total_den * 100;
+                                        echo round($persen, 2);
                                         echo " %";
                                     }
                                 }
