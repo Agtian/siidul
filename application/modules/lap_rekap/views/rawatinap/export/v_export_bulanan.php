@@ -47,7 +47,6 @@
                 <?php 
                     $no = 1;
                     $tanggal    = $total_hari;
-                    $id_ruang_sub   = $this->session->userdata("user_id_ruang_sub");
                     foreach ($data_indikator->result() as $row) {
                         $id_indikator = $row->ID;
 
