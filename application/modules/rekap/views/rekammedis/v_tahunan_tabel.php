@@ -77,6 +77,8 @@
                                     <?php 
                                         $no = 1;
                                         foreach ($tahunan_i->result() as $row) {
+                                            $id_indikator = $row->ID;
+
                                     ?>
                                     <tr>
                                         <td rowspan="2"><?php echo $no++; ?></td>
@@ -87,9 +89,9 @@
                                                 if ($row->NUM_JAN == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 6) {
                                                     echo round($row->NUM_JAN / $tt_hari_jan, 5); 
-                                                } else if ($no == 5) {
+                                                } else if ($id_indikator == 7) {
                                                     echo round($row->NUM_JAN / $tt_hari_jan, 5); 
                                                 } else {
                                                     echo $row->NUM_JAN;
@@ -101,9 +103,9 @@
                                                 if ($row->NUM_FEB == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 6) {
                                                     echo round($row->NUM_FEB / $tt_hari_feb, 5); 
-                                                } else if ($no == 5) {
+                                                } else if ($id_indikator == 7) {
                                                     echo round($row->NUM_FEB / $tt_hari_feb, 5); 
                                                 } else {
                                                     echo $row->NUM_FEB;
@@ -115,9 +117,9 @@
                                                 if ($row->NUM_MAR == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 6) {
                                                     echo round($row->NUM_MAR / $tt_hari_mar, 5); 
-                                                } else if ($no == 5) {
+                                                } else if ($id_indikator == 7) {
                                                     echo round($row->NUM_MAR / $tt_hari_mar, 5); 
                                                 } else {
                                                     echo $row->NUM_MAR;
@@ -129,9 +131,9 @@
                                                 if ($row->NUM_APR == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 6) {
                                                     echo round($row->NUM_APR / $tt_hari_apr, 5); 
-                                                } else if ($no == 5) {
+                                                } else if ($id_indikator == 7) {
                                                     echo round($row->NUM_APR / $tt_hari_apr, 5); 
                                                 } else {
                                                     echo $row->NUM_APR;
@@ -143,9 +145,9 @@
                                                 if ($row->NUM_MEI == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 6) {
                                                     echo round($row->NUM_MEI / $tt_hari_mei, 5); 
-                                                } else if ($no == 5) {
+                                                } else if ($id_indikator == 7) {
                                                     echo round($row->NUM_MEI / $tt_hari_mei, 5); 
                                                 } else {
                                                     echo $row->NUM_MEI;
@@ -157,9 +159,9 @@
                                                 if ($row->DEN_JUN == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 6) {
                                                     echo round($row->DEN_JUN / $tt_hari_jun, 5); 
-                                                } else if ($no == 5) {
+                                                } else if ($id_indikator == 7) {
                                                     echo round($row->DEN_JUN / $tt_hari_jun, 5); 
                                                 } else {
                                                     echo $row->DEN_JUN;
@@ -171,9 +173,9 @@
                                                 if ($row->NUM_JUL == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 6) {
                                                     echo round($row->NUM_JUL / $tt_hari_jul, 5); 
-                                                } else if ($no == 5) {
+                                                } else if ($id_indikator == 7) {
                                                     echo round($row->NUM_JUL / $tt_hari_jul, 5); 
                                                 } else {
                                                     echo $row->NUM_JUL;
@@ -185,9 +187,9 @@
                                                 if ($row->NUM_AGT == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 6) {
                                                     echo round($row->NUM_AGT / $tt_hari_agt, 5); 
-                                                } else if ($no == 5) {
+                                                } else if ($id_indikator == 7) {
                                                     echo round($row->NUM_AGT / $tt_hari_agt, 5); 
                                                 } else {
                                                     echo $row->NUM_AGT;
@@ -199,9 +201,9 @@
                                                 if ($row->NUM_SEP == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 6) {
                                                     echo round($row->NUM_SEP / $tt_hari_sep, 5); 
-                                                } else if ($no == 5) {
+                                                } else if ($id_indikator == 7) {
                                                     echo round($row->NUM_SEP / $tt_hari_sep, 5); 
                                                 } else {
                                                     echo $row->NUM_SEP;
@@ -213,9 +215,9 @@
                                                 if ($row->NUM_NOV == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 6) {
                                                     echo round($row->NUM_NOV / $tt_hari_nov, 5); 
-                                                } else if ($no == 5) {
+                                                } else if ($id_indikator == 7) {
                                                     echo round($row->NUM_NOV / $tt_hari_nov, 5); 
                                                 } else {
                                                     echo $row->NUM_NOV;
@@ -227,9 +229,9 @@
                                                 if ($row->NUM_OKT == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 6) {
                                                     echo round($row->NUM_OKT / $tt_hari_okt, 5); 
-                                                } else if ($no == 5) {
+                                                } else if ($id_indikator == 7) {
                                                     echo round($row->NUM_OKT / $tt_hari_okt, 5); 
                                                 } else {
                                                     echo $row->NUM_OKT;
@@ -241,9 +243,9 @@
                                                 if ($row->NUM_DES == 0)
                                                 {
                                                     echo "0";
-                                                } else if ($no == 4) {
+                                                } else if ($id_indikator == 6) {
                                                     echo round($row->NUM_DES / $tt_hari_des, 5); 
-                                                } else if ($no == 5) {
+                                                } else if ($id_indikator == 7) {
                                                     echo round($row->NUM_DES / $tt_hari_des, 5); 
                                                 } else {
                                                     echo $row->NUM_DES;
