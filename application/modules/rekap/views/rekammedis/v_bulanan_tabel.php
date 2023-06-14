@@ -90,6 +90,8 @@
                                         $no = 1;
                                         $id_ruang_sub   = $this->session->userdata("user_id_ruang_sub");
                                         foreach ($data_indikator->result() as $row) {
+                                            $id_indikator = $row->ID;
+
                                     ?>
                                     <tr>
                                         <td rowspan="2"><?php echo $no++; ?></td>
@@ -107,11 +109,11 @@
                                             if ($total_hari == $total_hari) {
                                                 foreach ($data->result() as $key) 
                                                 {
-                                                    if ($no == 4) {
+                                                    if ($id_indikator == 6) {
                                                         echo '<td align="center"> '.round($key->NUM, 2).' </td>';
                                                         $total_num += $key->NUM;
                                                         $average_3 = $total_num / $total_hari;
-                                                    } else if ($no == 5) {
+                                                    } else if ($id_indikator == 7) {
                                                         echo '<td align="center"> '.round($key->NUM, 2).' </td>';
                                                         $total_num += $key->NUM;
                                                         $average_4 = $total_num / $total_hari;
@@ -136,7 +138,7 @@
                                         <td align="center"> 
                                             <b>
                                                 <?php 
-                                                    if ($no == 4) 
+                                                    if ($id_indikator == 6) 
                                                     {
                                                         if (empty($average_3))
                                                         {
@@ -144,7 +146,7 @@
                                                         } else {
                                                             echo round($average_3, 4);
                                                         }
-                                                    } else if ($no == 5) {
+                                                    } else if ($id_indikator == 7) {
                                                         if (empty($average_4))
                                                         {
                                                             echo "0";
@@ -163,11 +165,11 @@
                                                     $data = $this->Rekap_model->get_data_bulanan($row->ID, $id_ruang_sub, $bulan, $tahun);
                                                     foreach ($data->result() as $key) 
                                                     {
-                                                        if ($no == 4) {
+                                                        if ($id_indikator == 6) {
                                                             $total_num += $key->NUM;
                                                             $total_den += $key->DEN;
                                                             $average_3 = $total_num / $total_den;
-                                                        } else if ($no == 5) {
+                                                        } else if ($id_indikator == 7) {
                                                             $total_num += $key->NUM;
                                                             $total_den += $key->DEN;
                                                             $average_4 = $total_num / $total_den;
@@ -177,7 +179,7 @@
                                                         }                                                
                                                     }
 
-                                                    if ($no == 4) {
+                                                    if ($id_indikator == 6) {
                                                         if ($total_den == 0)
                                                         {
                                                             echo "0";
@@ -187,7 +189,7 @@
                                                             $persen = $x / $total_den;
                                                             echo gmdate('H:i:s', floor($persen * 86400));
                                                         }
-                                                    } else if ($no == 5) {
+                                                    } else if ($id_indikator == 7) {
                                                         if ($total_den == 0)
                                                         {
                                                             echo "0";
@@ -234,7 +236,7 @@
                                                 <?php
                                                     // echo $total_den / 2; 
 
-                                                    if ($no == 4) 
+                                                    if ($id_indikator == 6) 
                                                     {
                                                         if (empty($total_den))
                                                         {
@@ -242,7 +244,7 @@
                                                         } else {
                                                             echo $total_den / 2;
                                                         }
-                                                    } else if ($no == 5) {
+                                                    } else if ($id_indikator == 7) {
                                                         if (empty($total_den))
                                                         {
                                                             echo "0";
