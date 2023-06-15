@@ -125,7 +125,8 @@
                                                 }
 
                                             } else {
-
+                                                $total_num  = 0; 
+                                                $total_den  = 0;
                                                 $data = $this->Rekap_model->get_data_bulanan($row->ID, $id_ruang_sub, $bulan, $tahun);
                                                 foreach ($data->result() as $key) 
                                                 {
@@ -168,11 +169,12 @@
                                                         if ($id_indikator == 6) {
                                                             $total_num += $key->NUM;
                                                             $total_den += $key->DEN;
-                                                            $average_3 = $total_num / $total_den;
+                                                            //print_r($total_den);die();
+                                                            //$average_3 = $total_num / $total_den;
                                                         } else if ($id_indikator == 7) {
                                                             $total_num += $key->NUM;
                                                             $total_den += $key->DEN;
-                                                            $average_4 = $total_num / $total_den;
+                                                            //$average_4 = $total_num / $total_den;
                                                         } else {
                                                             $total_num += $key->NUM;
                                                             $total_den += $key->DEN;
@@ -185,18 +187,18 @@
                                                             echo "0";
                                                             // echo $average_3;
                                                         } else {
-                                                            $x      = $total_num / $total_hari / 2;
+                                                            $x      = $total_num  ;
                                                             $persen = $x / $total_den;
-                                                            echo gmdate('H:i:s', floor($persen * 86400));
+                                                            echo gmdate('H:i:s', floor($persen * 3600));
                                                         }
                                                     } else if ($id_indikator == 7) {
                                                         if ($total_den == 0)
                                                         {
                                                             echo "0";
                                                         } else {
-                                                            $x      = $total_num / $total_hari / 2;
+                                                            $x      = $total_num  ;
                                                             $persen = $x / $total_den;
-                                                            echo gmdate('H:i:s', floor($persen * 86400));
+                                                            echo gmdate('H:i:s', floor($persen * 3600));
                                                         }
                                                     } else {
                                                         if ($total_num == 0 || $total_den == 0)
@@ -242,17 +244,17 @@
                                                         {
                                                             echo "0";
                                                         } else {
-                                                            echo $total_den / 2;
+                                                            echo $total_den ;
                                                         }
                                                     } else if ($id_indikator == 7) {
                                                         if (empty($total_den))
                                                         {
                                                             echo "0";
                                                         } else {
-                                                            echo $total_den / 2;
+                                                            echo $total_den ;
                                                         }
                                                     } else {
-                                                        echo $total_den / 3; 
+                                                        echo $total_den ; 
                                                     }
                                                 ?>
                                             </b> 

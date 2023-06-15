@@ -27,25 +27,7 @@
                         <hr>
 
                         <?php $no = 1; foreach ($data_indikator->result() as $row) { ?>
-                            <?php if ($no == 4) { ?>
-                                <label> <h4><b> <?php echo $no++.'. '.$row->DETAIL_INDIKATOR; ?></b></h4></label>
-                                <div class="form-group">
-                                    <div class="col-md-2 col-sm-2 col-xs-2">
-                                        <input type="text" class="form-control" name="num[]" placeholder="Numerator" readonly>
-                                    </div>
-                                    <div class="col-md-10 col-sm-10 col-xs-10"> <h4><?php echo $row->DETAIL_NUM; ?></h4> </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-2 col-sm-2 col-xs-2">
-                                        <input type="text" class="form-control" name="den[]" placeholder="Denumerator" required>
-                                    </div>
-                                    <div class="col-md-10 col-sm-10 col-xs-10"> <h4><?php echo $row->DETAIL_DEN; ?></h4> </div>
-                                </div>
-                                <input type="hidden" name="id_indikator[]" value="<?php echo $row->ID; ?>">
-                                <input type="hidden" name="id_ruang" value="<?= $this->session->userdata('user_id_ruang'); ?>">
-                                <input type="hidden" name="id_user" value="<?= $this->session->userdata('user_id'); ?>">
-                                <hr>
-                            <?php } else { ?>
+                           
                                 <label> <h4><b> <?php echo $no++.'. '.$row->DETAIL_INDIKATOR; ?></b></h4></label>
                                 <div class="form-group">
                                     <div class="col-md-2 col-sm-2 col-xs-2">
@@ -63,7 +45,6 @@
                                 <input type="hidden" name="id_ruang_sub" value="<?= $this->session->userdata('user_id_ruang_sub'); ?>">
                                 <input type="hidden" name="id_user" value="<?= $this->session->userdata('user_id'); ?>">
                                 <hr>
-                            <?php } ?>
                         <?php } ?>
 
                         <div class="ln_solid"></div>
