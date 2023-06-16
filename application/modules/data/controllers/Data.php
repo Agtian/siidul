@@ -160,54 +160,17 @@ class Data extends CI_Controller
 
 		$result = array();
 		foreach ($id_indikator as $key => $val) {
-			if ($id_ruang_sub == 2 && $key == 2) {
-				// Proses simpan nomor 3
-				$result[] = array(
-					'ID'            => $id[$key],
-					'TANGGAL' 		=> $tanggal,
-					'ID_RUANG_SUB' 	=> $id_ruang_sub,
-					'ID_INDIKATOR' 	=> $id_indikator[$key],
-					'ID_USER' 		=> $id_user,
-					'TANGGAL' 		=> $tanggal,
-					'NUM' 			=> $den[$key] * 4 / 60,
-					'DEN' 			=> $den[$key],
-				);
-			} else if ($id_ruang_sub == 2 && $key == 3) {
-				// Proses simpan nomor 3
-				$result[] = array(
-					'ID'            => $id[$key],
-					'TANGGAL' 		=> $tanggal,
-					'ID_RUANG_SUB' 	=> $id_ruang_sub,
-					'ID_INDIKATOR' 	=> $id_indikator[$key],
-					'ID_USER' 		=> $id_user,
-					'TANGGAL' 		=> $tanggal,
-					'NUM' 			=> $den[$key] * 7 / 60,
-					'DEN' 			=> $den[$key],
-				);
-			} else if ($id_ruang_sub == 20 && $key == 3) {
-				// Proses simpan nomor 4
-				$result[] = array(
-					'ID'            => $id[$key],
-					'TANGGAL' 		=> $tanggal,
-					'ID_RUANG_SUB' 	=> $id_ruang_sub,
-					'ID_INDIKATOR' 	=> $id_indikator[$key],
-					'ID_USER' 		=> $id_user,
-					'TANGGAL' 		=> $tanggal,
-					'NUM' 			=> $den[$key] * 30 / 60,
-					'DEN' 			=> $den[$key],
-				);
-			} else {
-				$result[] = array(
-					'ID'            => $id[$key],
-					'TANGGAL' 		=> $tanggal,
-					'ID_RUANG_SUB' 	=> $id_ruang_sub,
-					'ID_INDIKATOR' 	=> $id_indikator[$key],
-					'ID_USER' 		=> $id_user,
-					'TANGGAL' 		=> $tanggal,
-					'NUM' 			=> round($num[$key]),
-					'DEN' 			=> $den[$key],
-				);
-			}
+
+			$result[] = array(
+				'ID'            => $id[$key],
+				'TANGGAL' 		=> $tanggal,
+				'ID_RUANG_SUB' 	=> $id_ruang_sub,
+				'ID_INDIKATOR' 	=> $id_indikator[$key],
+				'ID_USER' 		=> $id_user,
+				'TANGGAL' 		=> $tanggal,
+				'NUM' 			=> round($num[$key]),
+				'DEN' 			=> $den[$key],
+			);
 		}
 
 		// print_r($result);
