@@ -71,6 +71,8 @@
                                     <?php 
                                         $no = 1;
                                         foreach ($semester_i->result() as $row) {
+                                            $id_indikator = $row->ID;
+
                                     ?>
                                     <tr>
                                         <td rowspan="2" align="center"><?php echo $no++; ?></td>
@@ -85,37 +87,21 @@
                                         <td align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 3)
-                                                    {
-                                                        if ($row->TOTAL_NUM == 0) 
-                                                        {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_NUM / 6;
-                                                        }
-                                                    } else {
+                                                  
                                                         if ($row->TOTAL_NUM == 0) 
                                                         {
                                                             echo "0";
                                                         } else {
                                                             echo $row->TOTAL_NUM;
                                                         }
-                                                    }     
+                                                      
                                                 ?> 
                                             </b>
                                         </td>
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 3)
-                                                    {
-                                                        if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                                        {
-                                                            echo "0";
-                                                        } else {
-                                                            echo ($row->TOTAL_NUM / 6) / $row->TOTAL_DEN;
-                                                        }
-                                                    } else if ($no == 4) {
+                                                    if ($id_indikator == 94) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "00:00:00";
@@ -181,6 +167,8 @@
                                     <?php 
                                         $no = 1;
                                         foreach ($semester_ii->result() as $row) {
+                                            $id_indikator = $row->ID;
+
                                     ?>
                                     <tr>
                                         <td rowspan="2" align="center"><?php echo $no++; ?></td>
@@ -195,37 +183,21 @@
                                         <td align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 3)
-                                                    {
-                                                        if ($row->TOTAL_NUM == 0) 
-                                                        {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_NUM / 6;
-                                                        }
-                                                    } else {
+                                                    
                                                         if ($row->TOTAL_NUM == 0) 
                                                         {
                                                             echo "0";
                                                         } else {
                                                             echo $row->TOTAL_NUM;
                                                         }
-                                                    }     
+                                                      
                                                 ?> 
                                             </b>
                                         </td>
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 3)
-                                                    {
-                                                        if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
-                                                        {
-                                                            echo "0";
-                                                        } else {
-                                                            echo ($row->TOTAL_NUM / 6) / $row->TOTAL_DEN;
-                                                        }
-                                                    } else if ($no == 5) {
+                                                     if ($id_indikator == 94) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "00:00:00";

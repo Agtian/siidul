@@ -14,23 +14,23 @@
                     <div class="x_content">
                         <br>
                         <?php echo form_open('rekap/capaian', 'class="form-horizontal "'); ?>
-                            <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12">TAHUN</label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <select class="form-control" name="tahun" required>
-                                        <?php foreach ($list_tahun->result() as $dd) { ?>
-                                            <option value="<?php echo $dd->TAHUN; ?>"> <?php echo $dd->TAHUN; ?> </option>
-                                        <?php } ?>
-                                    </select>
-                                </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">TAHUN</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <select class="form-control" name="tahun" required>
+                                    <?php foreach ($list_tahun->result() as $dd) { ?>
+                                        <option value="<?php echo $dd->TAHUN; ?>"> <?php echo $dd->TAHUN; ?> </option>
+                                    <?php } ?>
+                                </select>
                             </div>
-                            <div class="ln_solid"></div>
-                            <div class="form-group">
-                                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                    <button type="submit" class="btn btn-primary">Tampilkan</button>
-                                    <a class="btn btn-primary" target="_blank" href="<?php echo base_url('rekap/export_capaian/').$id_ruang_sub.'/'.$tahun; ?>">Export PDF</a>
-                                </div>
+                        </div>
+                        <div class="ln_solid"></div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                <button type="submit" class="btn btn-primary">Tampilkan</button>
+                                <a class="btn btn-primary" target="_blank" href="<?php echo base_url('rekap/export_capaian/') . $id_ruang_sub . '/' . $tahun; ?>">Export PDF</a>
                             </div>
+                        </div>
                         <?php echo form_close(); ?>
                     </div>
                 </div>
@@ -51,10 +51,18 @@
                             <table id="" class="table table-striped table-bordered">
                                 <thead>
                                     <tr class="bg-primary">
-                                        <th rowspan="2" width="30"><center>NO</center></th>
-                                        <th rowspan="2" width="250"><center>INDIKATOR</center></th>
-                                        <th rowspan="2"><center>STANDAR</center></th>
-                                        <th colspan="12"><center>BULAN</center></th>
+                                        <th rowspan="2" width="30">
+                                            <center>NO</center>
+                                        </th>
+                                        <th rowspan="2" width="250">
+                                            <center>INDIKATOR</center>
+                                        </th>
+                                        <th rowspan="2">
+                                            <center>STANDAR</center>
+                                        </th>
+                                        <th colspan="12">
+                                            <center>BULAN</center>
+                                        </th>
                                     </tr>
                                     <tr class="bg-primary">
                                         <th align="center">JAN</th>
@@ -72,25 +80,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php 
-                                        $no = 1;
-                                        foreach ($capaian->result() as $row) {
+                                    <?php
+                                    $no = 1;
+                                    foreach ($capaian->result() as $row) {
+                                        $id_indikator = $row->ID;
+
                                     ?>
-                                    <tr>
-                                        <td rowspan="1" align="center"><?php echo $no++; ?></td>
-                                        <td rowspan="1"><?php echo $row->DETAIL_INDIKATOR; ?></td>
-                                        <td align="center"><b> <?php echo $row->NILAI_STANDAR; ?> </b></td>
-                                        <td align="center"> 
-                                            <?php 
-                                                if ($no == '3')
-                                                {
-                                                    if (empty($row->NUM_JAN) || empty($row->DEN_JAN)) {
-                                                        echo "0";
-                                                    } else {
-                                                        $persen = (($row->NUM_JAN / $tt_hari_jan) / $row->DEN_JAN);
-                                                        echo round($persen, 2);
-                                                    }
-                                                } else if ($no == 4) {
+                                        <tr>
+                                            <td rowspan="1" align="center"><?php echo $no++; ?></td>
+                                            <td rowspan="1"><?php echo $row->DETAIL_INDIKATOR; ?></td>
+                                            <td align="center"><b> <?php echo $row->NILAI_STANDAR; ?> </b></td>
+                                            <td align="center">
+                                                <?php
+                                                if ($id_indikator == 94) {
                                                     if (empty($row->NUM_JAN)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -104,22 +106,14 @@
                                                         echo "0 %";
                                                     } else {
                                                         $persen = ($row->NUM_JAN / $row->DEN_JAN) * 100;
-                                                        echo round($persen, 2).' %';
+                                                        echo round($persen, 2) . ' %';
                                                     }
                                                 }
-                                            ?>
-                                        </td>
-                                        <td align="center"> 
-                                            <?php 
-                                                if ($no == '3')
-                                                {
-                                                    if (empty($row->NUM_FEB) || empty($row->DEN_FEB)) {
-                                                        echo "0";
-                                                    } else {
-                                                        $persen = (($row->NUM_FEB / $tt_hari_feb) / $row->DEN_FEB);
-                                                        echo round($persen, 2);
-                                                    }
-                                                } else if ($no == 4) {
+                                                ?>
+                                            </td>
+                                            <td align="center">
+                                                <?php
+                                                if ($id_indikator == 94) {
                                                     if (empty($row->NUM_FEB)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -133,22 +127,14 @@
                                                         echo "0 %";
                                                     } else {
                                                         $persen = ($row->NUM_FEB / $row->DEN_FEB) * 100;
-                                                        echo round($persen, 2).' %';
+                                                        echo round($persen, 2) . ' %';
                                                     }
                                                 }
-                                            ?>                                    
-                                        </td>
-                                        <td align="center"> 
-                                            <?php 
-                                                if ($no == '3')
-                                                {
-                                                    if (empty($row->NUM_MAR) || empty($row->DEN_MAR)) {
-                                                        echo "0";
-                                                    } else {
-                                                        $persen = (($row->NUM_MAR / $tt_hari_mar) / $row->DEN_MAR);
-                                                        echo round($persen, 2);
-                                                    }
-                                                } else if ($no == 4) {
+                                                ?>
+                                            </td>
+                                            <td align="center">
+                                                <?php
+                                                if ($id_indikator == 94) {
                                                     if (empty($row->NUM_MAR)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -162,22 +148,14 @@
                                                         echo "0 %";
                                                     } else {
                                                         $persen = ($row->NUM_MAR / $row->DEN_MAR) * 100;
-                                                        echo round($persen, 2).' %';
+                                                        echo round($persen, 2) . ' %';
                                                     }
                                                 }
-                                            ?>
-                                        </td>
-                                        <td align="center"> 
-                                            <?php 
-                                                if ($no == '3')
-                                                {
-                                                    if (empty($row->NUM_APR) || empty($row->DEN_APR)) {
-                                                        echo "0";
-                                                    } else {
-                                                        $persen = (($row->NUM_APR / $tt_hari_apr) / $row->DEN_APR);
-                                                        echo round($persen, 2);
-                                                    }
-                                                } else if ($no == 4) {
+                                                ?>
+                                            </td>
+                                            <td align="center">
+                                                <?php
+                                                if ($id_indikator == 94) {
                                                     if (empty($row->NUM_APR)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -191,22 +169,14 @@
                                                         echo "0 %";
                                                     } else {
                                                         $persen = ($row->NUM_APR / $row->DEN_APR) * 100;
-                                                        echo round($persen, 2).' %';
+                                                        echo round($persen, 2) . ' %';
                                                     }
                                                 }
-                                            ?>
-                                        </td>
-                                        <td align="center"> 
-                                            <?php 
-                                                if ($no == '3')
-                                                {
-                                                    if (empty($row->NUM_MEI) || empty($row->DEN_MEI)) {
-                                                        echo "0";
-                                                    } else {
-                                                        $persen = (($row->NUM_MEI / $tt_hari_mei) / $row->DEN_MEI);
-                                                        echo round($persen, 2);
-                                                    }
-                                                } else if ($no == 4) {
+                                                ?>
+                                            </td>
+                                            <td align="center">
+                                                <?php
+                                                if ($id_indikator == 94) {
                                                     if (empty($row->NUM_MEI)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -220,22 +190,14 @@
                                                         echo "0 %";
                                                     } else {
                                                         $persen = ($row->NUM_MEI / $row->DEN_MEI) * 100;
-                                                        echo round($persen, 2).' %';
+                                                        echo round($persen, 2) . ' %';
                                                     }
                                                 }
-                                            ?>
-                                        </td>
-                                        <td align="center"> 
-                                            <?php 
-                                                if ($no == '3')
-                                                {
-                                                    if (empty($row->NUM_JUN) || empty($row->DEN_JUN)) {
-                                                        echo "0";
-                                                    } else {
-                                                        $persen = (($row->NUM_JUN / $tt_hari_jun) / $row->DEN_JUN);
-                                                        echo round($persen, 2);
-                                                    }
-                                                } else if ($no == 4) {
+                                                ?>
+                                            </td>
+                                            <td align="center">
+                                                <?php
+                                                if ($id_indikator == 94) {
                                                     if (empty($row->NUM_JUN)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -249,22 +211,14 @@
                                                         echo "0 %";
                                                     } else {
                                                         $persen = ($row->NUM_JUN / $row->DEN_JUN) * 100;
-                                                        echo round($persen, 2).' %';
+                                                        echo round($persen, 2) . ' %';
                                                     }
                                                 }
-                                            ?>
-                                        </td>
-                                        <td align="center"> 
-                                            <?php 
-                                                if ($no == '3')
-                                                {
-                                                    if (empty($row->NUM_JUN) || empty($row->DEN_JUN)) {
-                                                        echo "0";
-                                                    } else {
-                                                        $persen = (($row->NUM_JUN / $tt_hari_jul) / $row->DEN_JUN);
-                                                        echo round($persen, 2);
-                                                    }
-                                                } else if ($no == 4) {
+                                                ?>
+                                            </td>
+                                            <td align="center">
+                                                <?php
+                                                if ($id_indikator == 94) {
                                                     if (empty($row->NUM_JUN)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -278,22 +232,14 @@
                                                         echo "0 %";
                                                     } else {
                                                         $persen = ($row->NUM_JUN / $row->DEN_JUN) * 100;
-                                                        echo round($persen, 2).' %';
+                                                        echo round($persen, 2) . ' %';
                                                     }
                                                 }
-                                            ?>
-                                        </td>
-                                        <td align="center"> 
-                                            <?php 
-                                                if ($no == '3')
-                                                {
-                                                    if (empty($row->NUM_AGT) || empty($row->DEN_AGT)) {
-                                                        echo "0";
-                                                    } else {
-                                                        $persen = (($row->NUM_AGT / $tt_hari_agt) / $row->DEN_AGT);
-                                                        echo round($persen, 2);
-                                                    }
-                                                } else if ($no == 4) {
+                                                ?>
+                                            </td>
+                                            <td align="center">
+                                                <?php
+                                                if ($id_indikator == 94) {
                                                     if (empty($row->NUM_AGT)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -307,22 +253,14 @@
                                                         echo "0 %";
                                                     } else {
                                                         $persen = ($row->NUM_AGT / $row->DEN_AGT) * 100;
-                                                        echo round($persen, 2).' %';
+                                                        echo round($persen, 2) . ' %';
                                                     }
                                                 }
-                                            ?>
-                                        </td>
-                                        <td align="center"> 
-                                            <?php 
-                                                if ($no == '3')
-                                                {
-                                                    if (empty($row->NUM_SEP) || empty($row->DEN_SEP)) {
-                                                        echo "0";
-                                                    } else {
-                                                        $persen = (($row->NUM_SEP / $tt_hari_sep) / $row->DEN_SEP);
-                                                        echo round($persen, 2);
-                                                    }
-                                                } else if ($no == 4) {
+                                                ?>
+                                            </td>
+                                            <td align="center">
+                                                <?php
+                                                if ($id_indikator == 94) {
                                                     if (empty($row->NUM_SEP)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -336,22 +274,14 @@
                                                         echo "0 %";
                                                     } else {
                                                         $persen = ($row->NUM_SEP / $row->DEN_SEP) * 100;
-                                                        echo round($persen, 2).' %';
+                                                        echo round($persen, 2) . ' %';
                                                     }
                                                 }
-                                            ?>
-                                        </td>
-                                        <td align="center"> 
-                                            <?php 
-                                                if ($no == '3')
-                                                {
-                                                    if (empty($row->NUM_OKT) || empty($row->DEN_OKT)) {
-                                                        echo "0";
-                                                    } else {
-                                                        $persen = (($row->NUM_OKT / $tt_hari_okt) / $row->DEN_OKT);
-                                                        echo round($persen, 2);
-                                                    }
-                                                } else if ($no == 4) {
+                                                ?>
+                                            </td>
+                                            <td align="center">
+                                                <?php
+                                                if ($id_indikator == 94) {
                                                     if (empty($row->NUM_OKT)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -365,22 +295,14 @@
                                                         echo "0 %";
                                                     } else {
                                                         $persen = ($row->NUM_OKT / $row->DEN_OKT) * 100;
-                                                        echo round($persen, 2).' %';
+                                                        echo round($persen, 2) . ' %';
                                                     }
                                                 }
-                                            ?>
-                                        </td>
-                                        <td align="center"> 
-                                            <?php 
-                                                if ($no == '3')
-                                                {
-                                                    if (empty($row->NUM_NOV) || empty($row->DEN_NOV)) {
-                                                        echo "0";
-                                                    } else {
-                                                        $persen = (($row->NUM_NOV / $tt_hari_nov) / $row->DEN_NOV);
-                                                        echo round($persen, 2);
-                                                    }
-                                                } else if ($no == 4) {
+                                                ?>
+                                            </td>
+                                            <td align="center">
+                                                <?php
+                                                if ($id_indikator == 94) {
                                                     if (empty($row->NUM_NOV)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -394,22 +316,14 @@
                                                         echo "0 %";
                                                     } else {
                                                         $persen = ($row->NUM_NOV / $row->DEN_NOV) * 100;
-                                                        echo round($persen, 2).' %';
+                                                        echo round($persen, 2) . ' %';
                                                     }
                                                 }
-                                            ?>
-                                        </td>
-                                        <td align="center"> 
-                                            <?php 
-                                                if ($no == '3')
-                                                {
-                                                    if (empty($row->NUM_DES) || empty($row->DEN_DES)) {
-                                                        echo "0";
-                                                    } else {
-                                                        $persen = (($row->NUM_DES / $tt_hari_des) / $row->DEN_DES);
-                                                        echo round($persen, 2);
-                                                    }
-                                                } else if ($no == 4) {
+                                                ?>
+                                            </td>
+                                            <td align="center">
+                                                <?php
+                                                if ($id_indikator == 94) {
                                                     if (empty($row->NUM_DES)) {
                                                         echo "00:00:00";
                                                     } else {
@@ -423,12 +337,12 @@
                                                         echo "0 %";
                                                     } else {
                                                         $persen = ($row->NUM_DES / $row->DEN_DES) * 100;
-                                                        echo round($persen, 2).' %';
+                                                        echo round($persen, 2) . ' %';
                                                     }
                                                 }
-                                            ?>
-                                        </td>
-                                    </tr>
+                                                ?>
+                                            </td>
+                                        </tr>
                                     <?php } ?>
                                 </tbody>
                             </table>
