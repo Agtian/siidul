@@ -58,8 +58,8 @@
 
 							<div>
 								<h1><i class="fa fa-book"></i> SI IDUL</h1>
-								<p> Sistem Informasi Indikator Mutu RSUD Kelet</p>
-								<p>@<?php echo date('Y'); ?> RSUD Kelet Provinsi Jawa Tengah</p>
+								<p> Sistem Informasi Indikator Mutu RSUD dr. Rehatta</p>
+								<p>&copy; <?php echo date('Y'); ?> RSUD dr. Rehatta Provinsi Jawa Tengah</p>
 							</div>
 						</div>
 					</form>
