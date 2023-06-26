@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title id="titleWeb">SI IDUL | RSUD Kelet</title>
+    <title id="titleWeb">SI IDUL | RSUD dr. Rehatta Provinsi Jawa Tengah</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/dashboard/vendors/bootstrap/dist/css/bootstrap.min.css">
@@ -211,7 +211,7 @@
             <!-- footer content -->
             <footer>
                 <div class="pull-right">
-                    RSUD Kelet Provinsi Jawa Tengah - 2022</a>
+                    RSUD dr.Rehatta Provinsi Jawa Tengah - <?php echo date("Y"); ?></a>
                 </div>
                 <div class="clearfix"></div>
             </footer>

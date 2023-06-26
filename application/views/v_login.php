@@ -8,7 +8,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>SI IDUL | RSUD Kelet</title>
+	<title>SI IDUL | RSUD dr. Rehatta Provinsi Jawa Tengah</title>
 	<!-- logo -->
 	<link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/images/rehatta.png" />
 	<!-- Bootstrap -->
@@ -95,7 +95,7 @@
 
 							<div>
 								<h1><i class="fa fa-book"></i> SI IDUL </h1>
-								<p>@<?php echo date('Y'); ?> RSUD Kelet. All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+								<p>&copy;<?php echo date('Y'); ?> RSUD dr. Rehatta Provinsi Jawa Tengah. All Rights Reserved.</p>
 							</div>
 						</div>
 					</form>
