@@ -91,6 +91,7 @@
                                         $tanggal    = $total_hari;
                                         $id_ruang_sub   = $this->session->userdata("user_id_ruang_sub");
                                         foreach ($data_indikator->result() as $row) {
+                                            $id_indikator = $row->ID;
                                     ?>
                                     <tr>
                                         <td rowspan="2" align="center"><?php echo $no++; ?></td>
@@ -122,7 +123,7 @@
                                         <td align="center"> 
                                             <b>
                                                 <?php 
-                                                    if ($no == 2)
+                                                    if ($id_indikator == 108)
                                                     {
                                                         if (empty($total_num))
                                                         {
@@ -145,7 +146,7 @@
                                         <td rowspan="2"> 
                                             <b><center>
                                                 <?php
-                                                    if ($no == 2)
+                                                    if ($id_indikator == 108)
                                                     {
                                                         if ($total_num == 0 || $total_den == 0)
                                                         {
