@@ -75,8 +75,6 @@
                                     <?php 
                                         $no = 1;
                                         foreach ($capaian->result() as $row) {
-                                            $id_indikator = $row->ID;
-
                                     ?>
                                     <tr>
                                         <td rowspan="1" align="center" height="60"><?php echo $no++; ?></td>
@@ -84,7 +82,7 @@
                                         <td align="center"><b> <?php echo $row->NILAI_STANDAR; ?> </b></td>
                                         <td align="center">
                                             <?php
-                                                if ($id_indikator == 108)
+                                                if ($no == 2)
                                                 {
                                                     if ($row->NUM_JAN == 0 || $row->DEN_JAN == 0) 
                                                     {
@@ -106,7 +104,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($id_indikator == 108)
+                                                if ($no == 2)
                                                 {
                                                     if ($row->NUM_FEB == 0 || $row->DEN_FEB == 0) 
                                                     {
@@ -128,7 +126,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($id_indikator == 108)
+                                                if ($no == 2)
                                                 {
                                                     if ($row->NUM_MAR == 0 || $row->NUM_MAR == 0) 
                                                     {
@@ -150,7 +148,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($id_indikator == 108)
+                                                if ($no == 2)
                                                 {
                                                     if ($row->NUM_APR == 0 || $row->NUM_APR == 0) 
                                                     {
@@ -172,7 +170,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($id_indikator == 108)
+                                                if ($no == 2)
                                                 {
                                                     if ($row->NUM_MEI == 0 || $row->NUM_MEI == 0) 
                                                     {
@@ -194,7 +192,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($id_indikator == 108)
+                                                if ($no == 2)
                                                 {
                                                     if ($row->NUM_JUN == 0 || $row->NUM_JUN == 0) 
                                                     {
@@ -216,7 +214,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($id_indikator == 108)
+                                                if ($no == 2)
                                                 {
                                                     if ($row->NUM_JUL == 0 || $row->NUM_JUL == 0) 
                                                     {
@@ -238,7 +236,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($id_indikator == 108)
+                                                if ($no == 2)
                                                 {
                                                     if ($row->NUM_AGT == 0 || $row->NUM_AGT == 0) 
                                                     {
@@ -260,7 +258,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($id_indikator == 108)
+                                                if ($no == 2)
                                                 {
                                                     if ($row->NUM_SEP == 0 || $row->NUM_SEP == 0) 
                                                     {
@@ -282,7 +280,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($id_indikator == 108)
+                                                if ($no == 2)
                                                 {
                                                     if ($row->NUM_OKT == 0 || $row->NUM_OKT == 0) 
                                                     {
@@ -304,7 +302,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($id_indikator == 108)
+                                                if ($no == 2)
                                                 {
                                                     if ($row->NUM_NOV == 0 || $row->NUM_NOV == 0) 
                                                     {
@@ -326,7 +324,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($id_indikator == 108)
+                                                if ($no == 2)
                                                 {
                                                     if ($row->NUM_DES == 0 || $row->NUM_DES == 0) 
                                                     {

@@ -82,7 +82,6 @@
     foreach ($capaian->result() as $row) {
         $no = $no + 1;
         $datas = $row;
-        $id_indikator = $row->ID;
     ?>
         var target = <?php echo $row->STD_VALUE; ?>;
 
@@ -93,18 +92,18 @@
 
         myChart('<?php echo 'chart_indikator_id_' . $no; ?>', '<?php echo $row->DETAIL_INDIKATOR; ?>',
             [
-                hitung(<?php echo $id_indikator; ?>, <?php echo $row->NUM_JAN; ?>, <?php echo $row->DEN_JAN; ?>, <?php echo $tt_hari_jan; ?>),
-                hitung(<?php echo $id_indikator; ?>, <?php echo $row->NUM_FEB; ?>, <?php echo $row->DEN_FEB; ?>, <?php echo $tt_hari_feb; ?>),
-                hitung(<?php echo $id_indikator; ?>, <?php echo $row->NUM_MAR; ?>, <?php echo $row->DEN_MAR; ?>, <?php echo $tt_hari_mar; ?>),
-                hitung(<?php echo $id_indikator; ?>, <?php echo $row->NUM_APR; ?>, <?php echo $row->DEN_APR; ?>, <?php echo $tt_hari_apr; ?>),
-                hitung(<?php echo $id_indikator; ?>, <?php echo $row->NUM_MEI; ?>, <?php echo $row->DEN_MEI; ?>, <?php echo $tt_hari_mei; ?>),
-                hitung(<?php echo $id_indikator; ?>, <?php echo $row->NUM_JUN; ?>, <?php echo $row->DEN_JUN; ?>, <?php echo $tt_hari_jun; ?>),
-                hitung(<?php echo $id_indikator; ?>, <?php echo $row->NUM_JUL; ?>, <?php echo $row->DEN_JUL; ?>, <?php echo $tt_hari_jul; ?>),
-                hitung(<?php echo $id_indikator; ?>, <?php echo $row->NUM_AGT; ?>, <?php echo $row->DEN_AGT; ?>, <?php echo $tt_hari_agt; ?>),
-                hitung(<?php echo $id_indikator; ?>, <?php echo $row->NUM_SEP; ?>, <?php echo $row->DEN_SEP; ?>, <?php echo $tt_hari_sep; ?>),
-                hitung(<?php echo $id_indikator; ?>, <?php echo $row->NUM_OKT; ?>, <?php echo $row->DEN_OKT; ?>, <?php echo $tt_hari_okt; ?>),
-                hitung(<?php echo $id_indikator; ?>, <?php echo $row->NUM_NOV; ?>, <?php echo $row->DEN_NOV; ?>, <?php echo $tt_hari_nov; ?>),
-                hitung(<?php echo $id_indikator; ?>, <?php echo $row->NUM_DES; ?>, <?php echo $row->DEN_DES; ?>, <?php echo $tt_hari_des; ?>)
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_JAN; ?>, <?php echo $row->DEN_JAN; ?>, <?php echo $tt_hari_jan; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_FEB; ?>, <?php echo $row->DEN_FEB; ?>, <?php echo $tt_hari_feb; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_MAR; ?>, <?php echo $row->DEN_MAR; ?>, <?php echo $tt_hari_mar; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_APR; ?>, <?php echo $row->DEN_APR; ?>, <?php echo $tt_hari_apr; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_MEI; ?>, <?php echo $row->DEN_MEI; ?>, <?php echo $tt_hari_mei; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_JUN; ?>, <?php echo $row->DEN_JUN; ?>, <?php echo $tt_hari_jun; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_JUL; ?>, <?php echo $row->DEN_JUL; ?>, <?php echo $tt_hari_jul; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_AGT; ?>, <?php echo $row->DEN_AGT; ?>, <?php echo $tt_hari_agt; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_SEP; ?>, <?php echo $row->DEN_SEP; ?>, <?php echo $tt_hari_sep; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_OKT; ?>, <?php echo $row->DEN_OKT; ?>, <?php echo $tt_hari_okt; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_NOV; ?>, <?php echo $row->DEN_NOV; ?>, <?php echo $tt_hari_nov; ?>),
+                hitung(<?php echo $no; ?>, <?php echo $row->NUM_DES; ?>, <?php echo $row->DEN_DES; ?>, <?php echo $tt_hari_des; ?>)
             ], [
                 <?php echo $row->STD_VALUE ?>,
                 <?php echo $row->STD_VALUE ?>,
@@ -121,8 +120,8 @@
             ]);
     <?php } ?>
 
-    function hitung(id, num, den, hari) {
-        if (id == 108) {
+    function hitung(no, num, den, hari) {
+        if (no == 1) {
             if (num == 0 || den == 0) {
                 return 0;
             } else {
