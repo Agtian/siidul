@@ -303,7 +303,7 @@
                                     <td rowspan="2" align="center">
                                         <b> 
                                             <?php 
-                                                if ($no == 3)
+                                                if ($no == 2)
                                                 {
                                                     if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                     {
