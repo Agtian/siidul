@@ -432,6 +432,8 @@
                                     <?php
                                     $no = 1;
                                     foreach ($triwulan_iii->result() as $row) {
+                                        $id_indikator = $row->ID;
+
                                     ?>
                                         <tr>
                                             <td rowspan="2"><?php echo $no++; ?></td>
@@ -606,6 +608,8 @@
                                     <?php
                                     $no = 1;
                                     foreach ($triwulan_iv->result() as $row) {
+                                        $id_indikator = $row->ID;
+
                                     ?>
                                         <tr>
                                             <td rowspan="2"><?php echo $no++; ?></td>
@@ -700,7 +704,7 @@
                                                         if (!empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
                                                             $num    = ($row->NUM_OKT / $tt_hari_okt);
                                                             $den    = $row->DEN_OKT;
-                                                            $persen = $num / $den;
+                                                            $persen = $den == 0 ? 0 : $num / $den;
                                                             echo gmdate('H:i:s', floor($persen * 86400));
                                                         } else if (!empty($row->NUM_OKT) && !empty($row->NUM_NOV) && empty($NUM_DES)) {
                                                             $num    = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov);
