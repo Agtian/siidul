@@ -441,83 +441,44 @@
                                             <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
                                             <td align="center">
                                                 <?php
-                                                if ($row->DEN_JUL == 0) {
+                                                if ($row->NUM_JUL == 0) {
                                                     echo "0";
-                                                } else if ($id_indikator == 6) {
-                                                    echo substr(($row->DEN_JUL * 4) / 60 / $tt_hari_jul, 0, 5);
-                                                } else if ($id_indikator == 7) {
-                                                    echo substr(($row->DEN_JUL * 7) / 60 / $tt_hari_jul, 0, 5);
                                                 } else {
-                                                    echo $row->DEN_JUL;
+                                                    echo $row->NUM_JUL;
                                                 }
+
                                                 ?>
                                             </td>
                                             <td align="center">
                                                 <?php
-                                                if ($row->DEN_AGT == 0) {
+                                                if ($row->NUM_AGT == 0) {
                                                     echo "0";
-                                                } else if ($id_indikator == 6) {
-                                                    echo substr(($row->DEN_AGT * 4) / 60 / $tt_hari_agt, 0, 5);
-                                                } else if ($id_indikator == 7) {
-                                                    echo substr(($row->DEN_AGT * 7) / 60 / $tt_hari_agt, 0, 5);
                                                 } else {
-                                                    echo $row->DEN_AGT;
+                                                    echo $row->NUM_AGT;
                                                 }
+
                                                 ?>
                                             </td>
                                             <td align="center">
                                                 <?php
-                                                if ($row->DEN_SEP == 0) {
+                                                if ($row->NUM_SEP == 0) {
                                                     echo "0";
-                                                } else if ($id_indikator == 6) {
-                                                    echo substr(($row->DEN_SEP * 4) / 60 / $tt_hari_sep, 0, 5);
-                                                } else if ($id_indikator == 7) {
-                                                    echo substr(($row->DEN_SEP * 7) / 60 / $tt_hari_sep, 0, 5);
                                                 } else {
-                                                    echo $row->DEN_SEP;
+                                                    echo $row->NUM_SEP;
                                                 }
                                                 ?>
                                             </td>
                                             <td align="center">
                                                 <b>
                                                     <?php
-                                                    if ($id_indikator == 6) {
-                                                        if (!empty($row->NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP)) {
-                                                            $persen = ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt);
-                                                            echo round($persen, 5);
-                                                        } else if (!empty($row->NUM_JUL) && !empty($row->NUM_AGT) && empty($NUM_SEP)) {
-                                                            $persen = ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt);
-                                                            echo round($persen, 5);
-                                                        } else if (!empty($row->NUM_JUL) && !empty($row->NUM_AGT) && !empty($NUM_SEP)) {
-                                                            $persen = ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep);
-                                                            echo round($persen, 5);
-                                                        } else if (empty($row->NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP)) {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_NUM;
-                                                        }
-                                                    } else if ($id_indikator == 7) {
-                                                        if (!empty($row->NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP)) {
-                                                            $persen = ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt);
-                                                            echo round($persen, 5);
-                                                        } else if (!empty($row->NUM_JUL) && !empty($row->NUM_AGT) && empty($NUM_SEP)) {
-                                                            $persen = ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt);
-                                                            echo round($persen, 5);
-                                                        } else if (!empty($row->NUM_JUL) && !empty($row->NUM_AGT) && !empty($NUM_SEP)) {
-                                                            $persen = ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep);
-                                                            echo round($persen, 5);
-                                                        } else if (empty($row->NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP)) {
-                                                            echo "0";
-                                                        } else {
-                                                            echo "";
-                                                        }
+
+
+                                                    if ($row->TOTAL_NUM == 0) {
+                                                        echo "0";
                                                     } else {
-                                                        if ($row->TOTAL_NUM == 0) {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_NUM;
-                                                        }
+                                                        echo $row->TOTAL_NUM;
                                                     }
+
                                                     ?>
                                                 </b>
                                             </td>
@@ -526,20 +487,20 @@
                                                     <?php
                                                     if ($id_indikator == 6 || $id_indikator == 7) {
                                                         if (!empty($row->NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP)) {
-                                                            $num    = ($row->NUM_JUL / $tt_hari_jul);
+                                                            $num    = ($row->NUM_JUL);
                                                             $den    = $row->DEN_JUL;
                                                             $persen = $num / $den;
-                                                            echo gmdate('H:i:s', floor($persen * 86400));
+                                                            echo gmdate('H:i:s', floor($persen * 60));
                                                         } else if (!empty($row->NUM_JUL) && !empty($row->NUM_AGT) && empty($NUM_SEP)) {
-                                                            $num    = ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt);
+                                                            $num    = ($row->NUM_JUL) + ($row->NUM_AGT);
                                                             $den    = $row->DEN_JUL + $row->DEN_AGT;
                                                             $persen = $num / $den;
-                                                            echo gmdate('H:i:s', floor($persen * 86400));
+                                                            echo gmdate('H:i:s', floor($persen * 60));
                                                         } else if (!empty($row->NUM_JUL) && !empty($row->NUM_AGT) && !empty($NUM_SEP)) {
-                                                            $num    = ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep);
+                                                            $num    = ($row->NUM_JUL) + ($row->NUM_AGT) + ($row->NUM_SEP);
                                                             $den    = $row->DEN_JUL + $row->DEN_AGT + $row->DEN_SEP;
                                                             $persen = $num / $den;
-                                                            echo gmdate('H:i:s', floor($persen * 86400));
+                                                            echo gmdate('H:i:s', floor($persen * 60));
                                                         } else {
                                                             echo "00:00:00";
                                                         }
@@ -617,83 +578,40 @@
                                             <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
                                             <td align="center">
                                                 <?php
-                                                if ($row->DEN_NOV == 0) {
+                                                if ($row->NUM_OKT == 0) {
                                                     echo "0";
-                                                } else if ($id_indikator == 6) {
-                                                    echo substr(($row->DEN_NOV * 4) / 60 / $tt_hari_nov, 0, 5);
-                                                } else if ($id_indikator == 7) {
-                                                    echo substr(($row->DEN_NOV * 7) / 60 / $tt_hari_nov, 0, 5);
                                                 } else {
-                                                    echo $row->DEN_NOV;
+                                                    echo $row->NUM_OKT;
                                                 }
                                                 ?>
                                             </td>
                                             <td align="center">
                                                 <?php
-                                                if ($row->DEN_OKT == 0) {
+                                                if ($row->NUM_NOV == 0) {
                                                     echo "0";
-                                                } else if ($id_indikator == 6) {
-                                                    echo substr(($row->DEN_OKT * 4) / 60 / $tt_hari_okt, 0, 5);
-                                                } else if ($id_indikator == 7) {
-                                                    echo substr(($row->DEN_OKT * 7) / 60 / $tt_hari_okt, 0, 5);
                                                 } else {
-                                                    echo $row->DEN_OKT;
+                                                    echo $row->NUM_NOV;
                                                 }
                                                 ?>
                                             </td>
                                             <td align="center">
                                                 <?php
-                                                if ($row->DEN_DES == 0) {
+                                                if ($row->NUM_DES == 0) {
                                                     echo "0";
-                                                } else if ($id_indikator == 6) {
-                                                    echo substr(($row->DEN_DES * 4) / 60 / $tt_hari_des, 0, 5);
-                                                } else if ($id_indikator == 7) {
-                                                    echo substr(($row->DEN_DES * 7) / 60 / $tt_hari_des, 0, 5);
                                                 } else {
-                                                    echo $row->DEN_DES;
+                                                    echo $row->NUM_DES;
                                                 }
                                                 ?>
                                             </td>
                                             <td align="center">
                                                 <b>
                                                     <?php
-                                                    if ($id_indikator == 6) {
-                                                        if (!empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-                                                            $persen = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov);
-                                                            echo round($persen, 5);
-                                                        } else if (!empty($row->NUM_OKT) && !empty($row->NUM_NOV) && empty($NUM_DES)) {
-                                                            $persen = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov);
-                                                            echo round($persen, 5);
-                                                        } else if (!empty($row->NUM_OKT) && !empty($row->NUM_NOV) && !empty($NUM_DES)) {
-                                                            $persen = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov) + ($row->NUM_DES / $tt_hari_des);
-                                                            echo round($persen, 5);
-                                                        } else if (empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_NUM;
-                                                        }
-                                                    } else if ($id_indikator == 7) {
-                                                        if (!empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-                                                            $persen = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov);
-                                                            echo round($persen, 5);
-                                                        } else if (!empty($row->NUM_OKT) && !empty($row->NUM_NOV) && empty($NUM_DES)) {
-                                                            $persen = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov);
-                                                            echo round($persen, 5);
-                                                        } else if (!empty($row->NUM_OKT) && !empty($row->NUM_NOV) && !empty($NUM_DES)) {
-                                                            $persen = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov) + ($row->NUM_DES / $tt_hari_des);
-                                                            echo round($persen, 5);
-                                                        } else if (empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_NUM;
-                                                        }
+                                                    if ($row->TOTAL_NUM == 0) {
+                                                        echo "0";
                                                     } else {
-                                                        if ($row->TOTAL_NUM == 0) {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_NUM;
-                                                        }
+                                                        echo $row->TOTAL_NUM;
                                                     }
+
                                                     ?>
                                                 </b>
                                             </td>
@@ -702,20 +620,20 @@
                                                     <?php
                                                     if ($id_indikator == 6 || $id_indikator == 7) {
                                                         if (!empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-                                                            $num    = ($row->NUM_OKT / $tt_hari_okt);
+                                                            $num    = ($row->NUM_OKT);
                                                             $den    = $row->DEN_OKT;
                                                             $persen = $den == 0 ? 0 : $num / $den;
-                                                            echo gmdate('H:i:s', floor($persen * 86400));
+                                                            echo gmdate('H:i:s', floor($persen * 60));
                                                         } else if (!empty($row->NUM_OKT) && !empty($row->NUM_NOV) && empty($NUM_DES)) {
-                                                            $num    = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov);
+                                                            $num    = ($row->NUM_OKT) + ($row->NUM_NOV);
                                                             $den    = $row->DEN_OKT + $row->DEN_NOV;
                                                             $persen = $num / $den;
-                                                            echo gmdate('H:i:s', floor($persen * 86400));
+                                                            echo gmdate('H:i:s', floor($persen * 60));
                                                         } else if (!empty($row->NUM_OKT) && !empty($row->NUM_NOV) && !empty($NUM_DES)) {
-                                                            $num    = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov) + ($row->NUM_DES / $tt_hari_des);
+                                                            $num    = ($row->NUM_OKT) + ($row->NUM_NOV) + ($row->NUM_DES);
                                                             $den    = $row->DEN_OKT + $row->DEN_NOV + $row->DEN_DES;
                                                             $persen = $num / $den;
-                                                            echo gmdate('H:i:s', floor($persen * 86400));
+                                                            echo gmdate('H:i:s', floor($persen * 60));
                                                         } else {
                                                             echo "00:00:00";
                                                         }
