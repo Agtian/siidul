@@ -123,11 +123,11 @@
                                                     if ($id_indikator == 6) {
                                                         echo '<td align="center"> ' . round($key->NUM, 2) . ' </td>';
                                                         $total_num += $key->NUM;
-                                                        $average_3 = $total_num / $total_hari;
+                                                        $average_3 = $total_num;
                                                     } else if ($id_indikator == 7) {
                                                         echo '<td align="center"> ' . round($key->NUM, 2) . ' </td>';
                                                         $total_num += $key->NUM;
-                                                        $average_4 = $total_num / $total_hari;
+                                                        $average_4 = $total_num;
                                                     } else {
                                                         echo '<td align="center"> ' . $key->NUM . ' </td>';
                                                         $total_num += $key->NUM;
@@ -170,12 +170,14 @@
                                                 <b>
                                                     <center>
                                                         <?php
+                                                        $total_num  = 0;
+                                                        $total_den  = 0;
                                                         $data = $this->Rekap_model->get_data_bulanan($row->ID, $id_ruang_sub, $bulan, $tahun);
                                                         foreach ($data->result() as $key) {
                                                             if ($id_indikator == 6) {
                                                                 $total_num += $key->NUM;
                                                                 $total_den += $key->DEN;
-                                                                //print_r($total_den);die();
+                                                                // print_r($total_num .' -- '.$total_den);die();
                                                                 //$average_3 = $total_num / $total_den;
                                                             } else if ($id_indikator == 7) {
                                                                 $total_num += $key->NUM;
@@ -194,7 +196,8 @@
                                                             } else {
                                                                 $x      = $total_num;
                                                                 $persen = $x / $total_den;
-                                                                echo gmdate('H:i:s', floor($persen * 3600));
+                                                                //print_r($total_num . ' -- ' . $total_den);die();
+                                                                echo gmdate('H:i:s', floor($persen * 60));
                                                             }
                                                         } else if ($id_indikator == 7) {
                                                             if ($total_den == 0) {
@@ -202,7 +205,7 @@
                                                             } else {
                                                                 $x      = $total_num;
                                                                 $persen = $x / $total_den;
-                                                                echo gmdate('H:i:s', floor($persen * 3600));
+                                                                echo gmdate('H:i:s', floor($persen * 60));
                                                             }
                                                         } else {
                                                             if ($total_num == 0 || $total_den == 0) {
