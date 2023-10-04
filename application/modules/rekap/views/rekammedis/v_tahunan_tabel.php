@@ -1,3 +1,5 @@
+<?php print_r('SEDANG PERBAIKAN - HARAP DITUNGGU BEBERAPA HARI');die(); ?>
+
 <div class="right_col" role="main">
     <div class="page-title">
         <div class="clearfix"></div>
