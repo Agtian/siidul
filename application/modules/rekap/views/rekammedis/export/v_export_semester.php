@@ -1,3 +1,5 @@
+<?php print_r('SEDANG PERBAIKAN - HARAP DITUNGGU BEBERAPA HARI');die(); ?>
+
 <html>
 <head>
     <meta charset="utf-8">
