@@ -1,5 +1,6 @@
-<html>
+<?php print_r('SEDANG PERBAIKAN - HARAP DITUNGGU BEBERAPA HARI');die(); ?>
 
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,210 +20,202 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/dashboard/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css">
 
     <!-- Bootstrap Colorpicker -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/dashboard/vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
-
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/dashboard/vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+    
 </head>
 
 <body>
     <div class="row" style="line-height:24px; font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; color:#555;">
-        <h2>Tabel Data : <?php echo formatNamaBulan($bulan) . ' ' . $tahun; ?></h2>
+        <h2>Tabel Data : <?php echo formatNamaBulan($bulan).' '.$tahun; ?></h2>
         <table id="datatable" class="table table-striped table-bordered">
             <thead>
                 <tr class="bg-primary">
-                    <th rowspan="2" width="30">
-                        <center>NO</center>
-                    </th>
-                    <th rowspan="2" width="170">
-                        <center>INDIKATOR</center>
-                    </th>
-                    <th rowspan="2" width="220">
-                        <center>SUB INDIKATOR</center>
-                    </th>
-                    <th colspan="<?php echo $total_hari; ?>">
-                        <center>TANGGAL</center>
-                    </th>
-                    <th rowspan="2" width="70">
-                        <center>TOTAL</center>
-                    </th>
-                    <th rowspan="2" width="70">
-                        <center>PERSEN</center>
-                    </th>
+                    <th rowspan="2" width="30"><center>NO</center></th>
+                    <th rowspan="2" width="170"><center>INDIKATOR</center></th>
+                    <th rowspan="2" width="220"><center>SUB INDIKATOR</center></th>
+                    <th colspan="<?php echo $total_hari; ?>" ><center>TANGGAL</center></th>
+                    <th rowspan="2" width="70"><center>TOTAL</center></th>
+                    <th rowspan="2" width="70"><center>PERSEN</center></th>
                 </tr>
                 <tr class="bg-primary">
-                    <?php
-                    foreach ($get_date->result() as $date) {
-                        echo '<th><center> ' . $date->DATE . ' </center></th>';
-                    }
+                    <?php 
+                        foreach ($get_date->result() as $date) {
+                            echo '<th><center> '.$date->DATE.' </center></th>';
+                        }
                     ?>
                 </tr>
             </thead>
             <tbody>
-                <?php
-                $no = 1;
-                $id_ruang_sub   = $this->session->userdata("user_id_ruang_sub");
-                foreach ($data_indikator->result() as $row) {
+                <?php 
+                    $no = 1;
+                    $id_ruang_sub   = $this->session->userdata("user_id_ruang_sub");
+                    foreach ($data_indikator->result() as $row) {
                 ?>
-                    <tr>
-                        <td rowspan="2" align="center"><?php echo $no++; ?></td>
-                        <td rowspan="2"><?php echo $row->DETAIL_INDIKATOR; ?></td>
-                        <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
+                <tr>
+                    <td rowspan="2" align="center"><?php echo $no++; ?></td>
+                    <td rowspan="2"><?php echo $row->DETAIL_INDIKATOR; ?></td>
+                    <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
 
 
-                        <?php
+                    <?php 
                         // gmdate('H:i:s', floor($num_3 * 86400))
 
                         $tanggal    = $total_hari;
-                        $total_num  = 0;
+                        $total_num  = 0; 
                         $total_den  = 0;
                         $data       = $this->Rekap_model->get_data_bulanan($row->ID, $id_ruang_sub, $bulan, $tahun);
                         if ($total_hari == $total_hari) {
-                            foreach ($data->result() as $key) {
-                                if ($id_indikator == 6) {
-                                    echo '<td align="center"> ' . round($key->NUM, 2) . ' </td>';
+                            foreach ($data->result() as $key) 
+                            {
+                                if ($no == 4) {
+                                    echo '<td align="center"> '.round($key->NUM, 2).' </td>';
                                     $total_num += $key->NUM;
-                                    $average_3 = $total_num;
-                                } else if ($id_indikator == 7) {
-                                    echo '<td align="center"> ' . round($key->NUM, 2) . ' </td>';
+                                    $average_3 = $total_num / $total_hari;
+                                } else if ($no == 5) {
+                                    echo '<td align="center"> '.round($key->NUM, 2).' </td>';
                                     $total_num += $key->NUM;
-                                    $average_4 = $total_num;
+                                    $average_4 = $total_num / $total_hari;
                                 } else {
-                                    echo '<td align="center"> ' . $key->NUM . ' </td>';
+                                    echo '<td align="center"> '.$key->NUM.' </td>';
                                     $total_num += $key->NUM;
                                     $total_den += $key->DEN;
-                                }
+                                }                                                
                             }
+
                         } else {
-                            $total_num  = 0;
-                            $total_den  = 0;
+
                             $data = $this->Rekap_model->get_data_bulanan($row->ID, $id_ruang_sub, $bulan, $tahun);
-                            foreach ($data->result() as $key) {
+                            foreach ($data->result() as $key) 
+                            {
                                 echo '<td align="center">  </td>'; // .$key->NUM.
                                 $total_num += $key->NUM;
                                 $total_den += $key->DEN;
                             }
-                        }
-                        ?>
-                        <td align="center">
-                            <b>
-                                <?php
-                                if ($id_indikator == 6) {
-                                    if (empty($average_3)) {
+                        } 
+                    ?>
+                    <td align="center"> 
+                        <b>
+                            <?php 
+                                if ($no == 4) 
+                                {
+                                    if (empty($average_3))
+                                    {
                                         echo "0";
                                     } else {
                                         echo round($average_3, 4);
                                     }
-                                } else if ($id_indikator == 7) {
-                                    if (empty($average_4)) {
+                                } else if ($no == 5) {
+                                    if (empty($average_4))
+                                    {
                                         echo "0";
                                     } else {
                                         echo round($average_4, 4);
                                     }
                                 } else {
-                                    echo $total_num;
+                                    echo $total_num; 
                                 }
-                                ?>
-                            </b>
-                        </td>
-                        <td rowspan="2">
-                            <b>
-                                <center>
-                                    <?php
-                                    $total_num  = 0;
-                                    $total_den  = 0;
-                                    $data = $this->Rekap_model->get_data_bulanan($row->ID, $id_ruang_sub, $bulan, $tahun);
-                                    foreach ($data->result() as $key) {
-                                        if ($id_indikator == 6) {
-                                            $total_num += $key->NUM;
-                                            $total_den += $key->DEN;
-                                            // print_r($total_num .' -- '.$total_den);die();
-                                            //$average_3 = $total_num / $total_den;
-                                        } else if ($id_indikator == 7) {
-                                            $total_num += $key->NUM;
-                                            $total_den += $key->DEN;
-                                            //$average_4 = $total_num / $total_den;
-                                        } else {
-                                            $total_num += $key->NUM;
-                                            $total_den += $key->DEN;
-                                        }
-                                    }
-
-                                    if ($id_indikator == 6) {
-                                        if ($total_den == 0) {
-                                            echo "0";
-                                            // echo $average_3;
-                                        } else {
-                                            $x      = $total_num;
-                                            $persen = $x / $total_den;
-                                            //print_r($total_num . ' -- ' . $total_den);die();
-                                            echo gmdate('H:i:s', floor($persen * 60));
-                                        }
-                                    } else if ($id_indikator == 7) {
-                                        if ($total_den == 0) {
-                                            echo "0";
-                                        } else {
-                                            $x      = $total_num;
-                                            $persen = $x / $total_den;
-                                            echo gmdate('H:i:s', floor($persen * 60));
-                                        }
+                            ?>
+                        </b> 
+                    </td>
+                    <td rowspan="2"> 
+                        <b><center>
+                            <?php
+                                $data = $this->Rekap_model->get_data_bulanan($row->ID, $id_ruang_sub, $bulan, $tahun);
+                                foreach ($data->result() as $key) 
+                                {
+                                    if ($no == 4) {
+                                        $total_num += $key->NUM;
+                                        $total_den += $key->DEN;
+                                        $average_3 = $total_num / $total_den;
+                                    } else if ($no == 5) {
+                                        $total_num += $key->NUM;
+                                        $total_den += $key->DEN;
+                                        $average_4 = $total_num / $total_den;
                                     } else {
-                                        if ($total_num == 0 || $total_den == 0) {
-                                            echo "0";
-                                        } else {
-                                            echo round($total_num / $total_den * 100, 2);
-                                            echo " %";
-                                        }
+                                        $total_num += $key->NUM;
+                                        $total_den += $key->DEN;
+                                    }                                                
+                                }
+
+                                if ($no == 4) {
+                                    if ($total_den == 0)
+                                    {
+                                        echo "0";
+                                        // echo $average_3;
+                                    } else {
+                                        $x      = $total_num / $total_hari / 2;
+                                        $persen = $x / $total_den;
+                                        echo gmdate('H:i:s', floor($persen * 86400));
                                     }
-                                    ?>
-                                </center>
-                            </b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><?php echo $row->DETAIL_DEN; ?></td>
-                        <?php
-                        $total_num  = 0;
-                        $total_den  = 0;
-                        if ($total_hari == $total_hari) {
-
-                            $tanggal    = $total_hari;
-                            $data = $this->Rekap_model->get_data_bulanan($row->ID, $id_ruang_sub, $bulan, $tahun);
-                            foreach ($data->result() as $key) {
-                                echo '<td align="center"> ' . $key->DEN . ' </td>';
-                                $total_num += $key->NUM;
-                                $total_den += $key->DEN;
-                            }
-                        } else {
-                            $data = $this->Rekap_model->get_data_bulanan($row->ID, $id_ruang_sub, $bulan, $tahun);
-                            foreach ($data->result() as $key) {
-                                echo '<td align="center"> ' . $key->DEN . ' </td>';
-                                $total_num += $key->NUM;
-                                $total_den += $key->DEN;
-                            }
-                        } ?>
-                        <td align="center">
-                            <b>
-                                <?php
-                                // echo $total_den / 2; 
-
-                                if ($id_indikator == 6) {
-                                    if (empty($total_den)) {
+                                } else if ($no == 5) {
+                                    if ($total_den == 0)
+                                    {
                                         echo "0";
                                     } else {
-                                        echo $total_den;
-                                    }
-                                } else if ($id_indikator == 7) {
-                                    if (empty($total_den)) {
-                                        echo "0";
-                                    } else {
-                                        echo $total_den;
+                                        $x      = $total_num / $total_hari / 2;
+                                        $persen = $x / $total_den;
+                                        echo gmdate('H:i:s', floor($persen * 86400));
                                     }
                                 } else {
-                                    echo $total_den;
+                                    if ($total_num == 0 || $total_den == 0)
+                                    {
+                                        echo "0";
+                                    } else {
+                                        echo round($total_num / $total_den * 100, 2);
+                                        echo " %";
+                                    }
                                 }
-                                ?>
-                            </b>
-                        </td>
-                    </tr>
+                            ?>
+                        </center></b> 
+                    </td>
+                </tr>
+                <tr>
+                    <td><?php echo $row->DETAIL_DEN; ?></td>
+                    <?php if ($total_hari == $total_hari) {
+                        $tanggal    = $total_hari;
+                        $data = $this->Rekap_model->get_data_bulanan($row->ID, $id_ruang_sub, $bulan, $tahun);
+                        foreach ($data->result() as $key) 
+                        {
+                            echo '<td align="center"> '.$key->DEN.' </td>';
+                            $total_num += $key->NUM;
+                            $total_den += $key->DEN;
+                        }
+                    } else { 
+                        $data = $this->Rekap_model->get_data_bulanan($row->ID, $id_ruang_sub, $bulan, $tahun);
+                        foreach ($data->result() as $key) 
+                        {
+                            echo '<td align="center"> '.$key->DEN.' </td>';
+                            $total_num += $key->NUM;
+                            $total_den += $key->DEN;
+                        }
+                    } ?>
+                    <td align="center"> 
+                        <b>
+                            <?php
+                                // echo $total_den / 2; 
+
+                                if ($no == 4) 
+                                {
+                                    if (empty($total_den))
+                                    {
+                                        echo "0";
+                                    } else {
+                                        echo $total_den / 2;
+                                    }
+                                } else if ($no == 5) {
+                                    if (empty($total_den))
+                                    {
+                                        echo "0";
+                                    } else {
+                                        echo $total_den / 2;
+                                    }
+                                } else {
+                                    echo $total_den / 3; 
+                                }
+                            ?>
+                        </b> 
+                    </td>
+                </tr>
                 <?php } ?>
             </tbody>
         </table>
