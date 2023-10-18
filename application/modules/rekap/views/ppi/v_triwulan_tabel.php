@@ -91,11 +91,11 @@
                                             <td align="center">
                                                 <b>
                                                     <?php
-                                                      if ($row->TOTAL_NUM == 0) {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_NUM;
-                                                        }
+                                                    if ($row->TOTAL_NUM == 0) {
+                                                        echo "0";
+                                                    } else {
+                                                        echo $row->TOTAL_NUM;
+                                                    }
                                                     ?>
                                                 </b>
                                             </td>
@@ -119,11 +119,11 @@
                                             <td align="center">
                                                 <b>
                                                     <?php
-                                                     if ($row->TOTAL_DEN == 0) {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_DEN;
-                                                        }
+                                                    if ($row->TOTAL_DEN == 0) {
+                                                        echo "0";
+                                                    } else {
+                                                        echo $row->TOTAL_DEN;
+                                                    }
                                                     ?>
                                                 </b>
                                             </td>
@@ -183,11 +183,11 @@
                                             <td align="center">
                                                 <b>
                                                     <?php
-                                                      if ($row->TOTAL_NUM == 0) {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_NUM;
-                                                        }
+                                                    if ($row->TOTAL_NUM == 0) {
+                                                        echo "0";
+                                                    } else {
+                                                        echo $row->TOTAL_NUM;
+                                                    }
                                                     ?>
                                                 </b>
                                             </td>
@@ -195,10 +195,10 @@
                                                 <b>
                                                     <?php
                                                     if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
-                                                            echo "0 %";
-                                                        } else {
-                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 100, 2) . " %";
-                                                        }
+                                                        echo "0 %";
+                                                    } else {
+                                                        echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 100, 2) . " %";
+                                                    }
                                                     ?>
                                                 </b>
                                             </td>
@@ -211,11 +211,11 @@
                                             <td align="center">
                                                 <b>
                                                     <?php
-                                                     if ($row->TOTAL_DEN == 0) {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_DEN;
-                                                        }
+                                                    if ($row->TOTAL_DEN == 0) {
+                                                        echo "0";
+                                                    } else {
+                                                        echo $row->TOTAL_DEN;
+                                                    }
                                                     ?>
                                                 </b>
                                             </td>
@@ -275,32 +275,24 @@
                                             <td align="center">
                                                 <b>
                                                     <?php
-                                                      if ($row->TOTAL_NUM == 0) {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_NUM;
-                                                        }
+                                                    if ($row->TOTAL_NUM == 0) {
+                                                        echo "0";
+                                                    } else {
+                                                        echo $row->TOTAL_NUM;
+                                                    }
                                                     ?>
                                                 </b>
                                             </td>
                                             <td rowspan="2" align="center">
                                                 <b>
                                                     <?php
-                                                    if ($no == 3 || $no == 4 || $no == 7) {
-                                                        if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
-                                                            echo "0 %";
-                                                        } else {
-                                                            $tt_average = $row->TOTAL_NUM / 3;
-                                                            $time       = $tt_average / $row->TOTAL_DEN;
-                                                            echo round($time, 2) . " %";
-                                                        }
+
+                                                    if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
+                                                        echo "0 %";
                                                     } else {
-                                                        if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
-                                                            echo "0 %";
-                                                        } else {
-                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 100, 2) . " %";
-                                                        }
+                                                        echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 100, 2) . " %";
                                                     }
+
                                                     ?>
                                                 </b>
                                             </td>
@@ -313,11 +305,11 @@
                                             <td align="center">
                                                 <b>
                                                     <?php
-                                                     if ($row->TOTAL_DEN == 0) {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_DEN;
-                                                        }
+                                                    if ($row->TOTAL_DEN == 0) {
+                                                        echo "0";
+                                                    } else {
+                                                        echo $row->TOTAL_DEN;
+                                                    }
                                                     ?>
                                                 </b>
                                             </td>
@@ -377,11 +369,11 @@
                                             <td align="center">
                                                 <b>
                                                     <?php
-                                                      if ($row->TOTAL_NUM == 0) {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_NUM;
-                                                        }
+                                                    if ($row->TOTAL_NUM == 0) {
+                                                        echo "0";
+                                                    } else {
+                                                        echo $row->TOTAL_NUM;
+                                                    }
                                                     ?>
                                                 </b>
                                             </td>
@@ -389,10 +381,10 @@
                                                 <b>
                                                     <?php
                                                     if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
-                                                            echo "0 %";
-                                                        } else {
-                                                            echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 100, 2) . " %";
-                                                        }
+                                                        echo "0 %";
+                                                    } else {
+                                                        echo round(($row->TOTAL_NUM / $row->TOTAL_DEN) * 100, 2) . " %";
+                                                    }
                                                     ?>
                                                 </b>
                                             </td>
@@ -405,11 +397,11 @@
                                             <td align="center">
                                                 <b>
                                                     <?php
-                                                     if ($row->TOTAL_DEN == 0) {
-                                                            echo "0";
-                                                        } else {
-                                                            echo $row->TOTAL_DEN;
-                                                        }
+                                                    if ($row->TOTAL_DEN == 0) {
+                                                        echo "0";
+                                                    } else {
+                                                        echo $row->TOTAL_DEN;
+                                                    }
                                                     ?>
                                                 </b>
                                             </td>
