@@ -570,7 +570,6 @@
                                     $no = 1;
                                     foreach ($triwulan_iv->result() as $row) {
                                         $id_indikator = $row->ID;
-
                                     ?>
                                         <tr>
                                             <td rowspan="2"><?php echo $no++; ?></td>
