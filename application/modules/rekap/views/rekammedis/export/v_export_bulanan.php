@@ -178,7 +178,10 @@
                     </tr>
                     <tr>
                         <td><?php echo $row->DETAIL_DEN; ?></td>
-                        <?php if ($total_hari == $total_hari) {
+                        <?php
+                        $total_num  = 0;
+                        $total_den  = 0;
+                        if ($total_hari == $total_hari) {
                             $tanggal    = $total_hari;
                             $data = $this->Rekap_model->get_data_bulanan($row->ID, $id_ruang_sub, $bulan, $tahun);
                             foreach ($data->result() as $key) {
