@@ -1,6 +1,3 @@
-
-<?php print_r('SEDANG PERBAIKAN - HARAP DITUNGGU BEBERAPA HARI');die(); ?>
-
 <div class="right_col" role="main">
     <div class="page-title">
         <div class="clearfix"></div>
@@ -78,6 +75,8 @@
                                     <?php 
                                         $no = 1;
                                         foreach ($capaian->result() as $row) {
+                                            $id_indikator = $row->ID;
+
                                     ?>
                                     <tr>
                                         <td rowspan="1"><?php echo $no++; ?></td>
@@ -85,18 +84,18 @@
                                         <td align="center"><b> <?php echo $row->NILAI_STANDAR; ?> </b></td>
                                         <td align="center"> 
                                             <?php 
-                                                if ($no == '4' || $no == '5')
+                                                if ($id_indikator == 6 || $id_indikator == 7)
                                                 {
-                                                    if (empty($row->NUM_JAN)) {
+                                                    if (empty($row->NUM_JAN) || $row->NUM_JAN == 0 || $row->DEN_JAN == 0 ) {
 
                                                         echo "00:00:00";
 
                                                     } else {
 
-                                                        $num    = ($row->NUM_JAN / $tt_hari_jan);
+                                                        $num    = ($row->NUM_JAN );
                                                         $den    = $row->DEN_JAN;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
 
                                                     }
                                                 } else {
@@ -107,7 +106,7 @@
                                                         
                                                     } else {
 
-                                                        $persen = ($row->NUM_JAN / $row->DEN_JAN) * 100;
+                                                        $persen = ($row->NUM_JAN /$row->DEN_JAN ) * 100;
                                                         echo round($persen, 2).' %';
                                                     }
 
@@ -116,7 +115,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php 
-                                                if ($no == '4' || $no == '5')
+                                                if ($id_indikator == 6 || $id_indikator == 7)
                                                 {
                                                     if (empty($row->NUM_FEB)) {
 
@@ -124,10 +123,10 @@
 
                                                     } else {
 
-                                                        $num    = ($row->NUM_FEB / $tt_hari_feb);
+                                                        $num    = ($row->NUM_FEB );
                                                         $den    = $row->DEN_FEB;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
 
                                                     }
                                                 } else {
@@ -147,7 +146,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php 
-                                                if ($no == '4' || $no == '5')
+                                                if ($id_indikator == 6 || $id_indikator == 7)
                                                 {
                                                     if (empty($row->NUM_MAR)) {
 
@@ -155,10 +154,10 @@
 
                                                     } else {
 
-                                                        $num    = ($row->NUM_MAR / $tt_hari_mar);
+                                                        $num    = ($row->NUM_MAR);
                                                         $den    = $row->DEN_MAR;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
 
                                                     }
                                                 } else {
@@ -178,7 +177,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php 
-                                                if ($no == '4' || $no == '5')
+                                                if ($id_indikator == 6 || $id_indikator == 7)
                                                 {
                                                     if (empty($row->NUM_APR)) {
 
@@ -186,10 +185,10 @@
 
                                                     } else {
 
-                                                        $num    = ($row->NUM_APR / $tt_hari_apr);
+                                                        $num    = ($row->NUM_APR );
                                                         $den    = $row->DEN_APR;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
 
                                                     }
                                                 } else {
@@ -200,7 +199,7 @@
                                                         
                                                     } else {
 
-                                                        $persen = ($row->NUM_APR / $row->DEN_APR) * 100;
+                                                        $persen = ($row->NUM_APR /$row->DEN_APR) * 100;
                                                         echo round($persen, 2).' %';
                                                     }
 
@@ -209,7 +208,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php 
-                                                if ($no == '4' || $no == '5')
+                                                if ($id_indikator == 6 || $id_indikator == 7)
                                                 {
                                                     if (empty($row->NUM_MEI)) {
 
@@ -217,10 +216,10 @@
 
                                                     } else {
 
-                                                        $num    = ($row->NUM_MEI / $tt_hari_mei);
+                                                        $num    = ($row->NUM_MEI );
                                                         $den    = $row->DEN_MEI;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
 
                                                     }
                                                 } else {
@@ -231,7 +230,7 @@
                                                         
                                                     } else {
 
-                                                        $persen = ($row->NUM_MEI / $row->DEN_MEI) * 100;
+                                                        $persen = ($row->NUM_MEI / $row->DEN_MEI ) * 100;
                                                         echo round($persen, 2).' %';
                                                     }
 
@@ -240,7 +239,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php 
-                                                if ($no == '4' || $no == '5')
+                                                if ($id_indikator == 6 || $id_indikator == 7)
                                                 {
                                                     if (empty($row->NUM_JUN)) {
 
@@ -248,10 +247,10 @@
 
                                                     } else {
 
-                                                        $num    = ($row->NUM_JUN / $tt_hari_jun);
+                                                        $num    = ($row->NUM_JUN );
                                                         $den    = $row->DEN_JUN;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
 
                                                     }
                                                 } else {
@@ -262,7 +261,7 @@
                                                         
                                                     } else {
 
-                                                        $persen = ($row->NUM_JUN / $row->DEN_JUN) * 100;
+                                                        $persen = ($row->NUM_JUN / $row->DEN_JUN ) * 100;
                                                         echo round($persen, 2).' %';
                                                     }
 
@@ -271,7 +270,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php 
-                                                if ($no == '4' || $no == '5')
+                                                if ($id_indikator == 6 || $id_indikator == 7)
                                                 {
                                                     if (empty($row->NUM_JUL)) {
 
@@ -279,10 +278,10 @@
 
                                                     } else {
 
-                                                        $num    = ($row->NUM_JUL / $tt_hari_jul);
+                                                        $num    = ($row->NUM_JUL );
                                                         $den    = $row->DEN_JUL;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
 
                                                     }
                                                 } else {
@@ -302,7 +301,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php 
-                                                if ($no == '4' || $no == '5')
+                                                if ($id_indikator == 6 || $id_indikator == 7)
                                                 {
                                                     if (empty($row->NUM_AGT)) {
 
@@ -310,10 +309,10 @@
 
                                                     } else {
 
-                                                        $num    = ($row->NUM_AGT / $tt_hari_agt);
+                                                        $num    = ($row->NUM_AGT );
                                                         $den    = $row->DEN_AGT;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
 
                                                     }
                                                 } else {
@@ -324,7 +323,7 @@
                                                         
                                                     } else {
 
-                                                        $persen = ($row->NUM_AGT / $row->DEN_AGT) * 100;
+                                                        $persen = ($row->NUM_AGT /  $row->DEN_AGT) * 100;
                                                         echo round($persen, 2).' %';
                                                     }
 
@@ -333,7 +332,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php 
-                                                if ($no == '4' || $no == '5')
+                                                if ($id_indikator == 6 || $id_indikator == 7)
                                                 {
                                                     if (empty($row->NUM_SEP)) {
 
@@ -341,10 +340,10 @@
 
                                                     } else {
 
-                                                        $num    = ($row->NUM_SEP / $tt_hari_sep);
+                                                        $num    = ($row->NUM_SEP );
                                                         $den    = $row->DEN_SEP;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
 
                                                     }
                                                 } else {
@@ -364,7 +363,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php 
-                                                if ($no == '4' || $no == '5')
+                                                if ($id_indikator == 6 || $id_indikator == 7)
                                                 {
                                                     if (empty($row->NUM_OKT)) {
 
@@ -372,10 +371,10 @@
 
                                                     } else {
 
-                                                        $num    = ($row->NUM_OKT / $tt_hari_okt);
+                                                        $num    = ($row->NUM_OKT);
                                                         $den    = $row->DEN_OKT;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
 
                                                     }
                                                 } else {
@@ -395,7 +394,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php 
-                                                if ($no == '4' || $no == '5')
+                                                if ($id_indikator == 6 || $id_indikator == 7)
                                                 {
                                                     if (empty($row->NUM_NOV)) {
 
@@ -403,15 +402,15 @@
 
                                                     } else {
 
-                                                        $num    = ($row->NUM_NOV / $tt_hari_nov);
+                                                        $num    = ($row->NUM_NOV );
                                                         $den    = $row->DEN_NOV;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
 
                                                     }
                                                 } else {
 
-                                                    if (empty($row->NUM_OKT)) {
+                                                    if (empty($row->NUM_NOV)) {
 
                                                         echo "0 %";
                                                         
@@ -426,7 +425,7 @@
                                         </td>
                                         <td align="center"> 
                                             <?php 
-                                                if ($no == '4' || $no == '5')
+                                                if ($id_indikator == 6 || $id_indikator == 7)
                                                 {
                                                     if (empty($row->NUM_DES)) {
 
@@ -434,10 +433,10 @@
 
                                                     } else {
 
-                                                        $num    = ($row->NUM_DES / $tt_hari_des);
+                                                        $num    = ($row->NUM_DES );
                                                         $den    = $row->DEN_DES;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
 
                                                     }
                                                 } else {
