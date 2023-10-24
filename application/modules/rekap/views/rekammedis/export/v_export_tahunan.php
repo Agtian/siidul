@@ -84,9 +84,9 @@
                                     <?php
                                     if ($row->NUM_JAN == 0) {
                                         echo "0";
-                                    } else if ($no == 4) {
+                                    } else if ($id_indikator == 6) {
                                         echo round($row->NUM_JAN, 5);
-                                    } else if ($no == 5) {
+                                    } else if ($id_indikator == 7) {
                                         echo round($row->NUM_JAN, 5);
                                     } else {
                                         echo $row->NUM_JAN;
@@ -97,9 +97,9 @@
                                     <?php
                                     if ($row->NUM_FEB == 0) {
                                         echo "0";
-                                    } else if ($no == 4) {
+                                    } else if ($id_indikator == 6) {
                                         echo round($row->NUM_FEB, 5);
-                                    } else if ($no == 5) {
+                                    } else if ($id_indikator == 7) {
                                         echo round($row->NUM_FEB, 5);
                                     } else {
                                         echo $row->NUM_FEB;
@@ -110,9 +110,9 @@
                                     <?php
                                     if ($row->NUM_MAR == 0) {
                                         echo "0";
-                                    } else if ($no == 4) {
+                                    } else if ($id_indikator == 6) {
                                         echo round($row->NUM_MAR, 5);
-                                    } else if ($no == 5) {
+                                    } else if ($id_indikator == 7) {
                                         echo round($row->NUM_MAR, 5);
                                     } else {
                                         echo $row->NUM_MAR;
@@ -123,9 +123,9 @@
                                     <?php
                                     if ($row->NUM_APR == 0) {
                                         echo "0";
-                                    } else if ($no == 4) {
+                                    } else if ($id_indikator == 6) {
                                         echo round($row->NUM_APR, 5);
-                                    } else if ($no == 5) {
+                                    } else if ($id_indikator == 7) {
                                         echo round($row->NUM_APR, 5);
                                     } else {
                                         echo $row->NUM_APR;
@@ -136,9 +136,9 @@
                                     <?php
                                     if ($row->NUM_MEI == 0) {
                                         echo "0";
-                                    } else if ($no == 4) {
+                                    } else if ($id_indikator == 6) {
                                         echo round($row->NUM_MEI, 5);
-                                    } else if ($no == 5) {
+                                    } else if ($id_indikator == 7) {
                                         echo round($row->NUM_MEI, 5);
                                     } else {
                                         echo $row->NUM_MEI;
@@ -149,9 +149,9 @@
                                     <?php
                                     if ($row->DEN_JUN == 0) {
                                         echo "0";
-                                    } else if ($no == 4) {
+                                    } else if ($id_indikator == 6) {
                                         echo round($row->DEN_JUN, 5);
-                                    } else if ($no == 5) {
+                                    } else if ($id_indikator == 7) {
                                         echo round($row->DEN_JUN, 5);
                                     } else {
                                         echo $row->DEN_JUN;
@@ -162,9 +162,9 @@
                                     <?php
                                     if ($row->NUM_JUL == 0) {
                                         echo "0";
-                                    } else if ($no == 4) {
+                                    } else if ($id_indikator == 6) {
                                         echo round($row->NUM_JUL, 5);
-                                    } else if ($no == 5) {
+                                    } else if ($id_indikator == 7) {
                                         echo round($row->NUM_JUL, 5);
                                     } else {
                                         echo $row->NUM_JUL;
@@ -175,9 +175,9 @@
                                     <?php
                                     if ($row->NUM_AGT == 0) {
                                         echo "0";
-                                    } else if ($no == 4) {
+                                    } else if ($id_indikator == 6) {
                                         echo round($row->NUM_AGT, 5);
-                                    } else if ($no == 5) {
+                                    } else if ($id_indikator == 7) {
                                         echo round($row->NUM_AGT, 5);
                                     } else {
                                         echo $row->NUM_AGT;
@@ -188,9 +188,9 @@
                                     <?php
                                     if ($row->NUM_SEP == 0) {
                                         echo "0";
-                                    } else if ($no == 4) {
+                                    } else if ($id_indikator == 6) {
                                         echo round($row->NUM_SEP, 5);
-                                    } else if ($no == 5) {
+                                    } else if ($id_indikator == 7) {
                                         echo round($row->NUM_SEP, 5);
                                     } else {
                                         echo $row->NUM_SEP;
@@ -201,9 +201,9 @@
                                     <?php
                                     if ($row->NUM_OKT == 0) {
                                         echo "0";
-                                    } else if ($no == 4) {
+                                    } else if ($id_indikator == 6) {
                                         echo round($row->NUM_OKT, 5);
-                                    } else if ($no == 5) {
+                                    } else if ($id_indikator == 7) {
                                         echo round($row->NUM_OKT, 5);
                                     } else {
                                         echo $row->NUM_OKT;
@@ -214,9 +214,9 @@
                                     <?php
                                     if ($row->NUM_NOV == 0) {
                                         echo "0";
-                                    } else if ($no == 4) {
+                                    } else if ($id_indikator == 6) {
                                         echo round($row->NUM_NOV, 5);
-                                    } else if ($no == 5) {
+                                    } else if ($id_indikator == 7) {
                                         echo round($row->NUM_NOV, 5);
                                     } else {
                                         echo $row->NUM_NOV;
@@ -227,9 +227,9 @@
                                     <?php
                                     if ($row->NUM_DES == 0) {
                                         echo "0";
-                                    } else if ($no == 4) {
+                                    } else if ($id_indikator == 6) {
                                         echo round($row->NUM_DES, 5);
-                                    } else if ($no == 5) {
+                                    } else if ($id_indikator == 7) {
                                         echo round($row->NUM_DES, 5);
                                     } else {
                                         echo $row->NUM_DES;
