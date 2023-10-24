@@ -1,6 +1,5 @@
-<?php print_r('SEDANG PERBAIKAN - HARAP DITUNGGU BEBERAPA HARI');die(); ?>
-
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,8 +19,8 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/dashboard/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css">
 
     <!-- Bootstrap Colorpicker -->
-    <link rel="stylesheet" href="<?php echo base_url()?>assets/dashboard/vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
-    
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/dashboard/vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+
 </head>
 
 <body>
@@ -36,12 +35,24 @@
                 <table id="" class="table table-striped table-bordered">
                     <thead>
                         <tr class="bg-primary">
-                            <th rowspan="2" width="30"><center>NO</center></th>
-                            <th rowspan="2" width="170"><center>INDIKATOR</center></th>
-                            <th rowspan="2" width="230"><center>SUB INDIKATOR</center></th>
-                            <th colspan="12"><center>BULAN</center></th>
-                            <th rowspan="2"><center>TOTAL</center></th>
-                            <th rowspan="2"><center>PERSEN</center></th>
+                            <th rowspan="2" width="30">
+                                <center>NO</center>
+                            </th>
+                            <th rowspan="2" width="170">
+                                <center>INDIKATOR</center>
+                            </th>
+                            <th rowspan="2" width="230">
+                                <center>SUB INDIKATOR</center>
+                            </th>
+                            <th colspan="12">
+                                <center>BULAN</center>
+                            </th>
+                            <th rowspan="2">
+                                <center>TOTAL</center>
+                            </th>
+                            <th rowspan="2">
+                                <center>PERSEN</center>
+                            </th>
                         </tr>
                         <tr class="bg-primary">
                             <th align="center">JAN</th>
@@ -59,361 +70,197 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php 
-                            $no = 1;
-                            foreach ($tahunan_i->result() as $row) {
+                        <?php
+                        $no = 1;
+                        foreach ($tahunan_i->result() as $row) {
+                            $id_indikator = $row->ID;
+
                         ?>
-                        <tr>
-                            <td rowspan="2"><?php echo $no++; ?></td>
-                            <td rowspan="2"><?php echo $row->DETAIL_INDIKATOR; ?></td>
-                            <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
-                            <td align="center"> 
-                                <?php
-                                    if ($row->NUM_JAN == 0)
-                                    {
+                            <tr>
+                                <td rowspan="2"><?php echo $no++; ?></td>
+                                <td rowspan="2"><?php echo $row->DETAIL_INDIKATOR; ?></td>
+                                <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
+                                <td align="center">
+                                    <?php
+                                    if ($row->NUM_JAN == 0) {
                                         echo "0";
                                     } else if ($no == 4) {
-                                        echo round($row->NUM_JAN / $tt_hari_jan, 5); 
+                                        echo round($row->NUM_JAN, 5);
                                     } else if ($no == 5) {
-                                        echo round($row->NUM_JAN / $tt_hari_jan, 5); 
+                                        echo round($row->NUM_JAN, 5);
                                     } else {
                                         echo $row->NUM_JAN;
                                     }
-                                ?> 
-                            </td>
-                            <td align="center"> 
-                                <?php
-                                    if ($row->NUM_FEB == 0)
-                                    {
+                                    ?>
+                                </td>
+                                <td align="center">
+                                    <?php
+                                    if ($row->NUM_FEB == 0) {
                                         echo "0";
                                     } else if ($no == 4) {
-                                        echo round($row->NUM_FEB / $tt_hari_feb, 5); 
+                                        echo round($row->NUM_FEB, 5);
                                     } else if ($no == 5) {
-                                        echo round($row->NUM_FEB / $tt_hari_feb, 5); 
+                                        echo round($row->NUM_FEB, 5);
                                     } else {
                                         echo $row->NUM_FEB;
                                     }
-                                ?> 
-                            </td>
-                            <td align="center"> 
-                                <?php
-                                    if ($row->NUM_MAR == 0)
-                                    {
+                                    ?>
+                                </td>
+                                <td align="center">
+                                    <?php
+                                    if ($row->NUM_MAR == 0) {
                                         echo "0";
                                     } else if ($no == 4) {
-                                        echo round($row->NUM_MAR / $tt_hari_mar, 5); 
+                                        echo round($row->NUM_MAR, 5);
                                     } else if ($no == 5) {
-                                        echo round($row->NUM_MAR / $tt_hari_mar, 5); 
+                                        echo round($row->NUM_MAR, 5);
                                     } else {
                                         echo $row->NUM_MAR;
                                     }
-                                ?> 
-                            </td>
-                            <td align="center"> 
-                                <?php
-                                    if ($row->NUM_APR == 0)
-                                    {
+                                    ?>
+                                </td>
+                                <td align="center">
+                                    <?php
+                                    if ($row->NUM_APR == 0) {
                                         echo "0";
                                     } else if ($no == 4) {
-                                        echo round($row->NUM_APR / $tt_hari_apr, 5); 
+                                        echo round($row->NUM_APR, 5);
                                     } else if ($no == 5) {
-                                        echo round($row->NUM_APR / $tt_hari_apr, 5); 
+                                        echo round($row->NUM_APR, 5);
                                     } else {
                                         echo $row->NUM_APR;
                                     }
-                                ?> 
-                            </td>
-                            <td align="center"> 
-                                <?php
-                                    if ($row->NUM_MEI == 0)
-                                    {
+                                    ?>
+                                </td>
+                                <td align="center">
+                                    <?php
+                                    if ($row->NUM_MEI == 0) {
                                         echo "0";
                                     } else if ($no == 4) {
-                                        echo round($row->NUM_MEI / $tt_hari_mei, 5); 
+                                        echo round($row->NUM_MEI, 5);
                                     } else if ($no == 5) {
-                                        echo round($row->NUM_MEI / $tt_hari_mei, 5); 
+                                        echo round($row->NUM_MEI, 5);
                                     } else {
                                         echo $row->NUM_MEI;
                                     }
-                                ?> 
-                            </td>
-                            <td align="center"> 
-                                <?php
-                                    if ($row->DEN_JUN == 0)
-                                    {
+                                    ?>
+                                </td>
+                                <td align="center">
+                                    <?php
+                                    if ($row->DEN_JUN == 0) {
                                         echo "0";
                                     } else if ($no == 4) {
-                                        echo round($row->DEN_JUN / $tt_hari_jun, 5); 
+                                        echo round($row->DEN_JUN, 5);
                                     } else if ($no == 5) {
-                                        echo round($row->DEN_JUN / $tt_hari_jun, 5); 
+                                        echo round($row->DEN_JUN, 5);
                                     } else {
                                         echo $row->DEN_JUN;
                                     }
-                                ?> 
-                            </td>
-                            <td align="center"> 
-                                <?php
-                                    if ($row->NUM_JUL == 0)
-                                    {
+                                    ?>
+                                </td>
+                                <td align="center">
+                                    <?php
+                                    if ($row->NUM_JUL == 0) {
                                         echo "0";
                                     } else if ($no == 4) {
-                                        echo round($row->NUM_JUL / $tt_hari_jul, 5); 
+                                        echo round($row->NUM_JUL, 5);
                                     } else if ($no == 5) {
-                                        echo round($row->NUM_JUL / $tt_hari_jul, 5); 
+                                        echo round($row->NUM_JUL, 5);
                                     } else {
                                         echo $row->NUM_JUL;
                                     }
-                                ?> 
-                            </td>
-                            <td align="center"> 
-                                <?php
-                                    if ($row->NUM_AGT == 0)
-                                    {
+                                    ?>
+                                </td>
+                                <td align="center">
+                                    <?php
+                                    if ($row->NUM_AGT == 0) {
                                         echo "0";
                                     } else if ($no == 4) {
-                                        echo round($row->NUM_AGT / $tt_hari_agt, 5); 
+                                        echo round($row->NUM_AGT, 5);
                                     } else if ($no == 5) {
-                                        echo round($row->NUM_AGT / $tt_hari_agt, 5); 
+                                        echo round($row->NUM_AGT, 5);
                                     } else {
                                         echo $row->NUM_AGT;
                                     }
-                                ?> 
-                            </td>
-                            <td align="center"> 
-                                <?php
-                                    if ($row->NUM_SEP == 0)
-                                    {
+                                    ?>
+                                </td>
+                                <td align="center">
+                                    <?php
+                                    if ($row->NUM_SEP == 0) {
                                         echo "0";
                                     } else if ($no == 4) {
-                                        echo round($row->NUM_SEP / $tt_hari_sep, 5); 
+                                        echo round($row->NUM_SEP, 5);
                                     } else if ($no == 5) {
-                                        echo round($row->NUM_SEP / $tt_hari_sep, 5); 
+                                        echo round($row->NUM_SEP, 5);
                                     } else {
                                         echo $row->NUM_SEP;
                                     }
-                                ?> 
-                            </td>
-                            <td align="center"> 
-                                <?php
-                                    if ($row->NUM_NOV == 0)
-                                    {
+                                    ?>
+                                </td>
+                                <td align="center">
+                                    <?php
+                                    if ($row->NUM_OKT == 0) {
                                         echo "0";
                                     } else if ($no == 4) {
-                                        echo round($row->NUM_NOV / $tt_hari_nov, 5); 
+                                        echo round($row->NUM_OKT, 5);
                                     } else if ($no == 5) {
-                                        echo round($row->NUM_NOV / $tt_hari_nov, 5); 
-                                    } else {
-                                        echo $row->NUM_NOV;
-                                    }
-                                ?> 
-                            </td>
-                            <td align="center"> 
-                                <?php
-                                    if ($row->NUM_OKT == 0)
-                                    {
-                                        echo "0";
-                                    } else if ($no == 4) {
-                                        echo round($row->NUM_OKT / $tt_hari_okt, 5); 
-                                    } else if ($no == 5) {
-                                        echo round($row->NUM_OKT / $tt_hari_okt, 5); 
+                                        echo round($row->NUM_OKT, 5);
                                     } else {
                                         echo $row->NUM_OKT;
                                     }
-                                ?> 
-                            </td>
-                            <td align="center"> 
-                                <?php
-                                    if ($row->NUM_DES == 0)
-                                    {
+                                    ?>
+                                </td>
+                                <td align="center">
+                                    <?php
+                                    if ($row->NUM_NOV == 0) {
                                         echo "0";
                                     } else if ($no == 4) {
-                                        echo round($row->NUM_DES / $tt_hari_des, 5); 
+                                        echo round($row->NUM_NOV, 5);
                                     } else if ($no == 5) {
-                                        echo round($row->NUM_DES / $tt_hari_des, 5); 
+                                        echo round($row->NUM_NOV, 5);
+                                    } else {
+                                        echo $row->NUM_NOV;
+                                    }
+                                    ?>
+                                </td>
+                                <td align="center">
+                                    <?php
+                                    if ($row->NUM_DES == 0) {
+                                        echo "0";
+                                    } else if ($no == 4) {
+                                        echo round($row->NUM_DES, 5);
+                                    } else if ($no == 5) {
+                                        echo round($row->NUM_DES, 5);
                                     } else {
                                         echo $row->NUM_DES;
                                     }
-                                ?> 
-                            </td>
-                            <td align="center">
-                                <b> 
-                                    <?php 
-                                        if ($no == '4' || $no == '5')
-                                        {
-                                            if (!empty($row->NUM_JAN) && empty($row->NUM_FEB) && empty($NUM_MAR) && empty($row->NUM_APR) && empty($NUM_MEI) && empty($row->NUM_JUN) && empty($NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP) && empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
+                                    ?>
+                                </td>
+                                <td align="center">
+                                    <b>
+                                        <?php
 
-                                                $persen = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb);
-                                                echo round($persen, 5);
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && empty($NUM_MAR) && empty($row->NUM_APR) && empty($NUM_MEI) && empty($row->NUM_JUN) && empty($NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP) && empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-
-                                                $persen = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb);
-                                                echo round($persen, 5);
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && empty($row->NUM_APR) && empty($NUM_MEI) && empty($row->NUM_JUN) && empty($NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP) && empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-
-                                                $persen = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar);
-                                                echo round($persen, 5);
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && !empty($row->NUM_APR) && empty($NUM_MEI) && empty($row->NUM_JUN) && empty($NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP) && empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-                                                
-                                                $persen = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr);
-                                                echo round($persen, 5);
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && !empty($row->NUM_APR) && !empty($NUM_MEI) && empty($row->NUM_JUN) && empty($NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP) && empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-                                                
-                                                $persen = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei);
-                                                echo round($persen, 5);
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && !empty($row->NUM_APR) && !empty($NUM_MEI) && !empty($row->NUM_JUN) && empty($NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP) && empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-                                                
-                                                $persen = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun);
-                                                echo round($persen, 5);
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && !empty($row->NUM_APR) && !empty($NUM_MEI) && !empty($row->NUM_JUN) && !empty($NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP) && empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-                                                
-                                                $persen = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun) + ($row->NUM_JUL / $tt_hari_jul);
-                                                echo round($persen, 5);
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && !empty($row->NUM_APR) && !empty($NUM_MEI) && !empty($row->NUM_JUN) && !empty($NUM_JUL) && !empty($row->NUM_AGT) && empty($NUM_SEP) && empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-                                                
-                                                $persen = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun) + ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt);
-                                                echo round($persen, 5);
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && !empty($row->NUM_APR) && !empty($NUM_MEI) && !empty($row->NUM_JUN) && !empty($NUM_JUL) && !empty($row->NUM_AGT) && !empty($NUM_SEP) && empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-                                                
-                                                $persen = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun) + ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep);
-                                                echo round($persen, 5);
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && !empty($row->NUM_APR) && !empty($NUM_MEI) && !empty($row->NUM_JUN) && !empty($NUM_JUL) && !empty($row->NUM_AGT) && !empty($NUM_SEP) && !empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-                                                
-                                                $persen = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun) + ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep) + ($row->NUM_OKT / $tt_hari_okt);
-                                                echo round($persen, 5);
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && !empty($row->NUM_APR) && !empty($NUM_MEI) && !empty($row->NUM_JUN) && !empty($NUM_JUL) && !empty($row->NUM_AGT) && !empty($NUM_SEP) && !empty($row->NUM_OKT) && !empty($row->NUM_NOV) && empty($NUM_DES)) {
-                                                
-                                                $persen = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun) + ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep) + ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov);
-                                                echo round($persen, 5);
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && !empty($row->NUM_APR) && !empty($NUM_MEI) && !empty($row->NUM_JUN) && !empty($NUM_JUL) && !empty($row->NUM_AGT) && !empty($NUM_SEP) && !empty($row->NUM_OKT) && !empty($row->NUM_NOV) && !empty($NUM_DES)) {
-                                                
-                                                $persen = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun) + ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep) + ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov) + ($row->NUM_DES / $tt_hari_des);
-                                                echo round($persen, 5);
-                                            } else if (empty($row->NUM_JAN) && empty($row->NUM_FEB) && empty($NUM_MAR) && empty($row->NUM_APR) && empty($NUM_MEI) && empty($row->NUM_JUN) && empty($NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP) && empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-
-                                                echo "0";
-
-                                            } else {
-
-                                                echo "";
-
-                                            }
+                                        if ($row->TOTAL_NUM == 0) {
+                                            echo "0";
                                         } else {
-                                            if ($row->TOTAL_NUM == 0) 
-                                            {
-                                                echo "0";
-                                            } else {
-                                                echo $row->TOTAL_NUM;
-                                            }
+                                            echo $row->TOTAL_NUM;
                                         }
-                                    ?> 
-                                </b>
-                            </td>
-                            <td rowspan="2" align="center">
-                                <b> 
-                                    <?php
-                                        if ($no == '4' || $no == '5')
-                                        {
-                                            if (!empty($row->NUM_JAN) && empty($row->NUM_FEB) && empty($NUM_MAR) && empty($row->NUM_APR) && empty($NUM_MEI) && empty($row->NUM_JUN) && empty($NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP) && empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
 
-                                                $num    = ($row->NUM_JAN / $tt_hari_jan);
-                                                $den    = $row->DEN_JAN;
-                                                $persen = $num / $den;
-                                                echo gmdate('H:i:s', floor($persen * 86400));
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && empty($NUM_MAR) && empty($row->NUM_APR) && empty($NUM_MEI) && empty($row->NUM_JUN) && empty($NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP) && empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-
-                                                $num    = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb);
-                                                $den    = $row->DEN_JAN + $row->DEN_FEB;
-                                                $persen = $num / $den;
-                                                echo gmdate('H:i:s', floor($persen * 86400));
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && empty($row->NUM_APR) && empty($NUM_MEI) && empty($row->NUM_JUN) && empty($NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP) && empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-
-                                                $num    = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar);
-                                                $den    = $row->DEN_JAN + $row->DEN_FEB + $row->DEN_MAR;
-                                                $persen = $num / $den;
-                                                echo gmdate('H:i:s', floor($persen * 86400));
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && !empty($row->NUM_APR) && empty($NUM_MEI) && empty($row->NUM_JUN) && empty($NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP) && empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-
-                                                $num    = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr);
-                                                $den    = $row->DEN_JAN + $row->DEN_FEB + $row->DEN_MAR + $row->DEN_APR;
-                                                $persen = $num / $den;
-                                                echo gmdate('H:i:s', floor($persen * 86400));
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && !empty($row->NUM_APR) && !empty($NUM_MEI) && empty($row->NUM_JUN) && empty($NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP) && empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-
-                                                $num    = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei);
-                                                $den    = $row->DEN_JAN + $row->DEN_FEB + $row->DEN_MAR + $row->DEN_APR + $row->DEN_MEI;
-                                                $persen = $num / $den;
-                                                echo gmdate('H:i:s', floor($persen * 86400));
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && !empty($row->NUM_APR) && !empty($NUM_MEI) && !empty($row->NUM_JUN) && empty($NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP) && empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-
-                                                $num    = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun);
-                                                $den    = $row->DEN_JAN + $row->DEN_FEB + $row->DEN_MAR + $row->DEN_APR + $row->DEN_MEI + $row->DEN_JUN;
-                                                $persen = $num / $den;
-                                                echo gmdate('H:i:s', floor($persen * 86400));
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && !empty($row->NUM_APR) && !empty($NUM_MEI) && !empty($row->NUM_JUN) && !empty($NUM_JUL) && empty($row->NUM_AGT) && empty($NUM_SEP) && empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-
-                                                $num    = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun) + ($row->NUM_JUL / $tt_hari_jul);
-                                                $den    = $row->DEN_JAN + $row->DEN_FEB + $row->DEN_MAR + $row->DEN_APR + $row->DEN_MEI + $row->DEN_JUN + $row->DEN_JUL;
-                                                $persen = $num / $den;
-                                                echo gmdate('H:i:s', floor($persen * 86400));
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && !empty($row->NUM_APR) && !empty($NUM_MEI) && !empty($row->NUM_JUN) && !empty($NUM_JUL) && !empty($row->NUM_AGT) && empty($NUM_SEP) && empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-
-                                                $num    = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun) + ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt);
-                                                $den    = $row->DEN_JAN + $row->DEN_FEB + $row->DEN_MAR + $row->DEN_APR + $row->DEN_MEI + $row->DEN_JUN + $row->DEN_JUL + $row->DEN_AGT;
-                                                $persen = $num / $den;
-                                                echo gmdate('H:i:s', floor($persen * 86400));
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && !empty($row->NUM_APR) && !empty($NUM_MEI) && !empty($row->NUM_JUN) && !empty($NUM_JUL) && !empty($row->NUM_AGT) && !empty($NUM_SEP) && empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-
-                                                $num    = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun) + ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep);
-                                                $den    = $row->DEN_JAN + $row->DEN_FEB + $row->DEN_MAR + $row->DEN_APR + $row->DEN_MEI + $row->DEN_JUN + $row->DEN_JUL + $row->DEN_AGT + $row->DEN_SEP;
-                                                $persen = $num / $den;
-                                                echo gmdate('H:i:s', floor($persen * 86400));
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && !empty($row->NUM_APR) && !empty($NUM_MEI) && !empty($row->NUM_JUN) && !empty($NUM_JUL) && !empty($row->NUM_AGT) && !empty($NUM_SEP) && !empty($row->NUM_OKT) && empty($row->NUM_NOV) && empty($NUM_DES)) {
-
-                                                $num    = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun) + ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep) + ($row->NUM_OKT / $tt_hari_okt);
-                                                $den    = $row->DEN_JAN + $row->DEN_FEB + $row->DEN_MAR + $row->DEN_APR + $row->DEN_MEI + $row->DEN_JUN + $row->DEN_JUL + $row->DEN_AGT + $row->DEN_SEP + $row->DEN_OKT;
-                                                $persen = $num / $den;
-                                                echo gmdate('H:i:s', floor($persen * 86400));
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && !empty($row->NUM_APR) && !empty($NUM_MEI) && !empty($row->NUM_JUN) && !empty($NUM_JUL) && !empty($row->NUM_AGT) && !empty($NUM_SEP) && !empty($row->NUM_OKT) && !empty($row->NUM_NOV) && empty($NUM_DES)) {
-
-                                                $num    = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun) + ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep) + ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov);
-                                                $den    = $row->DEN_JAN + $row->DEN_FEB + $row->DEN_MAR + $row->DEN_APR + $row->DEN_MEI + $row->DEN_JUN + $row->DEN_JUL + $row->DEN_AGT + $row->DEN_SEP + $row->DEN_OKT + $row->DEN_NOV;
-                                                $persen = $num / $den;
-                                                echo gmdate('H:i:s', floor($persen * 86400));
-
-                                            } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR) && !empty($row->NUM_APR) && !empty($NUM_MEI) && !empty($row->NUM_JUN) && !empty($NUM_JUL) && !empty($row->NUM_AGT) && !empty($NUM_SEP) && !empty($row->NUM_OKT) && !empty($row->NUM_NOV) && !empty($NUM_DES)) {
-
-                                                $num    = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun) + ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep) + ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov) + ($row->NUM_DES / $tt_hari_des);
-                                                $den    = $row->DEN_JAN + $row->DEN_FEB + $row->DEN_MAR + $row->DEN_APR + $row->DEN_MEI + $row->DEN_JUN + $row->DEN_JUL + $row->DEN_AGT + $row->DEN_SEP + $row->DEN_OKT + $row->DEN_NOV + $row->DEN_DES;
-                                                $persen = $num / $den;
-                                                echo gmdate('H:i:s', floor($persen * 86400));
-                                                
-                                            } else {
+                                        ?>
+                                    </b>
+                                </td>
+                                <td rowspan="2" align="center">
+                                    <b>
+                                        <?php
+                                        if ($no == '4' || $no == '5') {
+                                            if ($row->TOTAL_NUM == 0 && $row->TOTAL_DEN == 0) {
                                                 echo "00:00:00";
+                                            } else {
+                                                $persen = ($row->TOTAL_NUM / $row->TOTAL_DEN);
+                                                echo gmdate('H:i:s', floor($persen * 60));
                                             }
                                         } else {
-                                            if ($row->TOTAL_NUM == 0 && $row->TOTAL_DEN == 0) 
-                                            {
+                                            if ($row->TOTAL_NUM == 0 && $row->TOTAL_DEN == 0) {
                                                 echo "0";
                                                 echo " %";
                                             } else {
@@ -422,26 +269,26 @@
                                                 echo " %";
                                             }
                                         }
-                                    ?>
-                                </b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $row->DETAIL_DEN; ?></td>
-                            <td align="center"> <?php echo $row->DEN_JAN; ?> </td>
-                            <td align="center"> <?php echo $row->DEN_FEB; ?> </td>
-                            <td align="center"> <?php echo $row->DEN_MAR; ?> </td>
-                            <td align="center"> <?php echo $row->DEN_APR; ?> </td>
-                            <td align="center"> <?php echo $row->DEN_MEI; ?> </td>
-                            <td align="center"> <?php echo $row->DEN_JUN; ?> </td>
-                            <td align="center"> <?php echo $row->DEN_JUL; ?> </td>
-                            <td align="center"> <?php echo $row->DEN_AGT; ?> </td>
-                            <td align="center"> <?php echo $row->DEN_SEP; ?> </td>
-                            <td align="center"> <?php echo $row->DEN_OKT; ?> </td>
-                            <td align="center"> <?php echo $row->DEN_NOV; ?> </td>
-                            <td align="center"> <?php echo $row->DEN_DES; ?> </td>
-                            <td align="center"><b> <?php echo $row->TOTAL_DEN; ?> </b></td>
-                        </tr>
+                                        ?>
+                                    </b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><?php echo $row->DETAIL_DEN; ?></td>
+                                <td align="center"> <?php echo $row->DEN_JAN; ?> </td>
+                                <td align="center"> <?php echo $row->DEN_FEB; ?> </td>
+                                <td align="center"> <?php echo $row->DEN_MAR; ?> </td>
+                                <td align="center"> <?php echo $row->DEN_APR; ?> </td>
+                                <td align="center"> <?php echo $row->DEN_MEI; ?> </td>
+                                <td align="center"> <?php echo $row->DEN_JUN; ?> </td>
+                                <td align="center"> <?php echo $row->DEN_JUL; ?> </td>
+                                <td align="center"> <?php echo $row->DEN_AGT; ?> </td>
+                                <td align="center"> <?php echo $row->DEN_SEP; ?> </td>
+                                <td align="center"> <?php echo $row->DEN_OKT; ?> </td>
+                                <td align="center"> <?php echo $row->DEN_NOV; ?> </td>
+                                <td align="center"> <?php echo $row->DEN_DES; ?> </td>
+                                <td align="center"><b> <?php echo $row->TOTAL_DEN; ?> </b></td>
+                            </tr>
                         <?php } ?>
                     </tbody>
                 </table>
