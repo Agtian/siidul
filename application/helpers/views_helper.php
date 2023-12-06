@@ -348,6 +348,10 @@ function views_export_bulanan($id)
 			// Hemodialisa
 			return "hemodialisa/export/v_export_bulanan";
 			break;
+		case 32:
+			// Kasir
+			return "kasir/export/v_export_bulanan";
+			break;
 
 		default:
 			return "general/export/v_export_bulanan";
@@ -453,6 +457,10 @@ function views_export_triwulan($id)
 		case 24:
 			// Hemodialisa
 			return "hemodialisa/export/v_export_triwulan";
+			break;
+		case 32:
+			// Kasir
+			return "kasir/export/v_export_triwulan";
 			break;
 
 		default:
@@ -561,6 +569,10 @@ function views_export_semester($id)
 			// Hemodialisa
 			return "hemodialisa/export/v_export_semester";
 			break;
+		case 32:
+			// Kasir
+			return "kasir/export/v_export_semester";
+			break;
 
 		default:
 			return "general/export/v_export_semester";
@@ -666,6 +678,10 @@ function views_export_tahunan($id)
 		case 24:
 			// Hemodialisa
 			return "hemodialisa/export/v_export_tahunan";
+			break;
+		case 32:
+			// Kasir
+			return "kasir/export/v_export_tahunan";
 			break;
 		default:
 			// general
@@ -773,7 +789,10 @@ function views_export_capaian($id)
 			// Hemodialisa
 			return "hemodialisa/export/v_export_capaian";
 			break;
-
+		case 32:
+			// Kasir
+			return "kasir/export/v_export_capaian";
+			break;
 
 		default:
 			return "general/export/v_export_capaian";
@@ -879,6 +898,10 @@ function views_export_grafik($id)
 		case 24:
 			// Hemodialisa
 			return "hemodialisa/export/v_export_capaian";
+			break;
+		case 32:
+			// Kasir
+			return "kasir/export/v_export_capaian";
 			break;
 		default:
 			return "general/export/v_export_capaian";
@@ -988,7 +1011,10 @@ function views_export_triwulan_iii_form_dewas($id)
 			// Hemodialisa
 			return "hemodialisa/export/v_export_triwulan_iii_form_dewas";
 			break;
-
+		case 32:
+			// Kasir
+			return "kasir/export/v_export_triwulan_iii_form_dewas";
+			break;
 		default:
 			return "general/export/v_export_triwulan_iii_form_dewas";
 			break;
@@ -1097,7 +1123,10 @@ function views_rekap_bulanan($id)
 			// Hemodialisa
 			return "hemodialisa/v_bulanan_tabel";
 			break;
-
+		case 32:
+			// Kasir
+			return "kasir/v_bulanan_tabel";
+			break;
 
 		default:
 			return "general/v_bulanan_tabel";
@@ -1314,6 +1343,10 @@ function views_rekap_semester($id)
 			// Hemodialisa
 			return "hemodialisa/v_semester_tabel";
 			break;
+		case 32:
+			// Kasir
+			return "kasir/v_semester_tabel";
+			break;
 
 		default:
 			return "general/v_semester_tabel";
@@ -1420,7 +1453,10 @@ function views_rekap_tahunan($id)
 			// Hemodialisa
 			return "hemodialisa/v_tahunan_tabel";
 			break;
-
+		case 32:
+			// Kasir
+			return "kasir/v_tahunan_tabel";
+			break;
 		default:
 			return "general/v_tahunan_tabel";
 			break;
@@ -1526,7 +1562,10 @@ function views_rekap_capaian($id)
 			// Hemodialisa
 			return "hemodialisa/v_capaian";
 			break;
-
+		case 32:
+			// Kasir
+			return "kasir/v_capaian";
+			break;
 		default:
 			return "general/v_capaian";
 			break;
@@ -1639,7 +1678,10 @@ function views_grafik_capaian($id)
 			// pkrs
 			return "pkrs/v_grafik";
 			break;
-
+		case 32:
+			// Kasir
+			return "kasir/v_grafik";
+			break;
 		default:
 			return "general/v_grafik";
 			break;
@@ -1745,7 +1787,10 @@ function views_rekap_triwulan_table_dewas($id)
 			// Hemodialisa
 			return "hemodialisa/v_triwulan_tabel_dewas";
 			break;
-
+		case 32:
+			// Kasir
+			return "kasir/v_triwulan_tabel_dewas";
+			break;
 
 		default:
 			return "general/v_triwulan_tabel_dewas";

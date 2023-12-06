@@ -124,12 +124,12 @@
                                             <td rowspan="2" align="center">
                                                 <b>
                                                     <?php
-                                                    if ($id_indikator == 94) {
+                                                    if ($id_indikator == 252) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                             echo "00:00:00";
                                                         } else {
-                                                            $persen = $row->TOTAL_NUM / 12 / $row->TOTAL_DEN;
-                                                            echo gmdate('H:i:s', floor($persen * 86400));
+                                                            $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
+                                                            echo gmdate('H:i:s', floor($persen * 60));
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {

@@ -92,14 +92,14 @@
                                             <td align="center"><b> <?php echo $row->NILAI_STANDAR; ?> </b></td>
                                             <td align="center">
                                                 <?php
-                                                if ($id_indikator == 94) {
+                                                if ($id_indikator == 252) {
                                                     if (empty($row->NUM_JAN)) {
                                                         echo "00:00:00";
                                                     } else {
                                                         $num    = ($row->NUM_JAN / $tt_hari_jan);
                                                         $den    = $row->DEN_JAN;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
                                                     }
                                                 } else {
                                                     if (empty($row->NUM_JAN)) {
@@ -113,14 +113,14 @@
                                             </td>
                                             <td align="center">
                                                 <?php
-                                                if ($id_indikator == 94) {
+                                                if ($id_indikator == 252) {
                                                     if (empty($row->NUM_FEB)) {
                                                         echo "00:00:00";
                                                     } else {
                                                         $num    = ($row->NUM_FEB / $tt_hari_feb);
                                                         $den    = $row->DEN_FEB;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
                                                     }
                                                 } else {
                                                     if (empty($row->NUM_FEB)) {
@@ -134,14 +134,14 @@
                                             </td>
                                             <td align="center">
                                                 <?php
-                                                if ($id_indikator == 94) {
+                                                if ($id_indikator == 252) {
                                                     if (empty($row->NUM_MAR)) {
                                                         echo "00:00:00";
                                                     } else {
                                                         $num    = ($row->NUM_MAR / $tt_hari_mar);
                                                         $den    = $row->DEN_MAR;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
                                                     }
                                                 } else {
                                                     if (empty($row->NUM_MAR)) {
@@ -155,14 +155,14 @@
                                             </td>
                                             <td align="center">
                                                 <?php
-                                                if ($id_indikator == 94) {
+                                                if ($id_indikator == 252) {
                                                     if (empty($row->NUM_APR)) {
                                                         echo "00:00:00";
                                                     } else {
                                                         $num    = ($row->NUM_APR / $tt_hari_apr);
                                                         $den    = $row->DEN_APR;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
                                                     }
                                                 } else {
                                                     if (empty($row->NUM_APR)) {
@@ -176,14 +176,14 @@
                                             </td>
                                             <td align="center">
                                                 <?php
-                                                if ($id_indikator == 94) {
+                                                if ($id_indikator == 252) {
                                                     if (empty($row->NUM_MEI)) {
                                                         echo "00:00:00";
                                                     } else {
                                                         $num    = ($row->NUM_MEI / $tt_hari_mei);
                                                         $den    = $row->DEN_MEI;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
                                                     }
                                                 } else {
                                                     if (empty($row->NUM_MEI)) {
@@ -197,14 +197,14 @@
                                             </td>
                                             <td align="center">
                                                 <?php
-                                                if ($id_indikator == 94) {
+                                                if ($id_indikator == 252) {
                                                     if (empty($row->NUM_JUN)) {
                                                         echo "00:00:00";
                                                     } else {
                                                         $num    = ($row->NUM_JUN / $tt_hari_jun);
                                                         $den    = $row->DEN_JUN;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
                                                     }
                                                 } else {
                                                     if (empty($row->NUM_JUN)) {
@@ -218,14 +218,14 @@
                                             </td>
                                             <td align="center">
                                                 <?php
-                                                if ($id_indikator == 94) {
+                                                if ($id_indikator == 252) {
                                                     if (empty($row->NUM_JUN)) {
                                                         echo "00:00:00";
                                                     } else {
                                                         $num    = ($row->NUM_JUN / $tt_hari_jul);
                                                         $den    = $row->DEN_JUN;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
                                                     }
                                                 } else {
                                                     if (empty($row->NUM_JUN)) {
@@ -239,14 +239,14 @@
                                             </td>
                                             <td align="center">
                                                 <?php
-                                                if ($id_indikator == 94) {
+                                                if ($id_indikator == 252) {
                                                     if (empty($row->NUM_AGT)) {
                                                         echo "00:00:00";
                                                     } else {
                                                         $num    = ($row->NUM_AGT / $tt_hari_agt);
                                                         $den    = $row->DEN_AGT;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
                                                     }
                                                 } else {
                                                     if (empty($row->NUM_AGT)) {
@@ -260,14 +260,14 @@
                                             </td>
                                             <td align="center">
                                                 <?php
-                                                if ($id_indikator == 94) {
+                                                if ($id_indikator == 252) {
                                                     if (empty($row->NUM_SEP)) {
                                                         echo "00:00:00";
                                                     } else {
                                                         $num    = ($row->NUM_SEP / $tt_hari_sep);
                                                         $den    = $row->DEN_SEP;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
                                                     }
                                                 } else {
                                                     if (empty($row->NUM_SEP)) {
@@ -281,14 +281,14 @@
                                             </td>
                                             <td align="center">
                                                 <?php
-                                                if ($id_indikator == 94) {
+                                                if ($id_indikator == 252) {
                                                     if (empty($row->NUM_OKT)) {
                                                         echo "00:00:00";
                                                     } else {
                                                         $num    = ($row->NUM_OKT / $tt_hari_okt);
                                                         $den    = $row->DEN_OKT;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
                                                     }
                                                 } else {
                                                     if (empty($row->NUM_OKT)) {
@@ -302,14 +302,14 @@
                                             </td>
                                             <td align="center">
                                                 <?php
-                                                if ($id_indikator == 94) {
+                                                if ($id_indikator == 252) {
                                                     if (empty($row->NUM_NOV)) {
                                                         echo "00:00:00";
                                                     } else {
                                                         $num    = ($row->NUM_NOV / $tt_hari_nov);
                                                         $den    = $row->DEN_NOV;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
                                                     }
                                                 } else {
                                                     if (empty($row->NUM_NOV)) {
@@ -323,14 +323,14 @@
                                             </td>
                                             <td align="center">
                                                 <?php
-                                                if ($id_indikator == 94) {
+                                                if ($id_indikator == 252) {
                                                     if (empty($row->NUM_DES)) {
                                                         echo "00:00:00";
                                                     } else {
                                                         $num    = ($row->NUM_DES / $tt_hari_des);
                                                         $den    = $row->DEN_DES;
                                                         $persen = $num / $den;
-                                                        echo gmdate('H:i:s', floor($persen * 86400));
+                                                        echo gmdate('H:i:s', floor($persen * 60));
                                                     }
                                                 } else {
                                                     if (empty($row->NUM_DES)) {

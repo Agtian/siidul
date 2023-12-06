@@ -125,7 +125,7 @@
                                         <td align="center"> 
                                             <b>
                                                 <?php 
-                                                    if ($id_indikator == 94)
+                                                    if ($id_indikator == 252)
                                                     {
                                                         if (empty($total_num))
                                                         {
@@ -148,14 +148,14 @@
                                         <td rowspan="2"> 
                                             <b><center>
                                                 <?php
-                                                    if ($id_indikator == 94)
+                                                    if ($id_indikator == 252)
                                                     {
                                                         if ($total_num == 0 || $total_den == 0)
                                                         {
                                                             echo "0";
                                                         } else {
                                                             $average = ($total_num / $total_hari) / $total_den;
-                                                            echo gmdate('H:i:s', floor($average * 86400));
+                                                            echo gmdate('H:i:s', floor($average * 60));
                                                         }
                                                     } else {
                                                         if ($total_num == 0 || $total_den == 0)
