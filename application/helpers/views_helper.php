@@ -1204,7 +1204,10 @@ function views_rekap_triwulan($id)
 			// Hemodialisa
 			return "hemodialisa/v_triwulan_tabel";
 			break;
-
+		case 32:
+			// Kasir
+			return "kasir/v_triwulan_tabel";
+			break;
 
 		default:
 			return "general/v_triwulan_tabel";
