@@ -352,7 +352,14 @@ function views_export_bulanan($id)
 			// Kasir
 			return "kasir/export/v_export_bulanan";
 			break;
-
+		case 35:
+			// Pengemudi
+			return "pengemudi/export/v_export_bulanan";
+			break;
+		case 43:
+			// Diklat
+			return "diklat/export/v_export_bulanan";
+			break;
 		default:
 			return "general/export/v_export_bulanan";
 			break;
@@ -462,7 +469,14 @@ function views_export_triwulan($id)
 			// Kasir
 			return "kasir/export/v_export_triwulan";
 			break;
-
+		case 35:
+			// Kasir
+			return "pengemudi/export/v_export_triwulan";
+			break;
+		case 43:
+			// Diklat
+			return "diklat/export/v_export_triwulan";
+			break;
 		default:
 			// general
 			return "general/export/v_export_triwulan";
@@ -573,7 +587,14 @@ function views_export_semester($id)
 			// Kasir
 			return "kasir/export/v_export_semester";
 			break;
-
+		case 35:
+			// Kasir
+			return "pengemudi/export/v_export_semester";
+			break;
+		case 43:
+			// Diklat
+			return "diklat/export/v_export_semester";
+			break;
 		default:
 			return "general/export/v_export_semester";
 			break;
@@ -682,6 +703,14 @@ function views_export_tahunan($id)
 		case 32:
 			// Kasir
 			return "kasir/export/v_export_tahunan";
+			break;
+		case 35:
+			// Kasir
+			return "pengemudi/export/v_export_tahunan";
+			break;
+		case 43:
+			// Diklat
+			return "diklat/export/v_export_tahunan";
 			break;
 		default:
 			// general
@@ -793,7 +822,14 @@ function views_export_capaian($id)
 			// Kasir
 			return "kasir/export/v_export_capaian";
 			break;
-
+		case 35:
+			// Kasir
+			return "pengemudi/export/v_export_capaian";
+			break;
+		case 43:
+			// Diklat
+			return "diklat/export/v_export_capaian";
+			break;
 		default:
 			return "general/export/v_export_capaian";
 			break;
@@ -902,6 +938,14 @@ function views_export_grafik($id)
 		case 32:
 			// Kasir
 			return "kasir/export/v_export_capaian";
+			break;
+		case 35:
+			// Kasir
+			return "pengemudi/export/v_export_capaian";
+			break;
+		case 43:
+			// Diklat
+			return "diklat/export/v_export_capaian";
 			break;
 		default:
 			return "general/export/v_export_capaian";
@@ -1015,6 +1059,14 @@ function views_export_triwulan_iii_form_dewas($id)
 			// Kasir
 			return "kasir/export/v_export_triwulan_iii_form_dewas";
 			break;
+		case 35:
+			// Kasir
+			return "pengemudi/export/v_export_triwulan_iii_form_dewas";
+			break;
+		case 43:
+			// Diklat
+			return "diklat/export/v_export_triwulan_iii_form_dewas";
+			break;
 		default:
 			return "general/export/v_export_triwulan_iii_form_dewas";
 			break;
@@ -1127,7 +1179,14 @@ function views_rekap_bulanan($id)
 			// Kasir
 			return "kasir/v_bulanan_tabel";
 			break;
-
+		case 35:
+			// Kasir
+			return "pengemudi/v_bulanan_tabel";
+			break;
+		case 43:
+			// Diklat
+			return "diklat/v_bulanan_tabel";
+			break;
 		default:
 			return "general/v_bulanan_tabel";
 			break;
@@ -1237,7 +1296,14 @@ function views_rekap_triwulan($id)
 			// Kasir
 			return "kasir/v_triwulan_tabel";
 			break;
-
+		case 35:
+			// Kasir
+			return "pengemudi/v_triwulan_tabel";
+			break;
+		case 43:
+			// Diklat
+			return "diklat/v_triwulan_tabel";
+			break;
 		default:
 			return "general/v_triwulan_tabel";
 			break;
@@ -1347,7 +1413,14 @@ function views_rekap_semester($id)
 			// Kasir
 			return "kasir/v_semester_tabel";
 			break;
-
+		case 35:
+			// Kasir
+			return "pengemudi/v_semester_tabel";
+			break;
+		case 43:
+			// Diklat
+			return "diklat/v_semester_tabel";
+			break;
 		default:
 			return "general/v_semester_tabel";
 			break;
@@ -1457,6 +1530,14 @@ function views_rekap_tahunan($id)
 			// Kasir
 			return "kasir/v_tahunan_tabel";
 			break;
+		case 35:
+			// Kasir
+			return "pengemudi/v_tahunan_tabel";
+			break;
+		case 43:
+			// Diklat
+			return "diklat/v_tahunan_tabel";
+			break;
 		default:
 			return "general/v_tahunan_tabel";
 			break;
@@ -1565,6 +1646,14 @@ function views_rekap_capaian($id)
 		case 32:
 			// Kasir
 			return "kasir/v_capaian";
+			break;
+		case 35:
+			// Kasir
+			return "pengemudi/v_capaian";
+			break;
+		case 43:
+			// Diklat
+			return "diklat/v_capaian";
 			break;
 		default:
 			return "general/v_capaian";
@@ -1682,6 +1771,14 @@ function views_grafik_capaian($id)
 			// Kasir
 			return "kasir/v_grafik";
 			break;
+		case 35:
+			// Kasir
+			return "pengemudi/v_grafik";
+			break;
+		case 43:
+			// Diklat
+			return "diklat/v_grafik";
+			break;
 		default:
 			return "general/v_grafik";
 			break;
@@ -1791,7 +1888,14 @@ function views_rekap_triwulan_table_dewas($id)
 			// Kasir
 			return "kasir/v_triwulan_tabel_dewas";
 			break;
-
+		case 35:
+			// Kasir
+			return "pengemudi/v_triwulan_tabel_dewas";
+			break;
+		case 43:
+			// Diklat
+			return "diklat/v_triwulan_tabel_dewas";
+			break;
 		default:
 			return "general/v_triwulan_tabel_dewas";
 			break;
