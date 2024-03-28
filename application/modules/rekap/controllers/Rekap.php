@@ -114,6 +114,7 @@ class Rekap extends CI_Controller
 			$id_ruang 		= $this->session->userdata("user_id_ruang");
 			$id_ruang_sub 	= $this->session->userdata("user_id_ruang_sub");
 
+			
 			if (empty($tahun) || empty($id_ruang)) {
 
 				$data = array(
