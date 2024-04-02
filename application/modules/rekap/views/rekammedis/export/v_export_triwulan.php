@@ -162,17 +162,17 @@
                                                     $num    = ($row->NUM_JAN  );
                                                     $den    = $row->DEN_JAN;
                                                     $persen = $num / $den;
-                                                     echo gmdate('H:i:s', floor($persen * 3600));
+                                                     echo gmdate('H:i:s', floor($persen * 60));
                                                 } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && empty($NUM_MAR)) {
                                                     $num    = ($row->NUM_JAN  ) + ($row->NUM_FEB  );
                                                     $den    = $row->DEN_JAN + $row->DEN_FEB;
                                                     $persen = $num / $den;
-                                                     echo gmdate('H:i:s', floor($persen * 3600));
+                                                     echo gmdate('H:i:s', floor($persen * 60));
                                                 } else if (!empty($row->NUM_JAN) && !empty($row->NUM_FEB) && !empty($NUM_MAR)) {
                                                     $num    = ($row->NUM_JAN  ) + ($row->NUM_FEB  ) + ($row->NUM_MAR  );
                                                     $den    = $row->DEN_JAN + $row->DEN_FEB + $row->DEN_MAR;
                                                     $persen = $num / $den;
-                                                     echo gmdate('H:i:s', floor($persen * 3600));
+                                                     echo gmdate('H:i:s', floor($persen * 60));
                                                 } else {
                                                     echo "00:00:00";
                                                 }
@@ -338,17 +338,17 @@
                                                     $num    = ($row->NUM_APR / $tt_hari_apr);
                                                     $den    = $row->DEN_APR;
                                                     $persen = $num / $den;
-                                                     echo gmdate('H:i:s', floor($persen * 3600));
+                                                     echo gmdate('H:i:s', floor($persen * 60));
                                                 } else if (!empty($row->NUM_APR) && !empty($row->NUM_MEI) && empty($NUM_JUN)) {
                                                     $num    = ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei);
                                                     $den    = $row->DEN_APR + $row->DEN_MEI;
                                                     $persen = $num / $den;
-                                                     echo gmdate('H:i:s', floor($persen * 3600));
+                                                     echo gmdate('H:i:s', floor($persen * 60));
                                                 } else if (!empty($row->NUM_APR) && !empty($row->NUM_MEI) && !empty($NUM_JUN)) {
                                                     $num    = ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun);
                                                     $den    = $row->DEN_APR + $row->DEN_MEI + $row->DEN_JUN;
                                                     $persen = $num / $den;
-                                                     echo gmdate('H:i:s', floor($persen * 3600));
+                                                     echo gmdate('H:i:s', floor($persen * 60));
                                                 } else {
                                                     echo "00:00:00";
                                                 }
@@ -470,17 +470,17 @@
                                                     $num    = ($row->NUM_JUL);
                                                     $den    = $row->DEN_JUL;
                                                     $persen = $num / $den;
-                                                    echo gmdate('H:i:s', floor($persen * 3600));
+                                                    echo gmdate('H:i:s', floor($persen * 60));
                                                 } else if (!empty($row->NUM_JUL) && !empty($row->NUM_AGT) && empty($NUM_SEP)) {
                                                     $num    = ($row->NUM_JUL) + ($row->NUM_AGT);
                                                     $den    = $row->DEN_JUL + $row->DEN_AGT;
                                                     $persen = $num / $den;
-                                                    echo gmdate('H:i:s', floor($persen * 3600));
+                                                    echo gmdate('H:i:s', floor($persen * 60));
                                                 } else if (!empty($row->NUM_JUL) && !empty($row->NUM_AGT) && !empty($NUM_SEP)) {
                                                     $num    = ($row->NUM_JUL) + ($row->NUM_AGT) + ($row->NUM_SEP);
                                                     $den    = $row->DEN_JUL + $row->DEN_AGT + $row->DEN_SEP;
                                                     $persen = $num / $den;
-                                                    echo gmdate('H:i:s', floor($persen * 3600));
+                                                    echo gmdate('H:i:s', floor($persen * 60));
                                                 } else {
                                                     echo "00:00:00";
                                                 }
@@ -602,17 +602,17 @@
                                                     $num    = ($row->NUM_OKT);
                                                     $den    = $row->DEN_OKT;
                                                     $persen = $den == 0 ? 0 : $num / $den;
-                                                    echo gmdate('H:i:s', floor($persen * 3600));
+                                                    echo gmdate('H:i:s', floor($persen * 60));
                                                 } else if (!empty($row->NUM_OKT) && !empty($row->NUM_NOV) && empty($NUM_DES)) {
                                                     $num    = ($row->NUM_OKT) + ($row->NUM_NOV);
                                                     $den    = $row->DEN_OKT + $row->DEN_NOV;
                                                     $persen = $num / $den;
-                                                    echo gmdate('H:i:s', floor($persen * 3600));
+                                                    echo gmdate('H:i:s', floor($persen * 60));
                                                 } else if (!empty($row->NUM_OKT) && !empty($row->NUM_NOV) && !empty($NUM_DES)) {
                                                     $num    = ($row->NUM_OKT) + ($row->NUM_NOV) + ($row->NUM_DES);
                                                     $den    = $row->DEN_OKT + $row->DEN_NOV + $row->DEN_DES;
                                                     $persen = $num / $den;
-                                                    echo gmdate('H:i:s', floor($persen * 3600));
+                                                    echo gmdate('H:i:s', floor($persen * 60));
                                                 } else {
                                                     echo "00:00:00";
                                                 }
