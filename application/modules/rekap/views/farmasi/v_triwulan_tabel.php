@@ -13,7 +13,7 @@
                     </div>
                     <div class="x_content">
                         <br>
-                        <?php echo form_open('rekap_'.$this->session->userdata("user_controllers").'/triwulan', 'class="form-horizontal "'); ?>
+                        <?php echo form_open('rekap'.$this->session->userdata("user_controllers").'/triwulan', 'class="form-horizontal "'); ?>
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">TAHUN</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -68,6 +68,8 @@
                                     <?php 
                                         $no = 1;
                                         foreach ($triwulan_i->result() as $row) {
+                                            $id_indikator = $row->ID;
+
                                     ?>
                                     <tr>
                                         <td rowspan="2"><?php echo $no++; ?></td>
@@ -75,13 +77,13 @@
                                         <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2 || $no == 3)
+                                                if ($id_indikator == 65 || $id_indikator == 66)
                                                 {
                                                     if ($row->NUM_JAN == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $average = $row->NUM_JAN / $tt_hari_jan;
+                                                        $average = $row->NUM_JAN  ;
                                                         echo round($average, 4);
                                                     }
                                                 } else {
@@ -96,13 +98,13 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2 || $no == 3)
+                                                if ($id_indikator == 65 || $id_indikator == 66)
                                                 {
                                                     if ($row->NUM_FEB == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $average = $row->NUM_FEB / $tt_hari_feb;
+                                                        $average = $row->NUM_FEB  ;
                                                         echo round($average, 4);
                                                     }
                                                 } else {
@@ -117,13 +119,13 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2 || $no == 3)
+                                                if ($id_indikator == 65 || $id_indikator == 66)
                                                 {
                                                     if ($row->NUM_MAR == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $average = $row->NUM_MAR / $tt_hari_mar;
+                                                        $average = $row->NUM_MAR  ;
                                                         echo round($average, 4);
                                                     }
                                                 } else {
@@ -139,22 +141,22 @@
                                         <td align="center">
                                             <b> 
                                                 <?php
-                                                    if ($no == 2 || $no == 3)
+                                                    if ($id_indikator == 65 || $id_indikator == 66)
                                                     {
                                                         if ($row->TOTAL_NUM == 0) 
                                                         {
                                                             echo "00:00:00";
                                                         } else {
-                                                            $average = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar);
-                                                            echo gmdate('H:i:s', floor($average * 60));
+                                                            $average = ($row->NUM_JAN  ) + ($row->NUM_FEB  ) + ($row->NUM_MAR  );
+                                                            echo gmdate('H:i:s', floor($average * 3600));
                                                         }
-                                                    } else if ($no == 10) {
+                                                    } else if ($id_indikator == 205) {
                                                         if ($row->TOTAL_NUM == 0) 
                                                         {
-                                                            echo "0 %";
+                                                            echo "0";
                                                         } else {
-                                                            $average = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar);
-                                                            echo $average." %";
+                                                            $average = ($row->NUM_JAN  ) + ($row->NUM_FEB  ) + ($row->NUM_MAR  );
+                                                            echo $average;
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_NUM == 0) 
@@ -170,22 +172,22 @@
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 2 || $no == 3)
+                                                    if ($id_indikator == 65 || $id_indikator == 66)
                                                     {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "00:00:00";
                                                         } else {
-                                                            $tt_average = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar);
+                                                            $tt_average = ($row->NUM_JAN  ) + ($row->NUM_FEB  ) + ($row->NUM_MAR  );
                                                             $time       = $tt_average / $row->TOTAL_DEN;
-                                                            echo gmdate('H:i:s', floor($time * 60));
+                                                            echo gmdate('H:i:s', floor($time * 3600));
                                                         }
-                                                    } else if ($no == 10) {
+                                                    } else if ($id_indikator == 205) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "0 %";
                                                         } else {
-                                                            $average_den = ($row->DEN_JAN / $tt_hari_jan) + ($row->DEN_FEB / $tt_hari_feb) + ($row->DEN_MAR / $tt_hari_mar);
+                                                            $average_den =  ($row->DEN_MAR  );
                                                             echo round(($row->TOTAL_NUM / $average_den) * 100, 2)." %";
                                                         }
                                                     } else {
@@ -208,13 +210,13 @@
                                         <td align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 10) {
+                                                    if ($id_indikator == 205) {
                                                         if ($row->TOTAL_DEN == 0)
                                                         {
                                                             echo "0";
                                                         } else {
-                                                            $average_den = ($row->DEN_JAN / $tt_hari_jan) + ($row->DEN_FEB / $tt_hari_feb) + ($row->DEN_MAR / $tt_hari_mar);
-                                                            echo round(($row->TOTAL_NUM / $average_den), 2);
+                                                            $average_den = $row->DEN_MAR;
+                                                            echo round($average_den, 2);
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_DEN == 0) 
@@ -267,13 +269,13 @@
                                         <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2 || $no == 3)
+                                                if ($id_indikator == 65 || $id_indikator == 66)
                                                 {
                                                     if ($row->NUM_APR == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $average = $row->NUM_APR / $tt_hari_apr;
+                                                        $average = $row->NUM_APR  ;
                                                         echo round($average, 4);
                                                     }
                                                 } else {
@@ -288,13 +290,13 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2 || $no == 3)
+                                                if ($id_indikator == 65 || $id_indikator == 66)
                                                 {
                                                     if ($row->NUM_MEI == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $average = $row->NUM_MEI / $tt_hari_mei;
+                                                        $average = $row->NUM_MEI  ;
                                                         echo round($average, 4);
                                                     }
                                                 } else {
@@ -309,13 +311,13 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2 || $no == 3)
+                                                if ($id_indikator == 65 || $id_indikator == 66)
                                                 {
                                                     if ($row->NUM_JUN == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $average = $row->NUM_JUN / $tt_hari_jun;
+                                                        $average = $row->NUM_JUN  ;
                                                         echo round($average, 4);
                                                     }
                                                 } else {
@@ -331,22 +333,22 @@
                                         <td align="center">
                                             <b> 
                                                 <?php
-                                                    if ($no == 2 || $no == 3)
+                                                    if ($id_indikator == 65 || $id_indikator == 66)
                                                     {
                                                         if ($row->TOTAL_NUM == 0) 
                                                         {
                                                             echo "00:00:00";
                                                         } else {
-                                                            $average = ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun);
-                                                            echo gmdate('H:i:s', floor($average * 60));
+                                                            $average = ($row->NUM_APR  ) + ($row->NUM_MEI  ) + ($row->NUM_JUN  );
+                                                            echo gmdate('H:i:s', floor($average * 3600));
                                                         }
-                                                    } else if ($no == 10) {
+                                                    } else if ($id_indikator == 205) {
                                                         if ($row->TOTAL_NUM == 0) 
                                                         {
-                                                            echo "0 %";
+                                                            echo "0";
                                                         } else {
-                                                            $average = ($row->DEN_APR / $tt_hari_apr) + ($row->DEN_MEI / $tt_hari_mei) + ($row->DEN_JUN / $tt_hari_jun);
-                                                            echo $average." %";
+                                                            $average = ($row->DEN_APR  ) + ($row->DEN_MEI  ) + ($row->DEN_JUN  );
+                                                            echo $average;
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_NUM == 0) 
@@ -362,22 +364,22 @@
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 2 || $no == 3)
+                                                    if ($id_indikator == 65 || $id_indikator == 66)
                                                     {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "00:00:00";
                                                         } else {
-                                                            $tt_average = ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun);
+                                                            $tt_average = ($row->NUM_APR  ) + ($row->NUM_MEI  ) + ($row->NUM_JUN  );
                                                             $time       = $tt_average / $row->TOTAL_DEN;
-                                                            echo gmdate('H:i:s', floor($time * 60));
+                                                            echo gmdate('H:i:s', floor($time * 3600));
                                                         }
-                                                    } else if ($no == 10) {
+                                                    } else if ($id_indikator == 205) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "0 %";
                                                         } else {
-                                                            $average_den = ($row->DEN_APR / $tt_hari_apr) + ($row->DEN_MEI / $tt_hari_mei) + ($row->DEN_JUN / $tt_hari_jun);
+                                                            $average_den = $row->DEN_JUN ;
                                                             echo round(($row->TOTAL_NUM / $average_den) * 100, 2)." %";
                                                         }
                                                     } else {
@@ -400,13 +402,13 @@
                                         <td align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 10) {
+                                                    if ($id_indikator == 205) {
                                                         if ($row->TOTAL_DEN == 0)
                                                         {
                                                             echo "0";
                                                         } else {
-                                                            $average_den = ($row->DEN_APR / $tt_hari_apr) + ($row->DEN_MEI / $tt_hari_mei) + ($row->DEN_JUN / $tt_hari_jun);
-                                                            echo round(($row->TOTAL_NUM / $average_den), 2);
+                                                            $average_den = ($row->DEN_JUN  );
+                                                            echo round(($average_den), 2);
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_DEN == 0) 
@@ -459,13 +461,13 @@
                                         <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2 || $no == 3)
+                                                if ($id_indikator == 65 || $id_indikator == 66)
                                                 {
                                                     if ($row->NUM_JUL == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $average = $row->NUM_JUL / $tt_hari_jul;
+                                                        $average = $row->NUM_JUL  ;
                                                         echo round($average, 4);
                                                     }
                                                 } else {
@@ -480,13 +482,13 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2 || $no == 3)
+                                                if ($id_indikator == 65 || $id_indikator == 66)
                                                 {
                                                     if ($row->NUM_AGT == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $average = $row->NUM_AGT / $tt_hari_agt;
+                                                        $average = $row->NUM_AGT  ;
                                                         echo round($average, 4);
                                                     }
                                                 } else {
@@ -501,13 +503,13 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2 || $no == 3)
+                                                if ($id_indikator == 65 || $id_indikator == 66)
                                                 {
                                                     if ($row->NUM_SEP == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $average = $row->NUM_SEP / $tt_hari_sep;
+                                                        $average = $row->NUM_SEP  ;
                                                         echo round($average, 4);
                                                     }
                                                 } else {
@@ -523,22 +525,22 @@
                                         <td align="center">
                                             <b> 
                                                 <?php
-                                                    if ($no == 2 || $no == 3)
+                                                    if ($id_indikator == 65 || $id_indikator == 66)
                                                     {
                                                         if ($row->TOTAL_NUM == 0) 
                                                         {
                                                             echo "00:00:00";
                                                         } else {
-                                                            $average = ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep);
-                                                            echo gmdate('H:i:s', floor($average * 60));
+                                                            $average = ($row->NUM_JUL  ) + ($row->NUM_AGT  ) + ($row->NUM_SEP  );
+                                                            echo gmdate('H:i:s', floor($average * 3600));
                                                         }
-                                                    } else if ($no == 10) {
+                                                    } else if ($id_indikator == 205) {
                                                         if ($row->TOTAL_NUM == 0) 
                                                         {
-                                                            echo "0 %";
+                                                            echo "0";
                                                         } else {
-                                                            $average = ($row->DEN_JUL / $tt_hari_jul) + ($row->DEN_AGT / $tt_hari_agt) + ($row->DEN_SEP / $tt_hari_sep);
-                                                            echo $average." %";
+                                                            $average = ($row->DEN_JUL  ) + ($row->DEN_AGT  ) + ($row->DEN_SEP  );
+                                                            echo $average;
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_NUM == 0) 
@@ -554,22 +556,22 @@
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 2 || $no == 3)
+                                                    if ($id_indikator == 65 || $id_indikator == 66)
                                                     {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "00:00:00";
                                                         } else {
-                                                            $tt_average = ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep);
+                                                            $tt_average = ($row->NUM_JUL  ) + ($row->NUM_AGT  ) + ($row->NUM_SEP  );
                                                             $time       = $tt_average / $row->TOTAL_DEN;
-                                                            echo gmdate('H:i:s', floor($time * 60));
+                                                            echo gmdate('H:i:s', floor($time * 3600));
                                                         }
-                                                    } else if ($no == 10) {
+                                                    } else if ($id_indikator == 205) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "0 %";
                                                         } else {
-                                                            $average_den = ($row->DEN_JUL / $tt_hari_jul) + ($row->DEN_AGT / $tt_hari_agt) + ($row->DEN_SEP / $tt_hari_sep);
+                                                            $average_den = ($row->DEN_SEP  );
                                                             echo round(($row->TOTAL_NUM / $average_den) * 100, 2)." %";
                                                         }
                                                     } else {
@@ -592,13 +594,13 @@
                                         <td align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 10) {
+                                                    if ($id_indikator == 205) {
                                                         if ($row->TOTAL_DEN == 0)
                                                         {
                                                             echo "0";
                                                         } else {
-                                                            $average_den = ($row->DEN_JUL / $tt_hari_jul) + ($row->DEN_AGT / $tt_hari_agt) + ($row->DEN_SEP / $tt_hari_sep);
-                                                            echo round(($row->TOTAL_NUM / $average_den), 2);
+                                                            $average_den =($row->DEN_SEP  );
+                                                            echo round(( $average_den), 2);
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_DEN == 0) 
@@ -651,13 +653,13 @@
                                         <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2 || $no == 3)
+                                                if ($id_indikator == 65 || $id_indikator == 66)
                                                 {
                                                     if ($row->NUM_OKT == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $average = $row->NUM_OKT / $tt_hari_okt;
+                                                        $average = $row->NUM_OKT  ;
                                                         echo round($average, 4);
                                                     }
                                                 } else {
@@ -672,13 +674,13 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2 || $no == 3)
+                                                if ($id_indikator == 65 || $id_indikator == 66)
                                                 {
                                                     if ($row->NUM_NOV == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $average = $row->NUM_NOV / $tt_hari_nov;
+                                                        $average = $row->NUM_NOV  ;
                                                         echo round($average, 4);
                                                     }
                                                 } else {
@@ -693,13 +695,13 @@
                                         </td>
                                         <td align="center"> 
                                             <?php
-                                                if ($no == 2 || $no == 3)
+                                                if ($id_indikator == 65 || $id_indikator == 66)
                                                 {
                                                     if ($row->NUM_DES == 0) 
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $average = $row->NUM_DES / $tt_hari_des;
+                                                        $average = $row->NUM_DES  ;
                                                         echo round($average, 4);
                                                     }
                                                 } else {
@@ -715,22 +717,22 @@
                                         <td align="center">
                                             <b> 
                                                 <?php
-                                                    if ($no == 2 || $no == 3)
+                                                    if ($id_indikator == 65 || $id_indikator == 66)
                                                     {
                                                         if ($row->TOTAL_NUM == 0) 
                                                         {
                                                             echo "00:00:00";
                                                         } else {
-                                                            $average = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov) + ($row->NUM_DES / $tt_hari_des);
-                                                            echo gmdate('H:i:s', floor($average * 60));
+                                                            $average = ($row->NUM_OKT  ) + ($row->NUM_NOV  ) + ($row->NUM_DES  );
+                                                            echo gmdate('H:i:s', floor($average * 3600));
                                                         }
-                                                    } else if ($no == 10) {
+                                                    } else if ($id_indikator == 205) {
                                                         if ($row->TOTAL_NUM == 0) 
                                                         {
-                                                            echo "0 %";
+                                                            echo "0";
                                                         } else {
-                                                            $average = ($row->DEN_OKT / $tt_hari_okt) + ($row->DEN_NOV / $tt_hari_nov) + ($row->DEN_DES / $tt_hari_des);
-                                                            echo $average." %";
+                                                            $average = ($row->DEN_OKT  ) + ($row->DEN_NOV  ) + ($row->DEN_DES  );
+                                                            echo $average;
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_NUM == 0) 
@@ -746,22 +748,22 @@
                                         <td rowspan="2" align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 2 || $no == 3)
+                                                    if ($id_indikator == 65 || $id_indikator == 66)
                                                     {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "00:00:00";
                                                         } else {
-                                                            $tt_average = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov) + ($row->NUM_DES / $tt_hari_des);
+                                                            $tt_average = ($row->NUM_OKT  ) + ($row->NUM_NOV  ) + ($row->NUM_DES  );
                                                             $time       = $tt_average / $row->TOTAL_DEN;
-                                                            echo gmdate('H:i:s', floor($time * 60));
+                                                            echo gmdate('H:i:s', floor($time * 3600));
                                                         }
-                                                    } else if ($no == 10) {
+                                                    } else if ($id_indikator == 205) {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                         {
                                                             echo "0 %";
                                                         } else {
-                                                            $average_den = ($row->DEN_OKT / $tt_hari_okt) + ($row->DEN_NOV / $tt_hari_nov) + ($row->DEN_DES / $tt_hari_des);
+                                                            $average_den =($row->DEN_DES  );
                                                             echo round(($row->TOTAL_NUM / $average_den) * 100, 2)." %";
                                                         }
                                                     } else {
@@ -784,13 +786,13 @@
                                         <td align="center">
                                             <b> 
                                                 <?php 
-                                                    if ($no == 10) {
+                                                    if ($id_indikator == 205) {
                                                         if ($row->TOTAL_DEN == 0)
                                                         {
                                                             echo "0";
                                                         } else {
-                                                            $average_den = ($row->DEN_OKT / $tt_hari_okt) + ($row->DEN_NOV / $tt_hari_nov) + ($row->DEN_DES / $tt_hari_des);
-                                                            echo round(($row->TOTAL_NUM / $average_den), 2);
+                                                            $average_den = ($row->DEN_DES  );
+                                                            echo round(( $average_den), 2);
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_DEN == 0) 
