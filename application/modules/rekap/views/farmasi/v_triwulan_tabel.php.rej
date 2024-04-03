@@ -1,0 +1,12 @@
+diff a/application/modules/rekap/views/farmasi/v_triwulan_tabel.php b/application/modules/rekap/views/farmasi/v_triwulan_tabel.php	(rejected hunks)
+@@ -531,8 +531,8 @@
+                                                         {
+                                                             echo "00:00:00";
+                                                         } else {
+-                                                            $average = ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep);
+-                                                            echo gmdate('H:i:s', floor($average * 60));
++                                                            $average = ($row->NUM_JUL  ) + ($row->NUM_AGT  ) + ($row->NUM_SEP  );
++                                                            echo gmdate('H:i:s', floor($average * 3600));
+                                                         }
+                                                     } else if ($id_indikator == 205) {
+                                                         if ($row->TOTAL_NUM == 0) 
