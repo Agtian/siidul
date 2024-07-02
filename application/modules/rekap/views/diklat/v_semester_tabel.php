@@ -102,7 +102,7 @@
                                                         echo "0";
                                                         echo " %";
                                                     } else {
-                                                        echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * 100;
+                                                        echo ($row->TOTAL_NUM / $row->DEN_JUN) * 100;
                                                         echo " %";
                                                     }
                                                 ?> 
@@ -117,7 +117,7 @@
                                         <td align="center"> <?php echo $row->DEN_APR; ?> </td>
                                         <td align="center"> <?php echo $row->DEN_MEI; ?> </td>
                                         <td align="center"> <?php echo $row->DEN_JUN; ?> </td>
-                                        <td align="center"><b> <?php echo $row->TOTAL_DEN; ?> </b></td>
+                                        <td align="center"><b> <?php echo $row->DEN_JUN; ?> </b></td>
                                     </tr>
                                     <?php } ?>
                                 </tbody>
@@ -185,7 +185,7 @@
                                                         echo "0";
                                                         echo " %";
                                                     } else {
-                                                        echo ($row->TOTAL_NUM / $row->TOTAL_DEN) * 100;
+                                                        echo ($row->TOTAL_NUM / $row->DEN_DES) * 100;
                                                         echo " %";
                                                     }
                                                 ?> 
@@ -200,7 +200,7 @@
                                         <td align="center"> <?php echo $row->DEN_OKT; ?> </td>
                                         <td align="center"> <?php echo $row->DEN_NOV; ?> </td>
                                         <td align="center"> <?php echo $row->DEN_DES; ?> </td>
-                                        <td align="center"><b> <?php echo $row->TOTAL_DEN; ?> </b></td>
+                                        <td align="center"><b> <?php echo $row->DEN_DES; ?> </b></td>
                                     </tr>
                                     <?php } ?>
                                 </tbody>
