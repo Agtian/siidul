@@ -57,6 +57,8 @@
                             <?php 
                                 $no = 1;
                                 foreach ($semester_i->result() as $row) {
+                                    $id_indikator = $row->ID;
+
                             ?>
                             <tr>
                                 <td rowspan="2" align="center"><?php echo $no++; ?></td>
@@ -64,7 +66,7 @@
                                 <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_JAN == 0) 
                                             {
@@ -85,7 +87,7 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_FEB == 0) 
                                             {
@@ -106,7 +108,7 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_MAR == 0) 
                                             {
@@ -127,7 +129,7 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_APR == 0) 
                                             {
@@ -148,7 +150,7 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_MEI == 0) 
                                             {
@@ -169,7 +171,7 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_JUN == 0) 
                                             {
@@ -191,7 +193,7 @@
                                 <td align="center">
                                     <b> 
                                         <?php
-                                            if ($no == 2 || $no == 3)
+                                            if ($id_indikator == 65 || $id_indikator == 66)
                                             {
                                                 if ($row->TOTAL_NUM == 0) 
                                                 {
@@ -214,17 +216,17 @@
                                 <td rowspan="2" align="center">
                                     <b> 
                                         <?php 
-                                            if ($no == 2 || $no == 3)
+                                            if ($id_indikator == 65 || $id_indikator == 66)
                                             {
                                                 if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                 {
                                                     echo "00:00:00";
                                                 } else {
                                                     $tt_average = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar) + ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun);
-                                                    $time       = $tt_average / $row->TOTAL_DEN;
+                                                    $time       = $tt_average / 6;
                                                     echo gmdate('H:i:s', floor($time * 60));
                                                 }
-                                            } else if ($no == 10) {
+                                            } else if ($id_indikator == 205) {
                                                 if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                 {
                                                     echo "0 %";
@@ -255,7 +257,7 @@
                                 <td align="center">
                                     <b> 
                                         <?php 
-                                            if ($no == 10) {
+                                            if ($id_indikator == 205) {
                                                 if ($row->TOTAL_DEN == 0)
                                                 {
                                                     echo "0";
@@ -310,6 +312,7 @@
                             <?php 
                                 $no = 1;
                                 foreach ($semester_ii->result() as $row) {
+                                    $id_indikator = $row->ID;
                             ?>
                             <tr>
                                 <td rowspan="2" align="center"><?php echo $no++; ?></td>
@@ -317,7 +320,7 @@
                                 <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_JUL == 0) 
                                             {
@@ -338,7 +341,7 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_AGT == 0) 
                                             {
@@ -359,7 +362,7 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_SEP == 0) 
                                             {
@@ -380,7 +383,7 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_OKT == 0) 
                                             {
@@ -401,7 +404,7 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_NOV == 0) 
                                             {
@@ -422,7 +425,7 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_DES == 0) 
                                             {
@@ -444,7 +447,7 @@
                                 <td align="center">
                                     <b> 
                                         <?php
-                                            if ($no == 2 || $no == 3)
+                                            if ($id_indikator == 65 || $id_indikator == 66)
                                             {
                                                 if ($row->TOTAL_NUM == 0) 
                                                 {
@@ -467,17 +470,17 @@
                                 <td rowspan="2" align="center">
                                     <b> 
                                         <?php 
-                                            if ($no == 2 || $no == 3)
+                                            if ($id_indikator == 65 || $id_indikator == 66)
                                             {
                                                 if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) 
                                                 {
                                                     echo "00:00:00";
                                                 } else {
                                                     $tt_average = ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep) + ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov) + ($row->NUM_DES / $tt_hari_des);
-                                                    $time       = $tt_average / $row->TOTAL_DEN;
+                                                    $time       = $tt_average / 6;
                                                     echo gmdate('H:i:s', floor($time * 60));
                                                 }
-                                            } else if ($no == 10) {
+                                            } else if ($id_indikator == 205) {
                                                 if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0)
                                                 {
                                                     echo "0 %";
@@ -508,7 +511,7 @@
                                 <td align="center">
                                     <b> 
                                         <?php 
-                                            if ($no == 10) {
+                                            if ($id_indikator == 205) {
                                                 if ($row->TOTAL_DEN == 0)
                                                 {
                                                     echo "0";
