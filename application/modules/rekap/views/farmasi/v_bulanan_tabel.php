@@ -90,6 +90,8 @@
                                         $no = 1;
                                         $tanggal    = $total_hari;
                                         foreach ($data_indikator->result() as $row) {
+                                            $id_indikator = $row->ID;
+
                                     ?>
                                     <tr>
                                         <td rowspan="2"><?php echo $no++; ?></td>
@@ -122,7 +124,7 @@
                                         <td align="center"> 
                                             <b>
                                                 <?php 
-                                                    if ($no == 2 || $no == 3)
+                                                    if ($id_indikator == 65 || $id_indikator == 66)
                                                     {
                                                         if (empty($total_num))
                                                         {
@@ -145,17 +147,17 @@
                                         <td rowspan="2"> 
                                             <b><center>
                                                 <?php
-                                                    if ($no == 2 || $no == 3)
+                                                    if ($id_indikator == 65 || $id_indikator == 66)
                                                     {
                                                         if ($total_num == 0 || $total_den == 0)
                                                         {
                                                             echo "0";
                                                         } else {
                                                             $average = $total_num / $total_hari;
-                                                            $time    = $average / $total_den;
+                                                            $time    = $average ;
                                                             echo gmdate('H:i:s', floor($time * 60));
                                                         }
-                                                    } else if ($no == 10)
+                                                    } else if ($id_indikator ==205)
                                                     {
                                                         if ($total_den == 0)
                                                         {
