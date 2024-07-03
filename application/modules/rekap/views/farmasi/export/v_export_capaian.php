@@ -61,6 +61,8 @@
                             <?php 
                                 $no = 1;
                                 foreach ($capaian->result() as $row) {
+                                    $id_indikator = $row->ID;
+
                             ?>
                             <tr>
                                 <td rowspan="1" align="center" height="50"><?php echo $no++; ?></td>
@@ -68,17 +70,17 @@
                                 <td align="center"><b> <?php echo $row->NILAI_STANDAR; ?> </b></td>
                                 <td align="center">
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_JAN == 0 || $row->DEN_JAN == 0) 
                                             {
                                                 echo "00:00:00";
                                             } else {
                                                 $average = $row->NUM_JAN / $tt_hari_jan;
-                                                $time    = $average / $row->DEN_JAN;
+                                                $time    = $average;
                                                 echo gmdate('H:i:s', floor($time * 60));
                                             }
-                                        } else if ($no == 10) {
+                                        } else if ($id_indikator == 205) {
                                             if ($row->NUM_JAN == 0 || $row->DEN_JAN == 0) 
                                             {
                                                 echo "0 %";
@@ -98,17 +100,17 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_FEB == 0 || $row->DEN_FEB == 0) 
                                             {
                                                 echo "00:00:00";
                                             } else {
                                                 $average = $row->NUM_FEB / $tt_hari_feb;
-                                                $time    = $average / $row->DEN_FEB;
+                                                $time    = $average ;
                                                 echo gmdate('H:i:s', floor($time * 60));
                                             }
-                                        } else if ($no == 10) {
+                                        } else if ($id_indikator == 205) {
                                             if ($row->NUM_FEB == 0 || $row->DEN_FEB == 0) 
                                             {
                                                 echo "0 %";
@@ -128,17 +130,17 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_MAR == 0 || $row->DEN_MAR == 0) 
                                             {
                                                 echo "00:00:00";
                                             } else {
                                                 $average = $row->NUM_MAR / $tt_hari_mar;
-                                                $time    = $average / $row->DEN_MAR;
+                                                $time    = $average;
                                                 echo gmdate('H:i:s', floor($time * 60));
                                             }
-                                        } else if ($no == 10) {
+                                        } else if ($id_indikator == 205) {
                                             if ($row->NUM_MAR == 0 || $row->DEN_MAR == 0) 
                                             {
                                                 echo "0 %";
@@ -158,17 +160,17 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_APR == 0 || $row->DEN_APR == 0) 
                                             {
                                                 echo "00:00:00";
                                             } else {
                                                 $average = $row->NUM_APR / $tt_hari_apr;
-                                                $time    = $average / $row->DEN_APR;
+                                                $time    = $average ;
                                                 echo gmdate('H:i:s', floor($time * 60));
                                             }
-                                        } else if ($no == 10) {
+                                        } else if ($id_indikator == 205) {
                                             if ($row->NUM_APR == 0 || $row->DEN_APR == 0) 
                                             {
                                                 echo "0 %";
@@ -188,17 +190,17 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_MEI == 0 || $row->DEN_MEI == 0) 
                                             {
                                                 echo "00:00:00";
                                             } else {
                                                 $average = $row->NUM_MEI / $tt_hari_mei;
-                                                $time    = $average / $row->DEN_MEI;
+                                                $time    = $average ;
                                                 echo gmdate('H:i:s', floor($time * 60));
                                             }
-                                        } else if ($no == 10) {
+                                        } else if ($id_indikator == 205) {
                                             if ($row->NUM_MEI == 0 || $row->DEN_MEI == 0) 
                                             {
                                                 echo "0 %";
@@ -218,17 +220,17 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_JUN == 0 || $row->DEN_JUN == 0) 
                                             {
                                                 echo "00:00:00";
                                             } else {
                                                 $average = $row->NUM_JUN / $tt_hari_jun;
-                                                $time    = $average / $row->DEN_JUN;
+                                                $time    = $average ;
                                                 echo gmdate('H:i:s', floor($time * 60));
                                             }
-                                        } else if ($no == 10) {
+                                        } else if ($id_indikator == 205) {
                                             if ($row->NUM_JUN == 0 || $row->DEN_JUN == 0) 
                                             {
                                                 echo "0 %";
@@ -248,17 +250,17 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_JUL == 0 || $row->DEN_JUL == 0) 
                                             {
                                                 echo "00:00:00";
                                             } else {
                                                 $average = $row->NUM_JUL / $tt_hari_jul;
-                                                $time    = $average / $row->DEN_JUL;
+                                                $time    = $average;
                                                 echo gmdate('H:i:s', floor($time * 60));
                                             }
-                                        } else if ($no == 10) {
+                                        } else if ($id_indikator == 205) {
                                             if ($row->NUM_JUL == 0 || $row->DEN_JUL == 0) 
                                             {
                                                 echo "0 %";
@@ -278,17 +280,17 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_AGT == 0 || $row->DEN_AGT == 0) 
                                             {
                                                 echo "00:00:00";
                                             } else {
                                                 $average = $row->NUM_AGT / $tt_hari_agt;
-                                                $time    = $average / $row->DEN_AGT;
+                                                $time    = $average ;
                                                 echo gmdate('H:i:s', floor($time * 60));
                                             }
-                                        } else if ($no == 10) {
+                                        } else if ($id_indikator == 205) {
                                             if ($row->NUM_AGT == 0 || $row->DEN_AGT == 0) 
                                             {
                                                 echo "0 %";
@@ -308,17 +310,17 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_SEP == 0 || $row->DEN_SEP == 0) 
                                             {
                                                 echo "00:00:00";
                                             } else {
                                                 $average = $row->NUM_SEP / $tt_hari_sep;
-                                                $time    = $average / $row->NUM_SEP;
+                                                $time    = $average ;
                                                 echo gmdate('H:i:s', floor($time * 60));
                                             }
-                                        } else if ($no == 10) {
+                                        } else if ($id_indikator == 205) {
                                             if ($row->NUM_SEP == 0 || $row->NUM_SEP == 0) 
                                             {
                                                 echo "0";
@@ -338,17 +340,17 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_OKT == 0 || $row->DEN_OKT == 0) 
                                             {
                                                 echo "00:00:00";
                                             } else {
                                                 $average = $row->NUM_OKT / $tt_hari_okt;
-                                                $time    = $average / $row->DEN_OKT;
+                                                $time    = $average ;
                                                 echo gmdate('H:i:s', floor($time * 60));
                                             }
-                                        } else if ($no == 10) {
+                                        } else if ($id_indikator == 205) {
                                             if ($row->NUM_OKT == 0 || $row->DEN_OKT == 0) 
                                             {
                                                 echo "0 %";
@@ -368,17 +370,17 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_NOV == 0 || $row->DEN_NOV == 0) 
                                             {
                                                 echo "00:00:00";
                                             } else {
                                                 $average = $row->NUM_NOV / $tt_hari_nov;
-                                                $time    = $average / $row->DEN_NOV;
+                                                $time    = $average ;
                                                 echo gmdate('H:i:s', floor($time * 60));
                                             }
-                                        } else if ($no == 10) {
+                                        } else if ($id_indikator == 205) {
                                             if ($row->NUM_NOV == 0 || $row->DEN_NOV == 0) 
                                             {
                                                 echo "0 %";
@@ -398,17 +400,17 @@
                                 </td>
                                 <td align="center"> 
                                     <?php
-                                        if ($no == 2 || $no == 3)
+                                        if ($id_indikator == 65 || $id_indikator == 66)
                                         {
                                             if ($row->NUM_DES == 0 || $row->DEN_DES == 0) 
                                             {
                                                 echo "00:00:00";
                                             } else {
                                                 $average = $row->NUM_DES / $tt_hari_des;
-                                                $time    = $average / $row->DEN_DES;
+                                                $time    = $average ;
                                                 echo gmdate('H:i:s', floor($time * 60));
                                             }
-                                        } else if ($no == 10) {
+                                        } else if ($id_indikator == 205) {
                                             if ($row->NUM_DES == 0 || $row->DEN_DES == 0) 
                                             {
                                                 echo "0 %";
