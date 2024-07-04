@@ -142,7 +142,7 @@
                                                     {
                                                         echo "0 %";
                                                     } else {
-                                                        $average = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar);
+                                                        $average = ($row->NUM_JAN ) + ($row->NUM_FEB ) + ($row->NUM_MAR );
                                                         echo $average." %";
                                                     }
                                                 } else {
@@ -174,7 +174,7 @@
                                                     {
                                                         echo "0 %";
                                                     } else {
-                                                        $average_den = ($row->DEN_JAN / $tt_hari_jan) + ($row->DEN_FEB / $tt_hari_feb) + ($row->DEN_MAR / $tt_hari_mar);
+                                                        $average_den = ($row->DEN_JAN ) + ($row->DEN_FEB ) + ($row->DEN_MAR );
                                                         echo round(($row->TOTAL_NUM / $average_den) * 100, 2)." %";
                                                     }
                                                 } else {
@@ -336,7 +336,7 @@
                                                     {
                                                         echo "0 %";
                                                     } else {
-                                                        $average = ($row->DEN_APR / $tt_hari_apr) + ($row->DEN_MEI / $tt_hari_mei) + ($row->DEN_JUN / $tt_hari_jun);
+                                                        $average = ($row->DEN_APR ) + ($row->DEN_MEI ) + ($row->DEN_JUN );
                                                         echo $average." %";
                                                     }
                                                 } else {
@@ -368,7 +368,7 @@
                                                     {
                                                         echo "0 %";
                                                     } else {
-                                                        $average_den = ($row->DEN_APR / $tt_hari_apr) + ($row->DEN_MEI / $tt_hari_mei) + ($row->DEN_JUN / $tt_hari_jun);
+                                                        $average_den = ($row->DEN_APR ) + ($row->DEN_MEI ) + ($row->DEN_JUN );
                                                         echo round(($row->TOTAL_NUM / $average_den) * 100, 2)." %";
                                                     }
                                                 } else {
@@ -396,7 +396,7 @@
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $average_den = ($row->DEN_APR / $tt_hari_apr) + ($row->DEN_MEI / $tt_hari_mei) + ($row->DEN_JUN / $tt_hari_jun);
+                                                        $average_den = ($row->DEN_APR ) + ($row->DEN_MEI ) + ($row->DEN_JUN );
                                                         echo round(($row->TOTAL_NUM / $average_den), 2);
                                                     }
                                                 } else {
@@ -529,7 +529,7 @@
                                                     {
                                                         echo "0 %";
                                                     } else {
-                                                        $average = ($row->DEN_JUL / $tt_hari_jul) + ($row->DEN_AGT / $tt_hari_agt) + ($row->DEN_SEP / $tt_hari_sep);
+                                                        $average = ($row->DEN_JUL) + ($row->DEN_AGT ) + ($row->DEN_SEP );
                                                         echo $average." %";
                                                     }
                                                 } else {
@@ -561,7 +561,7 @@
                                                     {
                                                         echo "0 %";
                                                     } else {
-                                                        $average_den = ($row->DEN_JUL / $tt_hari_jul) + ($row->DEN_AGT / $tt_hari_agt) + ($row->DEN_SEP / $tt_hari_sep);
+                                                        $average_den = ($row->DEN_JUL ) + ($row->DEN_AGT ) + ($row->DEN_SEP );
                                                         echo round(($row->TOTAL_NUM / $average_den) * 100, 2)." %";
                                                     }
                                                 } else {
@@ -589,7 +589,7 @@
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $average_den = ($row->DEN_JUL / $tt_hari_jul) + ($row->DEN_AGT / $tt_hari_agt) + ($row->DEN_SEP / $tt_hari_sep);
+                                                        $average_den = ($row->DEN_JUL ) + ($row->DEN_AGT ) + ($row->DEN_SEP );
                                                         echo round(($row->TOTAL_NUM / $average_den), 2);
                                                     }
                                                 } else {
@@ -721,7 +721,7 @@
                                                     {
                                                         echo "0 %";
                                                     } else {
-                                                        $average = ($row->DEN_OKT / $tt_hari_okt) + ($row->DEN_NOV / $tt_hari_nov) + ($row->DEN_DES / $tt_hari_des);
+                                                        $average = ($row->DEN_OKT ) + ($row->DEN_NOV ) + ($row->DEN_DES );
                                                         echo $average." %";
                                                     }
                                                 } else {
@@ -753,7 +753,7 @@
                                                     {
                                                         echo "0 %";
                                                     } else {
-                                                        $average_den = ($row->DEN_OKT / $tt_hari_okt) + ($row->DEN_NOV / $tt_hari_nov) + ($row->DEN_DES / $tt_hari_des);
+                                                        $average_den = ($row->DEN_OKT ) + ($row->DEN_NOV) + ($row->DEN_DES );
                                                         echo round(($row->TOTAL_NUM / $average_den) * 100, 2)." %";
                                                     }
                                                 } else {
@@ -781,7 +781,7 @@
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $average_den = ($row->DEN_OKT / $tt_hari_okt) + ($row->DEN_NOV / $tt_hari_nov) + ($row->DEN_DES / $tt_hari_des);
+                                                        $average_den = ($row->DEN_OKT ) + ($row->DEN_NOV ) + ($row->DEN_DES );
                                                         echo round(($row->TOTAL_NUM / $average_den), 2);
                                                     }
                                                 } else {

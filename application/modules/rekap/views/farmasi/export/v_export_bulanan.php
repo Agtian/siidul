@@ -126,7 +126,7 @@
                                             echo "0 %";
                                         } else {
                                             $num    = $total_num;
-                                            $den    = $total_den / $total_hari;
+                                            $den    = $total_den ;
                                             $total  = ($num / $den) * 100;
                                             echo $total . " %";
                                         }
