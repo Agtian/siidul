@@ -62,6 +62,7 @@
                                     <td rowspan="2" align="center"><?php echo $no++; ?></td>
                                     <td rowspan="2"><?php echo $row->DETAIL_INDIKATOR; ?></td>
                                     <td rowspan="1"><?php echo $row->DETAIL_NUM; ?></td>
+                                    <!-- num -->
                                     <td align="center"> 
                                         <?php
                                             if ($id_indikator == 65 || $id_indikator == 66)
@@ -125,6 +126,7 @@
                                             }
                                         ?>
                                     </td>
+                                    <!-- total num -->
                                     <td align="center">
                                         <b> 
                                             <?php
@@ -140,10 +142,10 @@
                                                 } else if ($id_indikator == 205) {
                                                     if ($row->TOTAL_NUM == 0) 
                                                     {
-                                                        echo "0 %";
+                                                        echo "0";
                                                     } else {
                                                         $average = ($row->NUM_JAN ) + ($row->NUM_FEB ) + ($row->NUM_MAR );
-                                                        echo $average." %";
+                                                        echo $average;
                                                     }
                                                 } else {
                                                     if ($row->TOTAL_NUM == 0) 
@@ -156,6 +158,7 @@
                                             ?> 
                                         </b>
                                     </td>
+                                    <!-- persen -->
                                     <td rowspan="2" align="center">
                                         <b> 
                                             <?php 
@@ -174,7 +177,7 @@
                                                     {
                                                         echo "0 %";
                                                     } else {
-                                                        $average_den = ($row->DEN_JAN ) + ($row->DEN_FEB ) + ($row->DEN_MAR );
+                                                        $average_den =  ($row->DEN_MAR );
                                                         echo round(($row->TOTAL_NUM / $average_den) * 100, 2)." %";
                                                     }
                                                 } else {
@@ -189,6 +192,7 @@
                                         </b>
                                     </td>
                                 </tr>
+                                <!-- total den -->
                                 <tr>
                                     <td><?php echo $row->DETAIL_DEN; ?></td>
                                     <td align="center"> <?php echo $row->DEN_JAN; ?> </td>
@@ -202,8 +206,8 @@
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $average_den = ($row->DEN_JAN / $tt_hari_jan) + ($row->DEN_FEB / $tt_hari_feb) + ($row->DEN_MAR / $tt_hari_mar);
-                                                        echo round(($row->TOTAL_NUM / $average_den), 2);
+                                                        $average_den = ($row->DEN_MAR );
+                                                        echo round(($average_den), 2);
                                                     }
                                                 } else {
                                                     if ($row->TOTAL_DEN == 0) 
@@ -334,10 +338,10 @@
                                                 } else if ($id_indikator == 205) {
                                                     if ($row->TOTAL_NUM == 0) 
                                                     {
-                                                        echo "0 %";
+                                                        echo "0";
                                                     } else {
-                                                        $average = ($row->DEN_APR ) + ($row->DEN_MEI ) + ($row->DEN_JUN );
-                                                        echo $average." %";
+                                                        $average = ($row->NUM_APR ) + ($row->NUM_MEI ) + ($row->NUM_JUN );
+                                                        echo $average."";
                                                     }
                                                 } else {
                                                     if ($row->TOTAL_NUM == 0) 
@@ -368,7 +372,7 @@
                                                     {
                                                         echo "0 %";
                                                     } else {
-                                                        $average_den = ($row->DEN_APR ) + ($row->DEN_MEI ) + ($row->DEN_JUN );
+                                                        $average_den =  ($row->DEN_JUN );
                                                         echo round(($row->TOTAL_NUM / $average_den) * 100, 2)." %";
                                                     }
                                                 } else {
@@ -396,8 +400,8 @@
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $average_den = ($row->DEN_APR ) + ($row->DEN_MEI ) + ($row->DEN_JUN );
-                                                        echo round(($row->TOTAL_NUM / $average_den), 2);
+                                                        $average_den =($row->DEN_JUN );
+                                                        echo round( $average_den, 2);
                                                     }
                                                 } else {
                                                     if ($row->TOTAL_DEN == 0) 
@@ -527,10 +531,10 @@
                                                 } else if ($id_indikator == 205) {
                                                     if ($row->TOTAL_NUM == 0) 
                                                     {
-                                                        echo "0 %";
+                                                        echo "0";
                                                     } else {
-                                                        $average = ($row->DEN_JUL) + ($row->DEN_AGT ) + ($row->DEN_SEP );
-                                                        echo $average." %";
+                                                        $average = ($row->NUM_JUL) + ($row->NUM_AGT ) + ($row->NUM_SEP );
+                                                        echo $average."";
                                                     }
                                                 } else {
                                                     if ($row->TOTAL_NUM == 0) 
@@ -561,7 +565,7 @@
                                                     {
                                                         echo "0 %";
                                                     } else {
-                                                        $average_den = ($row->DEN_JUL ) + ($row->DEN_AGT ) + ($row->DEN_SEP );
+                                                        $average_den = ($row->DEN_SEP );
                                                         echo round(($row->TOTAL_NUM / $average_den) * 100, 2)." %";
                                                     }
                                                 } else {
@@ -589,8 +593,8 @@
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $average_den = ($row->DEN_JUL ) + ($row->DEN_AGT ) + ($row->DEN_SEP );
-                                                        echo round(($row->TOTAL_NUM / $average_den), 2);
+                                                        $average_den =  ($row->DEN_SEP );
+                                                        echo round(($average_den), 2);
                                                     }
                                                 } else {
                                                     if ($row->TOTAL_DEN == 0) 
@@ -719,10 +723,10 @@
                                                 } else if ($id_indikator == 205) {
                                                     if ($row->TOTAL_NUM == 0) 
                                                     {
-                                                        echo "0 %";
+                                                        echo "0";
                                                     } else {
-                                                        $average = ($row->DEN_OKT ) + ($row->DEN_NOV ) + ($row->DEN_DES );
-                                                        echo $average." %";
+                                                        $average = ($row->NUM_OKT ) + ($row->NUM_NOV ) + ($row->NUM_DES );
+                                                        echo $average."";
                                                     }
                                                 } else {
                                                     if ($row->TOTAL_NUM == 0) 
@@ -753,7 +757,7 @@
                                                     {
                                                         echo "0 %";
                                                     } else {
-                                                        $average_den = ($row->DEN_OKT ) + ($row->DEN_NOV) + ($row->DEN_DES );
+                                                        $average_den = ($row->DEN_DES );
                                                         echo round(($row->TOTAL_NUM / $average_den) * 100, 2)." %";
                                                     }
                                                 } else {
@@ -781,8 +785,8 @@
                                                     {
                                                         echo "0";
                                                     } else {
-                                                        $average_den = ($row->DEN_OKT ) + ($row->DEN_NOV ) + ($row->DEN_DES );
-                                                        echo round(($row->TOTAL_NUM / $average_den), 2);
+                                                        $average_den = ($row->DEN_DES );
+                                                        echo round(( $average_den), 2);
                                                     }
                                                 } else {
                                                     if ($row->TOTAL_DEN == 0) 
