@@ -123,6 +123,21 @@ function views_input($id)
 	}
 }
 
+function views_evaluasi()
+{
+	return "default/v_evaluasi";
+}
+
+function views_evaluasi_capaian()
+{
+	return "default/v_index_evaluasi_capaian";
+}
+
+function views_tabel_capaian_evaluasi(){
+	return "default/v_get_evaluasi_capaian";
+
+}
+
 function views_ubah($id)
 {
 	switch ($id) {
