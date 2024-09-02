@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Data_model extends CI_Model {
+class Data_model extends CI_Model
+{
 
 	public function get_data_indikator()
 	{
@@ -43,6 +44,35 @@ class Data_model extends CI_Model {
 		$this->db->where('TANGGAL', $tanggal);
 		return $this->db->get()->num_rows();
 	}
+
+	//evaluasi
+	public function cek_data_double_evaluasi($bulan, $tahun)
+	{
+		$this->db->select('*');
+		$this->db->from('TR_EVALUASI');
+		$this->db->where('ID_RUANG_SUB', $this->session->userdata('user_id_ruang_sub'));
+		$this->db->where('BULAN', $bulan);
+		$this->db->where('TAHUN', $tahun);
+		return $this->db->get()->num_rows();
+	}
+
+
+
+	function get_evaluasi($bulan, $tahun, $id_ruang_sub)
+	{
+
+		return $this->db->query("select tm.DETAIL_INDIKATOR, tm.NILAI_STANDAR ,
+				ev.FAKTOR_PENDORONG, ev.FAKTOR_PENGHAMBAT, sub.NAMA_SUB_RUANG,  ruang.NAMA_RUANG
+				from TR_EVALUASI ev
+				join TM_INDIKATOR tm on tm.ID = ev.ID_INDIKATOR
+				join TREF_RUANG_SUB sub on sub.ID = ev.ID_RUANG_SUB
+				join TREF_RUANG ruang on ruang.ID = sub.ID_RUANG
+				where BULAN ='$bulan' and TAHUN ='$tahun'
+				and ID_RUANG_SUB = '$id_ruang_sub' ")->result();
+	}
+	//end evaluasi
+
+
 
 	public function get_data_pertanggal($tanggal)
 	{
@@ -88,5 +118,4 @@ class Data_model extends CI_Model {
 		$this->db->group_by('TANGGAL');
 		return $this->db->get();
 	}
-
 }

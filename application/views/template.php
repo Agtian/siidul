@@ -109,6 +109,12 @@
                                             <li><a href="<?php echo base_url('rekap/grafik'); ?>">Grafik Capaian</a></li>
                                         </ul>
                                     </li>
+                                    <li><a><i class="fa fa-desktop"></i> EVALUASI <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="<?php echo base_url('data/evaluasi'); ?>">Faktor</a></li>
+                                            <li><a href="<?php echo base_url('data/evaluasi_hasil'); ?>">Hasil</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a><i class="fa fa-book"></i> PROFIL INDIKATOR<span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><a href="https://drive.google.com/file/d/1VCoshE77tRlirvSgXejCPPKMNmD4KWo6/view" target="_blank">SPM</a></li>
