@@ -531,8 +531,8 @@
                                                         if ($row->TOTAL_NUM == 0) {
                                                             echo "0";
                                                         } else {
-                                                            $average =  ($row->DEN_SEP);
-                                                            echo $average;
+                                                            $average = ($row->NUM_JUL) + ($row->NUM_AGT) + ($row->NUM_SEP);
+                                                            echo $average . "";
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_NUM == 0) {
@@ -560,7 +560,7 @@
                                                             echo "0 %";
                                                         } else {
                                                             $average_den = ($row->DEN_SEP);
-                                                            echo round(($row->TOTAL_DEN / $average_den) * 100, 2) . " %";
+                                                            echo round(($row->TOTAL_NUM / $average_den) * 100, 2) . " %";
                                                         }
                                                     } else {
                                                         if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
