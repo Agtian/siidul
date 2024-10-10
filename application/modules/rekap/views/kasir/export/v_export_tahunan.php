@@ -109,7 +109,7 @@
                                 <td rowspan="2" align="center">
                                     <b>
                                         <?php
-                                        if ($id_indikator == 252) {
+                                        if ($id_indikator == 252 && $id_indikator == 238) {
                                             if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                 echo "00:00:00";
                                             } else {
