@@ -94,12 +94,13 @@
                                         <td rowspan="2" align="center">
                                             <b>
                                                 <?php
-                                                if ($id_indikator == 252) {
+                                                if ($id_indikator == 252 || $id_indikator == 238) {
                                                     if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                         echo "00:00:00";
                                                     } else {
-                                                        $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                        echo gmdate('H:i:s', floor($persen * 60));
+                                                        $tt_average = ($row->NUM_JAN / $tt_hari_jan) + ($row->NUM_FEB / $tt_hari_feb) + ($row->NUM_MAR / $tt_hari_mar);
+                                                        $time       = $tt_average / $row->TOTAL_DEN;
+                                                        echo gmdate('H:i:s', floor($time * 60));
                                                     }
                                                 } else {
                                                     if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
@@ -190,12 +191,13 @@
                                         <td rowspan="2" align="center">
                                             <b>
                                                 <?php
-                                                if ($id_indikator == 252) {
+                                                if ($id_indikator == 252 || $id_indikator == 238) {
                                                     if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                         echo "00:00:00";
                                                     } else {
-                                                        $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                        echo gmdate('H:i:s', floor($persen * 60));
+                                                        $tt_average = ($row->NUM_APR / $tt_hari_apr) + ($row->NUM_MEI / $tt_hari_mei) + ($row->NUM_JUN / $tt_hari_jun);
+                                                        $time       = $tt_average / $row->TOTAL_DEN;
+                                                        echo gmdate('H:i:s', floor($time * 60));
                                                     }
                                                 } else {
                                                     if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
@@ -286,12 +288,14 @@
                                         <td rowspan="2" align="center">
                                             <b>
                                                 <?php
-                                                if ($id_indikator == 252) {
+                                                if ($id_indikator == 252 || $id_indikator == 238) {
                                                     if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                         echo "00:00:00";
                                                     } else {
-                                                        $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                        echo gmdate('H:i:s', floor($persen * 60));
+                                                        $tt_average = ($row->NUM_JUL / $tt_hari_jul) + ($row->NUM_AGT / $tt_hari_agt) + ($row->NUM_SEP / $tt_hari_sep);
+                                                        $time       = $tt_average / $row->TOTAL_DEN ;
+                                                        echo gmdate('H:i:s', floor($time * 60));
+
                                                     }
                                                 } else {
                                                     if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
@@ -382,12 +386,14 @@
                                         <td rowspan="2" align="center">
                                             <b>
                                                 <?php
-                                                if ($id_indikator == 252) {
+                                                if ($id_indikator == 252 || $id_indikator == 238) {
                                                     if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {
                                                         echo "00:00:00";
                                                     } else {
-                                                        $persen = $row->TOTAL_NUM / $row->TOTAL_DEN;
-                                                        echo gmdate('H:i:s', floor($persen * 60));
+
+                                                        $tt_average = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov) + ($row->NUM_DES / $tt_hari_des);
+                                                        $time       = $tt_average / $row->TOTAL_DEN;
+                                                        echo gmdate('H:i:s', floor($time * 60));
                                                     }
                                                 } else {
                                                     if ($row->TOTAL_NUM == 0 || $row->TOTAL_DEN == 0) {

@@ -79,7 +79,7 @@
                                     <td align="center"><b> <?php echo $row->NILAI_STANDAR; ?> </b></td>
                                     <td align="center">
                                         <?php
-                                        if ($id_indikator == 252) {
+                                        if ($id_indikator == 252 || $id_indikator == 238) {
                                             if (empty($row->NUM_JAN)) {
                                                 echo "00:00:00";
                                             } else {
@@ -100,7 +100,7 @@
                                     </td>
                                     <td align="center">
                                         <?php
-                                        if ($id_indikator == 252) {
+                                        if ($id_indikator == 252 || $id_indikator == 238) {
                                             if (empty($row->NUM_FEB)) {
                                                 echo "00:00:00";
                                             } else {
@@ -121,7 +121,7 @@
                                     </td>
                                     <td align="center">
                                         <?php
-                                        if ($id_indikator == 252) {
+                                        if ($id_indikator == 252 || $id_indikator == 238) {
                                             if (empty($row->NUM_MAR)) {
                                                 echo "00:00:00";
                                             } else {
@@ -142,7 +142,7 @@
                                     </td>
                                     <td align="center">
                                         <?php
-                                        if ($id_indikator == 252) {
+                                        if ($id_indikator == 252 || $id_indikator == 238) {
                                             if (empty($row->NUM_APR)) {
                                                 echo "00:00:00";
                                             } else {
@@ -163,7 +163,7 @@
                                     </td>
                                     <td align="center">
                                         <?php
-                                        if ($id_indikator == 252) {
+                                        if ($id_indikator == 252 || $id_indikator == 238) {
                                             if (empty($row->NUM_MEI)) {
                                                 echo "00:00:00";
                                             } else {
@@ -184,7 +184,7 @@
                                     </td>
                                     <td align="center">
                                         <?php
-                                        if ($id_indikator == 252) {
+                                        if ($id_indikator == 252 || $id_indikator == 238) {
                                             if (empty($row->NUM_JUN)) {
                                                 echo "00:00:00";
                                             } else {
@@ -205,7 +205,7 @@
                                     </td>
                                     <td align="center">
                                         <?php
-                                        if ($id_indikator == 252) {
+                                        if ($id_indikator == 252 || $id_indikator == 238) {
                                             if (empty($row->NUM_JUN)) {
                                                 echo "00:00:00";
                                             } else {
@@ -226,7 +226,7 @@
                                     </td>
                                     <td align="center">
                                         <?php
-                                        if ($id_indikator == 252) {
+                                        if ($id_indikator == 252 || $id_indikator == 238) {
                                             if (empty($row->NUM_AGT)) {
                                                 echo "00:00:00";
                                             } else {
@@ -247,7 +247,7 @@
                                     </td>
                                     <td align="center">
                                         <?php
-                                        if ($id_indikator == 252) {
+                                        if ($id_indikator == 252 || $id_indikator == 238) {
                                             if (empty($row->NUM_SEP)) {
                                                 echo "00:00:00";
                                             } else {
@@ -268,7 +268,7 @@
                                     </td>
                                     <td align="center">
                                         <?php
-                                        if ($id_indikator == 252) {
+                                        if ($id_indikator == 252 || $id_indikator == 238) {
                                             if (empty($row->NUM_OKT)) {
                                                 echo "00:00:00";
                                             } else {
@@ -289,7 +289,7 @@
                                     </td>
                                     <td align="center">
                                         <?php
-                                        if ($id_indikator == 252) {
+                                        if ($id_indikator == 252 || $id_indikator == 238) {
                                             if (empty($row->NUM_NOV)) {
                                                 echo "00:00:00";
                                             } else {
@@ -310,7 +310,7 @@
                                     </td>
                                     <td align="center">
                                         <?php
-                                        if ($id_indikator == 252) {
+                                        if ($id_indikator == 252 || $id_indikator == 238) {
                                             if (empty($row->NUM_DES)) {
                                                 echo "00:00:00";
                                             } else {
