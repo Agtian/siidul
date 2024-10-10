@@ -738,7 +738,7 @@
                                                             echo "00:00:00";
                                                         } else {
                                                             $tt_average = ($row->NUM_OKT / $tt_hari_okt) + ($row->NUM_NOV / $tt_hari_nov) + ($row->NUM_DES / $tt_hari_des);
-                                                            $time       = $tt_average / $row->TOTAL_DEN;
+                                                            $time       = $tt_average / 3;
                                                             echo gmdate('H:i:s', floor($time * 60));
                                                         }
                                                     } else if ($id_indikator == 205) {
