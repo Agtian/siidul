@@ -101,7 +101,7 @@
                                     <td align="center">
                                         <b>
                                             <?php
-                                            if ($id_indikator == 252 && $id_indikator == 238)
+                                            if ($id_indikator == 252 || $id_indikator == 238)
                                             {
                                                 if (empty($total_num)) {
                                                     echo "0";
@@ -123,7 +123,7 @@
                                         <b>
                                             <center>
                                                 <?php
-                                                if ($id_indikator == 252 && $id_indikator == 238)
+                                                if ($id_indikator == 252 || $id_indikator == 238)
                                                 {
                                                     if ($total_num == 0 || $total_den == 0) {
                                                         echo "0";

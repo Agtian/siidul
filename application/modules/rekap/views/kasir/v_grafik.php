@@ -121,7 +121,7 @@
     <?php } ?>
 
     function hitung(no, num, den, hari) {
-        if (no == 252 && no == 238) {
+        if (no == 252 || no == 238) {
             if (num == 0 || den == 0) {
                 return 0;
             } else {
