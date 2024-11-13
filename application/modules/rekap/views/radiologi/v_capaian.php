@@ -130,20 +130,20 @@
                                             <?php
                                                 if ($id_indikator == 108)
                                                 {
-                                                    if ($row->NUM_MAR == 0 || $row->NUM_MAR == 0) 
+                                                    if ($row->NUM_MAR == 0 || $row->DEN_MAR == 0) 
                                                     {
                                                         echo "00:00:00";
                                                     } else {
                                                         $average = $row->NUM_MAR / $tt_hari_mar;
-                                                        $time    = $average / $row->NUM_MAR;
+                                                        $time    = $average / $row->DEN_MAR;
                                                         echo gmdate('H:i:s', floor($time * 1440));
                                                     }
                                                 } else {
-                                                    if ($row->NUM_MAR == 0 || $row->NUM_MAR == 0) 
+                                                    if ($row->NUM_MAR == 0 || $row->DEN_MAR == 0) 
                                                     {
                                                         echo "0  %";
                                                     } else {
-                                                        echo substr($row->NUM_MAR / $row->NUM_MAR * 100, 0, 5)." %";
+                                                        echo substr($row->NUM_MAR / $row->DEN_MAR * 100, 0, 5)." %";
                                                     }
                                                 }
                                             ?>
@@ -152,20 +152,20 @@
                                             <?php
                                                 if ($id_indikator == 108)
                                                 {
-                                                    if ($row->NUM_APR == 0 || $row->NUM_APR == 0) 
+                                                    if ($row->NUM_APR == 0 || $row->DEN_APR == 0) 
                                                     {
                                                         echo "00:00:00";
                                                     } else {
                                                         $average = $row->NUM_APR / $tt_hari_apr;
-                                                        $time    = $average / $row->NUM_APR;
+                                                        $time    = $average / $row->DEN_APR;
                                                         echo gmdate('H:i:s', floor($time * 1440));
                                                     }
                                                 } else {
-                                                    if ($row->NUM_APR == 0 || $row->NUM_APR == 0) 
+                                                    if ($row->NUM_APR == 0 || $row->DEN_APR == 0) 
                                                     {
                                                         echo "0  %";
                                                     } else {
-                                                        echo substr($row->NUM_APR / $row->NUM_APR * 100, 0, 5)." %";
+                                                        echo substr($row->NUM_APR / $row->DEN_APR * 100, 0, 5)." %";
                                                     }
                                                 }
                                             ?>
@@ -174,7 +174,7 @@
                                             <?php
                                                 if ($id_indikator == 108)
                                                 {
-                                                    if ($row->NUM_MEI == 0 || $row->NUM_MEI == 0) 
+                                                    if ($row->NUM_MEI == 0 || $row->DEN_MEI == 0) 
                                                     {
                                                         echo "00:00:00";
                                                     } else {
@@ -183,11 +183,11 @@
                                                         echo gmdate('H:i:s', floor($time * 1440));
                                                     }
                                                 } else {
-                                                    if ($row->NUM_MEI == 0 || $row->NUM_MEI == 0) 
+                                                    if ($row->NUM_MEI == 0 || $row->DEN_MEI == 0) 
                                                     {
                                                         echo "0  %";
                                                     } else {
-                                                        echo substr($row->NUM_MEI / $row->NUM_MEI * 100, 0, 5)." %";
+                                                        echo substr($row->NUM_MEI / $row->DEN_MEI * 100, 0, 5)." %";
                                                     }
                                                 }
                                             ?>
@@ -196,20 +196,20 @@
                                             <?php
                                                 if ($id_indikator == 108)
                                                 {
-                                                    if ($row->NUM_JUN == 0 || $row->NUM_JUN == 0) 
+                                                    if ($row->NUM_JUN == 0 || $row->DEN_JUN == 0) 
                                                     {
                                                         echo "00:00:00";
                                                     } else {
                                                         $average = $row->NUM_JUN / $tt_hari_jun;
-                                                        $time    = $average / $row->NUM_JUN;
+                                                        $time    = $average / $row->DEN_JUN;
                                                         echo gmdate('H:i:s', floor($time * 1440));
                                                     }
                                                 } else {
-                                                    if ($row->NUM_JUN == 0 || $row->NUM_JUN == 0) 
+                                                    if ($row->NUM_JUN == 0 || $row->DEN_JUN == 0) 
                                                     {
                                                         echo "0  %";
                                                     } else {
-                                                        echo substr($row->NUM_JUN / $row->NUM_JUN * 100, 0, 5)." %";
+                                                        echo substr($row->NUM_JUN / $row->DEN_JUN * 100, 0, 5)." %";
                                                     }
                                                 }
                                             ?>
@@ -218,20 +218,20 @@
                                             <?php
                                                 if ($id_indikator == 108)
                                                 {
-                                                    if ($row->NUM_JUL == 0 || $row->NUM_JUL == 0) 
+                                                    if ($row->NUM_JUL == 0 || $row->DEN_JUL == 0) 
                                                     {
                                                         echo "00:00:00";
                                                     } else {
                                                         $average = $row->NUM_JUL / $tt_hari_jul;
-                                                        $time    = $average / $row->NUM_JUL;
+                                                        $time    = $average / $row->DEN_JUL;
                                                         echo gmdate('H:i:s', floor($time * 1440));
                                                     }
                                                 } else {
-                                                    if ($row->NUM_JUL == 0 || $row->NUM_JUL == 0) 
+                                                    if ($row->NUM_JUL == 0 || $row->DEN_JUL == 0) 
                                                     {
                                                         echo "0  %";
                                                     } else {
-                                                        echo substr($row->NUM_JUL / $row->NUM_JUL * 100, 0, 5)." %";
+                                                        echo substr($row->NUM_JUL / $row->DEN_JUL * 100, 0, 5)." %";
                                                     }
                                                 }
                                             ?>
@@ -240,20 +240,20 @@
                                             <?php
                                                 if ($id_indikator == 108)
                                                 {
-                                                    if ($row->NUM_AGT == 0 || $row->NUM_AGT == 0) 
+                                                    if ($row->NUM_AGT == 0 || $row->DEN_AGT == 0) 
                                                     {
                                                         echo "00:00:00";
                                                     } else {
                                                         $average = $row->NUM_AGT / $tt_hari_agt;
-                                                        $time    = $average / $row->NUM_AGT;
+                                                        $time    = $average / $row->DEN_AGT;
                                                         echo gmdate('H:i:s', floor($time * 1440));
                                                     }
                                                 } else {
-                                                    if ($row->NUM_AGT == 0 || $row->NUM_AGT == 0) 
+                                                    if ($row->NUM_AGT == 0 || $row->DEN_AGT == 0) 
                                                     {
                                                         echo "0  %";
                                                     } else {
-                                                        echo substr($row->NUM_AGT / $row->NUM_AGT * 100, 0, 5)." %";
+                                                        echo substr($row->NUM_AGT / $row->DEN_AGT * 100, 0, 5)." %";
                                                     }
                                                 }
                                             ?>
@@ -262,20 +262,20 @@
                                             <?php
                                                 if ($id_indikator == 108)
                                                 {
-                                                    if ($row->NUM_SEP == 0 || $row->NUM_SEP == 0) 
+                                                    if ($row->NUM_SEP == 0 || $row->DEN_SEP == 0) 
                                                     {
                                                         echo "00:00:00";
                                                     } else {
                                                         $average = $row->NUM_SEP / $tt_hari_sep;
-                                                        $time    = $average / $row->NUM_SEP;
+                                                        $time    = $average / $row->DEN_SEP;
                                                         echo gmdate('H:i:s', floor($time * 1440));
                                                     }
                                                 } else {
-                                                    if ($row->NUM_SEP == 0 || $row->NUM_SEP == 0) 
+                                                    if ($row->NUM_SEP == 0 || $row->DEN_SEP == 0) 
                                                     {
                                                         echo "0  %";
                                                     } else {
-                                                        echo substr($row->NUM_SEP / $row->NUM_SEP * 100, 0, 5)." %";
+                                                        echo substr($row->NUM_SEP / $row->DEN_SEP * 100, 0, 5)." %";
                                                     }
                                                 }
                                             ?>
@@ -284,20 +284,20 @@
                                             <?php
                                                 if ($id_indikator == 108)
                                                 {
-                                                    if ($row->NUM_OKT == 0 || $row->NUM_OKT == 0) 
+                                                    if ($row->NUM_OKT == 0 || $row->DEN_OKT == 0) 
                                                     {
                                                         echo "00:00:00";
                                                     } else {
                                                         $average = $row->NUM_OKT / $tt_hari_okt;
-                                                        $time    = $average / $row->NUM_OKT;
+                                                        $time    = $average / $row->DEN_OKT;
                                                         echo gmdate('H:i:s', floor($time * 1440));
                                                     }
                                                 } else {
-                                                    if ($row->NUM_OKT == 0 || $row->NUM_OKT == 0) 
+                                                    if ($row->NUM_OKT == 0 || $row->DEN_OKT == 0) 
                                                     {
                                                         echo "0  %";
                                                     } else {
-                                                        echo substr($row->NUM_OKT / $row->NUM_OKT * 100, 0, 5)." %";
+                                                        echo substr($row->NUM_OKT / $row->DEN_OKT * 100, 0, 5)." %";
                                                     }
                                                 }
                                             ?> 
@@ -306,20 +306,20 @@
                                             <?php
                                                 if ($id_indikator == 108)
                                                 {
-                                                    if ($row->NUM_NOV == 0 || $row->NUM_NOV == 0) 
+                                                    if ($row->NUM_NOV == 0 || $row->DEN_NOV == 0) 
                                                     {
                                                         echo "00:00:00";
                                                     } else {
                                                         $average = $row->NUM_NOV / $tt_hari_nov;
-                                                        $time    = $average / $row->NUM_NOV;
+                                                        $time    = $average / $row->DEN_NOV;
                                                         echo gmdate('H:i:s', floor($time * 1440));
                                                     }
                                                 } else {
-                                                    if ($row->NUM_NOV == 0 || $row->NUM_NOV == 0) 
+                                                    if ($row->NUM_NOV == 0 || $row->DEN_NOV == 0) 
                                                     {
                                                         echo "0  %";
                                                     } else {
-                                                        echo substr($row->NUM_NOV / $row->NUM_NOV * 100, 0, 5)." %";
+                                                        echo substr($row->NUM_NOV / $row->DEN_NOV * 100, 0, 5)." %";
                                                     }
                                                 }
                                             ?>
@@ -328,20 +328,20 @@
                                             <?php
                                                 if ($id_indikator == 108)
                                                 {
-                                                    if ($row->NUM_DES == 0 || $row->NUM_DES == 0) 
+                                                    if ($row->NUM_DES == 0 || $row->DEN_DES == 0) 
                                                     {
                                                         echo "00:00:00";
                                                     } else {
                                                         $average = $row->NUM_DES / $tt_hari_des;
-                                                        $time    = $average / $row->NUM_DES;
+                                                        $time    = $average / $row->DEN_DES;
                                                         echo gmdate('H:i:s', floor($time * 1440));
                                                     }
                                                 } else {
-                                                    if ($row->NUM_DES == 0 || $row->NUM_DES == 0) 
+                                                    if ($row->NUM_DES == 0 || $row->DEN_DES == 0) 
                                                     {
                                                         echo "0  %";
                                                     } else {
-                                                        echo substr($row->NUM_DES / $row->NUM_DES * 100, 0, 5)." %";
+                                                        echo substr($row->NUM_DES / $row->DEN_DES * 100, 0, 5)." %";
                                                     }
                                                 }
                                             ?>
